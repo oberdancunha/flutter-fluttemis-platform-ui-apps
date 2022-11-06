@@ -3,6 +3,7 @@ library fluttemis_fluent_ui_dependency_modules;
 export 'package:bio/seqio/genbank.dart';
 export 'package:collection/collection.dart';
 export 'package:equatable/equatable.dart';
+export 'package:file_picker/file_picker.dart';
 export 'package:flutter_bloc/flutter_bloc.dart';
 export 'package:flutter_modular/flutter_modular.dart' hide Default;
 export 'package:fpdart/fpdart.dart' hide State;

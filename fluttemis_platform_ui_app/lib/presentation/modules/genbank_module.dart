@@ -10,7 +10,18 @@ class GenbankModule extends WidgetModule {
   List<Bind<Object>> get binds => [];
 
   @override
-  Widget get view => const FilePickerPage(
-        openFileMessage: 'Clique para abrir o arquivo Genbank (.genbank, .gbk, .gbff)',
-      );
+  Widget get view {
+    final allowedExtensions = [
+      'genbank',
+      'gbk',
+      'gbff',
+      'gb',
+    ];
+
+    return FilePickerPage(
+      openFileMessage:
+          'Clique para abrir o arquivo Genbank (extensões ${allowedExtensions.join(', ')})',
+      allowedExtensions: allowedExtensions,
+    );
+  }
 }

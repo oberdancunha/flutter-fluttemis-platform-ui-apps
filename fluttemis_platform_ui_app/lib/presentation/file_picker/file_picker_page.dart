@@ -1,11 +1,17 @@
+import 'dart:developer';
+import 'dart:io';
+
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/file_picker/platform_file_picker_widget.dart';
 import 'package:flutter/widgets.dart';
 
 class FilePickerPage extends StatelessWidget {
   final String openFileMessage;
+  final List<String> allowedExtensions;
 
   const FilePickerPage({
     required this.openFileMessage,
+    required this.allowedExtensions,
     super.key,
   });
 
@@ -16,6 +22,15 @@ class FilePickerPage extends StatelessWidget {
         iconSize: 150,
         openFileMessage: openFileMessage,
         messageSize: 15,
-        pickFile: () {},
+        pickFile: () async {
+          final FilePickerResult? result = await FilePicker.platform.pickFiles(
+            type: FileType.custom,
+            allowedExtensions: allowedExtensions,
+          );
+          if (result != null) {
+            final file = File(result.files.single.path!);
+            log(file.path);
+          }
+        },
       );
 }
