@@ -14,4 +14,5 @@ final materialThemeDataLight = ThemeData().copyWith(
       sidebarBackgroundColor: const Color(0xFFB3B0AD),
     ),
   ],
+  useMaterial3: true,
 );
