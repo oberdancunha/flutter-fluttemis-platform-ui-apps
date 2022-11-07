@@ -11,12 +11,16 @@ class PlatformAppWidget
   final bool debugShowCheckedModeBanner;
   final RouteInformationParser<Object> routeInformationParser;
   final RouterDelegate<Object> routerDelegate;
+  final Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates;
+  final Iterable<Locale> supportedLocales;
 
   const PlatformAppWidget({
     required this.title,
     required this.debugShowCheckedModeBanner,
     required this.routeInformationParser,
     required this.routerDelegate,
+    required this.localizationsDelegates,
+    required this.supportedLocales,
     super.key,
   });
 
@@ -26,6 +30,8 @@ class PlatformAppWidget
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
       );
 
   @override
@@ -34,6 +40,8 @@ class PlatformAppWidget
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
       );
 
   @override
@@ -42,5 +50,7 @@ class PlatformAppWidget
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
       );
 }

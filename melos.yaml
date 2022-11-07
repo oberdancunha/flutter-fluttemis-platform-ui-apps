@@ -27,3 +27,11 @@ scripts:
 
   analyze:
     exec: dart analyze .
+
+  localization:flutter:
+    exec: flutter gen-l10n
+    description: Run gen-l10n to generate localizations files
+    select-package:
+      flutter: true
+      file-exists: lib/l10n/app_pt.arb
+      

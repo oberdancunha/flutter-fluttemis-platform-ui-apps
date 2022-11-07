@@ -10,3 +10,5 @@ export 'package:fpdart/fpdart.dart' hide State;
 export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:kt_dart/kt.dart' hide reverse;
 export 'package:window_manager/window_manager.dart';
+
+export './l10n/fluttemis_app_localizations.dart';

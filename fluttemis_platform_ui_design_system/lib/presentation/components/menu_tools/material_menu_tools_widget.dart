@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme/fluttemis_theme_extension.dart';
@@ -43,6 +44,7 @@ class _MaterialMenuToolsWidgetState extends State<MaterialMenuToolsWidget> {
   @override
   Widget build(BuildContext context) {
     final themeExtension = Theme.of(context).extension<FluttemisThemeExtension<Color>>()!;
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
     return Scaffold(
       key: _navigationViewKey,
@@ -70,7 +72,9 @@ class _MaterialMenuToolsWidgetState extends State<MaterialMenuToolsWidget> {
                           width: 38,
                           height: 38,
                           child: Tooltip(
-                            message: _isClosed ? 'Abrir navegação' : 'Fechar navegação',
+                            message: _isClosed
+                                ? fluttemisAppLocalizations.openMenu
+                                : fluttemisAppLocalizations.closeMenu,
                             child: IconButton(
                               icon: const Icon(Icons.menu),
                               onPressed: () {

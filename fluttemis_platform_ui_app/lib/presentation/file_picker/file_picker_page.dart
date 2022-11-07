@@ -6,11 +6,11 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/file
 import 'package:flutter/widgets.dart';
 
 class FilePickerPage extends StatelessWidget {
-  final String openFileMessage;
+  final String fileTypeMessage;
   final List<String> allowedExtensions;
 
   const FilePickerPage({
-    required this.openFileMessage,
+    required this.fileTypeMessage,
     required this.allowedExtensions,
     super.key,
   });
@@ -20,7 +20,10 @@ class FilePickerPage extends StatelessWidget {
         height: 200,
         width: 300,
         iconSize: 150,
-        openFileMessage: openFileMessage,
+        openFileMessage: FluttemisAppLocalizations.of(context)!.filePicker(
+          fileTypeMessage,
+          allowedExtensions.join(', '),
+        ),
         messageSize: 15,
         pickFile: () async {
           final FilePickerResult? result = await FilePicker.platform.pickFiles(

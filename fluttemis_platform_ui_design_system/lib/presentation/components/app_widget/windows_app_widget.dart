@@ -9,6 +9,8 @@ class WindowsAppWidget extends PlatformAppWidget {
     required super.debugShowCheckedModeBanner,
     required super.routeInformationParser,
     required super.routerDelegate,
+    required super.localizationsDelegates,
+    required super.supportedLocales,
     super.key,
   });
 
@@ -19,6 +21,8 @@ class WindowsAppWidget extends PlatformAppWidget {
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
         color: Colors.transparent,
       );
 }

@@ -1,0 +1,17 @@
+{
+  "openMenu": "Abrir navegação",
+  "closeMenu": "Fechar navegação",
+  "genbankFile": "Genbank file",  
+  "filePicker": "Clique para abrir o arquivo {fileType} (extensões {fileExtensions})",
+  "@filePicker": {
+    "description": "Choose input file type",
+    "placeholders": {
+      "fileType": {
+        "type": "String"
+      },
+      "fileExtensions": {
+        "type": "String"
+      }
+    }
+  }
+}

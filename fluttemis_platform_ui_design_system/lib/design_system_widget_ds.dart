@@ -1,5 +1,5 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/widgets.dart';
 
 import 'presentation/components/app_widget/platform_app_widget.dart';
 
@@ -12,5 +12,7 @@ class DesignSystemWidgetDS extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routeInformationParser: Modular.routeInformationParser,
         routerDelegate: Modular.routerDelegate,
+        localizationsDelegates: FluttemisAppLocalizations.localizationsDelegates,
+        supportedLocales: FluttemisAppLocalizations.supportedLocales,
       );
 }

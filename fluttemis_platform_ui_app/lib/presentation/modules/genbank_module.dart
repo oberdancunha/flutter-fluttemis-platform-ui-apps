@@ -19,8 +19,7 @@ class GenbankModule extends WidgetModule {
     ];
 
     return FilePickerPage(
-      openFileMessage:
-          'Clique para abrir o arquivo Genbank (extensões ${allowedExtensions.join(', ')})',
+      fileTypeMessage: 'genbank',
       allowedExtensions: allowedExtensions,
     );
   }

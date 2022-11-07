@@ -9,7 +9,7 @@ abstract class PlatformWidget<MacosWidget extends Widget, WindowsWidget extends 
   @override
   Widget build(BuildContext context) {
     if (Platform.isIOS || Platform.isMacOS) {
-      return buildMaterialWidget();
+      return buildMacosWidget();
     } else if (Platform.isWindows) {
       return buildWindowsWidget();
     }

@@ -10,6 +10,8 @@ class MacosAppWidget extends PlatformAppWidget {
     required super.debugShowCheckedModeBanner,
     required super.routeInformationParser,
     required super.routerDelegate,
+    required super.localizationsDelegates,
+    required super.supportedLocales,
     super.key,
   });
 
@@ -22,5 +24,7 @@ class MacosAppWidget extends PlatformAppWidget {
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
       );
 }
