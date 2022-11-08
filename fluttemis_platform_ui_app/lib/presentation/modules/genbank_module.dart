@@ -1,26 +1,19 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-import '../file_picker/file_picker_page.dart';
-
-class GenbankModule extends WidgetModule {
-  GenbankModule({super.key});
+class GenbankModule extends Module {
+  @override
+  final List<Bind> binds = [];
 
   @override
-  List<Bind<Object>> get binds => [];
-
-  @override
-  Widget get view {
-    final allowedExtensions = [
-      'genbank',
-      'gbk',
-      'gbff',
-      'gb',
-    ];
-
-    return FilePickerPage(
-      fileTypeMessage: 'genbank',
-      allowedExtensions: allowedExtensions,
-    );
-  }
+  final List<ModularRoute> routes = [
+    ChildRoute(
+      '/',
+      child: (_, __) => const SizedBox(
+        child: Center(
+          child: Text('Vamos ler um arquivo dos genbanks....'),
+        ),
+      ),
+    ),
+  ];
 }
