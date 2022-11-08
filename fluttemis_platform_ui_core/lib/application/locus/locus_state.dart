@@ -1,31 +1,40 @@
-part of 'locus_bloc.dart';
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
-abstract class LocusState extends Equatable {}
+import '../../domain/core/failures.dart';
+import '../../domain/locus/locus.dart';
 
-class LocusStateInitial extends LocusState {
-  @override
-  List<Object?> get props => [];
-}
-
-class LocusStateLoad extends LocusState {
-  @override
-  List<Object?> get props => [];
-}
-
-class LocusStateSuccess extends LocusState {
+class LocusState extends Equatable {
   final KtList<Locus> locus;
+  final bool isLoading;
+  final Failure? failure;
 
-  LocusStateSuccess(this.locus);
+  const LocusState({
+    required this.locus,
+    required this.isLoading,
+    required this.failure,
+  });
+
+  factory LocusState.initial() => const LocusState(
+        locus: KtList.empty(),
+        isLoading: false,
+        failure: null,
+      );
 
   @override
-  List<Object?> get props => [locus];
-}
+  List<Object?> get props => [
+        locus,
+        isLoading,
+        failure,
+      ];
 
-class LocusStateFailure extends LocusState {
-  final Failure failure;
-
-  LocusStateFailure(this.failure);
-
-  @override
-  List<Object?> get props => [failure];
+  LocusState copyWith({
+    KtList<Locus>? locus,
+    bool? isLoading,
+    Failure? failure,
+  }) =>
+      LocusState(
+        locus: locus ?? this.locus,
+        isLoading: isLoading ?? this.isLoading,
+        failure: failure ?? this.failure,
+      );
 }
