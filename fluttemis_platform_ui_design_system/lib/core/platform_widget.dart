@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 abstract class PlatformWidget<MacosWidget extends Widget, WindowsWidget extends Widget,
     MaterialWidget extends Widget> extends StatelessWidget {
