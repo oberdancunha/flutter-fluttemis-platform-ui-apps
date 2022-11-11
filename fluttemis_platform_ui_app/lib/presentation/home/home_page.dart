@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:fluttemis_platform_ui_design_system/presentation/components/scaffold/platform_scaffold_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/text/platform_text_widget.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scaffold/platform_scaffold_widget.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
 import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {

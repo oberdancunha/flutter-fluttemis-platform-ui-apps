@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:macos_ui/macos_ui.dart';
 
-import '../../../theme/light/macos_theme_data_light.dart';
+import '../theme/light/material_theme_data_light.dart';
 import 'platform_app_widget.dart';
 
-class MacosAppWidget extends PlatformAppWidget {
-  const MacosAppWidget({
+class MaterialAppWidget extends PlatformAppWidget {
+  const MaterialAppWidget({
     required super.title,
     required super.debugShowCheckedModeBanner,
     required super.routeInformationParser,
@@ -16,11 +15,9 @@ class MacosAppWidget extends PlatformAppWidget {
   });
 
   @override
-  Widget build(BuildContext context) => MacosApp.router(
+  Widget build(BuildContext context) => MaterialApp.router(
         title: title,
-        theme: macosThemeDataLight,
-        themeMode:
-            macosThemeDataLight.brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light,
+        theme: materialThemeDataLight,
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,

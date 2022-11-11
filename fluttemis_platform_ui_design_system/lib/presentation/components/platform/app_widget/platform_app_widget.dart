@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../core/platform_widget.dart';
+import '../core/platform_widget.dart';
 import 'macos_app_widget.dart';
 import 'material_app_widget.dart';
 import 'windows_app_widget.dart';

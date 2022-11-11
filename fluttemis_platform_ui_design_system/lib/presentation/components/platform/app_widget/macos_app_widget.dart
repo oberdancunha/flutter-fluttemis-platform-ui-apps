@@ -1,10 +1,11 @@
-import 'package:fluent_ui/fluent_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:macos_ui/macos_ui.dart';
 
-import '../../../theme/light/windows_theme_data_light.dart';
+import '../theme/light/macos_theme_data_light.dart';
 import 'platform_app_widget.dart';
 
-class WindowsAppWidget extends PlatformAppWidget {
-  const WindowsAppWidget({
+class MacosAppWidget extends PlatformAppWidget {
+  const MacosAppWidget({
     required super.title,
     required super.debugShowCheckedModeBanner,
     required super.routeInformationParser,
@@ -15,14 +16,15 @@ class WindowsAppWidget extends PlatformAppWidget {
   });
 
   @override
-  Widget build(BuildContext context) => FluentApp.router(
+  Widget build(BuildContext context) => MacosApp.router(
         title: title,
-        theme: windowsThemeDataLight,
+        theme: macosThemeDataLight,
+        themeMode:
+            macosThemeDataLight.brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light,
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
         localizationsDelegates: localizationsDelegates,
         supportedLocales: supportedLocales,
-        color: Colors.transparent,
       );
 }

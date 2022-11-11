@@ -1,4 +1,4 @@
-import '../../../core/platform_widget.dart';
+import '../core/platform_widget.dart';
 import 'macos_text_widget.dart';
 import 'material_text_widget.dart';
 import 'windows_text_widget.dart';
