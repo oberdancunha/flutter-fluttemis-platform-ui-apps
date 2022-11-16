@@ -19,10 +19,14 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
         cardDecoration: BoxDecoration(
+          color: MacosTheme.of(context).canvasColor.withAlpha(255),
           borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: MacosTheme.of(context).primaryColor,
-          ),
+          boxShadow: const <BoxShadow>[
+            BoxShadow(
+              color: MacosColors.systemGrayColor,
+              blurRadius: 10,
+            ),
+          ],
         ),
         secondaryTitleStyle: MacosTheme.of(context).typography.title3,
         mainTitleStyle: MacosTheme.of(context).typography.title1,

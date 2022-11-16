@@ -12,7 +12,6 @@ class MenuToolsWidget extends StatelessWidget {
         crossAxisCount: 5,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 0.55,
         padding: const EdgeInsets.all(20),
         children: [
           PlatformToolCardWidget(

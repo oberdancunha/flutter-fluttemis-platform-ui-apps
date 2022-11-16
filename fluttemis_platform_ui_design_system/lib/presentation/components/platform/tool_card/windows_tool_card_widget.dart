@@ -18,16 +18,20 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
         cardDecoration: BoxDecoration(
-          border: Border.all(
-            color: FluentTheme.of(context).cardColor,
-          ),
+          color: FluentTheme.of(context).cardColor,
+          boxShadow: <BoxShadow>[
+            BoxShadow(
+              color: FluentTheme.of(context).shadowColor,
+              blurRadius: 4,
+            ),
+          ],
         ),
         secondaryTitleStyle: FluentTheme.of(context).typography.subtitle!,
         mainTitleStyle: FluentTheme.of(context).typography.title!,
-        mainTitleColor: FluentTheme.of(context).cardColor,
+        mainTitleColor: FluentTheme.of(context).accentColor,
         description: description,
         descriptionStyle: FluentTheme.of(context).typography.caption!,
-        actionButtonColor: FluentTheme.of(context).cardColor,
+        actionButtonColor: FluentTheme.of(context).accentColor,
         actionButtonBorderRadius: BorderRadius.zero,
         actionButtonIcon: FluentIcons.text_document,
         actionButtonIconColor: Colors.white,
