@@ -91,29 +91,17 @@ abstract class FluttemisAppLocalizations {
     Locale('pt')
   ];
 
-  /// No description provided for @openMenu.
+  /// No description provided for @openFile.
   ///
   /// In pt, this message translates to:
-  /// **'Abrir navegação'**
-  String get openMenu;
+  /// **'Abrir arquivo'**
+  String get openFile;
 
-  /// No description provided for @closeMenu.
+  /// No description provided for @genbankDescription.
   ///
   /// In pt, this message translates to:
-  /// **'Fechar navegação'**
-  String get closeMenu;
-
-  /// No description provided for @genbankFile.
-  ///
-  /// In pt, this message translates to:
-  /// **'Genbank file'**
-  String get genbankFile;
-
-  /// Choose input file type
-  ///
-  /// In pt, this message translates to:
-  /// **'Clique para abrir o arquivo {fileType} (extensões {fileExtensions})'**
-  String filePicker(String fileType, String fileExtensions);
+  /// **'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene'**
+  String get genbankDescription;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

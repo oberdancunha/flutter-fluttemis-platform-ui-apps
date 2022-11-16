@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
 import '../icon/platform_icon_widget.dart';
@@ -89,7 +90,7 @@ class BuildToolCard extends StatelessWidget {
                     borderRadius: actionButtonBorderRadius,
                   ),
                   child: PlatformTooltipWidget(
-                    message: 'Abrir arquivo',
+                    message: FluttemisAppLocalizations.of(context)!.openFile,
                     child: PlatformIconWidget(
                       actionButtonIcon,
                       size: constraints.maxWidth / 15,

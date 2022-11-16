@@ -1,17 +1,4 @@
 {
-  "openMenu": "Abrir navegação",
-  "closeMenu": "Fechar navegação",
-  "genbankFile": "Genbank file",  
-  "filePicker": "Clique para abrir o arquivo {fileType} (extensões {fileExtensions})",
-  "@filePicker": {
-    "description": "Choose input file type",
-    "placeholders": {
-      "fileType": {
-        "type": "String"
-      },
-      "fileExtensions": {
-        "type": "String"
-      }
-    }
-  }
+  "openFile": "Abrir arquivo",
+  "genbankDescription": "Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene"
 }

@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
 import '../platform/tool_card/platform_tool_card_widget.dart';
@@ -13,12 +14,11 @@ class MenuToolsWidget extends StatelessWidget {
         mainAxisSpacing: 10,
         childAspectRatio: 0.55,
         padding: const EdgeInsets.all(20),
-        children: const [
+        children: [
           PlatformToolCardWidget(
             mainTitle: 'Genbank',
-            secondaryTitle: 'Leitura de arquivo',
-            description:
-                'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene.',
+            secondaryTitle: FluttemisAppLocalizations.of(context)!.openFile,
+            description: FluttemisAppLocalizations.of(context)!.genbankDescription,
             image: 'assets/images/ncbi.png',
           ),
         ],
