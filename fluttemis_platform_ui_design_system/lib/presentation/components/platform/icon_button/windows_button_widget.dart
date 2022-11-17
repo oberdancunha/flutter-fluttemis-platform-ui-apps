@@ -16,6 +16,9 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
           onPressed: onPressed,
           style: ButtonStyle(
             backgroundColor: ButtonState.all(FluentTheme.of(context).accentColor),
+            shape: ButtonState.all(
+              const RoundedRectangleBorder(),
+            ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
