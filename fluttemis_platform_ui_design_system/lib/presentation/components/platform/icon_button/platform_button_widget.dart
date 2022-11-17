@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../core/platform_widget.dart';
 import 'macos_icon_button_widget.dart';
