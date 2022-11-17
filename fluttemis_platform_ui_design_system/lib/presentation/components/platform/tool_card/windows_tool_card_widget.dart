@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-import 'build_tool_card.dart';
+import '../../tool_card/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class WindowsToolCardWidget extends PlatformToolCardWidget {
@@ -13,8 +13,9 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
   });
 
   @override
-  Widget build(BuildContext context) => BuildToolCard(
+  Widget build(BuildContext context) => ToolCardWidget(
         image: image,
+        imageColor: Colors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
         cardDecoration: BoxDecoration(
@@ -34,6 +35,5 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
         actionButtonColor: FluentTheme.of(context).accentColor,
         actionButtonBorderRadius: BorderRadius.zero,
         actionButtonIcon: FluentIcons.text_document,
-        actionButtonIconColor: Colors.white,
       );
 }

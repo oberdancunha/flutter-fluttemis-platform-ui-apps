@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import 'build_tool_card.dart';
+import '../../tool_card/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class MacosToolCardWidget extends PlatformToolCardWidget {
@@ -14,8 +14,9 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
   });
 
   @override
-  Widget build(BuildContext context) => BuildToolCard(
+  Widget build(BuildContext context) => ToolCardWidget(
         image: image,
+        imageColor: MacosColors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
         cardDecoration: BoxDecoration(
@@ -38,7 +39,6 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
           bottomRight: Radius.circular(15),
         ),
         actionButtonIcon: CupertinoIcons.doc_text_fill,
-        actionButtonIconColor: MacosColors.white,
       );
 }
   

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'build_tool_card.dart';
+import '../../tool_card/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class MaterialToolCardWidget extends PlatformToolCardWidget {
@@ -13,8 +13,9 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
   });
 
   @override
-  Widget build(BuildContext context) => BuildToolCard(
+  Widget build(BuildContext context) => ToolCardWidget(
         image: image,
+        imageColor: Colors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
         cardDecoration: BoxDecoration(
@@ -33,6 +34,5 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
           bottomRight: Radius.circular(15),
         ),
         actionButtonIcon: Icons.file_open,
-        actionButtonIconColor: Colors.white,
       );
 }

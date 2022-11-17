@@ -1,11 +1,12 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import '../icon/platform_icon_widget.dart';
-import '../icon_button/platform_button_widget.dart';
+import '../platform/icon/platform_icon_widget.dart';
+import '../platform/icon_button/platform_button_widget.dart';
 
-class BuildToolCard extends StatelessWidget {
+class ToolCardWidget extends StatelessWidget {
   final String image;
+  final Color imageColor;
   final String secondaryTitle;
   final String mainTitle;
   final BoxDecoration cardDecoration;
@@ -17,10 +18,10 @@ class BuildToolCard extends StatelessWidget {
   final Color actionButtonColor;
   final BorderRadiusGeometry actionButtonBorderRadius;
   final IconData actionButtonIcon;
-  final Color actionButtonIconColor;
 
-  const BuildToolCard({
+  const ToolCardWidget({
     required this.image,
+    required this.imageColor,
     required this.secondaryTitle,
     required this.mainTitle,
     required this.cardDecoration,
@@ -32,7 +33,6 @@ class BuildToolCard extends StatelessWidget {
     required this.actionButtonColor,
     required this.actionButtonBorderRadius,
     required this.actionButtonIcon,
-    required this.actionButtonIconColor,
     super.key,
   });
 
@@ -41,39 +41,50 @@ class BuildToolCard extends StatelessWidget {
         builder: (_, constraints) => DecoratedBox(
           decoration: cardDecoration,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(constraints.maxWidth / 50),
-                    child: SizedBox(
-                      width: constraints.maxWidth / 4,
-                      height: constraints.maxHeight / 3,
-                      child: Image.asset(
-                        image,
-                      ),
-                    ),
-                  ),
-                  RichText(
-                    textAlign: TextAlign.center,
-                    text: TextSpan(
-                      text: '$secondaryTitle \n',
-                      style: secondaryTitleStyle.copyWith(
-                        fontSize: constraints.maxWidth / 15,
-                      ),
-                      children: <TextSpan>[
-                        TextSpan(
-                          text: mainTitle,
-                          style: mainTitleStyle.copyWith(
-                            color: mainTitleColor,
-                            fontSize: constraints.maxWidth / 10,
+              SizedBox(
+                height: constraints.maxHeight / 3,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      width: constraints.maxWidth / 3,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          color: mainTitleColor,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Center(
+                          child: Image.asset(
+                            image,
+                            fit: BoxFit.contain,
+                            width: constraints.maxHeight / 5,
+                            color: imageColor,
                           ),
                         ),
-                      ],
+                      ),
                     ),
-                  ),
-                ],
+                    RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        text: '$secondaryTitle \n',
+                        style: secondaryTitleStyle.copyWith(
+                          fontSize: constraints.maxWidth / 17,
+                        ),
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: mainTitle,
+                            style: mainTitleStyle.copyWith(
+                              color: mainTitleColor,
+                              fontSize: constraints.maxWidth / 8,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Column(
                 children: [
@@ -99,7 +110,7 @@ class BuildToolCard extends StatelessWidget {
                         icon: PlatformIconWidget(
                           actionButtonIcon,
                           size: constraints.maxWidth / 20,
-                          color: actionButtonIconColor,
+                          color: imageColor,
                         ),
                         label: FluttemisAppLocalizations.of(context)!.openFile,
                         onPressed: () {},
