@@ -108,6 +108,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene'**
   String get genbankDescription;
+
+  /// No description provided for @toolAcceptedExtensions.
+  ///
+  /// In pt, this message translates to:
+  /// **'Extensões aceitas: '**
+  String get toolAcceptedExtensions;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

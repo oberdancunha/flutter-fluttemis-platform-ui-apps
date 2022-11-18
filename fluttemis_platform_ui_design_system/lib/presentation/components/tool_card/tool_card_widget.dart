@@ -13,11 +13,13 @@ class ToolCardWidget extends StatelessWidget {
   final TextStyle secondaryTitleStyle;
   final TextStyle mainTitleStyle;
   final Color mainTitleColor;
-  final String description;
-  final TextStyle descriptionStyle;
   final Color actionButtonColor;
   final BorderRadiusGeometry actionButtonBorderRadius;
   final IconData actionButtonIcon;
+  final String? description;
+  final TextStyle? descriptionStyle;
+  final String? mainDescriptionExtend;
+  final String? secondaryDescriptionExtend;
 
   const ToolCardWidget({
     required this.image,
@@ -28,11 +30,13 @@ class ToolCardWidget extends StatelessWidget {
     required this.secondaryTitleStyle,
     required this.mainTitleStyle,
     required this.mainTitleColor,
-    required this.description,
-    required this.descriptionStyle,
     required this.actionButtonColor,
     required this.actionButtonBorderRadius,
     required this.actionButtonIcon,
+    this.description,
+    this.descriptionStyle,
+    this.mainDescriptionExtend,
+    this.secondaryDescriptionExtend,
     super.key,
   });
 
@@ -92,12 +96,42 @@ class ToolCardWidget extends StatelessWidget {
                     padding: EdgeInsets.all(constraints.maxWidth / 30),
                     child: SizedBox(
                       height: constraints.maxHeight / 2.5,
-                      child: Text(
-                        description,
-                        style: descriptionStyle.copyWith(
-                          fontSize: constraints.maxWidth / 25,
-                        ),
-                        textAlign: TextAlign.justify,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (description != null)
+                            Text(
+                              description!,
+                              style: descriptionStyle!.copyWith(
+                                fontSize: constraints.maxWidth / 25,
+                              ),
+                              textAlign: TextAlign.justify,
+                            )
+                          else
+                            const SizedBox.shrink(),
+                          if (mainDescriptionExtend != null && secondaryDescriptionExtend != null)
+                            RichText(
+                              textAlign: TextAlign.center,
+                              text: TextSpan(
+                                text: '$secondaryDescriptionExtend',
+                                style: descriptionStyle!.copyWith(
+                                  fontSize: constraints.maxWidth / 25,
+                                ),
+                                children: <TextSpan>[
+                                  TextSpan(
+                                    text: mainDescriptionExtend,
+                                    style: descriptionStyle!.copyWith(
+                                      color: mainTitleColor,
+                                      fontSize: constraints.maxWidth / 25,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          else
+                            const SizedBox.shrink(),
+                        ],
                       ),
                     ),
                   ),

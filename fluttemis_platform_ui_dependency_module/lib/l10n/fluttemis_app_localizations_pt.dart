@@ -12,4 +12,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get genbankDescription => 'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene';
+
+  @override
+  String get toolAcceptedExtensions => 'Extensões aceitas: ';
 }
