@@ -5,6 +5,9 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   FluttemisAppLocalizationsPt([String locale = 'pt']) : super(locale);
 
   @override
+  String get mainMenu => 'Menu principal';
+
+  @override
   String get openFile => 'Abrir arquivo';
 
   @override

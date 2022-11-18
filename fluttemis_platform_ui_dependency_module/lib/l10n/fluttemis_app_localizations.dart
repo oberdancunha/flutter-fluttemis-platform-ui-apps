@@ -91,6 +91,12 @@ abstract class FluttemisAppLocalizations {
     Locale('pt')
   ];
 
+  /// No description provided for @mainMenu.
+  ///
+  /// In pt, this message translates to:
+  /// **'Menu principal'**
+  String get mainMenu;
+
   /// No description provided for @openFile.
   ///
   /// In pt, this message translates to:
