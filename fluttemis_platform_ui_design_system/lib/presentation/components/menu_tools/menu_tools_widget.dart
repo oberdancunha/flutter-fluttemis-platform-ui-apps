@@ -1,9 +1,7 @@
-import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
-import '../platform/tool_card/platform_tool_card_widget.dart';
+import '../menu_title/menu_title_widget.dart';
+import 'tools/genbank_tool_widget.dart';
 
 class MenuToolsWidget extends StatelessWidget {
   const MenuToolsWidget({super.key});
@@ -11,17 +9,7 @@ class MenuToolsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 10,
-            width: MediaQuery.of(context).size.width,
-            child: Center(
-              child: PlatformTextWidget(
-                FluttemisAppLocalizations.of(context)!.mainMenu,
-                textType: TextType.title,
-                fontSize: MediaQuery.of(context).size.width / 35,
-              ),
-            ),
-          ),
+          const MenuTitleWidget(),
           Expanded(
             child: GridView.count(
               primary: true,
@@ -29,13 +17,8 @@ class MenuToolsWidget extends StatelessWidget {
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
               padding: const EdgeInsets.all(20),
-              children: [
-                PlatformToolCardWidget(
-                  mainTitle: 'Genbank',
-                  secondaryTitle: FluttemisAppLocalizations.of(context)!.openFile,
-                  description: FluttemisAppLocalizations.of(context)!.genbankDescription,
-                  image: 'assets/images/ncbi.png',
-                ),
+              children: const [
+                GenbankToolWidget(),
               ],
             ),
           ),
