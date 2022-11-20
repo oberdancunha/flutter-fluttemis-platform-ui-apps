@@ -11,6 +11,7 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
     super.description,
     super.mainDescriptionExtend,
     super.secondaryDescriptionExtend,
+    super.toolAction,
     super.key,
   });
 
@@ -39,5 +40,6 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
         descriptionStyle: FluentTheme.of(context).typography.caption,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolAction: toolAction,
       );
 }

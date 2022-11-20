@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../core/platform_widget.dart';
 import 'macos_tool_card_widget.dart';
 import 'material_tool_card_widget.dart';
@@ -11,6 +13,7 @@ class PlatformToolCardWidget
   final String? description;
   final String? mainDescriptionExtend;
   final String? secondaryDescriptionExtend;
+  final VoidCallback? toolAction;
 
   const PlatformToolCardWidget({
     required this.image,
@@ -19,6 +22,7 @@ class PlatformToolCardWidget
     this.description,
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
+    this.toolAction,
     super.key,
   });
 
@@ -30,6 +34,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolAction: toolAction,
       );
 
   @override
@@ -40,6 +45,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolAction: toolAction,
       );
 
   @override
@@ -50,5 +56,6 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolAction: toolAction,
       );
 }

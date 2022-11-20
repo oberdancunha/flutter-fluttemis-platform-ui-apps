@@ -20,6 +20,7 @@ class ToolCardWidget extends StatelessWidget {
   final TextStyle? descriptionStyle;
   final String? mainDescriptionExtend;
   final String? secondaryDescriptionExtend;
+  final VoidCallback? toolAction;
 
   const ToolCardWidget({
     required this.image,
@@ -37,6 +38,7 @@ class ToolCardWidget extends StatelessWidget {
     this.descriptionStyle,
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
+    this.toolAction,
     super.key,
   });
 
@@ -135,22 +137,25 @@ class ToolCardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: SizedBox(
-                      height: constraints.maxHeight / 10,
-                      width: constraints.maxWidth / 1.5,
-                      child: PlatformIconButtonWidget(
-                        icon: PlatformIconWidget(
-                          actionButtonIcon,
-                          size: constraints.maxWidth / 20,
-                          color: imageColor,
+                  if (toolAction != null)
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: SizedBox(
+                        height: constraints.maxHeight / 10,
+                        width: constraints.maxWidth / 1.5,
+                        child: PlatformIconButtonWidget(
+                          icon: PlatformIconWidget(
+                            actionButtonIcon,
+                            size: constraints.maxWidth / 20,
+                            color: imageColor,
+                          ),
+                          label: FluttemisAppLocalizations.of(context)!.openFile,
+                          onPressed: toolAction!,
                         ),
-                        label: FluttemisAppLocalizations.of(context)!.openFile,
-                        onPressed: () {},
                       ),
-                    ),
-                  ),
+                    )
+                  else
+                    const SizedBox.shrink(),
                 ],
               ),
             ],
