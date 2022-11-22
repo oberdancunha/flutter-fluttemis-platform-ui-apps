@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/application/locus/locus_store.dart';
 import 'package:fluttemis_platform_ui_core/configurations/genbank_module_binds.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
@@ -11,7 +12,9 @@ class GenbankModule extends Module {
   final List<ModularRoute> routes = [
     ChildRoute(
       '/',
-      child: (_, args) => const LocusMapPage(),
+      child: (_, args) => LocusMapPage(
+        locusStore: Modular.get<LocusStore>(),
+      ),
     ),
   ];
 }

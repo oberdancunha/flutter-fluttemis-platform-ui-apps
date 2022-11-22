@@ -10,9 +10,9 @@ import '../infrastructure/locus/locus_repository.dart';
 List<Bind<Object>> get genbankModuleBinds => [
       Bind.factory<ILocusDataSource>(
         (i) {
-          final genbankFile = (i.args.data as List<String?>).elementAt(0);
+          final genbankFile = i.args.data.toString();
 
-          return LocusDataSourceGenbankFile(genbankFile: genbankFile!);
+          return LocusDataSourceGenbankFile(genbankFile: genbankFile);
         },
       ),
       Bind.factory<ILocusRepository>(
