@@ -164,6 +164,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.3"
+  fluttemis_platform_ui_core:
+    dependency: "direct main"
+    description:
+      path: "../fluttemis_platform_ui_core"
+      relative: true
+    source: path
+    version: "0.0.1"
   fluttemis_platform_ui_dependency_module:
     dependency: "direct main"
     description:

@@ -13,6 +13,8 @@ dependencies:
     sdk: flutter
   fluttemis_platform_ui_dependency_module:
     path: ../fluttemis_platform_ui_dependency_module
+  fluttemis_platform_ui_core:
+    path: ../fluttemis_platform_ui_core
   fluent_ui: ^4.0.3
   macos_ui: ^1.7.5
  
