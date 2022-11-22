@@ -28,10 +28,11 @@ class _GenbankToolWidgetState extends State<GenbankToolWidget> {
         mainDescriptionExtend: genbankExtensionsAccepted.join(', '),
         secondaryDescriptionExtend: FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions,
         toolAction: () async {
-          await FilePicker.platform.pickFiles(
+          final file = await FilePicker.platform.pickFiles(
             type: FileType.custom,
             allowedExtensions: genbankExtensionsAccepted,
           );
+          Modular.to.navigate('/genbank/', arguments: file!.paths);
         },
       );
 }
