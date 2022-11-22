@@ -33,6 +33,8 @@ dependencies:
     path: ../fluttemis_platform_ui_dependency_module
   fluttemis_platform_ui_design_system:
     path: ../fluttemis_platform_ui_design_system
+  fluttemis_platform_ui_core:
+    path: ../fluttemis_platform_ui_core
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
