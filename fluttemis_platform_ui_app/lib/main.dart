@@ -14,7 +14,7 @@ Future<void> main() async {
     skipTaskbar: false,
     titleBarStyle: TitleBarStyle.normal,
   );
-  await windowManager.waitUntilReadyToShow(windowOptions, () async {
+  windowManager.waitUntilReadyToShow(windowOptions, () async {
     await windowManager.show();
     await windowManager.focus();
   });
