@@ -1,10 +1,16 @@
+import 'package:fluttemis_platform_ui_core/driver/i_file_picker.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../platform/tool_card/platform_tool_card_widget.dart';
 
 class GenbankToolWidget extends StatefulWidget {
-  const GenbankToolWidget({super.key});
+  final IFilePicker filePicker;
+
+  const GenbankToolWidget({
+    required this.filePicker,
+    super.key,
+  });
 
   @override
   State<GenbankToolWidget> createState() => _GenbankToolWidgetState();
@@ -28,11 +34,11 @@ class _GenbankToolWidgetState extends State<GenbankToolWidget> {
         mainDescriptionExtend: genbankExtensionsAccepted.join(', '),
         secondaryDescriptionExtend: FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions,
         toolAction: () async {
-          final file = await FilePicker.platform.pickFiles(
-            type: FileType.custom,
-            allowedExtensions: genbankExtensionsAccepted,
-          );
-          Modular.to.navigate('/genbank/', arguments: file!.paths);
+          final filePath =
+              await widget.filePicker.filePickerByExtensions(genbankExtensionsAccepted);
+          if (filePath != null) {
+            Modular.to.navigate('/genbank/', arguments: filePath);
+          }
         },
       );
 }
