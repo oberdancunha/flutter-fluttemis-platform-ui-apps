@@ -24,6 +24,7 @@ dependencies:
   kt_dart: ^0.9.1
   window_manager: ^0.2.7
   intl: ^0.17.0
+  lottie: ^2.0.0
 
 dev_dependencies:
   flutter_test:
