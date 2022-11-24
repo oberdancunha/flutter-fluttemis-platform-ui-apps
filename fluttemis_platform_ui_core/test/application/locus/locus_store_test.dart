@@ -57,6 +57,11 @@ void main() {
       ),
       LocusState(
         locus: getLocus(),
+        isLoading: true,
+        failure: null,
+      ),
+      LocusState(
+        locus: getLocus(),
         isLoading: false,
         failure: null,
       ),
@@ -81,6 +86,11 @@ void main() {
         locus: KtList.empty(),
         isLoading: true,
         failure: null,
+      ),
+      LocusState(
+        locus: const KtList.empty(),
+        isLoading: true,
+        failure: FailureFileFormatIncorrect(),
       ),
       LocusState(
         locus: const KtList.empty(),
