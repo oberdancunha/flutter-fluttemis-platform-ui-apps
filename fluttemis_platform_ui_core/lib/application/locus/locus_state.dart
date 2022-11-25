@@ -1,12 +1,12 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
-import '../../domain/core/failures.dart';
+import '../../domain/core/file_failures.dart';
 import '../../domain/locus/locus.dart';
 
 class LocusState extends Equatable {
   final KtList<Locus> locus;
   final bool isLoading;
-  final Failure? failure;
+  final FileFailure? failure;
 
   const LocusState({
     required this.locus,
@@ -30,7 +30,7 @@ class LocusState extends Equatable {
   LocusState copyWith({
     KtList<Locus>? locus,
     bool? isLoading,
-    Failure? failure,
+    FileFailure? failure,
   }) =>
       LocusState(
         locus: locus ?? this.locus,

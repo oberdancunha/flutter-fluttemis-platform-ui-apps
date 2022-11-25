@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/domain/core/failures.dart';
+import 'package:fluttemis_platform_ui_core/domain/core/file_failures.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/i_locus_data_source.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/locus_dto.dart';
@@ -29,7 +29,7 @@ void main() {
     );
   });
 
-  Future<Either<Failure, KtList<Locus>>> locusRepositoryGet() => locusRepository.getLocus();
+  Future<Either<FileFailure, KtList<Locus>>> locusRepositoryGet() => locusRepository.getLocus();
 
   group(
     'Success | ',
@@ -41,7 +41,7 @@ void main() {
 
       void mockDataSourceGetLocusSuccess() {
         when(locusDataSourceMock.getLocus)
-            .thenAnswer((_) async => right<Failure, List<LocusDto>>(getLocusDto()));
+            .thenAnswer((_) async => right<FileFailure, List<LocusDto>>(getLocusDto()));
       }
 
       test(
@@ -64,8 +64,8 @@ void main() {
         'Should return a Failure.fileNotFound when file not exists',
         () async {
           when(locusDataSourceMock.getLocus).thenAnswer(
-            (_) async => left<Failure, List<LocusDto>>(
-              FailureFileNotFound(),
+            (_) async => left<FileFailure, List<LocusDto>>(
+              FileFailureNotFound(),
             ),
           );
           final listLocus = await locusRepositoryGet();
@@ -73,7 +73,7 @@ void main() {
             listLocus,
             equals(
               left(
-                FailureFileNotFound(),
+                FileFailureNotFound(),
               ),
             ),
           );
@@ -84,8 +84,8 @@ void main() {
         'Should return a Failure.fileIsEmpty when file is empty',
         () async {
           when(locusDataSourceMock.getLocus).thenAnswer(
-            (_) async => left<Failure, List<LocusDto>>(
-              FailureFileEmpty(),
+            (_) async => left<FileFailure, List<LocusDto>>(
+              FileFailureEmpty(),
             ),
           );
           final listLocus = await locusRepositoryGet();
@@ -93,7 +93,7 @@ void main() {
             listLocus,
             equals(
               left(
-                FailureFileEmpty(),
+                FileFailureEmpty(),
               ),
             ),
           );
@@ -104,8 +104,8 @@ void main() {
         'Should return a Failure.fileFormatIncorrect when file format is not a genbank',
         () async {
           when(locusDataSourceMock.getLocus).thenAnswer(
-            (_) async => left<Failure, List<LocusDto>>(
-              FailureFileFormatIncorrect(),
+            (_) async => left<FileFailure, List<LocusDto>>(
+              FileFailureFormatIncorrect(),
             ),
           );
           final listLocus = await locusRepositoryGet();
@@ -113,7 +113,7 @@ void main() {
             listLocus,
             equals(
               left(
-                FailureFileFormatIncorrect(),
+                FileFailureFormatIncorrect(),
               ),
             ),
           );
@@ -124,8 +124,8 @@ void main() {
         'Should return a Failure.fileParseError when there are an unexpected error',
         () async {
           when(locusDataSourceMock.getLocus).thenAnswer(
-            (_) async => left<Failure, List<LocusDto>>(
-              FailureFileParseError(error: const {}),
+            (_) async => left<FileFailure, List<LocusDto>>(
+              FileFailureParseError(error: const {}),
             ),
           );
           final listLocus = await locusRepositoryGet();
@@ -133,7 +133,7 @@ void main() {
             listLocus,
             equals(
               left(
-                FailureFileParseError(error: const {}),
+                FileFailureParseError(error: const {}),
               ),
             ),
           );

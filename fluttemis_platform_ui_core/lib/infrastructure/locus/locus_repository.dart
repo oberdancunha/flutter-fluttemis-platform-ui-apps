@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
-import '../../domain/core/failures.dart';
+import '../../domain/core/file_failures.dart';
 import '../../domain/locus/i_locus_repository.dart';
 import '../../domain/locus/locus.dart';
 import 'i_locus_data_source.dart';
@@ -16,7 +16,7 @@ class LocusRepository implements ILocusRepository {
   });
 
   @override
-  Future<Either<Failure, KtList<Locus>>> getLocus() async {
+  Future<Either<FileFailure, KtList<Locus>>> getLocus() async {
     final locus = await locusDataSource.getLocus();
 
     return locus.fold(

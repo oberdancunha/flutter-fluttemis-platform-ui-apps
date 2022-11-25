@@ -1,12 +1,12 @@
 import 'dart:io' show Platform;
 
-import 'package:fluttemis_platform_ui_core/domain/core/failures.dart';
+import 'package:fluttemis_platform_ui_core/domain/core/file_failures.dart';
 import 'package:fluttemis_platform_ui_core/external/locus/locus_data_source_genbank_file.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/locus_dto.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:path/path.dart' as path;
 import "package:path/path.dart" show dirname;
+import 'package:path/path.dart' as path;
 
 import '../../data/genbank_dto.dart';
 
@@ -18,7 +18,7 @@ void main() {
     basePath = path.fromUri(dirname(Platform.script.toString()));
   });
 
-  Future<Either<Failure, List<LocusDto>>> locusDataSourceGenbankFileGet() =>
+  Future<Either<FileFailure, List<LocusDto>>> locusDataSourceGenbankFileGet() =>
       locusDataSourceGenbankFile.getLocus();
 
   group(
@@ -50,7 +50,7 @@ void main() {
           expect(
             listLocus,
             equals(
-              left(FailureFileNotFound()),
+              left(FileFailureNotFound()),
             ),
           );
         },
@@ -66,7 +66,7 @@ void main() {
           expect(
             listLocus,
             equals(
-              left(FailureFileEmpty()),
+              left(FileFailureEmpty()),
             ),
           );
         },
@@ -83,7 +83,7 @@ void main() {
           expect(
             listLocus,
             equals(
-              left(FailureFileFormatIncorrect()),
+              left(FileFailureFormatIncorrect()),
             ),
           );
         },

@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_core/application/locus/locus_state.dart';
 import 'package:fluttemis_platform_ui_core/application/locus/locus_store.dart';
-import 'package:fluttemis_platform_ui_core/domain/core/failures.dart';
+import 'package:fluttemis_platform_ui_core/domain/core/file_failures.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/i_locus_repository.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -72,7 +72,7 @@ void main() {
     'Should call getLocus from locusRespository and change initial state to failure state with file format incorrect error',
     build: () {
       when(() => mockLocusRepository.getLocus()).thenAnswer(
-        (_) async => left(FailureFileFormatIncorrect()),
+        (_) async => left(FileFailureFormatIncorrect()),
       );
 
       return locusStore;
@@ -90,12 +90,12 @@ void main() {
       LocusState(
         locus: const KtList.empty(),
         isLoading: true,
-        failure: FailureFileFormatIncorrect(),
+        failure: FileFailureFormatIncorrect(),
       ),
       LocusState(
         locus: const KtList.empty(),
         isLoading: false,
-        failure: FailureFileFormatIncorrect(),
+        failure: FileFailureFormatIncorrect(),
       ),
     ],
   );

@@ -1,7 +1,7 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/foundation.dart';
 
-import '../../domain/core/failures.dart';
+import '../../domain/core/file_failures.dart';
 import '../../infrastructure/locus/feature_dto.dart';
 import '../../infrastructure/locus/i_locus_data_source.dart';
 import '../../infrastructure/locus/locus_dto.dart';
@@ -15,15 +15,15 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
   });
 
   @override
-  Future<Either<Failure, List<LocusDto>>> getLocus() async {
+  Future<Either<FileFailure, List<LocusDto>>> getLocus() async {
     final locus = await compute(genbank.open, genbankFile);
 
     return locus.when(
       failure: (failure) => failure.when(
-        fileNotFound: () => left(FailureFileNotFound()),
-        fileParseError: (error) => left(FailureFileParseError(error: error)),
-        fileEmpty: () => left(FailureFileEmpty()),
-        fileFormatIncorrect: () => left(FailureFileFormatIncorrect()),
+        fileNotFound: () => left(FileFailureNotFound()),
+        fileParseError: (error) => left(FileFailureParseError(error: error)),
+        fileEmpty: () => left(FileFailureEmpty()),
+        fileFormatIncorrect: () => left(FileFailureFormatIncorrect()),
       ),
       data: (genbankData) => right(
         genbankData
