@@ -15,6 +15,7 @@ class GenbankModule extends Module {
       child: (_, args) => LocusMapPage(
         locusStore: Modular.get<LocusStore>(),
       ),
+      transition: TransitionType.fadeIn,
     ),
   ];
 }
