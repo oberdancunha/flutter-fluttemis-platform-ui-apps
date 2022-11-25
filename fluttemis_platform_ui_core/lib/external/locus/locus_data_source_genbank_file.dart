@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
+import 'package:flutter/foundation.dart';
 
 import '../../domain/core/failures.dart';
 import '../../infrastructure/locus/feature_dto.dart';
@@ -15,7 +16,7 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
 
   @override
   Future<Either<Failure, List<LocusDto>>> getLocus() async {
-    final locus = await genbank.open(genbankFile);
+    final locus = await compute(genbank.open, genbankFile);
 
     return locus.when(
       failure: (failure) => failure.when(
