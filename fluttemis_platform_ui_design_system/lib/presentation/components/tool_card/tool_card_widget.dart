@@ -1,6 +1,7 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
+import '../platform/circular_image/platform_circular_image_widget.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_button_widget.dart';
 
@@ -54,21 +55,13 @@ class ToolCardWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
+                    PlatformCircularImageWidget(
                       width: constraints.maxWidth / 3,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          color: mainTitleColor,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Center(
-                          child: Image.asset(
-                            image,
-                            fit: BoxFit.contain,
-                            width: constraints.maxHeight / 5,
-                            color: imageColor,
-                          ),
-                        ),
+                      imageWidget: Image.asset(
+                        image,
+                        fit: BoxFit.contain,
+                        width: constraints.maxHeight / 5,
+                        color: imageColor,
                       ),
                     ),
                     RichText(
