@@ -15,4 +15,16 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get toolAcceptedExtensions => 'Extensões aceitas: ';
+
+  @override
+  String get fileEmpty => 'Erro na leitura do arquivo: arquivo vazio';
+
+  @override
+  String get fileFormatError => 'Erro na leitura do arquivo: formato desconhecido';
+
+  @override
+  String get fileNotFound => 'Erro na leitura do arquivo: arquivo não encontrado';
+
+  @override
+  String get fileUnexpectedError => 'Erro na leitura do arquivo: erro não esperado';
 }

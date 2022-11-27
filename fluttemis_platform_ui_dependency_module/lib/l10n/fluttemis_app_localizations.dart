@@ -114,6 +114,30 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Extensões aceitas: '**
   String get toolAcceptedExtensions;
+
+  /// No description provided for @fileEmpty.
+  ///
+  /// In pt, this message translates to:
+  /// **'Erro na leitura do arquivo: arquivo vazio'**
+  String get fileEmpty;
+
+  /// No description provided for @fileFormatError.
+  ///
+  /// In pt, this message translates to:
+  /// **'Erro na leitura do arquivo: formato desconhecido'**
+  String get fileFormatError;
+
+  /// No description provided for @fileNotFound.
+  ///
+  /// In pt, this message translates to:
+  /// **'Erro na leitura do arquivo: arquivo não encontrado'**
+  String get fileNotFound;
+
+  /// No description provided for @fileUnexpectedError.
+  ///
+  /// In pt, this message translates to:
+  /// **'Erro na leitura do arquivo: erro não esperado'**
+  String get fileUnexpectedError;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
