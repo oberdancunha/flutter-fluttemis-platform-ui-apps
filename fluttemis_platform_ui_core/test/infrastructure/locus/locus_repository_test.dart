@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/domain/core/failure.dart';
 import 'package:fluttemis_platform_ui_core/domain/core/file_failures.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/i_locus_data_source.dart';
@@ -29,7 +30,7 @@ void main() {
     );
   });
 
-  Future<Either<FileFailure, KtList<Locus>>> locusRepositoryGet() => locusRepository.getLocus();
+  Future<Either<Failure, KtList<Locus>>> locusRepositoryGet() => locusRepository.getLocus();
 
   group(
     'Success | ',

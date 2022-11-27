@@ -1,6 +1,6 @@
-import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
+import 'failure.dart';
 
-abstract class FileFailure extends Equatable {}
+abstract class FileFailure extends Failure {}
 
 class FileFailureNotFound extends FileFailure {
   @override
