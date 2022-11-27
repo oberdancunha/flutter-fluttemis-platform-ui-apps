@@ -67,6 +67,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/ncbi.png
+    - assets/images/file_error/file_empty.png
+    - assets/images/file_error/file_format_error.png
+    - assets/images/file_error/file_not_found.png
+    - assets/images/file_error/file_unexpected_error.png
     - assets/lotties/dna-loader.json
   #   - images/a_dot_ham.jpeg
 
