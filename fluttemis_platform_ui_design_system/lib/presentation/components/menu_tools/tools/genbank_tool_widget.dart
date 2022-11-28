@@ -37,7 +37,7 @@ class _GenbankToolWidgetState extends State<GenbankToolWidget> {
           final filePath =
               await widget.filePicker.filePickerByExtensions(genbankExtensionsAccepted);
           if (filePath != null) {
-            Modular.to.navigate('/genbank/', arguments: filePath);
+            Modular.to.navigate('/genbankfile/', arguments: filePath);
           }
         },
       );
