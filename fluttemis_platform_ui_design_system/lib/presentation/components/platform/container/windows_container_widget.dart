@@ -17,12 +17,12 @@ class WindowsContainerWidget extends PlatformContainerWidget {
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
-          color:
-              backgroundColor != null ? Color(backgroundColor!) : FluentTheme.of(context).cardColor,
+          color: backgroundColor != null
+              ? Color(backgroundColor!)
+              : FluentTheme.of(context).accentColor,
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color:
-                  shadowColor != null ? Color(shadowColor!) : FluentTheme.of(context).shadowColor,
+              color: shadowColor != null ? Color(shadowColor!) : const Color(0x00000000),
               blurRadius: 4,
             ),
           ],

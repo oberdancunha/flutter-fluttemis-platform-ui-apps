@@ -20,11 +20,11 @@ class MacosContainerWidget extends PlatformContainerWidget {
         decoration: BoxDecoration(
           color: backgroundColor != null
               ? MacosColor(backgroundColor!)
-              : MacosTheme.of(context).canvasColor.withAlpha(255),
+              : MacosTheme.of(context).primaryColor,
           borderRadius: BorderRadius.circular(15),
           boxShadow: <BoxShadow>[
             BoxShadow(
-              color: shadowColor != null ? MacosColor(shadowColor!) : MacosColors.systemGrayColor,
+              color: shadowColor != null ? MacosColor(shadowColor!) : const Color(0xFF8E8E93),
               blurRadius: 10,
             ),
           ],
