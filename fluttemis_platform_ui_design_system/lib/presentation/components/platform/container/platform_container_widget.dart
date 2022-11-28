@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../core/platform_widget.dart';
 import 'macos_container_widget.dart';
@@ -10,9 +10,9 @@ class PlatformContainerWidget
   final Widget child;
   final double? height;
   final double? width;
-  final Color? backgroundColor;
-  final Color? shadowColor;
-  final Color? borderColor;
+  final int? backgroundColor;
+  final int? shadowColor;
+  final int? borderColor;
 
   const PlatformContainerWidget({
     required this.child,
