@@ -21,15 +21,6 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
         imageColor: Colors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
-        cardDecoration: BoxDecoration(
-          color: FluentTheme.of(context).cardColor,
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: FluentTheme.of(context).shadowColor,
-              blurRadius: 4,
-            ),
-          ],
-        ),
         secondaryTitleStyle: FluentTheme.of(context).typography.subtitle!,
         mainTitleStyle: FluentTheme.of(context).typography.title!,
         mainTitleColor: FluentTheme.of(context).accentColor,

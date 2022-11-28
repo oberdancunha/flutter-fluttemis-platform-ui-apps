@@ -2,6 +2,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/widgets.dart';
 
 import '../platform/circular_image/platform_circular_image_widget.dart';
+import '../platform/container/platform_container_widget.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_button_widget.dart';
 
@@ -10,7 +11,6 @@ class ToolCardWidget extends StatelessWidget {
   final Color imageColor;
   final String secondaryTitle;
   final String mainTitle;
-  final BoxDecoration cardDecoration;
   final TextStyle secondaryTitleStyle;
   final TextStyle mainTitleStyle;
   final Color mainTitleColor;
@@ -28,7 +28,6 @@ class ToolCardWidget extends StatelessWidget {
     required this.imageColor,
     required this.secondaryTitle,
     required this.mainTitle,
-    required this.cardDecoration,
     required this.secondaryTitleStyle,
     required this.mainTitleStyle,
     required this.mainTitleColor,
@@ -45,8 +44,7 @@ class ToolCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
-        builder: (_, constraints) => DecoratedBox(
-          decoration: cardDecoration,
+        builder: (_, constraints) => PlatformContainerWidget(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

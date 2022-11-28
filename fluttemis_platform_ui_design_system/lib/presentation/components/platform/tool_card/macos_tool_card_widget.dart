@@ -22,16 +22,6 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
         imageColor: MacosColors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
-        cardDecoration: BoxDecoration(
-          color: MacosTheme.of(context).canvasColor.withAlpha(255),
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: const <BoxShadow>[
-            BoxShadow(
-              color: MacosColors.systemGrayColor,
-              blurRadius: 10,
-            ),
-          ],
-        ),
         secondaryTitleStyle: MacosTheme.of(context).typography.title3,
         mainTitleStyle: MacosTheme.of(context).typography.title1,
         mainTitleColor: MacosTheme.of(context).primaryColor.withAlpha(255),

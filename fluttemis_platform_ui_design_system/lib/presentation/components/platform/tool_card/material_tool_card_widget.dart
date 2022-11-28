@@ -21,12 +21,6 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
         imageColor: Colors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
-        cardDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          border: Border.all(
-            color: Theme.of(context).primaryColor,
-          ),
-        ),
         secondaryTitleStyle: Theme.of(context).textTheme.titleSmall!,
         mainTitleStyle: Theme.of(context).textTheme.titleLarge!,
         mainTitleColor: Theme.of(context).primaryColor,
