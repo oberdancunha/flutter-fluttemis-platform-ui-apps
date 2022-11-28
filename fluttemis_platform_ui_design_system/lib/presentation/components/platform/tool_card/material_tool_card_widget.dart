@@ -17,6 +17,7 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
 
   @override
   Widget build(BuildContext context) => ToolCardWidget(
+        borderColor: 0xFF9C27B0,
         image: image,
         imageColor: Colors.white,
         secondaryTitle: secondaryTitle,

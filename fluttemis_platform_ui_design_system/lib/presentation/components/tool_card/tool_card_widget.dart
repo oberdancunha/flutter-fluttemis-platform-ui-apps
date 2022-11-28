@@ -17,6 +17,9 @@ class ToolCardWidget extends StatelessWidget {
   final Color actionButtonColor;
   final BorderRadiusGeometry actionButtonBorderRadius;
   final IconData actionButtonIcon;
+  final int? backgroundColor;
+  final int? shadowColor;
+  final int? borderColor;
   final String? description;
   final TextStyle? descriptionStyle;
   final String? mainDescriptionExtend;
@@ -34,6 +37,9 @@ class ToolCardWidget extends StatelessWidget {
     required this.actionButtonColor,
     required this.actionButtonBorderRadius,
     required this.actionButtonIcon,
+    this.backgroundColor,
+    this.shadowColor,
+    this.borderColor,
     this.description,
     this.descriptionStyle,
     this.mainDescriptionExtend,
@@ -45,6 +51,9 @@ class ToolCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (_, constraints) => PlatformContainerWidget(
+          backgroundColor: backgroundColor,
+          shadowColor: shadowColor,
+          borderColor: borderColor,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [

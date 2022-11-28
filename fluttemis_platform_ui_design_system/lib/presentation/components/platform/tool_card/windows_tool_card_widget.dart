@@ -17,6 +17,8 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
 
   @override
   Widget build(BuildContext context) => ToolCardWidget(
+        backgroundColor: 0xFFFFFFFF,
+        shadowColor: 0xFF323130,
         image: image,
         imageColor: Colors.white,
         secondaryTitle: secondaryTitle,
