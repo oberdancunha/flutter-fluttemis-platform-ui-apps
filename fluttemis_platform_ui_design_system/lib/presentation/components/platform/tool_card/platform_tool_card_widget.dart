@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../core/platform_widget.dart';
+import '../icon/icon_type_enum.dart';
 import 'macos_tool_card_widget.dart';
 import 'material_tool_card_widget.dart';
 import 'windows_tool_card_widget.dart';
@@ -13,6 +14,7 @@ class PlatformToolCardWidget
   final String? description;
   final String? mainDescriptionExtend;
   final String? secondaryDescriptionExtend;
+  final IconType? toolActionButtonIconType;
   final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
 
@@ -23,6 +25,7 @@ class PlatformToolCardWidget
     this.description,
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
+    this.toolActionButtonIconType,
     this.toolActionButtonDescription,
     this.toolAction,
     super.key,
@@ -36,6 +39,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
@@ -48,6 +52,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
@@ -60,6 +65,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );

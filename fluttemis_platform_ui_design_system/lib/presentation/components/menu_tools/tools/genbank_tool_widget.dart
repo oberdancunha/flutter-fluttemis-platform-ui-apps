@@ -3,6 +3,7 @@ import 'package:fluttemis_platform_ui_core/store/access_history/access_history_s
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../platform/icon/icon_type_enum.dart';
 import '../../platform/tool_card/platform_tool_card_widget.dart';
 
 class GenbankToolWidget extends StatefulWidget {
@@ -34,6 +35,7 @@ class _GenbankToolWidgetState extends State<GenbankToolWidget> {
         description: FluttemisAppLocalizations.of(context)!.genbankDescription,
         mainDescriptionExtend: genbankExtensionsAccepted.join(', '),
         secondaryDescriptionExtend: FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions,
+        toolActionButtonIconType: IconType.openFile,
         toolActionButtonDescription: FluttemisAppLocalizations.of(context)!.openFile,
         toolAction: () async {
           final filePath =

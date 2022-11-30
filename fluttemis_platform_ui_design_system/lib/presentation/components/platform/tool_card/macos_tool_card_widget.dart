@@ -12,6 +12,7 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
     super.description,
     super.mainDescriptionExtend,
     super.secondaryDescriptionExtend,
+    super.toolActionButtonIconType,
     super.toolActionButtonDescription,
     super.toolAction,
     super.key,
@@ -32,7 +33,7 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
         actionButtonBorderRadius: const BorderRadius.only(
           bottomRight: Radius.circular(15),
         ),
-        actionButtonIcon: CupertinoIcons.doc_text_fill,
+        toolActionButtonIconType: toolActionButtonIconType,
         description: description,
         descriptionStyle: MacosTheme.of(context).typography.body,
         mainDescriptionExtend: mainDescriptionExtend,

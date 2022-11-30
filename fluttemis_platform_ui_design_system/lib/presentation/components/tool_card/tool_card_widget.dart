@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 
 import '../platform/circular_image/platform_circular_image_widget.dart';
 import '../platform/container/platform_container_widget.dart';
+import '../platform/icon/icon_type_enum.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_icon_button_widget.dart';
 
@@ -15,13 +16,13 @@ class ToolCardWidget extends StatelessWidget {
   final Color mainTitleColor;
   final Color actionButtonColor;
   final BorderRadiusGeometry actionButtonBorderRadius;
-  final IconData actionButtonIcon;
   final int? backgroundColor;
   final int? shadowColor;
   final int? borderColor;
   final String? description;
   final TextStyle? descriptionStyle;
   final String? mainDescriptionExtend;
+  final IconType? toolActionButtonIconType;
   final String? secondaryDescriptionExtend;
   final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
@@ -36,7 +37,6 @@ class ToolCardWidget extends StatelessWidget {
     required this.mainTitleColor,
     required this.actionButtonColor,
     required this.actionButtonBorderRadius,
-    required this.actionButtonIcon,
     this.backgroundColor,
     this.shadowColor,
     this.borderColor,
@@ -44,6 +44,7 @@ class ToolCardWidget extends StatelessWidget {
     this.descriptionStyle,
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
+    this.toolActionButtonIconType,
     this.toolActionButtonDescription,
     this.toolAction,
     super.key,
@@ -143,7 +144,9 @@ class ToolCardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (toolActionButtonDescription != null && toolAction != null)
+                  if (toolActionButtonIconType != null &&
+                      toolActionButtonDescription != null &&
+                      toolAction != null)
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: SizedBox(
@@ -151,7 +154,7 @@ class ToolCardWidget extends StatelessWidget {
                         width: constraints.maxWidth / 1.5,
                         child: PlatformIconButtonWidget(
                           icon: PlatformIconWidget(
-                            actionButtonIcon,
+                            iconType: toolActionButtonIconType!,
                             size: constraints.maxWidth / 20,
                             color: imageColor,
                           ),
