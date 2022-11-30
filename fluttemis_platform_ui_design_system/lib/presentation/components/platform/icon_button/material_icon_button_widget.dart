@@ -17,8 +17,8 @@ class MaterialIconButtonWidget extends PlatformIconButtonWidget {
           icon: icon,
           label: Text(
             label,
-            style: Theme.of(context).textTheme.labelMedium!.copyWith(
-                  fontSize: constraints.maxWidth / 18,
+            style: Theme.of(context).textTheme.button!.copyWith(
+                  fontSize: constraints.maxWidth / 21.2,
                   color: Colors.white,
                 ),
           ),
