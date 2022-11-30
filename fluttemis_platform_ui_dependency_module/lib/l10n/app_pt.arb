@@ -9,5 +9,6 @@
   "fileUnexpectedError": "Erro na leitura do arquivo: erro não esperado",
   "nextOptionInError": "Escolha uma das opções a seguir",
   "backTo": "Voltar para o",
-  "goToMenu": "Ir para o menu"
+  "goToMenu": "Ir para o menu",
+  "menuDescription": "Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema."
 }

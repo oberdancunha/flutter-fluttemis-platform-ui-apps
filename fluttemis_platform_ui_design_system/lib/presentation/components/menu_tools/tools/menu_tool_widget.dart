@@ -12,6 +12,7 @@ class MenuToolWidget extends StatelessWidget {
         mainTitle: 'Menu',
         secondaryTitle: FluttemisAppLocalizations.of(context)!.backTo,
         toolActionButtonDescription: FluttemisAppLocalizations.of(context)!.goToMenu,
+        description: FluttemisAppLocalizations.of(context)!.menuDescription,
         toolAction: () {
           Modular.to.popAndPushNamed('/');
         },

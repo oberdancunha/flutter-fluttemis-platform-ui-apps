@@ -156,6 +156,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Ir para o menu'**
   String get goToMenu;
+
+  /// No description provided for @menuDescription.
+  ///
+  /// In pt, this message translates to:
+  /// **'Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema.'**
+  String get menuDescription;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
