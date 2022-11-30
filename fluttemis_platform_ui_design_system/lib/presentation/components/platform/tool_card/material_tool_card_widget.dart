@@ -11,6 +11,7 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
     super.description,
     super.mainDescriptionExtend,
     super.secondaryDescriptionExtend,
+    super.toolActionButtonDescription,
     super.toolAction,
     super.key,
   });
@@ -34,6 +35,7 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
         descriptionStyle: Theme.of(context).textTheme.bodyText2,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
 }

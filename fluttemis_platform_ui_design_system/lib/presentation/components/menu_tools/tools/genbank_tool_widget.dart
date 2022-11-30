@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/driver/i_file_picker.dart';
+import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
@@ -33,11 +34,13 @@ class _GenbankToolWidgetState extends State<GenbankToolWidget> {
         description: FluttemisAppLocalizations.of(context)!.genbankDescription,
         mainDescriptionExtend: genbankExtensionsAccepted.join(', '),
         secondaryDescriptionExtend: FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions,
+        toolActionButtonDescription: FluttemisAppLocalizations.of(context)!.openFile,
         toolAction: () async {
           final filePath =
               await widget.filePicker.filePickerByExtensions(genbankExtensionsAccepted);
           if (filePath != null) {
-            Modular.to.navigate('/genbankfile/', arguments: filePath);
+            Modular.get<AccessHistoryStore>().setLastToolAccessed(widget);
+            Modular.to.popAndPushNamed('/genbankfile/', arguments: filePath);
           }
         },
       );

@@ -12,6 +12,7 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
     super.description,
     super.mainDescriptionExtend,
     super.secondaryDescriptionExtend,
+    super.toolActionButtonDescription,
     super.toolAction,
     super.key,
   });
@@ -36,6 +37,7 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
         descriptionStyle: MacosTheme.of(context).typography.body,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
 }

@@ -13,6 +13,7 @@ class PlatformToolCardWidget
   final String? description;
   final String? mainDescriptionExtend;
   final String? secondaryDescriptionExtend;
+  final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
 
   const PlatformToolCardWidget({
@@ -22,6 +23,7 @@ class PlatformToolCardWidget
     this.description,
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
+    this.toolActionButtonDescription,
     this.toolAction,
     super.key,
   });
@@ -34,6 +36,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
 
@@ -45,6 +48,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
 
@@ -56,6 +60,7 @@ class PlatformToolCardWidget
         description: description,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
+        toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
 }
