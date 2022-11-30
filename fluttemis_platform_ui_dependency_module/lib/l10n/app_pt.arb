@@ -1,7 +1,7 @@
 {
   "mainMenu": "Menu principal",
   "openFile": "Abrir arquivo",
-  "genbankDescription": "Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene",
+  "genbankDescription": "Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene.",
   "toolAcceptedExtensions": "Extensões aceitas: ",
   "fileEmpty": "Erro na leitura do arquivo: arquivo vazio",
   "fileFormatError": "Erro na leitura do arquivo: formato desconhecido",
@@ -13,5 +13,6 @@
   "menuDescription": "Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema.",
   "tryMessage": "Tentar",
   "again": "Novamente",
-  "tryAgain": "Tentar novamente"
+  "tryAgain": "Tentar novamente",
+  "tryAgainDescription": "Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente."
 }

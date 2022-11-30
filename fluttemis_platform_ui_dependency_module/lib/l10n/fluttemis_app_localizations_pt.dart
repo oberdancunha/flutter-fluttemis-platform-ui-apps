@@ -11,7 +11,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get openFile => 'Abrir arquivo';
 
   @override
-  String get genbankDescription => 'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene';
+  String get genbankDescription => 'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene.';
 
   @override
   String get toolAcceptedExtensions => 'Extensões aceitas: ';
@@ -48,4 +48,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get tryAgain => 'Tentar novamente';
+
+  @override
+  String get tryAgainDescription => 'Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente.';
 }

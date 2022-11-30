@@ -106,7 +106,7 @@ abstract class FluttemisAppLocalizations {
   /// No description provided for @genbankDescription.
   ///
   /// In pt, this message translates to:
-  /// **'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene'**
+  /// **'Um arquivo genbank é composto por sequências de nucleotídeos, informações do organismo de origem e suas anotações, como CDS, rRNA e gene.'**
   String get genbankDescription;
 
   /// No description provided for @toolAcceptedExtensions.
@@ -180,6 +180,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Tentar novamente'**
   String get tryAgain;
+
+  /// No description provided for @tryAgainDescription.
+  ///
+  /// In pt, this message translates to:
+  /// **'Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente.'**
+  String get tryAgainDescription;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

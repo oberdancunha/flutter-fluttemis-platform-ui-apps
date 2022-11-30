@@ -12,6 +12,7 @@ class RecoveryToolWidget extends StatelessWidget {
         mainTitle: FluttemisAppLocalizations.of(context)!.again,
         secondaryTitle: FluttemisAppLocalizations.of(context)!.tryMessage,
         toolActionButtonDescription: FluttemisAppLocalizations.of(context)!.tryAgain,
+        description: FluttemisAppLocalizations.of(context)!.tryAgainDescription,
         toolAction: () {
           if (Modular.args.data != null) {
             Modular.to.pushNamed(Modular.to.path, arguments: Modular.args.data);
