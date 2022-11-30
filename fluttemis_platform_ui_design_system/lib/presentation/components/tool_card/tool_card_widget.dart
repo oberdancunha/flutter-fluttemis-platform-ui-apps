@@ -1,4 +1,3 @@
-import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
 import '../platform/circular_image/platform_circular_image_widget.dart';
@@ -24,6 +23,7 @@ class ToolCardWidget extends StatelessWidget {
   final TextStyle? descriptionStyle;
   final String? mainDescriptionExtend;
   final String? secondaryDescriptionExtend;
+  final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
 
   const ToolCardWidget({
@@ -44,6 +44,7 @@ class ToolCardWidget extends StatelessWidget {
     this.descriptionStyle,
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
+    this.toolActionButtonDescription,
     this.toolAction,
     super.key,
   });
@@ -137,7 +138,7 @@ class ToolCardWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (toolAction != null)
+                  if (toolActionButtonDescription != null && toolAction != null)
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: SizedBox(
@@ -149,7 +150,7 @@ class ToolCardWidget extends StatelessWidget {
                             size: constraints.maxWidth / 20,
                             color: imageColor,
                           ),
-                          label: FluttemisAppLocalizations.of(context)!.openFile,
+                          label: toolActionButtonDescription!,
                           onPressed: toolAction!,
                         ),
                       ),
