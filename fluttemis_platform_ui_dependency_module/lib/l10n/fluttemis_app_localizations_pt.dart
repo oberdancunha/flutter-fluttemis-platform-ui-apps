@@ -27,4 +27,13 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get fileUnexpectedError => 'Erro na leitura do arquivo: erro não esperado';
+
+  @override
+  String get nextOptionInError => 'Escolha uma das opções a seguir';
+
+  @override
+  String get backTo => 'Voltar para o';
+
+  @override
+  String get goToMenu => 'Ir para o menu';
 }

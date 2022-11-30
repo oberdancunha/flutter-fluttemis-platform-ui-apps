@@ -138,6 +138,24 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Erro na leitura do arquivo: erro não esperado'**
   String get fileUnexpectedError;
+
+  /// No description provided for @nextOptionInError.
+  ///
+  /// In pt, this message translates to:
+  /// **'Escolha uma das opções a seguir'**
+  String get nextOptionInError;
+
+  /// No description provided for @backTo.
+  ///
+  /// In pt, this message translates to:
+  /// **'Voltar para o'**
+  String get backTo;
+
+  /// No description provided for @goToMenu.
+  ///
+  /// In pt, this message translates to:
+  /// **'Ir para o menu'**
+  String get goToMenu;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
