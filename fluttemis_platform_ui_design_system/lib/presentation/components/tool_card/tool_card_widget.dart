@@ -60,37 +60,42 @@ class ToolCardWidget extends StatelessWidget {
             children: [
               SizedBox(
                 height: constraints.maxHeight / 3,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    PlatformCircularImageWidget(
-                      width: constraints.maxWidth / 3,
-                      imageWidget: Image.asset(
-                        image,
-                        fit: BoxFit.contain,
-                        width: constraints.maxHeight / 5,
-                        color: imageColor,
-                      ),
-                    ),
-                    RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        text: '$secondaryTitle \n',
-                        style: secondaryTitleStyle.copyWith(
-                          fontSize: constraints.maxWidth / 17,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      PlatformCircularImageWidget(
+                        width: constraints.maxWidth / 3,
+                        imageWidget: Image.asset(
+                          image,
+                          fit: BoxFit.contain,
+                          width: constraints.maxHeight / 5,
+                          color: imageColor,
                         ),
-                        children: <TextSpan>[
-                          TextSpan(
-                            text: mainTitle,
-                            style: mainTitleStyle.copyWith(
-                              color: mainTitleColor,
-                              fontSize: constraints.maxWidth / 8,
-                            ),
-                          ),
-                        ],
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: RichText(
+                          textAlign: TextAlign.center,
+                          text: TextSpan(
+                            text: '$secondaryTitle \n',
+                            style: secondaryTitleStyle.copyWith(
+                              fontSize: constraints.maxWidth / 17,
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(
+                                text: mainTitle,
+                                style: mainTitleStyle.copyWith(
+                                  color: mainTitleColor,
+                                  fontSize: constraints.maxWidth / 9.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Column(
