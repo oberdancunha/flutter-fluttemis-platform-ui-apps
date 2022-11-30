@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../core/platform_widget.dart';
 import 'macos_icon_button_widget.dart';
 import 'material_icon_button_widget.dart';
-import 'windows_button_widget.dart';
+import 'windows_icon_button_widget.dart';
 
 class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
     WindowsIconButtonWidget, MaterialIconButtonWidget> {

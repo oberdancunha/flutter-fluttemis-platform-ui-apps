@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../platform/circular_image/platform_circular_image_widget.dart';
 import '../platform/container/platform_container_widget.dart';
 import '../platform/icon/platform_icon_widget.dart';
-import '../platform/icon_button/platform_button_widget.dart';
+import '../platform/icon_button/platform_icon_button_widget.dart';
 
 class ToolCardWidget extends StatelessWidget {
   final String image;
@@ -70,7 +70,7 @@ class ToolCardWidget extends StatelessWidget {
                         imageWidget: Image.asset(
                           image,
                           fit: BoxFit.contain,
-                          width: constraints.maxHeight / 5,
+                          width: constraints.maxWidth / 5,
                           color: imageColor,
                         ),
                       ),

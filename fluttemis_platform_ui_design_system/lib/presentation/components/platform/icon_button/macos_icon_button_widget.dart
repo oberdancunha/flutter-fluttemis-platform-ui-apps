@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import 'platform_button_widget.dart';
+import 'platform_icon_button_widget.dart';
 
 class MacosIconButtonWidget extends PlatformIconButtonWidget {
   const MacosIconButtonWidget({

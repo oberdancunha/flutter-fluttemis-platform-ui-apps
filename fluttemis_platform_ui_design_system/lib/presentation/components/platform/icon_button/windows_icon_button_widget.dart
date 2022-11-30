@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-import 'platform_button_widget.dart';
+import 'platform_icon_button_widget.dart';
 
 class WindowsIconButtonWidget extends PlatformIconButtonWidget {
   const WindowsIconButtonWidget({

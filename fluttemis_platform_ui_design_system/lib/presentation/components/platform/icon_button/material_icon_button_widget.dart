@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'platform_button_widget.dart';
+import 'platform_icon_button_widget.dart';
 
 class MaterialIconButtonWidget extends PlatformIconButtonWidget {
   const MaterialIconButtonWidget({
