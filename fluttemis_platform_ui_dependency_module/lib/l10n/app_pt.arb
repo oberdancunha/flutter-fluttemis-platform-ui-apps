@@ -6,6 +6,8 @@
   "fileEmpty": "Erro na leitura do arquivo: arquivo vazio",
   "fileFormatError": "Erro na leitura do arquivo: formato desconhecido",
   "fileNotFound": "Erro na leitura do arquivo: arquivo não encontrado",
-  "fileUnexpectedError": "Erro na leitura do arquivo: erro não esperado"
-
+  "fileUnexpectedError": "Erro na leitura do arquivo: erro não esperado",
+  "nextOptionInError": "Escolha uma das opções a seguir",
+  "backTo": "Voltar para o",
+  "goToMenu": "Ir para o menu"
 }
