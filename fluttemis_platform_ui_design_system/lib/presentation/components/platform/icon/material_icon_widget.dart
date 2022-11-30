@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'icon_type_enum.dart';
 import 'platform_icon_widget.dart';
 
 class MaterialIconWidget extends PlatformIconWidget {
-  const MaterialIconWidget(
-    super.iconData, {
+  const MaterialIconWidget({
+    required super.iconType,
     required super.size,
     required super.color,
     super.key,
@@ -12,8 +13,20 @@ class MaterialIconWidget extends PlatformIconWidget {
 
   @override
   Widget build(BuildContext context) => Icon(
-        iconData,
+        getIconData(),
         size: size,
         color: color,
       );
+
+  @override
+  IconData? getIconData() {
+    switch (iconType) {
+      case IconType.openFile:
+        return Icons.file_open;
+      case IconType.menu:
+        return Icons.grid_view;
+      case IconType.recovery:
+        return Icons.loop;
+    }
+  }
 }

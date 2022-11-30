@@ -1,18 +1,19 @@
 import 'package:flutter/widgets.dart';
 
 import '../core/platform_widget.dart';
+import 'icon_type_enum.dart';
 import 'macos_icon_widget.dart';
 import 'material_icon_widget.dart';
 import 'windows_icon_widget.dart';
 
 class PlatformIconWidget
     extends PlatformWidget<MacosIconWidget, WindowsIconWidget, MaterialIconWidget> {
-  final IconData iconData;
+  final IconType iconType;
   final double size;
   final Color color;
 
-  const PlatformIconWidget(
-    this.iconData, {
+  const PlatformIconWidget({
+    required this.iconType,
     required this.size,
     required this.color,
     super.key,
@@ -20,22 +21,24 @@ class PlatformIconWidget
 
   @override
   MacosIconWidget buildMacosWidget() => MacosIconWidget(
-        iconData,
+        iconType: iconType,
         size: size,
         color: color,
       );
 
   @override
   WindowsIconWidget buildWindowsWidget() => WindowsIconWidget(
-        iconData,
+        iconType: iconType,
         size: size,
         color: color,
       );
 
   @override
   MaterialIconWidget buildMaterialWidget() => MaterialIconWidget(
-        iconData,
+        iconType: iconType,
         size: size,
         color: color,
       );
+
+  IconData? getIconData() => null;
 }
