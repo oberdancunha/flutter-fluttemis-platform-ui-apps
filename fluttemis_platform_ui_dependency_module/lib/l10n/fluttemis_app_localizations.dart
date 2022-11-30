@@ -162,6 +162,24 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema.'**
   String get menuDescription;
+
+  /// No description provided for @tryMessage.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tentar'**
+  String get tryMessage;
+
+  /// No description provided for @again.
+  ///
+  /// In pt, this message translates to:
+  /// **'Novamente'**
+  String get again;
+
+  /// No description provided for @tryAgain.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tentar novamente'**
+  String get tryAgain;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

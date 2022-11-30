@@ -39,4 +39,13 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get menuDescription => 'Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema.';
+
+  @override
+  String get tryMessage => 'Tentar';
+
+  @override
+  String get again => 'Novamente';
+
+  @override
+  String get tryAgain => 'Tentar novamente';
 }

@@ -10,5 +10,8 @@
   "nextOptionInError": "Escolha uma das opções a seguir",
   "backTo": "Voltar para o",
   "goToMenu": "Ir para o menu",
-  "menuDescription": "Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema."
+  "menuDescription": "Caso queira desistir de usar a ferramenta escolhida, você pode acessar diretamente o menu principal do sistema.",
+  "tryMessage": "Tentar",
+  "again": "Novamente",
+  "tryAgain": "Tentar novamente"
 }
