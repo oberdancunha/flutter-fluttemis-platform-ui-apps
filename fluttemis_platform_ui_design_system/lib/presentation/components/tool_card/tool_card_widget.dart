@@ -61,7 +61,7 @@ class ToolCardWidget extends StatelessWidget {
               SizedBox(
                 height: constraints.maxHeight / 3,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  padding: EdgeInsets.symmetric(horizontal: constraints.maxWidth / 45),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
