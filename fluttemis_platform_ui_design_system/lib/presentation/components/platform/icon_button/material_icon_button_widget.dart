@@ -23,9 +23,6 @@ class MaterialIconButtonWidget extends PlatformIconButtonWidget {
                 ),
           ),
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(
-              Theme.of(context).primaryColor,
-            ),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(5),

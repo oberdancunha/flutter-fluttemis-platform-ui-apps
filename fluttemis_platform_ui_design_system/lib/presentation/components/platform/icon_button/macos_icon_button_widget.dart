@@ -16,7 +16,7 @@ class MacosIconButtonWidget extends PlatformIconButtonWidget {
         builder: (_, constraints) => PushButton(
           onPressed: onPressed,
           buttonSize: ButtonSize.small,
-          color: MacosTheme.of(context).primaryColor,
+          color: MacosTheme.of(context).pushButtonTheme.color,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

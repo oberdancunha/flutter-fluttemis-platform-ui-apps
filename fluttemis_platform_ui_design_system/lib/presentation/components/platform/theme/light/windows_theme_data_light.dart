@@ -6,4 +6,9 @@ final windowsThemeDataLight = ThemeData().copyWith(
   accentColor: Colors.magenta,
   cardColor: Colors.white,
   shadowColor: Colors.grey,
+  buttonTheme: ButtonThemeData(
+    filledButtonStyle: ButtonStyle(
+      backgroundColor: ButtonState.all(Colors.blue.dark),
+    ),
+  ),
 );

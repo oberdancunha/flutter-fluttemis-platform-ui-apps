@@ -15,7 +15,6 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
         builder: (_, constraints) => FilledButton(
           onPressed: onPressed,
           style: ButtonStyle(
-            backgroundColor: ButtonState.all(FluentTheme.of(context).accentColor),
             shape: ButtonState.all(
               const RoundedRectangleBorder(),
             ),
