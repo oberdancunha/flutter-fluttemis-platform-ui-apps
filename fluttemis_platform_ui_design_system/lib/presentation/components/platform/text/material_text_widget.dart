@@ -29,6 +29,11 @@ class MaterialTextWidget extends PlatformTextWidget {
         return Theme.of(context).textTheme.subtitle1!.copyWith(
               fontSize: fontSize,
             );
+      case TextType.error:
+        return Theme.of(context).textTheme.bodyText1!.copyWith(
+              color: Theme.of(context).errorColor,
+              fontSize: fontSize,
+            );
     }
   }
 }

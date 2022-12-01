@@ -29,6 +29,11 @@ class WindowsTextWidget extends PlatformTextWidget {
         return FluentTheme.of(context).typography.subtitle!.copyWith(
               fontSize: fontSize,
             );
+      case TextType.error:
+        return FluentTheme.of(context).typography.display!.copyWith(
+              color: Colors.red,
+              fontSize: fontSize,
+            );
     }
   }
 }

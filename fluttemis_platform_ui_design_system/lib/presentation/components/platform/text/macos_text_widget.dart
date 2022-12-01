@@ -30,6 +30,11 @@ class MacosTextWidget extends PlatformTextWidget {
         return MacosTheme.of(context).typography.title2.copyWith(
               fontSize: fontSize,
             );
+      case TextType.error:
+        return MacosTheme.of(context).typography.title3.copyWith(
+              color: MacosColors.appleRed,
+              fontSize: fontSize,
+            );
     }
   }
 }
