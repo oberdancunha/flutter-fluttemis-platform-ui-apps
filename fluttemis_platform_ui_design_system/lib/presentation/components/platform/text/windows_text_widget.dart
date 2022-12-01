@@ -20,6 +20,10 @@ class WindowsTextWidget extends PlatformTextWidget {
   @override
   TextStyle getTextStyle(BuildContext context, TextType textType) {
     switch (textType) {
+      case TextType.mainTitle:
+        return FluentTheme.of(context).typography.title!.copyWith(
+              fontSize: fontSize,
+            );
       case TextType.title:
         return FluentTheme.of(context).typography.title!.copyWith(
               color: FluentTheme.of(context).accentColor,

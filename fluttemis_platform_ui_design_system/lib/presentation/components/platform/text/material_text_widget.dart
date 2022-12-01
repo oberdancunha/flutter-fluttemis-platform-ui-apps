@@ -20,6 +20,10 @@ class MaterialTextWidget extends PlatformTextWidget {
   @override
   TextStyle getTextStyle(BuildContext context, TextType textType) {
     switch (textType) {
+      case TextType.mainTitle:
+        return Theme.of(context).textTheme.titleLarge!.copyWith(
+              fontSize: fontSize,
+            );
       case TextType.title:
         return Theme.of(context).textTheme.titleLarge!.copyWith(
               color: Theme.of(context).primaryColor,

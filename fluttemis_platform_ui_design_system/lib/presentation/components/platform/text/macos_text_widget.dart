@@ -21,6 +21,10 @@ class MacosTextWidget extends PlatformTextWidget {
   @override
   TextStyle getTextStyle(BuildContext context, TextType textType) {
     switch (textType) {
+      case TextType.mainTitle:
+        return MacosTheme.of(context).typography.title1.copyWith(
+              fontSize: fontSize,
+            );
       case TextType.title:
         return MacosTheme.of(context).typography.title1.copyWith(
               color: MacosTheme.of(context).primaryColor,

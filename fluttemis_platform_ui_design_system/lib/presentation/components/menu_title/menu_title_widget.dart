@@ -14,7 +14,7 @@ class MenuTitleWidget extends StatelessWidget {
         child: Center(
           child: PlatformTextWidget(
             FluttemisAppLocalizations.of(context)!.mainMenu,
-            textType: TextType.title,
+            textType: TextType.mainTitle,
             fontSize: MediaQuery.of(context).size.width / 35,
           ),
         ),
