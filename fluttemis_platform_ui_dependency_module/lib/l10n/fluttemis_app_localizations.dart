@@ -186,6 +186,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente.'**
   String get tryAgainDescription;
+
+  /// No description provided for @fileReading.
+  ///
+  /// In pt, this message translates to:
+  /// **'Lendo dados do arquivo'**
+  String get fileReading;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

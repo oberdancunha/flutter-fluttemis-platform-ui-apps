@@ -51,4 +51,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get tryAgainDescription => 'Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente.';
+
+  @override
+  String get fileReading => 'Lendo dados do arquivo';
 }
