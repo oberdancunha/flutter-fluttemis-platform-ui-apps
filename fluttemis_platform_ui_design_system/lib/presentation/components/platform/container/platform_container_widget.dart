@@ -10,9 +10,9 @@ class PlatformContainerWidget
   final Widget child;
   final double? height;
   final double? width;
-  final int? backgroundColor;
-  final int? shadowColor;
-  final int? borderColor;
+  final Color? backgroundColor;
+  final Color? shadowColor;
+  final Color? borderColor;
 
   const PlatformContainerWidget({
     required this.child,

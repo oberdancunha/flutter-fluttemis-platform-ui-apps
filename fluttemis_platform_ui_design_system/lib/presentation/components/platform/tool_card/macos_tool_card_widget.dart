@@ -20,8 +20,8 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
 
   @override
   Widget build(BuildContext context) => ToolCardWidget(
-        backgroundColor: 0xfff1f1f1,
-        shadowColor: 0xFF8E8E93,
+        backgroundColor: MacosTheme.of(context).canvasColor,
+        shadowColor: const MacosColor(0xFF8E8E93),
         image: image,
         imageColor: MacosColors.white,
         secondaryTitle: secondaryTitle,

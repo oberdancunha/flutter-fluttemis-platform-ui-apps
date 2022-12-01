@@ -16,9 +16,9 @@ class ToolCardWidget extends StatelessWidget {
   final Color mainTitleColor;
   final Color actionButtonColor;
   final BorderRadiusGeometry actionButtonBorderRadius;
-  final int? backgroundColor;
-  final int? shadowColor;
-  final int? borderColor;
+  final Color? backgroundColor;
+  final Color? shadowColor;
+  final Color? borderColor;
   final String? description;
   final TextStyle? descriptionStyle;
   final String? mainDescriptionExtend;
