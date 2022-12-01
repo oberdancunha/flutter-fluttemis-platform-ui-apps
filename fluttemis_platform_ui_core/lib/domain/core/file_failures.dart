@@ -15,6 +15,9 @@ class FileFailureParseError extends FileFailure {
 
   @override
   List<Object?> get props => [error];
+
+  @override
+  bool get tryAgain => true;
 }
 
 class FileFailureEmpty extends FileFailure {
