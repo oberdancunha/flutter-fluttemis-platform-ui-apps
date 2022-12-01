@@ -26,6 +26,10 @@ class MacosTextWidget extends PlatformTextWidget {
               color: MacosTheme.of(context).primaryColor,
               fontSize: fontSize,
             );
+      case TextType.subTitle:
+        return MacosTheme.of(context).typography.title2.copyWith(
+              fontSize: fontSize,
+            );
     }
   }
 }

@@ -1,3 +1,4 @@
 enum TextType {
   title,
+  subTitle,
 }
