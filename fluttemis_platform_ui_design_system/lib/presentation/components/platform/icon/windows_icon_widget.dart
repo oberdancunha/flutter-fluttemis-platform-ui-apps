@@ -7,7 +7,7 @@ class WindowsIconWidget extends PlatformIconWidget {
   const WindowsIconWidget({
     required super.iconType,
     required super.size,
-    required super.color,
+    super.color,
     super.key,
   });
 

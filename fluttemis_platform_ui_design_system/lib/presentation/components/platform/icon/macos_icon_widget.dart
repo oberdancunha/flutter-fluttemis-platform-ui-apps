@@ -8,7 +8,7 @@ class MacosIconWidget extends PlatformIconWidget {
   const MacosIconWidget({
     required super.iconType,
     required super.size,
-    required super.color,
+    super.color,
     super.key,
   });
 

@@ -7,7 +7,7 @@ class MaterialIconWidget extends PlatformIconWidget {
   const MaterialIconWidget({
     required super.iconType,
     required super.size,
-    required super.color,
+    super.color,
     super.key,
   });
 

@@ -10,12 +10,12 @@ class PlatformIconWidget
     extends PlatformWidget<MacosIconWidget, WindowsIconWidget, MaterialIconWidget> {
   final IconType iconType;
   final double size;
-  final Color color;
+  final Color? color;
 
   const PlatformIconWidget({
     required this.iconType,
     required this.size,
-    required this.color,
+    this.color,
     super.key,
   });
 
