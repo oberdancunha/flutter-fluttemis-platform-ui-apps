@@ -14,7 +14,8 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
   @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (_, constraints) => FocusWidget(
-          baseColor: FluentTheme.of(context).scaffoldBackgroundColor.lerpWith(Colors.grey, 0.5),
+          baseColor: const Color.fromARGB(255, 194, 194, 194),
+          focusColor: const Color.fromARGB(255, 196, 222, 255),
           child: Button(
             onPressed: onPressed,
             style: ButtonStyle(

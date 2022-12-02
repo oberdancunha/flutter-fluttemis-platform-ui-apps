@@ -4,10 +4,12 @@ import 'package:flutter/widgets.dart';
 class FocusWidget extends StatefulWidget {
   final Widget child;
   final Color baseColor;
+  final Color focusColor;
 
   const FocusWidget({
     required this.child,
     required this.baseColor,
+    required this.focusColor,
     super.key,
   });
 
@@ -59,10 +61,10 @@ class _FocusWidgetState extends State<FocusWidget> {
   Color get color {
     Color baseColor = widget.baseColor;
     if (_focused) {
-      baseColor = Color.alphaBlend(baseColor.withOpacity(0.25), baseColor);
+      baseColor = Color.alphaBlend(baseColor.withOpacity(0.25), widget.focusColor);
     }
     if (_hovering) {
-      baseColor = Color.alphaBlend(baseColor.withOpacity(0), baseColor);
+      baseColor = Color.alphaBlend(baseColor.withOpacity(0), widget.focusColor);
     }
 
     return baseColor;
