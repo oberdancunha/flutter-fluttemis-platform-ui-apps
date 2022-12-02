@@ -9,5 +9,11 @@ final windowsThemeDataLight = ThemeData.light().copyWith(
     filledButtonStyle: ButtonStyle(
       backgroundColor: ButtonState.all(Colors.blue.dark),
     ),
+    defaultButtonStyle: ButtonStyle(
+      border: ButtonState.all(
+        BorderSide(color: Colors.blue.dark),
+      ),
+      foregroundColor: ButtonState.all(Colors.grey),
+    ),
   ),
 );
