@@ -6,12 +6,12 @@ final windowsThemeDataLight = ThemeData.light().copyWith(
   cardColor: Colors.white,
   shadowColor: Colors.grey,
   buttonTheme: ButtonThemeData(
-    filledButtonStyle: ButtonStyle(
-      backgroundColor: ButtonState.all(Colors.blue.dark),
-    ),
     defaultButtonStyle: ButtonStyle(
       border: ButtonState.all(
-        BorderSide(color: Colors.blue.dark),
+        const BorderSide(
+          width: 1.3,
+          color: Color.fromARGB(255, 0, 62, 246),
+        ),
       ),
       foregroundColor: ButtonState.all(Colors.grey),
     ),
