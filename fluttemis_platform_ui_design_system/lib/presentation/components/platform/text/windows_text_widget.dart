@@ -34,7 +34,7 @@ class WindowsTextWidget extends PlatformTextWidget {
               fontSize: fontSize,
             );
       case TextType.error:
-        return FluentTheme.of(context).typography.display!.copyWith(
+        return FluentTheme.of(context).typography.body!.copyWith(
               color: Colors.red,
               fontSize: fontSize,
             );
