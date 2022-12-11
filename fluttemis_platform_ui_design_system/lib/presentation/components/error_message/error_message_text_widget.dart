@@ -25,26 +25,33 @@ class ErrorMessageTextWidget extends StatelessWidget {
       height: MediaQuery.of(context).size.height / 10,
       width: MediaQuery.of(context).size.width / 3,
       containerType: ContainerType.error,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/images/file_error/${errorMessageModel.image}',
-            width: MediaQuery.of(context).size.width / 30,
-          ),
-          SizedBox(width: MediaQuery.of(context).size.width / 80),
-          PlatformContainerWidget(
-            height: MediaQuery.of(context).size.height / 11,
-            width: 1,
-            child: const SizedBox.shrink(),
-          ),
-          SizedBox(width: MediaQuery.of(context).size.width / 80),
-          PlatformTextWidget(
-            errorMessageModel.message,
-            textType: TextType.error,
-            fontSize: MediaQuery.of(context).size.width / 80,
-          ),
-        ],
+      child: LayoutBuilder(
+        builder: (_, constraints) => Row(
+          children: [
+            SizedBox(
+              width: constraints.maxWidth / 6,
+              child: Center(
+                child: Image.asset(
+                  'assets/images/file_error/${errorMessageModel.image}',
+                  width: constraints.maxWidth / 10,
+                ),
+              ),
+            ),
+            PlatformContainerWidget(
+              height: constraints.maxHeight * 0.85,
+              width: 1,
+              child: const SizedBox.shrink(),
+            ),
+            SizedBox(width: constraints.maxWidth / 25),
+            Expanded(
+              child: PlatformTextWidget(
+                errorMessageModel.message,
+                textType: TextType.error,
+                fontSize: constraints.maxWidth / 31,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
