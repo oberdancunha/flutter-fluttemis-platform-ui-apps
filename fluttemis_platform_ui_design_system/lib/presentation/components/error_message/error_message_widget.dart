@@ -10,13 +10,24 @@ import '../platform/text/text_type_enum.dart';
 import 'error_message_text_widget.dart';
 import 'error_recovery_option_widget.dart';
 
-class ErrorMessageWidget extends StatelessWidget {
+class ErrorMessageWidget extends StatefulWidget {
   final Failure failure;
 
   const ErrorMessageWidget({
     required this.failure,
     super.key,
   });
+
+  @override
+  State<ErrorMessageWidget> createState() => _ErrorMessageWidgetState();
+}
+
+class _ErrorMessageWidgetState extends State<ErrorMessageWidget> {
+  @override
+  void dispose() {
+    Modular.dispose<AccessHistoryStore>();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +41,7 @@ class ErrorMessageWidget extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: Center(
             child: ErrorMessageTextWidget(
-              failure: failure,
+              failure: widget.failure,
             ),
           ),
         ),
@@ -49,7 +60,7 @@ class ErrorMessageWidget extends StatelessWidget {
               SizedBox(width: MediaQuery.of(context).size.width / 40),
             ],
             const ErrorRecoveryOptionWidget(child: MenuToolWidget()),
-            if (failure.tryAgain) ...[
+            if (widget.failure.tryAgain) ...[
               SizedBox(width: MediaQuery.of(context).size.width / 40),
               const ErrorRecoveryOptionWidget(child: RecoveryToolWidget()),
             ],
