@@ -8,7 +8,7 @@ import 'windows_container_widget.dart';
 
 class PlatformContainerWidget
     extends PlatformWidget<MacosContainerWidget, WindowsContainerWidget, MaterialContainerWidget> {
-  final Widget? child;
+  final Widget child;
   final double? height;
   final double? width;
   final Color? backgroundColor;
@@ -17,7 +17,7 @@ class PlatformContainerWidget
   final ContainerType? containerType;
 
   const PlatformContainerWidget({
-    this.child,
+    required this.child,
     this.height,
     this.width,
     this.backgroundColor,
