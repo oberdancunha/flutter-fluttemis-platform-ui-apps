@@ -40,7 +40,6 @@ class ErrorMessageTextWidget extends StatelessWidget {
             PlatformContainerWidget(
               height: constraints.maxHeight * 0.85,
               width: 1,
-              child: const SizedBox.shrink(),
             ),
             SizedBox(width: constraints.maxWidth / 25),
             Expanded(
