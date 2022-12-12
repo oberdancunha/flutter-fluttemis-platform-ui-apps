@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-import '../platform/circular_image/platform_circular_image_widget.dart';
 import '../platform/container/platform_container_widget.dart';
 import '../platform/icon/icon_type_enum.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_icon_button_widget.dart';
+import 'tool_icon_widget.dart';
 
 class ToolCardWidget extends StatelessWidget {
   final String image;
@@ -68,14 +68,10 @@ class ToolCardWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      PlatformCircularImageWidget(
-                        width: constraints.maxWidth / 3,
-                        imageWidget: Image.asset(
-                          image,
-                          fit: BoxFit.contain,
-                          width: constraints.maxWidth / 5,
-                          color: imageColor,
-                        ),
+                      ToolIconWidget(
+                        image: image,
+                        imageColor: imageColor,
+                        width: constraints.maxWidth,
                       ),
                       Expanded(
                         child: RichText(
