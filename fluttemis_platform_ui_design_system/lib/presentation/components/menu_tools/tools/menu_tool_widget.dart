@@ -5,7 +5,10 @@ import '../../platform/icon/icon_type_enum.dart';
 import 'i_template_tool.dart';
 
 class MenuToolWidget extends ITemplateTool {
-  const MenuToolWidget({super.key});
+  const MenuToolWidget({
+    super.key,
+    super.toolTypeToShow,
+  });
 
   @override
   State<MenuToolWidget> createState() => _MenuToolWidgetState();
