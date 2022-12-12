@@ -22,7 +22,6 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
         backgroundColor: Theme.of(context).backgroundColor,
         borderColor: Theme.of(context).primaryColor,
         image: image,
-        imageColor: Colors.white,
         secondaryTitle: secondaryTitle,
         mainTitle: mainTitle,
         secondaryTitleStyle: Theme.of(context).textTheme.titleSmall!,

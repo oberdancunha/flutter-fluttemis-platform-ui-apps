@@ -4,11 +4,10 @@ import '../platform/container/platform_container_widget.dart';
 import '../platform/icon/icon_type_enum.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_icon_button_widget.dart';
-import 'tool_icon_widget.dart';
+import '../platform/tool_icon/platform_tool_icon_widget.dart';
 
 class ToolCardWidget extends StatelessWidget {
   final String image;
-  final Color imageColor;
   final String secondaryTitle;
   final String mainTitle;
   final TextStyle secondaryTitleStyle;
@@ -30,7 +29,6 @@ class ToolCardWidget extends StatelessWidget {
 
   const ToolCardWidget({
     required this.image,
-    required this.imageColor,
     required this.secondaryTitle,
     required this.mainTitle,
     required this.secondaryTitleStyle,
@@ -68,9 +66,8 @@ class ToolCardWidget extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ToolIconWidget(
+                      PlatformToolIconWidget(
                         image: image,
-                        imageColor: imageColor,
                         width: constraints.maxWidth,
                       ),
                       Expanded(
