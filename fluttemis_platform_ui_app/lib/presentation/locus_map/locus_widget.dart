@@ -5,21 +5,21 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/load
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scaffold/platform_scaffold_widget.dart';
 import 'package:flutter/widgets.dart';
 
-class LocusMapPage extends StatefulWidget {
+class LocusWidget extends StatefulWidget {
   final LocusStore locusStore;
   final AccessHistoryStore accessHistoryStore;
 
-  const LocusMapPage({
+  const LocusWidget({
     required this.locusStore,
     required this.accessHistoryStore,
     super.key,
   });
 
   @override
-  State<LocusMapPage> createState() => _LocusMapPageState();
+  State<LocusWidget> createState() => _LocusWidgetState();
 }
 
-class _LocusMapPageState extends State<LocusMapPage> {
+class _LocusWidgetState extends State<LocusWidget> {
   @override
   void initState() {
     super.initState();
