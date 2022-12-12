@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import '../../tool_card/tool_card_widget.dart';
+import '../../tool_widgets/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class MacosToolCardWidget extends PlatformToolCardWidget {

@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-import '../../tool_card/tool_card_widget.dart';
+import '../../tool_widgets/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class WindowsToolCardWidget extends PlatformToolCardWidget {
