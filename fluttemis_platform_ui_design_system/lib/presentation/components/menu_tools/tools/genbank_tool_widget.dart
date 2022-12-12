@@ -6,13 +6,14 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/widgets.dart';
 
 import '../../platform/icon/icon_type_enum.dart';
-import '../../platform/tool_card/platform_tool_card_widget.dart';
+import 'i_template_tool.dart';
 
-class GenbankToolWidget extends StatefulWidget {
+class GenbankToolWidget extends ITemplateTool {
   final IFilePicker filePicker;
 
   const GenbankToolWidget({
     required this.filePicker,
+    super.toolTypeToShow,
     super.key,
   });
 
@@ -20,7 +21,7 @@ class GenbankToolWidget extends StatefulWidget {
   State<GenbankToolWidget> createState() => _GenbankToolWidgetState();
 }
 
-class _GenbankToolWidgetState extends State<GenbankToolWidget> {
+class _GenbankToolWidgetState extends ITemplateToolState<GenbankToolWidget> {
   late List<String> genbankExtensionsAccepted;
 
   @override
@@ -30,26 +31,40 @@ class _GenbankToolWidgetState extends State<GenbankToolWidget> {
   }
 
   @override
-  Widget build(BuildContext context) => PlatformToolCardWidget(
-        image: 'assets/images/ncbi.png',
-        mainTitle: 'Genbank',
-        secondaryTitle: FluttemisAppLocalizations.of(context)!.openFile,
-        description: FluttemisAppLocalizations.of(context)!.genbankDescription,
-        mainDescriptionExtend: genbankExtensionsAccepted.join(', '),
-        secondaryDescriptionExtend: FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions,
-        toolActionButtonIconType: IconType.openFile,
-        toolActionButtonDescription: FluttemisAppLocalizations.of(context)!.openFile,
-        toolAction: () async {
-          final filePath =
-              await widget.filePicker.filePickerByExtensions(genbankExtensionsAccepted);
-          if (filePath != null) {
-            Modular.get<AccessHistoryStore>().setLastToolAccessed(widget);
-            Modular.get<AccessHistoryStore>().setLastResource(
-              AccessHistoryResourceTypes.file,
-              getFileNameFromPath(filePath),
-            );
-            Modular.to.popAndPushNamed('/genbankfile/', arguments: filePath);
-          }
-        },
-      );
+  String get image => 'assets/images/ncbi.png';
+
+  @override
+  String get mainTitle => 'Genbank';
+
+  @override
+  String get secondaryTitle => FluttemisAppLocalizations.of(context)!.openFile;
+
+  @override
+  String? get description => FluttemisAppLocalizations.of(context)!.genbankDescription;
+
+  @override
+  String? get mainDescriptionExtend => genbankExtensionsAccepted.join(', ');
+
+  @override
+  String? get secondaryDescriptionExtend =>
+      FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions;
+
+  @override
+  IconType? get toolActionButtonIconType => IconType.openFile;
+
+  @override
+  String? get toolActionButtonDescription => FluttemisAppLocalizations.of(context)!.openFile;
+
+  @override
+  VoidCallback? get toolAction => () async {
+        final filePath = await widget.filePicker.filePickerByExtensions(genbankExtensionsAccepted);
+        if (filePath != null) {
+          Modular.get<AccessHistoryStore>().setLastToolAccessed(widget);
+          Modular.get<AccessHistoryStore>().setLastResource(
+            AccessHistoryResourceTypes.file,
+            getFileNameFromPath(filePath),
+          );
+          Modular.to.popAndPushNamed('/genbankfile/', arguments: filePath);
+        }
+      };
 }
