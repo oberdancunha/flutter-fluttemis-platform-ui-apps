@@ -5,7 +5,7 @@ import 'package:fluttemis_platform_ui_core/infrastructure/locus/i_locus_data_sou
 import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
-import '../locus_map/locus_widget.dart';
+import '../locus/locus_widget.dart';
 
 class GenbankFileModule extends Module {
   @override
