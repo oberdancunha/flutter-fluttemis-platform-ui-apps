@@ -11,16 +11,40 @@ class MacosCircularImageWidget extends PlatformCircularImageWidget {
   });
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-        width: width,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: MacosTheme.of(context).primaryColor,
-            shape: BoxShape.circle,
-          ),
-          child: Center(
-            child: imageWidget,
-          ),
+  Widget build(BuildContext context) => MacosCircleAvatar(
+        radius: width,
+        backgroundColor: MacosTheme.of(context).primaryColor,
+        child: Center(
+          child: imageWidget,
         ),
+      );
+}
+
+class MacosCircleAvatar extends StatelessWidget {
+  final Color backgroundColor;
+  final double radius;
+  final Widget child;
+
+  const MacosCircleAvatar({
+    required this.backgroundColor,
+    required this.radius,
+    required this.child,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) => AnimatedContainer(
+        constraints: BoxConstraints(
+          minHeight: radius,
+          minWidth: radius,
+          maxHeight: radius,
+          maxWidth: radius,
+        ),
+        decoration: BoxDecoration(
+          color: backgroundColor,
+          shape: BoxShape.circle,
+        ),
+        duration: const Duration(milliseconds: 200),
+        child: child,
       );
 }
