@@ -54,4 +54,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get fileReading => 'Lendo dados do arquivo';
+
+  @override
+  String get quicklyAccess => 'Acesso rápido';
 }

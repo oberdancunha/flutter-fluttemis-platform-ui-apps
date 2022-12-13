@@ -192,6 +192,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Lendo dados do arquivo'**
   String get fileReading;
+
+  /// No description provided for @quicklyAccess.
+  ///
+  /// In pt, this message translates to:
+  /// **'Acesso rápido'**
+  String get quicklyAccess;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
