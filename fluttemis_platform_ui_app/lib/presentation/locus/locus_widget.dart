@@ -5,6 +5,8 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/load
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scaffold/platform_scaffold_widget.dart';
 import 'package:flutter/widgets.dart';
 
+import '../locus_map/locus_map_page.dart';
+
 class LocusWidget extends StatefulWidget {
   final LocusStore locusStore;
   final AccessHistoryStore accessHistoryStore;
@@ -42,13 +44,7 @@ class _LocusWidgetState extends State<LocusWidget> {
                 return ErrorMessageWidget(failure: locusState.failure!);
               }
 
-              return SizedBox(
-                child: Center(
-                  child: Text(
-                    'Vamos ler um arquivo dos genbanks....${locusState.locus.get(0).name} - ${locusState.locus.get(0).length}',
-                  ),
-                ),
-              );
+              return LocusMapPage(locus: locusState.locus);
             },
           ),
         ),
