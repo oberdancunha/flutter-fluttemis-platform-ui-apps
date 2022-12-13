@@ -1,4 +1,0 @@
-enum ToolTypeToShow {
-  card,
-  icon,
-}

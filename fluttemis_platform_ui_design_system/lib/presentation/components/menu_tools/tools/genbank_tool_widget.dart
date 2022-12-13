@@ -13,7 +13,6 @@ class GenbankToolWidget extends ITemplateTool {
 
   const GenbankToolWidget({
     required this.filePicker,
-    super.toolTypeToShow,
     super.key,
   });
 

@@ -7,7 +7,6 @@ import 'i_template_tool.dart';
 class MenuToolWidget extends ITemplateTool {
   const MenuToolWidget({
     super.key,
-    super.toolTypeToShow,
   });
 
   @override
