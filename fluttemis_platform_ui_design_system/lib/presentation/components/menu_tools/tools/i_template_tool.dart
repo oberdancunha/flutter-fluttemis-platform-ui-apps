@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../platform/icon/icon_type_enum.dart';
 import '../../platform/tool_card/platform_tool_card_widget.dart';
-import '../../platform/tool_icon/platform_tool_icon_widget.dart';
+import '../../tool_widgets/tool_icon_action_widget.dart';
 import 'tool_type_to_show_enum.dart';
 
 abstract class ITemplateTool extends StatefulWidget {
@@ -38,9 +38,11 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
       );
 
   Widget get platformToolIconWidget => LayoutBuilder(
-        builder: (_, constraints) => PlatformToolIconWidget(
+        builder: (_, constraints) => ToolIconActionWidget(
           image: image,
+          message: '$secondaryTitle $mainTitle',
           width: constraints.maxWidth,
+          toolAction: toolAction!,
         ),
       );
 
