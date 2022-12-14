@@ -25,7 +25,7 @@ class TopMenuToolsWidget extends StatelessWidget {
             child: PlatformTextWidget(
               FluttemisAppLocalizations.of(context)!.quicklyAccess,
               textType: TextType.subTitle,
-              fontSize: MediaQuery.of(context).size.width * 0.01,
+              fontSize: MediaQuery.of(context).size.width * 0.016,
             ),
           ),
           Row(
