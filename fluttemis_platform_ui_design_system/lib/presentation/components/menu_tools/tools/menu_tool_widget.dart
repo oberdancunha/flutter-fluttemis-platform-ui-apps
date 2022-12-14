@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
@@ -28,6 +29,7 @@ class _MenuToolWidgetState extends ITemplateToolState<MenuToolWidget> {
 
   @override
   VoidCallback? get toolAction => () {
+        Modular.dispose<AccessHistoryStore>();
         Modular.to.popAndPushNamed('/');
       };
 
