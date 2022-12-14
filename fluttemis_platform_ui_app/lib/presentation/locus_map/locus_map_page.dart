@@ -3,6 +3,8 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:fluttemis_platform_ui_design_system/presentation/components/top_menu_tools/top_menu_tools_widget.dart';
 import 'package:flutter/widgets.dart';
 
+import 'locus_map_widget.dart';
+
 class LocusMapPage extends StatelessWidget {
   final KtList<Locus> locus;
 
@@ -16,8 +18,10 @@ class LocusMapPage extends StatelessWidget {
         padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.005),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            TopMenuToolsWidget(),
+          children: [
+            const TopMenuToolsWidget(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.025),
+            const LocusMapWidget(),
           ],
         ),
       );
