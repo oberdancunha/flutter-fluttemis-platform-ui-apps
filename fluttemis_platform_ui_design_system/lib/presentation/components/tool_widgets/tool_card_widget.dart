@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../platform/container/platform_container_widget.dart';
+import '../platform/card/platform_card_widget.dart';
 import '../platform/icon/icon_type_enum.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_icon_button_widget.dart';
@@ -15,9 +15,6 @@ class ToolCardWidget extends StatelessWidget {
   final Color mainTitleColor;
   final Color actionButtonColor;
   final BorderRadiusGeometry actionButtonBorderRadius;
-  final Color? backgroundColor;
-  final Color? shadowColor;
-  final Color? borderColor;
   final String? description;
   final TextStyle? descriptionStyle;
   final String? mainDescriptionExtend;
@@ -36,9 +33,6 @@ class ToolCardWidget extends StatelessWidget {
     required this.mainTitleColor,
     required this.actionButtonColor,
     required this.actionButtonBorderRadius,
-    this.backgroundColor,
-    this.shadowColor,
-    this.borderColor,
     this.description,
     this.descriptionStyle,
     this.mainDescriptionExtend,
@@ -52,10 +46,7 @@ class ToolCardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
-        builder: (_, constraints) => PlatformContainerWidget(
-          backgroundColor: backgroundColor,
-          shadowColor: shadowColor,
-          borderColor: borderColor,
+        builder: (_, constraints) => PlatformCardWidget(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
