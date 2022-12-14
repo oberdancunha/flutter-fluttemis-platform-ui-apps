@@ -1,5 +1,4 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
-import 'package:flutter/material.dart';
 
 class Feature extends Equatable {
   final String id;
@@ -7,7 +6,7 @@ class Feature extends Equatable {
   final int end;
   final String type;
   final int strand;
-  final Color color;
+  final int color;
   final bool show;
   final String typeByOverlap;
   final String? name;

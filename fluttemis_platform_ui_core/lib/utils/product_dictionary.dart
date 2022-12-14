@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-
 import 'constants.dart';
 
-Map<Color, List<String>> productDictionary = {
+Map<int, List<String>> productDictionary = {
   colorLocusFeatureHypotheticalProduct: [
     'hypothetical',
   ],
@@ -16,7 +14,7 @@ Map<Color, List<String>> productDictionary = {
   ],
 };
 
-Map<Color, String> productDictionaryLabel = {
+Map<int, String> productDictionaryLabel = {
   colorLocusFeatureKnownProduct: 'Known',
   colorLocusFeatureHypotheticalProduct: 'Hypothetical',
   colorLocusFeaturePutativeProduct: 'Putative',

@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-
 import '../../utils/constants.dart';
 import '../../utils/product_dictionary.dart';
 
-Color colorLocusFeatureByProduct(String product) {
+int colorLocusFeatureByProduct(String product) {
   if (product.isEmpty) {
     return colorLocusFeatureNotProduct;
   }
