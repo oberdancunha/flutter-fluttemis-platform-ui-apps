@@ -198,6 +198,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Acesso rápido'**
   String get quicklyAccess;
+
+  /// No description provided for @productColorLabel.
+  ///
+  /// In pt, this message translates to:
+  /// **'Legenda de cores pelo tipo do produto'**
+  String get productColorLabel;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

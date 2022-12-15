@@ -16,5 +16,6 @@
   "tryAgain": "Tentar novamente",
   "tryAgainDescription": "Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente.",
   "fileReading": "Lendo dados do arquivo",
-  "quicklyAccess": "Acesso rápido"
+  "quicklyAccess": "Acesso rápido",
+  "productColorLabel": "Legenda de cores pelo tipo do produto"
 }

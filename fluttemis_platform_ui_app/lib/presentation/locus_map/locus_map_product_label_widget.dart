@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/utils/product_dictionary.dart';
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/color/platform_color.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/container/platform_container_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
@@ -14,8 +15,8 @@ class LocusMapProductLabelWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const PlatformTextWidget(
-              'Product color label',
+            PlatformTextWidget(
+              FluttemisAppLocalizations.of(context)!.productColorLabel,
               textType: TextType.subTitle,
               fontSize: 17.5,
             ),

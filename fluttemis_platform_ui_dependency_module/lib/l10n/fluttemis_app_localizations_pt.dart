@@ -57,4 +57,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get quicklyAccess => 'Acesso rápido';
+
+  @override
+  String get productColorLabel => 'Legenda de cores pelo tipo do produto';
 }
