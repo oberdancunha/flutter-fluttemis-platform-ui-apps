@@ -10,20 +10,15 @@ class MenuToolsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const MenuTitleWidget(),
-          Expanded(
-            child: GridView.count(
-              primary: true,
-              crossAxisCount: 5,
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
-              padding: const EdgeInsets.all(20),
-              children: [
-                GenbankToolWidget(
-                  filePicker: Modular.get<IFilePicker>(),
-                ),
-              ],
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 240,
+            width: 240,
+            child: GenbankToolWidget(
+              filePicker: Modular.get<IFilePicker>(),
             ),
           ),
         ],

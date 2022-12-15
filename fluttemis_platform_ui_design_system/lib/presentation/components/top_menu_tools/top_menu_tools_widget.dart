@@ -15,7 +15,7 @@ class TopMenuToolsWidget extends StatelessWidget {
     final accessHistoryToolWidget = Modular.get<AccessHistoryStore>().value.accessHistoryTool;
 
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.12,
+      height: 90,
       width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -25,7 +25,7 @@ class TopMenuToolsWidget extends StatelessWidget {
             child: PlatformTextWidget(
               FluttemisAppLocalizations.of(context)!.quicklyAccess,
               textType: TextType.subTitle,
-              fontSize: MediaQuery.of(context).size.width * 0.016,
+              fontSize: 20,
             ),
           ),
           Row(

@@ -9,11 +9,13 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
     WindowsIconButtonWidget, MaterialIconButtonWidget> {
   final Widget icon;
   final String label;
+  final double fontSize;
   final VoidCallback onPressed;
 
   const PlatformIconButtonWidget({
     required this.icon,
     required this.label,
+    required this.fontSize,
     required this.onPressed,
     super.key,
   });
@@ -22,6 +24,7 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
   MacosIconButtonWidget buildMacosWidget() => MacosIconButtonWidget(
         icon: icon,
         label: label,
+        fontSize: fontSize,
         onPressed: onPressed,
       );
 
@@ -29,6 +32,7 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
   WindowsIconButtonWidget buildWindowsWidget() => WindowsIconButtonWidget(
         icon: icon,
         label: label,
+        fontSize: fontSize,
         onPressed: onPressed,
       );
 
@@ -36,6 +40,7 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
   MaterialIconButtonWidget buildMaterialWidget() => MaterialIconButtonWidget(
         icon: icon,
         label: label,
+        fontSize: fontSize,
         onPressed: onPressed,
       );
 }

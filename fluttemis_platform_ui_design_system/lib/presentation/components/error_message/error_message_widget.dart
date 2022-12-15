@@ -27,7 +27,6 @@ class ErrorMessageWidget extends StatelessWidget {
       children: [
         SizedBox(
           height: MediaQuery.of(context).size.height * 0.5,
-          width: MediaQuery.of(context).size.width,
           child: Center(
             child: ErrorMessageTextWidget(
               failure: failure,
@@ -37,7 +36,7 @@ class ErrorMessageWidget extends StatelessWidget {
         PlatformTextWidget(
           FluttemisAppLocalizations.of(context)!.nextOptionInError,
           textType: TextType.subTitle,
-          fontSize: MediaQuery.of(context).size.width / 60,
+          fontSize: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,11 +45,11 @@ class ErrorMessageWidget extends StatelessWidget {
               ErrorRecoveryOptionWidget(
                 child: accessHistoryToolWidget,
               ),
-              SizedBox(width: MediaQuery.of(context).size.width / 40),
+              const SizedBox(width: 20),
             ],
             const ErrorRecoveryOptionWidget(child: MenuToolWidget()),
             if (failure.tryAgain) ...[
-              SizedBox(width: MediaQuery.of(context).size.width / 40),
+              const SizedBox(width: 20),
               const ErrorRecoveryOptionWidget(child: RecoveryToolWidget()),
             ],
           ],

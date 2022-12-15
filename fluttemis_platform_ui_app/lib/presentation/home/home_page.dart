@@ -6,9 +6,16 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) => const PlatformScaffoldWidget(
-        body: Center(
-          child: MenuToolsWidget(),
+  Widget build(BuildContext context) => PlatformScaffoldWidget(
+        body: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          child: const Padding(
+            padding: EdgeInsets.all(20),
+            child: Center(
+              child: MenuToolsWidget(),
+            ),
+          ),
         ),
       );
 }

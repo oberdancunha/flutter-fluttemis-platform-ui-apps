@@ -28,12 +28,12 @@ class ResourceDetailsWidget extends StatelessWidget {
                     resourceType: accessHistory.resourceType!,
                   ),
                   textType: TextType.subTitle,
-                  fontSize: MediaQuery.of(context).size.width * 0.01,
+                  fontSize: 13,
                 ),
                 PlatformTextWidget(
                   " ${accessHistory.resourceDescription!}",
                   textType: TextType.title,
-                  fontSize: MediaQuery.of(context).size.width * 0.01,
+                  fontSize: 13,
                 ),
               ],
             );

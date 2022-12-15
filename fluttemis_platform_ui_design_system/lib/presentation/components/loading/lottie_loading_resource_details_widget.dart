@@ -17,7 +17,7 @@ class LottieLoadingResourceDetailsWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const LottieLoadingWidget(lottieJsonFile: 'assets/lotties/dna-loader.json'),
-          SizedBox(height: MediaQuery.of(context).size.height * 0.03),
+          const SizedBox(height: 25),
           ResourceDetailsWidget(accessHistoryStore: accessHistoryStore),
         ],
       );

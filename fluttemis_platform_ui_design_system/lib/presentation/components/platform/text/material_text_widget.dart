@@ -34,7 +34,7 @@ class MaterialTextWidget extends PlatformTextWidget {
               fontSize: fontSize,
             );
       case TextType.error:
-        return Theme.of(context).textTheme.bodyText1!.copyWith(
+        return Theme.of(context).textTheme.displaySmall!.copyWith(
               color: Theme.of(context).errorColor,
               fontSize: fontSize,
             );

@@ -9,13 +9,12 @@ class MenuTitleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        height: MediaQuery.of(context).size.height / 10,
-        width: MediaQuery.of(context).size.width,
+        height: 50,
         child: Center(
           child: PlatformTextWidget(
             FluttemisAppLocalizations.of(context)!.mainMenu,
             textType: TextType.mainTitle,
-            fontSize: MediaQuery.of(context).size.width / 35,
+            fontSize: 30,
           ),
         ),
       );

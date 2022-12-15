@@ -22,35 +22,33 @@ class ErrorMessageTextWidget extends StatelessWidget {
     final errorMessageModel = _getErrorWidgetByType(context);
 
     return PlatformContainerWidget(
-      height: MediaQuery.of(context).size.height / 10,
-      width: MediaQuery.of(context).size.width / 3,
+      height: 75,
+      width: 420,
       containerType: ContainerType.error,
-      child: LayoutBuilder(
-        builder: (_, constraints) => Row(
-          children: [
-            SizedBox(
-              width: constraints.maxWidth / 6,
-              child: Center(
-                child: Image.asset(
-                  'assets/images/file_error/${errorMessageModel.image}',
-                  width: constraints.maxWidth / 10,
-                ),
+      child: Row(
+        children: [
+          SizedBox(
+            width: 70,
+            child: Center(
+              child: Image.asset(
+                'assets/images/file_error/${errorMessageModel.image}',
+                width: 45,
               ),
             ),
-            PlatformContainerWidget(
-              height: constraints.maxHeight * 0.85,
-              width: 1,
+          ),
+          const PlatformContainerWidget(
+            height: 68,
+            width: 1,
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: PlatformTextWidget(
+              errorMessageModel.message,
+              textType: TextType.error,
+              fontSize: 14,
             ),
-            SizedBox(width: constraints.maxWidth / 25),
-            Expanded(
-              child: PlatformTextWidget(
-                errorMessageModel.message,
-                textType: TextType.error,
-                fontSize: constraints.maxWidth / 31,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

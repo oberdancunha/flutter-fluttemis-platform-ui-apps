@@ -15,13 +15,13 @@ class LocusMapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.005),
+        padding: const EdgeInsets.all(7),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const TopMenuToolsWidget(),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.025),
-            const LocusMapWidget(),
+          children: const [
+            TopMenuToolsWidget(),
+            SizedBox(height: 15),
+            LocusMapWidget(),
           ],
         ),
       );

@@ -48,7 +48,7 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
           final aspectRatioElementToEntireScreen =
               constraints.maxWidth / MediaQuery.of(context).size.width;
 
-          return aspectRatioElementToEntireScreen > 0.1
+          return aspectRatioElementToEntireScreen > 0.11
               ? platformToolCardWidget
               : platformToolIconWidget;
         },

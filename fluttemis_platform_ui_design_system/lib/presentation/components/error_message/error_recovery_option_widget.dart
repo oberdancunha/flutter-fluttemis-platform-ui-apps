@@ -10,8 +10,8 @@ class ErrorRecoveryOptionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        height: MediaQuery.of(context).size.height / 4,
-        width: MediaQuery.of(context).size.width / 7,
+        height: 230,
+        width: 230,
         child: child,
       );
 }

@@ -9,18 +9,16 @@ class LocusMapWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Center(
         child: SizedBox(
-          height: MediaQuery.of(context).size.height * 0.4,
+          height: 300,
           width: MediaQuery.of(context).size.width * 0.98,
-          child: LayoutBuilder(
-            builder: (_, constraints) => PlatformCardWidget(
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: constraints.maxHeight * 0.3,
-                    child: const LocusMapProductLabelWidget(),
-                  ),
-                ],
-              ),
+          child: PlatformCardWidget(
+            child: Column(
+              children: const [
+                SizedBox(
+                  height: 90,
+                  child: LocusMapProductLabelWidget(),
+                ),
+              ],
             ),
           ),
         ),

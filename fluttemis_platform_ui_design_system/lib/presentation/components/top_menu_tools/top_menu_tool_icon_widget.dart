@@ -10,7 +10,7 @@ class TopMenuToolIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        width: MediaQuery.of(context).size.width * 0.08,
+        width: 105,
         child: child,
       );
 }

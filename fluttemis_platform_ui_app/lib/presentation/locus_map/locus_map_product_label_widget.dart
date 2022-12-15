@@ -9,49 +9,44 @@ class LocusMapProductLabelWidget extends StatelessWidget {
   const LocusMapProductLabelWidget({super.key});
 
   @override
-  Widget build(BuildContext context) => LayoutBuilder(
-        builder: (_, constraints) => SizedBox(
-          width: constraints.maxWidth,
-          child: Padding(
-            padding: EdgeInsets.all(constraints.maxWidth * 0.009),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                PlatformTextWidget(
-                  'Product color label',
-                  textType: TextType.subTitle,
-                  fontSize: constraints.maxWidth * 0.014,
-                ),
-                SizedBox(height: constraints.maxHeight * 0.1),
-                Row(
-                  children: productDictionaryLabel.keys
-                      .map<Widget>(
-                        (productLabelColor) => Row(
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const PlatformTextWidget(
+              'Product color label',
+              textType: TextType.subTitle,
+              fontSize: 17.5,
+            ),
+            const SizedBox(height: 9),
+            Row(
+              children: productDictionaryLabel.keys
+                  .map<Widget>(
+                    (productLabelColor) => Row(
+                      children: [
+                        Column(
                           children: [
-                            Column(
-                              children: [
-                                PlatformTextWidget(
-                                  '${productDictionaryLabel[productLabelColor]} product',
-                                  textType: TextType.subTitle,
-                                  fontSize: constraints.maxWidth * 0.009,
-                                ),
-                                SizedBox(height: constraints.maxHeight * 0.1),
-                                PlatformContainerWidget(
-                                  width: constraints.maxWidth * 0.08,
-                                  height: constraints.maxHeight * 0.03,
-                                  backgroundColor: getPlatformColor(productLabelColor),
-                                ),
-                              ],
+                            PlatformTextWidget(
+                              '${productDictionaryLabel[productLabelColor]} product',
+                              textType: TextType.subTitle,
+                              fontSize: 12,
                             ),
-                            SizedBox(width: constraints.maxWidth * 0.02),
+                            const SizedBox(height: 9),
+                            PlatformContainerWidget(
+                              width: 100,
+                              height: 2.5,
+                              backgroundColor: getPlatformColor(productLabelColor),
+                            ),
                           ],
                         ),
-                      )
-                      .toList(),
-                ),
-              ],
+                        const SizedBox(width: 25),
+                      ],
+                    ),
+                  )
+                  .toList(),
             ),
-          ),
+          ],
         ),
       );
 }
