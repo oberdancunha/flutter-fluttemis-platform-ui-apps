@@ -3,12 +3,12 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:fluttemis_platform_ui_design_system/presentation/components/top_menu_tools/top_menu_tools_widget.dart';
 import 'package:flutter/widgets.dart';
 
-import 'locus_map_widget.dart';
+import 'locus_map/locus_map_widget.dart';
 
-class LocusMapPage extends StatelessWidget {
+class LocusPage extends StatelessWidget {
   final KtList<Locus> locus;
 
-  const LocusMapPage({
+  const LocusPage({
     required this.locus,
     super.key,
   });

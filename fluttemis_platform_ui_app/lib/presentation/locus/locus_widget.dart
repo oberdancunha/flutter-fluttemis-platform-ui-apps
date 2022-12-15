@@ -5,7 +5,7 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/load
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scaffold/platform_scaffold_widget.dart';
 import 'package:flutter/widgets.dart';
 
-import 'locus_map/locus_map_page.dart';
+import 'locus_page.dart';
 
 class LocusWidget extends StatefulWidget {
   final LocusStore locusStore;
@@ -44,7 +44,7 @@ class _LocusWidgetState extends State<LocusWidget> {
                 return ErrorMessageWidget(failure: locusState.failure!);
               }
 
-              return LocusMapPage(locus: locusState.locus);
+              return LocusPage(locus: locusState.locus);
             },
           ),
         ),
