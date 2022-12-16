@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
+import 'package:fluttemis_platform_ui_core/utils/custom_date_format.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_list_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_model.dart';
@@ -39,7 +40,11 @@ class GenomeOverviewWidget extends StatelessWidget {
             ),
           if (locus.releaseDate != null)
             OverviewDataModel(
-              value: locus.releaseDate!,
+              value: DateFormat.yMMMMd(FluttemisAppLocalizations.of(context)!.localeName).format(
+                DateTime.parse(
+                  CustomDateFormat.yMd(locus.releaseDate!).dateFormatted,
+                ),
+              ),
               description: FluttemisAppLocalizations.of(context)!.annotationDate,
               image: 'assets/images/data/genome_date.png',
             ),
