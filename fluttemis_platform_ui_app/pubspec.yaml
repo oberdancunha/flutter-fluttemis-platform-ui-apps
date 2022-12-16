@@ -73,6 +73,11 @@ flutter:
     - assets/images/file_error/file_unexpected_error.png
     - assets/images/menu.png
     - assets/images/recovery.png
+    - assets/images/data/genome.png
+    - assets/images/data/dna.png
+    - assets/images/data/genome_type.png
+    - assets/images/data/genome_shape.png
+    - assets/images/data/genome_date.png
     - assets/lotties/dna-loader.json
   #   - images/a_dot_ham.jpeg
 
