@@ -15,29 +15,29 @@ class MacosTextWidget extends PlatformTextWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: getTextStyle(context, textType),
+        style: getTextStyle(context, textType).copyWith(
+          fontSize: fontSize,
+        ),
       );
 
   @override
   TextStyle getTextStyle(BuildContext context, TextType textType) {
     switch (textType) {
       case TextType.mainTitle:
-        return MacosTheme.of(context).typography.title1.copyWith(
-              fontSize: fontSize,
-            );
+        return MacosTheme.of(context).typography.title1.copyWith();
       case TextType.title:
         return MacosTheme.of(context).typography.title1.copyWith(
               color: MacosTheme.of(context).primaryColor,
-              fontSize: fontSize,
             );
       case TextType.subTitle:
-        return MacosTheme.of(context).typography.title2.copyWith(
-              fontSize: fontSize,
-            );
+        return MacosTheme.of(context).typography.title2.copyWith();
       case TextType.error:
         return MacosTheme.of(context).typography.title3.copyWith(
               color: MacosColors.appleRed,
-              fontSize: fontSize,
+            );
+      case TextType.caption:
+        return MacosTheme.of(context).typography.caption1.copyWith(
+              color: MacosColors.systemGrayColor,
             );
     }
   }

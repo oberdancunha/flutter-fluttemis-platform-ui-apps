@@ -14,29 +14,29 @@ class WindowsTextWidget extends PlatformTextWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: getTextStyle(context, textType),
+        style: getTextStyle(context, textType).copyWith(
+          fontSize: fontSize,
+        ),
       );
 
   @override
   TextStyle getTextStyle(BuildContext context, TextType textType) {
     switch (textType) {
       case TextType.mainTitle:
-        return FluentTheme.of(context).typography.title!.copyWith(
-              fontSize: fontSize,
-            );
+        return FluentTheme.of(context).typography.title!;
       case TextType.title:
         return FluentTheme.of(context).typography.title!.copyWith(
               color: FluentTheme.of(context).accentColor,
-              fontSize: fontSize,
             );
       case TextType.subTitle:
-        return FluentTheme.of(context).typography.subtitle!.copyWith(
-              fontSize: fontSize,
-            );
+        return FluentTheme.of(context).typography.subtitle!.copyWith();
       case TextType.error:
         return FluentTheme.of(context).typography.body!.copyWith(
               color: Colors.red,
-              fontSize: fontSize,
+            );
+      case TextType.caption:
+        return FluentTheme.of(context).typography.caption!.copyWith(
+              color: Colors.grey[90],
             );
     }
   }

@@ -14,29 +14,29 @@ class MaterialTextWidget extends PlatformTextWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: getTextStyle(context, textType),
+        style: getTextStyle(context, textType).copyWith(
+          fontSize: fontSize,
+        ),
       );
 
   @override
   TextStyle getTextStyle(BuildContext context, TextType textType) {
     switch (textType) {
       case TextType.mainTitle:
-        return Theme.of(context).textTheme.titleLarge!.copyWith(
-              fontSize: fontSize,
-            );
+        return Theme.of(context).textTheme.titleLarge!.copyWith();
       case TextType.title:
         return Theme.of(context).textTheme.titleLarge!.copyWith(
               color: Theme.of(context).primaryColor,
-              fontSize: fontSize,
             );
       case TextType.subTitle:
-        return Theme.of(context).textTheme.subtitle1!.copyWith(
-              fontSize: fontSize,
-            );
+        return Theme.of(context).textTheme.subtitle1!.copyWith();
       case TextType.error:
         return Theme.of(context).textTheme.displaySmall!.copyWith(
               color: Theme.of(context).errorColor,
-              fontSize: fontSize,
+            );
+      case TextType.caption:
+        return Theme.of(context).textTheme.caption!.copyWith(
+              color: Colors.grey.shade500,
             );
     }
   }
