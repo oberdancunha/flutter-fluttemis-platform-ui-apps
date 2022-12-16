@@ -60,4 +60,22 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get productColorLabel => 'Legenda de cores pelo tipo do produto';
+
+  @override
+  String get genomeOverview => 'Dados gerais do genoma';
+
+  @override
+  String get organismName => 'Nome do organismo sequenciado';
+
+  @override
+  String get genomeLength => 'Bases de dna do organismo sequenciado';
+
+  @override
+  String get genomeType => 'Tipo de genoma';
+
+  @override
+  String get genomeShape => 'Forma do genoma';
+
+  @override
+  String get annotationDate => 'Data da anotação';
 }

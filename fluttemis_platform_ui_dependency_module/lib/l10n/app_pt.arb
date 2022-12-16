@@ -17,5 +17,11 @@
   "tryAgainDescription": "Caso desconfie de que o erro tenha acontecido por alguma instabilidade do momento, você pode tentar realizar essa tarefa novamente.",
   "fileReading": "Lendo dados do arquivo",
   "quicklyAccess": "Acesso rápido",
-  "productColorLabel": "Legenda de cores pelo tipo do produto"
+  "productColorLabel": "Legenda de cores pelo tipo do produto",
+  "genomeOverview": "Dados gerais do genoma",
+  "organismName": "Nome do organismo sequenciado",
+  "genomeLength": "Bases de dna do organismo sequenciado",
+  "genomeType": "Tipo de genoma",
+  "genomeShape": "Forma do genoma",
+  "annotationDate": "Data da anotação"
 }

@@ -204,6 +204,42 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Legenda de cores pelo tipo do produto'**
   String get productColorLabel;
+
+  /// No description provided for @genomeOverview.
+  ///
+  /// In pt, this message translates to:
+  /// **'Dados gerais do genoma'**
+  String get genomeOverview;
+
+  /// No description provided for @organismName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome do organismo sequenciado'**
+  String get organismName;
+
+  /// No description provided for @genomeLength.
+  ///
+  /// In pt, this message translates to:
+  /// **'Bases de dna do organismo sequenciado'**
+  String get genomeLength;
+
+  /// No description provided for @genomeType.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tipo de genoma'**
+  String get genomeType;
+
+  /// No description provided for @genomeShape.
+  ///
+  /// In pt, this message translates to:
+  /// **'Forma do genoma'**
+  String get genomeShape;
+
+  /// No description provided for @annotationDate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Data da anotação'**
+  String get annotationDate;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

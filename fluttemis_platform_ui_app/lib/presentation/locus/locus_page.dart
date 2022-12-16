@@ -4,6 +4,7 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/top_
 import 'package:flutter/widgets.dart';
 
 import 'locus_map/locus_map_widget.dart';
+import 'locus_resume/genome_overview_widget.dart';
 
 class LocusPage extends StatelessWidget {
   final KtList<Locus> locus;
@@ -18,10 +19,16 @@ class LocusPage extends StatelessWidget {
         padding: const EdgeInsets.all(7),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            TopMenuToolsWidget(),
-            SizedBox(height: 15),
-            LocusMapWidget(),
+          children: [
+            const TopMenuToolsWidget(),
+            const SizedBox(height: 15),
+            const LocusMapWidget(),
+            const SizedBox(height: 15),
+            Expanded(
+              child: GenomeOverviewWidget(
+                locus: locus.elementAt(0),
+              ),
+            ),
           ],
         ),
       );
