@@ -37,7 +37,7 @@ class OverviewDataWidget extends StatelessWidget {
                     children: [
                       PlatformTextWidget(
                         value,
-                        textType: TextType.subTitle,
+                        textType: TextType.label,
                         fontSize: 13,
                       ),
                       PlatformTextWidget(

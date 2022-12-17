@@ -30,7 +30,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
                           children: [
                             PlatformTextWidget(
                               '${productDictionaryLabel[productLabelColor]} product',
-                              textType: TextType.subTitle,
+                              textType: TextType.label,
                               fontSize: 12,
                             ),
                             const SizedBox(height: 9),
