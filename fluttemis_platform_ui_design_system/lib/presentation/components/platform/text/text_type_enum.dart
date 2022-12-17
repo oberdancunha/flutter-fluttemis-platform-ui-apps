@@ -4,4 +4,5 @@ enum TextType {
   subTitle,
   error,
   caption,
+  label,
 }

@@ -38,6 +38,10 @@ class WindowsTextWidget extends PlatformTextWidget {
         return FluentTheme.of(context).typography.caption!.copyWith(
               color: Colors.grey[90],
             );
+      case TextType.label:
+        return FluentTheme.of(context).typography.caption!.copyWith(
+              color: Colors.grey[160],
+            );
     }
   }
 }

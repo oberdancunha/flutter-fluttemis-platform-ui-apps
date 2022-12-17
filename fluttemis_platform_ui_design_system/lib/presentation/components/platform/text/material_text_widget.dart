@@ -38,6 +38,10 @@ class MaterialTextWidget extends PlatformTextWidget {
         return Theme.of(context).textTheme.caption!.copyWith(
               color: Colors.grey.shade500,
             );
+      case TextType.label:
+        return Theme.of(context).textTheme.caption!.copyWith(
+              color: Colors.grey.shade800,
+            );
     }
   }
 }
