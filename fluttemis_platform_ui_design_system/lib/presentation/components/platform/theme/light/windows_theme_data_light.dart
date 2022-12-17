@@ -4,7 +4,8 @@ final windowsThemeDataLight = ThemeData.light().copyWith(
   scaffoldBackgroundColor: const Color.fromARGB(255, 241, 241, 241),
   accentColor: Colors.magenta,
   cardColor: Colors.white,
-  shadowColor: Colors.grey,
+  shadowColor: const Color.fromARGB(255, 104, 104, 104),
+  borderInputColor: const Color.fromARGB(255, 111, 111, 111),
   buttonTheme: ButtonThemeData(
     defaultButtonStyle: ButtonStyle(
       border: ButtonState.all(

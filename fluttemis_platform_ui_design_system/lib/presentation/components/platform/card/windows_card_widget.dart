@@ -13,6 +13,7 @@ class WindowsCardWidget extends PlatformCardWidget {
   Widget build(BuildContext context) => WindowsContainerWidget(
         backgroundColor: FluentTheme.of(context).cardColor,
         shadowColor: FluentTheme.of(context).shadowColor,
+        borderColor: FluentTheme.of(context).borderInputColor,
         child: child,
       );
 }

@@ -11,9 +11,11 @@ class WindowsContainerWidget extends PlatformContainerWidget {
     super.backgroundColor,
     super.shadowColor,
     super.containerType,
+    super.borderColor,
     super.key,
   });
 
+  @override
   @override
   Widget build(BuildContext context) => Container(
         height: height ?? 0,
@@ -26,6 +28,9 @@ class WindowsContainerWidget extends PlatformContainerWidget {
               blurRadius: 4,
             ),
           ],
+          border: Border.all(
+            color: borderColor ?? const Color(0x00000000),
+          ),
         ),
         child: child,
       );
