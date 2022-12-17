@@ -65,10 +65,10 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get genomeOverview => 'Dados gerais do genoma';
 
   @override
-  String get organismName => 'Nome do organismo sequenciado';
+  String get genomeCodeAccession => 'Código de acesso de anotação do genoma';
 
   @override
-  String get genomeLength => 'Bases de dna do organismo sequenciado';
+  String get genomeLength => 'Quantidade de bases de dna do genoma';
 
   @override
   String get genomeType => 'Tipo de genoma';
@@ -77,5 +77,8 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get genomeShape => 'Forma do genoma';
 
   @override
-  String get annotationDate => 'Data da anotação';
+  String get annotationDate => 'Data em que a anotação tornou-se pública';
+
+  @override
+  String get locusOverview => 'Dados gerais dos locus';
 }

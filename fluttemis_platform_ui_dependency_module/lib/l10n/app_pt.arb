@@ -19,9 +19,10 @@
   "quicklyAccess": "Acesso rápido",
   "productColorLabel": "Legenda de cores pelo tipo do produto",
   "genomeOverview": "Dados gerais do genoma",
-  "organismName": "Nome do organismo sequenciado",
-  "genomeLength": "Bases de dna do organismo sequenciado",
+  "genomeCodeAccession": "Código de acesso de anotação do genoma",
+  "genomeLength": "Quantidade de bases de dna do genoma",
   "genomeType": "Tipo de genoma",
   "genomeShape": "Forma do genoma",
-  "annotationDate": "Data da anotação"
+  "annotationDate": "Data em que a anotação tornou-se pública",
+  "locusOverview": "Dados gerais dos locus"
 }

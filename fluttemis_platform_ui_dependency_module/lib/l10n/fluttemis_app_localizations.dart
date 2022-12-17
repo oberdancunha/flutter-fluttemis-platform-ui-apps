@@ -211,16 +211,16 @@ abstract class FluttemisAppLocalizations {
   /// **'Dados gerais do genoma'**
   String get genomeOverview;
 
-  /// No description provided for @organismName.
+  /// No description provided for @genomeCodeAccession.
   ///
   /// In pt, this message translates to:
-  /// **'Nome do organismo sequenciado'**
-  String get organismName;
+  /// **'Código de acesso de anotação do genoma'**
+  String get genomeCodeAccession;
 
   /// No description provided for @genomeLength.
   ///
   /// In pt, this message translates to:
-  /// **'Bases de dna do organismo sequenciado'**
+  /// **'Quantidade de bases de dna do genoma'**
   String get genomeLength;
 
   /// No description provided for @genomeType.
@@ -238,8 +238,14 @@ abstract class FluttemisAppLocalizations {
   /// No description provided for @annotationDate.
   ///
   /// In pt, this message translates to:
-  /// **'Data da anotação'**
+  /// **'Data em que a anotação tornou-se pública'**
   String get annotationDate;
+
+  /// No description provided for @locusOverview.
+  ///
+  /// In pt, this message translates to:
+  /// **'Dados gerais dos locus'**
+  String get locusOverview;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

@@ -19,7 +19,7 @@ class GenomeOverviewWidget extends StatelessWidget {
         listOverviewData: [
           OverviewDataModel(
             value: locus.name,
-            description: FluttemisAppLocalizations.of(context)!.organismName,
+            description: FluttemisAppLocalizations.of(context)!.genomeCodeAccession,
             image: 'assets/images/data/genome.png',
           ),
           OverviewDataModel(
