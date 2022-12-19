@@ -56,6 +56,9 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get fileReading => 'Lendo dados do arquivo';
 
   @override
+  String get apiReading => 'Lendo dados da API';
+
+  @override
   String get quicklyAccess => 'Acesso rápido';
 
   @override
@@ -63,6 +66,12 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get genomeOverview => 'Dados gerais do genoma';
+
+  @override
+  String get genomeFileName => 'Nome do arquivo';
+
+  @override
+  String get genomeApiName => 'Endereço da API';
 
   @override
   String get genomeCodeAccession => 'Código de acesso de anotação do genoma';

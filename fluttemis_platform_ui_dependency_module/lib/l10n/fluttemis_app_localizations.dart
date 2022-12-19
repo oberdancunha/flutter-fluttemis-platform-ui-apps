@@ -193,6 +193,12 @@ abstract class FluttemisAppLocalizations {
   /// **'Lendo dados do arquivo'**
   String get fileReading;
 
+  /// No description provided for @apiReading.
+  ///
+  /// In pt, this message translates to:
+  /// **'Lendo dados da API'**
+  String get apiReading;
+
   /// No description provided for @quicklyAccess.
   ///
   /// In pt, this message translates to:
@@ -210,6 +216,18 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Dados gerais do genoma'**
   String get genomeOverview;
+
+  /// No description provided for @genomeFileName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nome do arquivo'**
+  String get genomeFileName;
+
+  /// No description provided for @genomeApiName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Endereço da API'**
+  String get genomeApiName;
 
   /// No description provided for @genomeCodeAccession.
   ///
