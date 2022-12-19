@@ -50,6 +50,8 @@ class ResourceDetailsWidget extends StatelessWidget {
     switch (resourceType) {
       case AccessHistoryResourceTypes.file:
         return FluttemisAppLocalizations.of(context)!.fileReading;
+      case AccessHistoryResourceTypes.api:
+        return FluttemisAppLocalizations.of(context)!.apiReading;
     }
   }
 }

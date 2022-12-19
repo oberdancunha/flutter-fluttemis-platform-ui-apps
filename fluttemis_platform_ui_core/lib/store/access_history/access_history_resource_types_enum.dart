@@ -1,3 +1,4 @@
 enum AccessHistoryResourceTypes {
   file,
+  api,
 }
