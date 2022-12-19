@@ -31,21 +31,28 @@ class OverviewDataWidget extends StatelessWidget {
                     width: 35,
                   ),
                   const SizedBox(width: 8),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      PlatformTextWidget(
-                        value,
-                        textType: TextType.label,
-                        fontSize: 13,
-                      ),
-                      PlatformTextWidget(
-                        description,
-                        textType: TextType.caption,
-                        fontSize: 10,
-                      ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SingleChildScrollView(
+                          physics: const ClampingScrollPhysics(),
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: PlatformTextWidget(
+                            value,
+                            textType: TextType.label,
+                            fontSize: 13,
+                          ),
+                        ),
+                        PlatformTextWidget(
+                          description,
+                          textType: TextType.caption,
+                          fontSize: 10,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
