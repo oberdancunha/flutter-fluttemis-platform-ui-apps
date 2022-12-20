@@ -10,6 +10,12 @@ final materialThemeDataLight = ThemeData.light().copyWith(
       backgroundColor: MaterialStateProperty.all(Colors.blue.shade800),
     ),
   ),
+  scrollbarTheme: const ScrollbarThemeData().copyWith(
+    thumbVisibility: MaterialStateProperty.all(true),
+    thickness: MaterialStateProperty.all(5),
+    crossAxisMargin: 0,
+    mainAxisMargin: 0,
+  ),
   useMaterial3: true,
   extensions: <ThemeExtension<FluttemisMaterialThemeExtension>>[
     FluttemisMaterialThemeExtension(

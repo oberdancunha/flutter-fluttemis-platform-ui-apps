@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
 final macosThemeDataLight = MacosThemeData.light().copyWith(
@@ -5,5 +6,13 @@ final macosThemeDataLight = MacosThemeData.light().copyWith(
   canvasColor: MacosColors.white,
   pushButtonTheme: const PushButtonThemeData(
     color: MacosColors.appleBlue,
+  ),
+  scrollbarTheme: const MacosScrollbarThemeData().copyWith(
+    radius: const Radius.elliptical(2, 2),
+    isAlwaysShown: true,
+    thickness: 5,
+    hoveringThickness: 5,
+    crossAxisMargin: 0,
+    mainAxisMargin: 0,
   ),
 );

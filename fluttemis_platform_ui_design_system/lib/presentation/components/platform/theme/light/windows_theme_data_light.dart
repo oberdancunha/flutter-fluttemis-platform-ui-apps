@@ -17,4 +17,16 @@ final windowsThemeDataLight = ThemeData.light().copyWith(
       foregroundColor: ButtonState.all(Colors.grey),
     ),
   ),
+  scrollbarTheme: const ScrollbarThemeData(
+    radius: Radius.zero,
+    hoveringRadius: Radius.zero,
+    thickness: 5,
+    hoveringThickness: 5,
+    hoveringPadding: EdgeInsets.zero,
+    padding: EdgeInsets.zero,
+    hoveringCrossAxisMargin: 0,
+    crossAxisMargin: 0,
+    hoveringMainAxisMargin: 0,
+    mainAxisMargin: 0,
+  ),
 );
