@@ -4,7 +4,7 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/over
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/card/platform_card_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class LocusFeaturesOverviewWidget extends StatelessWidget {
   final int total;
