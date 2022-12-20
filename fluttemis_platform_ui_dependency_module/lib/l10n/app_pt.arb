@@ -27,5 +27,8 @@
   "genomeType": "Tipo de genoma",
   "genomeShape": "Forma do genoma",
   "annotationDate": "Data em que a anotação tornou-se pública",
-  "locusOverview": "Dados gerais dos locus"
+  "locusOverview": "Dados gerais dos locus",
+  "totalLocus": "Total de locus",
+  "totalTypeLocus": "Total de tipos de locus",
+  "countTypeLocus": "Total de locus por tipo"
 }

@@ -5,6 +5,8 @@ import 'package:flutter/widgets.dart';
 
 import 'locus_map/locus_map_widget.dart';
 import 'locus_resume/genome_overview_widget.dart';
+import 'locus_resume/locus_features_overview_widget.dart';
+import 'locus_resume/locus_products_overview_widget.dart';
 
 class LocusPage extends StatelessWidget {
   final KtList<Locus> locus;
@@ -25,8 +27,19 @@ class LocusPage extends StatelessWidget {
             const LocusMapWidget(),
             const SizedBox(height: 15),
             Expanded(
-              child: GenomeOverviewWidget(
-                locus: locus.elementAt(0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GenomeOverviewWidget(locus: locus.elementAt(0)),
+                  LocusFeaturesOverviewWidget(
+                    total: locus.elementAt(0).features.count(),
+                    featuresTypesCount: locus.elementAt(0).featuresReport.featuresTypesCount,
+                  ),
+                  LocusProductsOverviewWidget(
+                    featuresTypesProductsCount:
+                        locus.elementAt(0).featuresReport.featuresTypesProductsCount,
+                  ),
+                ],
               ),
             ),
           ],

@@ -82,6 +82,7 @@ flutter:
     - assets/images/data/genome_date.png
     - assets/images/data/total_locus.png
     - assets/images/data/total_locus_types.png
+    - assets/images/data/count_type_locus.png
     - assets/lotties/dna-loader.json
   #   - images/a_dot_ham.jpeg
 
