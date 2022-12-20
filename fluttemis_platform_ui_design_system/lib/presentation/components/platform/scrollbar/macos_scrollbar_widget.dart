@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import 'platform_scrollbar_widger.dart';
+import 'platform_scrollbar_widget.dart';
 
 class MacosScrollbarWidget extends PlatformScrollbarWidget {
   const MacosScrollbarWidget({

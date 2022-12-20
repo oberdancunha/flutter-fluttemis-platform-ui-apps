@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'platform_scrollbar_widger.dart';
+import 'platform_scrollbar_widget.dart';
 
 class MaterialScrollbarWidget extends PlatformScrollbarWidget {
   const MaterialScrollbarWidget({

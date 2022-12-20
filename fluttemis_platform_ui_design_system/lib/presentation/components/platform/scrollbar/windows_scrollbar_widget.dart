@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-import 'platform_scrollbar_widger.dart';
+import 'platform_scrollbar_widget.dart';
 
 class WindowsScrollbarWidget extends PlatformScrollbarWidget {
   const WindowsScrollbarWidget({
