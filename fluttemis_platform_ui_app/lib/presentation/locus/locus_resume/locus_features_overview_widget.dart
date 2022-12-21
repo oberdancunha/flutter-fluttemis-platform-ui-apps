@@ -34,7 +34,7 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
           OverviewMultipleDataListWidget(
             title: FluttemisAppLocalizations.of(context)!.countTypeLocus,
             children: featuresTypesCount.keys
-                .map<Widget>(
+                .map(
                   (featureType) => OverviewMultipleDataItemWidget(
                     value: featuresTypesCount[featureType].toString(),
                     label: featureType,
