@@ -38,6 +38,11 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
                   (featureType) => OverviewMultipleDataItemWidget(
                     value: featuresTypesCount[featureType].toString(),
                     label: featureType,
+                    representativeWidget: Image.asset(
+                      'assets/images/data/count_type_locus.png',
+                      width: 30,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 )
                 .toList(),

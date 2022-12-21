@@ -6,10 +6,12 @@ import '../platform/text/text_type_enum.dart';
 class OverviewMultipleDataItemWidget extends StatelessWidget {
   final String value;
   final String label;
+  final Widget representativeWidget;
 
   const OverviewMultipleDataItemWidget({
     required this.value,
     required this.label,
+    required this.representativeWidget,
     super.key,
   });
 
@@ -18,11 +20,7 @@ class OverviewMultipleDataItemWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            'assets/images/data/count_type_locus.png',
-            width: 30,
-            fit: BoxFit.cover,
-          ),
+          representativeWidget,
           const SizedBox(width: 5),
           Expanded(
             child: Column(
