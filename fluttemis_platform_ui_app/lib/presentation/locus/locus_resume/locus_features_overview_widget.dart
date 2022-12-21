@@ -73,7 +73,7 @@ class _LocusFeaturesOverviewWidgetState extends State<LocusFeaturesOverviewWidge
                           crossAxisCount: 3,
                           mainAxisSpacing: 20,
                           physics: const ClampingScrollPhysics(),
-                          childAspectRatio: 2.4,
+                          childAspectRatio: 2.23,
                           controller: _scrollController,
                           padding: const EdgeInsets.only(right: 6),
                           children: widget.featuresTypesCount.keys
