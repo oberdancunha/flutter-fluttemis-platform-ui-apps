@@ -28,7 +28,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
         ],
         widgets: [
           OverviewMultipleDataListWidget(
-            title: FluttemisAppLocalizations.of(context)!.countProductLocus,
+            title: FluttemisAppLocalizations.of(context)!.countTypeProducts,
             children: featuresTypesProductsCount.keys
                 .map(
                   (productType) => OverviewMultipleDataItemWidget(

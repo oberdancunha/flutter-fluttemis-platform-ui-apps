@@ -17,22 +17,22 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => OverviewDataListWidget(
-        title: FluttemisAppLocalizations.of(context)!.locusOverview,
+        title: FluttemisAppLocalizations.of(context)!.featuresOverview,
         listOverviewData: [
           OverviewDataModel(
             value: total.toString(),
-            description: FluttemisAppLocalizations.of(context)!.totalLocus,
+            description: FluttemisAppLocalizations.of(context)!.totalFeatures,
             image: 'assets/images/data/total_locus.png',
           ),
           OverviewDataModel(
             value: featuresTypesCount.length.toString(),
-            description: FluttemisAppLocalizations.of(context)!.totalTypeLocus,
+            description: FluttemisAppLocalizations.of(context)!.totalTypeFeatures,
             image: 'assets/images/data/total_locus_types.png',
           ),
         ],
         widgets: [
           OverviewMultipleDataListWidget(
-            title: FluttemisAppLocalizations.of(context)!.countTypeLocus,
+            title: FluttemisAppLocalizations.of(context)!.countTypeFeatures,
             children: featuresTypesCount.keys
                 .map(
                   (featureType) => OverviewMultipleDataItemWidget(

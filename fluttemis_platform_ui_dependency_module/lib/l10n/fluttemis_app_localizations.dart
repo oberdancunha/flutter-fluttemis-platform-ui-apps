@@ -259,29 +259,29 @@ abstract class FluttemisAppLocalizations {
   /// **'Data em que a anotação tornou-se pública'**
   String get annotationDate;
 
-  /// No description provided for @locusOverview.
+  /// No description provided for @featuresOverview.
   ///
   /// In pt, this message translates to:
-  /// **'Dados gerais dos locus'**
-  String get locusOverview;
+  /// **'Dados gerais de features'**
+  String get featuresOverview;
 
-  /// No description provided for @totalLocus.
+  /// No description provided for @totalFeatures.
   ///
   /// In pt, this message translates to:
-  /// **'Total de locus'**
-  String get totalLocus;
+  /// **'Total de features'**
+  String get totalFeatures;
 
-  /// No description provided for @totalTypeLocus.
+  /// No description provided for @totalTypeFeatures.
   ///
   /// In pt, this message translates to:
-  /// **'Total de tipos de locus'**
-  String get totalTypeLocus;
+  /// **'Total de tipos de features'**
+  String get totalTypeFeatures;
 
-  /// No description provided for @countTypeLocus.
+  /// No description provided for @countTypeFeatures.
   ///
   /// In pt, this message translates to:
-  /// **'Total de locus por tipo'**
-  String get countTypeLocus;
+  /// **'Total de features por tipo'**
+  String get countTypeFeatures;
 
   /// No description provided for @productsOverview.
   ///
@@ -295,11 +295,11 @@ abstract class FluttemisAppLocalizations {
   /// **'Total de tipos de produtos'**
   String get totalTypeProducts;
 
-  /// No description provided for @countProductLocus.
+  /// No description provided for @countTypeProducts.
   ///
   /// In pt, this message translates to:
   /// **'Total de produtos por tipo'**
-  String get countProductLocus;
+  String get countTypeProducts;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

@@ -89,16 +89,16 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get annotationDate => 'Data em que a anotação tornou-se pública';
 
   @override
-  String get locusOverview => 'Dados gerais dos locus';
+  String get featuresOverview => 'Dados gerais de features';
 
   @override
-  String get totalLocus => 'Total de locus';
+  String get totalFeatures => 'Total de features';
 
   @override
-  String get totalTypeLocus => 'Total de tipos de locus';
+  String get totalTypeFeatures => 'Total de tipos de features';
 
   @override
-  String get countTypeLocus => 'Total de locus por tipo';
+  String get countTypeFeatures => 'Total de features por tipo';
 
   @override
   String get productsOverview => 'Dados gerais dos produtos';
@@ -107,5 +107,5 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get totalTypeProducts => 'Total de tipos de produtos';
 
   @override
-  String get countProductLocus => 'Total de produtos por tipo';
+  String get countTypeProducts => 'Total de produtos por tipo';
 }
