@@ -99,4 +99,13 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get countTypeLocus => 'Total de locus por tipo';
+
+  @override
+  String get productsOverview => 'Dados gerais dos produtos';
+
+  @override
+  String get totalTypeProducts => 'Total de tipos de produtos';
+
+  @override
+  String get countProductLocus => 'Total de produtos por tipo';
 }

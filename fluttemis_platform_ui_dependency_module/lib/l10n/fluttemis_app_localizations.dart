@@ -282,6 +282,24 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Total de locus por tipo'**
   String get countTypeLocus;
+
+  /// No description provided for @productsOverview.
+  ///
+  /// In pt, this message translates to:
+  /// **'Dados gerais dos produtos'**
+  String get productsOverview;
+
+  /// No description provided for @totalTypeProducts.
+  ///
+  /// In pt, this message translates to:
+  /// **'Total de tipos de produtos'**
+  String get totalTypeProducts;
+
+  /// No description provided for @countProductLocus.
+  ///
+  /// In pt, this message translates to:
+  /// **'Total de produtos por tipo'**
+  String get countProductLocus;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

@@ -30,5 +30,8 @@
   "locusOverview": "Dados gerais dos locus",
   "totalLocus": "Total de locus",
   "totalTypeLocus": "Total de tipos de locus",
-  "countTypeLocus": "Total de locus por tipo"
+  "countTypeLocus": "Total de locus por tipo",
+  "productsOverview": "Dados gerais dos produtos",
+  "totalTypeProducts": "Total de tipos de produtos",
+  "countProductLocus": "Total de produtos por tipo"
 }
