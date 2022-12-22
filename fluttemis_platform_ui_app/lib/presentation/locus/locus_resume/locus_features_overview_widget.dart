@@ -40,7 +40,7 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
                     label: featureType,
                     representativeWidget: Image.asset(
                       'assets/images/data/count_type_locus.png',
-                      width: 30,
+                      width: 28,
                       fit: BoxFit.cover,
                     ),
                   ),
