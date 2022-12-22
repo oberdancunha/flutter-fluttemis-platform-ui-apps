@@ -29,7 +29,7 @@ class OverviewMultipleDataItemWidget extends StatelessWidget {
                 PlatformTextWidget(
                   value,
                   textType: TextType.label,
-                  fontSize: 13,
+                  fontSize: 14,
                 ),
                 SingleChildScrollView(
                   physics: const ClampingScrollPhysics(),
