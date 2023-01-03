@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+import '../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
 import 'overview_data_model.dart';
@@ -50,30 +51,38 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
               ),
             ),
             Expanded(
-              child: ListView.separated(
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
-                itemCount: _allDataWidgets.length,
-                padding: const EdgeInsets.all(5),
+              child: PlatformScrollbarWidget(
                 controller: _scrollController,
-                physics: const ClampingScrollPhysics(),
-                itemBuilder: (_, index) {
-                  final widgetData = _allDataWidgets[index];
+                child: ListView.separated(
+                  separatorBuilder: (_, __) => const SizedBox(height: 10),
+                  itemCount: _allDataWidgets.length,
+                  padding: const EdgeInsets.only(
+                    top: 5,
+                    bottom: 5,
+                    left: 5,
+                    right: 10,
+                  ),
+                  controller: _scrollController,
+                  physics: const ClampingScrollPhysics(),
+                  itemBuilder: (_, index) {
+                    final widgetData = _allDataWidgets[index];
 
-                  if (widgetData is OverviewDataModel) {
-                    return OverviewDataWidget(
-                      value: widgetData.value,
-                      description: widgetData.description,
-                      image: widgetData.image,
+                    if (widgetData is OverviewDataModel) {
+                      return OverviewDataWidget(
+                        value: widgetData.value,
+                        description: widgetData.description,
+                        image: widgetData.image,
+                      );
+                    }
+
+                    return LayoutBuilder(
+                      builder: (_, constraints) => SizedBox(
+                        width: constraints.maxWidth,
+                        child: widgetData as Widget,
+                      ),
                     );
-                  }
-
-                  return LayoutBuilder(
-                    builder: (_, constraints) => SizedBox(
-                      width: constraints.maxWidth,
-                      child: widgetData as Widget,
-                    ),
-                  );
-                },
+                  },
+                ),
               ),
             ),
           ],
