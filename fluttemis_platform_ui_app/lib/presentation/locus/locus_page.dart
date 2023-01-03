@@ -28,7 +28,7 @@ class LocusPage extends StatelessWidget {
             const SizedBox(height: 15),
             Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   GenomeOverviewWidget(locus: locus.elementAt(0)),
                   LocusFeaturesOverviewWidget(
