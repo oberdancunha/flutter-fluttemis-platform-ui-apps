@@ -6,12 +6,10 @@ import '../../domain/locus/locus.dart';
 class LocusState extends Equatable {
   final KtList<Locus> locus;
   final bool isLoading;
-  final Locus? locusToBeShown;
   final Failure? failure;
 
   const LocusState({
     required this.locus,
-    required this.locusToBeShown,
     required this.isLoading,
     required this.failure,
   });
@@ -19,7 +17,6 @@ class LocusState extends Equatable {
   factory LocusState.initial() => const LocusState(
         locus: KtList.empty(),
         isLoading: false,
-        locusToBeShown: null,
         failure: null,
       );
 
@@ -39,7 +36,6 @@ class LocusState extends Equatable {
       LocusState(
         locus: locus ?? this.locus,
         isLoading: isLoading ?? this.isLoading,
-        locusToBeShown: locusToBeShown ?? this.locusToBeShown,
         failure: failure ?? this.failure,
       );
 }

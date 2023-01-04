@@ -17,10 +17,7 @@ class LocusStore extends ValueNotifier<LocusState> {
     final locusOrFailure = await locusRepository.getLocus();
     locusOrFailure.fold(
       (failure) => value = value.copyWith(failure: failure),
-      (locus) => value = value.copyWith(
-        locus: locus,
-        locusToBeShown: locus.get(0),
-      ),
+      (locus) => value = value.copyWith(locus: locus),
     );
     value = value.copyWith(
       isLoading: false,

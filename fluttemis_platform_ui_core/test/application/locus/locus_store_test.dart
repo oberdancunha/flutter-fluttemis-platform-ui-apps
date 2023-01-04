@@ -32,7 +32,6 @@ void main() {
         const LocusState(
           locus: KtList.empty(),
           isLoading: false,
-          locusToBeShown: null,
           failure: null,
         ),
       ),
@@ -54,19 +53,16 @@ void main() {
       const LocusState(
         locus: KtList.empty(),
         isLoading: true,
-        locusToBeShown: null,
         failure: null,
       ),
       LocusState(
         locus: getLocus(),
         isLoading: true,
-        locusToBeShown: getLocus().elementAt(0),
         failure: null,
       ),
       LocusState(
         locus: getLocus(),
         isLoading: false,
-        locusToBeShown: getLocus().elementAt(0),
         failure: null,
       ),
     ],
@@ -89,19 +85,16 @@ void main() {
       const LocusState(
         locus: KtList.empty(),
         isLoading: true,
-        locusToBeShown: null,
         failure: null,
       ),
       LocusState(
         locus: const KtList.empty(),
         isLoading: true,
-        locusToBeShown: null,
         failure: FileFailureFormatIncorrect(),
       ),
       LocusState(
         locus: const KtList.empty(),
         isLoading: false,
-        locusToBeShown: null,
         failure: FileFailureFormatIncorrect(),
       ),
     ],
