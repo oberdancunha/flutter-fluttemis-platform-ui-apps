@@ -39,7 +39,7 @@ void main() {
   });
 
   valueListenableTest<LocusStore>(
-    'Should call getLocus from locusRespository and change initial state to success state',
+    'Should call getLocus from locusRepository and change initial state to success state',
     build: () {
       when(() => mockLocusRepository.getLocus()).thenAnswer((_) async => right(getLocus()));
 
@@ -69,7 +69,7 @@ void main() {
   );
 
   valueListenableTest<LocusStore>(
-    'Should call getLocus from locusRespository and change initial state to failure state with file format incorrect error',
+    'Should call getLocus from locusRepository and change initial state to failure state with file format incorrect error',
     build: () {
       when(() => mockLocusRepository.getLocus()).thenAnswer(
         (_) async => left(FileFailureFormatIncorrect()),
