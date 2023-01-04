@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/application/locus/locus_store.dart';
+import 'package:fluttemis_platform_ui_core/application/locusShow/locus_show_store.dart';
 import 'package:fluttemis_platform_ui_core/configurations/locus_module_binds.dart';
 import 'package:fluttemis_platform_ui_core/external/locus/locus_data_source_genbank_file.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/i_locus_data_source.dart';
@@ -18,6 +19,7 @@ class GenbankFileModule extends Module {
       },
     ),
     ...locusModuleBinds,
+    Bind.factory<LocusShowStore>((_) => LocusShowStore()),
   ];
 
   @override
