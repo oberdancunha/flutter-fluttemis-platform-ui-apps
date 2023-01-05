@@ -44,6 +44,10 @@ class MacosTextWidget extends PlatformTextWidget {
         return MacosTheme.of(context).typography.caption1.copyWith(
               color: const MacosColor(0xFF323130),
             );
+      case TextType.genomeName:
+        return MacosTheme.of(context).typography.title2.copyWith(
+              fontStyle: FontStyle.italic,
+            );
     }
   }
 }

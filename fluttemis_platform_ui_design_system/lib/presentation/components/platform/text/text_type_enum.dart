@@ -5,4 +5,5 @@ enum TextType {
   error,
   caption,
   label,
+  genomeName,
 }

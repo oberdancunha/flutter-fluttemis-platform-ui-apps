@@ -42,6 +42,10 @@ class WindowsTextWidget extends PlatformTextWidget {
         return FluentTheme.of(context).typography.caption!.copyWith(
               color: Colors.grey[160],
             );
+      case TextType.genomeName:
+        return FluentTheme.of(context).typography.subtitle!.copyWith(
+              fontStyle: FontStyle.italic,
+            );
     }
   }
 }
