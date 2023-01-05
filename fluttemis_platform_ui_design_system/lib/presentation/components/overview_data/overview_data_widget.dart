@@ -8,11 +8,13 @@ class OverviewDataWidget extends StatelessWidget {
   final String value;
   final String description;
   final String image;
+  final TextType? textType;
 
   const OverviewDataWidget({
     required this.value,
     required this.description,
     required this.image,
+    this.textType,
     super.key,
   });
 
@@ -42,7 +44,7 @@ class OverviewDataWidget extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 6),
                           child: PlatformTextWidget(
                             value,
-                            textType: TextType.label,
+                            textType: textType ?? TextType.label,
                             fontSize: 13,
                           ),
                         ),

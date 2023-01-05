@@ -75,7 +75,8 @@ flutter:
     - assets/images/recovery.png
     - assets/images/data/genome_file.png
     - assets/images/data/genome_api.png
-    - assets/images/data/genome.png
+    - assets/images/data/genome_name.png
+    - assets/images/data/genome_code.png
     - assets/images/data/dna.png
     - assets/images/data/genome_type.png
     - assets/images/data/genome_shape.png

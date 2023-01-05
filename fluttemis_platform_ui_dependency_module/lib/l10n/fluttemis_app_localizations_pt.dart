@@ -74,6 +74,9 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get genomeApiName => 'Endereço da API';
 
   @override
+  String get genomeName => 'Nome do genoma';
+
+  @override
   String get genomeCodeAccession => 'Código de acesso de anotação do genoma';
 
   @override

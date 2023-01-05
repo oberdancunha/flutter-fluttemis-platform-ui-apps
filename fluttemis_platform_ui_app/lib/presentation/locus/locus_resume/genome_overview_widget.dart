@@ -5,6 +5,7 @@ import 'package:fluttemis_platform_ui_core/utils/custom_date_format.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_list_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_model.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
 import 'package:flutter/widgets.dart';
 
 class GenomeOverviewWidget extends StatefulWidget {
@@ -42,9 +43,15 @@ class _GenomeOverviewWidgetState extends State<GenomeOverviewWidget> {
               resourceType: _resourceType!,
             ),
           OverviewDataModel(
+            value: widget.locus.organism,
+            description: FluttemisAppLocalizations.of(context)!.genomeName,
+            image: 'assets/images/data/genome_name.png',
+            textType: TextType.genomeName,
+          ),
+          OverviewDataModel(
             value: widget.locus.name,
             description: FluttemisAppLocalizations.of(context)!.genomeCodeAccession,
-            image: 'assets/images/data/genome.png',
+            image: 'assets/images/data/genome_code.png',
           ),
           OverviewDataModel(
             value: widget.locus.length.toString(),

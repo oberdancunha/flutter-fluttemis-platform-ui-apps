@@ -72,6 +72,7 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
                         value: widgetData.value,
                         description: widgetData.description,
                         image: widgetData.image,
+                        textType: widgetData.textType,
                       );
                     }
 
