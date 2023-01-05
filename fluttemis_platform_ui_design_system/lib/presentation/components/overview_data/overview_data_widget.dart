@@ -1,10 +1,11 @@
 import 'package:flutter/widgets.dart';
 
 import '../platform/card/platform_card_widget.dart';
+import '../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
 
-class OverviewDataWidget extends StatelessWidget {
+class OverviewDataWidget extends StatefulWidget {
   final String value;
   final String description;
   final String image;
@@ -19,6 +20,19 @@ class OverviewDataWidget extends StatelessWidget {
   });
 
   @override
+  State<OverviewDataWidget> createState() => _OverviewDataWidgetState();
+}
+
+class _OverviewDataWidgetState extends State<OverviewDataWidget> {
+  late ScrollController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = ScrollController();
+  }
+
+  @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (_, constraints) => SizedBox(
           width: constraints.maxWidth,
@@ -29,7 +43,7 @@ class OverviewDataWidget extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset(
-                    image,
+                    widget.image,
                     width: 35,
                   ),
                   const SizedBox(width: 8),
@@ -38,18 +52,25 @@ class OverviewDataWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SingleChildScrollView(
-                          physics: const ClampingScrollPhysics(),
-                          scrollDirection: Axis.horizontal,
-                          padding: const EdgeInsets.only(bottom: 6),
-                          child: PlatformTextWidget(
-                            value,
-                            textType: textType ?? TextType.label,
-                            fontSize: 13,
+                        PlatformScrollbarWidget(
+                          controller: _controller,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 2),
+                            child: SingleChildScrollView(
+                              physics: const ClampingScrollPhysics(),
+                              controller: _controller,
+                              scrollDirection: Axis.horizontal,
+                              padding: const EdgeInsets.only(bottom: 6),
+                              child: PlatformTextWidget(
+                                widget.value,
+                                textType: widget.textType ?? TextType.label,
+                                fontSize: 13,
+                              ),
+                            ),
                           ),
                         ),
                         PlatformTextWidget(
-                          description,
+                          widget.description,
                           textType: TextType.caption,
                           fontSize: 10,
                         ),
