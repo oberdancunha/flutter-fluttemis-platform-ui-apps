@@ -3,16 +3,16 @@ import 'package:fluttemis_platform_ui_core/store/access_history/access_history_s
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import 'resource_input_name_widget.dart';
+import 'data_source_input_name_widget.dart';
 
-class ResourceInputWidget extends StatefulWidget {
-  const ResourceInputWidget({super.key});
+class DataSourceInputWidget extends StatefulWidget {
+  const DataSourceInputWidget({super.key});
 
   @override
-  State<ResourceInputWidget> createState() => _ResourceInputWidgetState();
+  State<DataSourceInputWidget> createState() => _DataSourceInputWidgetState();
 }
 
-class _ResourceInputWidgetState extends State<ResourceInputWidget> {
+class _DataSourceInputWidgetState extends State<DataSourceInputWidget> {
   late AccessHistoryStore _accessHistoryStore;
   String? _resourceDescription;
   AccessHistoryResourceTypes? _resourceType;
@@ -42,7 +42,7 @@ class _ResourceInputWidgetState extends State<ResourceInputWidget> {
               width: 25,
             ),
             const SizedBox(width: 7),
-            ResourceInputNameWidget(
+            DataSourceInputNameWidget(
               inputName: _resourceDescription!,
               fontSize: 13,
             ),

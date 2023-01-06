@@ -1,7 +1,7 @@
 import 'package:fluttemis_platform_ui_core/application/locus/locus_store.dart';
 import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/error_message/error_message_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/loading/lottie_loading_resource_details_widget.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/loading/lottie_loading_data_source_details_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scaffold/platform_scaffold_widget.dart';
 import 'package:flutter/widgets.dart';
 
@@ -35,7 +35,7 @@ class _LocusWidgetState extends State<LocusWidget> {
             valueListenable: widget.locusStore,
             builder: (_, locusState, __) {
               if (locusState.isLoading) {
-                return LottieLoadingResourceDetailsWidget(
+                return LottieLoadingDataSourceDetailsWidget(
                   accessHistoryStore: widget.accessHistoryStore,
                 );
               }

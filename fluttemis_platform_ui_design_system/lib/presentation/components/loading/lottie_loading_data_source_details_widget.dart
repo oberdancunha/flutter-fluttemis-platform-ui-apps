@@ -1,13 +1,13 @@
 import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:flutter/widgets.dart';
 
+import 'data_source_details_widget.dart';
 import 'lottie_loading_widget.dart';
-import 'resource_details_widget.dart';
 
-class LottieLoadingResourceDetailsWidget extends StatelessWidget {
+class LottieLoadingDataSourceDetailsWidget extends StatelessWidget {
   final AccessHistoryStore accessHistoryStore;
 
-  const LottieLoadingResourceDetailsWidget({
+  const LottieLoadingDataSourceDetailsWidget({
     required this.accessHistoryStore,
     super.key,
   });
@@ -18,7 +18,7 @@ class LottieLoadingResourceDetailsWidget extends StatelessWidget {
         children: [
           const LottieLoadingWidget(lottieJsonFile: 'assets/lotties/dna-loader.json'),
           const SizedBox(height: 25),
-          ResourceDetailsWidget(accessHistoryStore: accessHistoryStore),
+          DataSourceDetailsWidget(accessHistoryStore: accessHistoryStore),
         ],
       );
 }

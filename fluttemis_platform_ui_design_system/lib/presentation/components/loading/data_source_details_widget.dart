@@ -3,14 +3,14 @@ import 'package:fluttemis_platform_ui_core/store/access_history/access_history_s
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
+import '../data_source_input_type/data_source_input_name_widget.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
-import '../resource_input/resource_input_name_widget.dart';
 
-class ResourceDetailsWidget extends StatelessWidget {
+class DataSourceDetailsWidget extends StatelessWidget {
   final AccessHistoryStore accessHistoryStore;
 
-  const ResourceDetailsWidget({
+  const DataSourceDetailsWidget({
     required this.accessHistoryStore,
     super.key,
   });
@@ -31,7 +31,7 @@ class ResourceDetailsWidget extends StatelessWidget {
                   textType: TextType.subTitle,
                   fontSize: 13,
                 ),
-                ResourceInputNameWidget(
+                DataSourceInputNameWidget(
                   inputName: " ${accessHistory.resourceDescription!}",
                   fontSize: 13,
                 ),
