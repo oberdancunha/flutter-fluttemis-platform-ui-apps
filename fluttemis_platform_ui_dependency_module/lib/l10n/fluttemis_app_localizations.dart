@@ -217,18 +217,6 @@ abstract class FluttemisAppLocalizations {
   /// **'Dados gerais do genoma'**
   String get genomeOverview;
 
-  /// No description provided for @genomeFileName.
-  ///
-  /// In pt, this message translates to:
-  /// **'Nome do arquivo'**
-  String get genomeFileName;
-
-  /// No description provided for @genomeApiName.
-  ///
-  /// In pt, this message translates to:
-  /// **'Endereço da API'**
-  String get genomeApiName;
-
   /// No description provided for @genomeName.
   ///
   /// In pt, this message translates to:

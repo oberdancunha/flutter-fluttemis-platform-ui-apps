@@ -20,8 +20,6 @@
   "quicklyAccess": "Acesso rápido",
   "productColorLabel": "Legenda de cores pelo tipo do produto",
   "genomeOverview": "Dados gerais do genoma",
-  "genomeFileName": "Nome do arquivo",
-  "genomeApiName": "Endereço da API",
   "genomeName": "Nome do genoma",
   "genomeCodeAccession": "Código de acesso de anotação do genoma",
   "genomeLength": "Quantidade de bases de dna do genoma",
