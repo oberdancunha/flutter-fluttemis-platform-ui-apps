@@ -16,7 +16,6 @@ class TopMenuToolsWidget extends StatelessWidget {
 
     return SizedBox(
       height: 90,
-      width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.start,

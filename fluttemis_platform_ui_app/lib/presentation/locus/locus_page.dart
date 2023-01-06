@@ -3,6 +3,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:fluttemis_platform_ui_design_system/presentation/components/menu_tools/menu_tools_header_widget.dart';
 import 'package:flutter/widgets.dart';
 
+import 'locus_resume/locus_resume_header_widget.dart';
 import 'locus_resume/locus_resume_widget.dart';
 
 class LocusPage extends StatelessWidget {
@@ -15,6 +16,7 @@ class LocusPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MenuToolsHeaderWidget(
+        horizontalReportWidget: LocusResumeHeaderWidget(locus: locus),
         child: LocusResumeWidget(locus: locus),
       );
 }
