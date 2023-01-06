@@ -28,6 +28,8 @@ class MacosIconWidget extends PlatformIconWidget {
         return CupertinoIcons.rectangle_grid_2x2;
       case IconType.recovery:
         return CupertinoIcons.arrow_2_circlepath;
+      case IconType.table:
+        return CupertinoIcons.table;
     }
   }
 }
