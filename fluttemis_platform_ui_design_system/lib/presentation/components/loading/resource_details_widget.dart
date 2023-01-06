@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
+import '../resource_input/resource_input_name_widget.dart';
 
 class ResourceDetailsWidget extends StatelessWidget {
   final AccessHistoryStore accessHistoryStore;
@@ -30,9 +31,8 @@ class ResourceDetailsWidget extends StatelessWidget {
                   textType: TextType.subTitle,
                   fontSize: 13,
                 ),
-                PlatformTextWidget(
-                  " ${accessHistory.resourceDescription!}",
-                  textType: TextType.title,
+                ResourceInputNameWidget(
+                  inputName: " ${accessHistory.resourceDescription!}",
                   fontSize: 13,
                 ),
               ],

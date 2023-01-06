@@ -3,8 +3,7 @@ import 'package:fluttemis_platform_ui_core/store/access_history/access_history_s
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import 'resource_input_name_widget.dart';
 
 class ResourceInputWidget extends StatefulWidget {
   const ResourceInputWidget({super.key});
@@ -43,9 +42,8 @@ class _ResourceInputWidgetState extends State<ResourceInputWidget> {
               width: 25,
             ),
             const SizedBox(width: 7),
-            PlatformTextWidget(
-              _resourceDescription!,
-              textType: TextType.title,
+            ResourceInputNameWidget(
+              inputName: _resourceDescription!,
               fontSize: 13,
             ),
           ],
