@@ -20,7 +20,6 @@ class ToolCardWidget extends StatelessWidget {
   final String? mainDescriptionExtend;
   final IconType? toolActionButtonIconType;
   final String? secondaryDescriptionExtend;
-  final Color? actionButtonIconColor;
   final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
 
@@ -38,7 +37,6 @@ class ToolCardWidget extends StatelessWidget {
     this.mainDescriptionExtend,
     this.secondaryDescriptionExtend,
     this.toolActionButtonIconType,
-    this.actionButtonIconColor,
     this.toolActionButtonDescription,
     this.toolAction,
     super.key,
@@ -141,7 +139,6 @@ class ToolCardWidget extends StatelessWidget {
                         icon: PlatformIconWidget(
                           iconType: toolActionButtonIconType!,
                           size: 12,
-                          color: actionButtonIconColor,
                         ),
                         label: toolActionButtonDescription!,
                         fontSize: 9,

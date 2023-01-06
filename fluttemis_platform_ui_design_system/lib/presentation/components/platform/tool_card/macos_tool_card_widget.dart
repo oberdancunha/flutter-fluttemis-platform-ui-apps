@@ -35,7 +35,6 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
         descriptionStyle: MacosTheme.of(context).typography.body,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
-        actionButtonIconColor: MacosColors.white,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );

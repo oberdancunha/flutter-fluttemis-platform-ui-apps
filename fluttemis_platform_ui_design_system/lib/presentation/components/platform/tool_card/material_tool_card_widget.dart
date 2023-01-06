@@ -34,7 +34,6 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
         descriptionStyle: Theme.of(context).textTheme.bodyText2,
         mainDescriptionExtend: mainDescriptionExtend,
         secondaryDescriptionExtend: secondaryDescriptionExtend,
-        actionButtonIconColor: Colors.white,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
