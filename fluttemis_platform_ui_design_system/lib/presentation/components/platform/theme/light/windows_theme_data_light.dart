@@ -17,6 +17,7 @@ final windowsThemeDataLight = ThemeData.light().copyWith(
       foregroundColor: ButtonState.all(Colors.grey),
     ),
   ),
+  iconTheme: const IconThemeData(),
   scrollbarTheme: const ScrollbarThemeData(
     radius: Radius.zero,
     hoveringRadius: Radius.zero,

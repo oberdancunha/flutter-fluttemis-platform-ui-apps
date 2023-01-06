@@ -8,6 +8,12 @@ final materialThemeDataLight = ThemeData.light().copyWith(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(Colors.blue.shade800),
+      foregroundColor: MaterialStateProperty.all(Colors.white),
+      textStyle: MaterialStateProperty.all(
+        const TextStyle(
+          color: Colors.white,
+        ),
+      ),
     ),
   ),
   scrollbarTheme: const ScrollbarThemeData().copyWith(
@@ -15,6 +21,9 @@ final materialThemeDataLight = ThemeData.light().copyWith(
     thickness: MaterialStateProperty.all(5),
     crossAxisMargin: 0,
     mainAxisMargin: 0,
+  ),
+  iconTheme: const IconThemeData(
+    color: Colors.white,
   ),
   useMaterial3: true,
   extensions: <ThemeExtension<FluttemisMaterialThemeExtension>>[

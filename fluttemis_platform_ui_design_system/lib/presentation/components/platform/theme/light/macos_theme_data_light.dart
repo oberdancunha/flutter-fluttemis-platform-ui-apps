@@ -7,6 +7,9 @@ final macosThemeDataLight = MacosThemeData.light().copyWith(
   pushButtonTheme: const PushButtonThemeData(
     color: MacosColors.appleBlue,
   ),
+  iconTheme: const MacosIconThemeData(
+    color: MacosColors.white,
+  ),
   scrollbarTheme: const MacosScrollbarThemeData().copyWith(
     radius: const Radius.elliptical(2, 2),
     isAlwaysShown: true,
