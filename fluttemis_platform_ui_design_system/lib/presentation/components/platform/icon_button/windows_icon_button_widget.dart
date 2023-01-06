@@ -30,9 +30,9 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
               const SizedBox(width: 11),
               Text(
                 label,
-                style: FluentTheme.of(context).typography.body!.copyWith(
-                      fontSize: fontSize,
-                    ),
+                style: TextStyle(
+                  fontSize: fontSize,
+                ),
               ),
             ],
           ),

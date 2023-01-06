@@ -24,10 +24,7 @@ class MacosIconButtonWidget extends PlatformIconButtonWidget {
             const SizedBox(width: 11),
             Text(
               label,
-              style: MacosTheme.of(context).typography.title3.copyWith(
-                    fontSize: fontSize,
-                    color: MacosColors.white,
-                  ),
+              style: TextStyle(fontSize: fontSize),
             ),
           ],
         ),

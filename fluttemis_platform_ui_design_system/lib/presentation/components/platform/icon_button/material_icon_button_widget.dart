@@ -17,10 +17,7 @@ class MaterialIconButtonWidget extends PlatformIconButtonWidget {
         icon: icon,
         label: Text(
           label,
-          style: Theme.of(context).textTheme.button!.copyWith(
-                fontSize: fontSize,
-                color: Colors.white,
-              ),
+          style: TextStyle(fontSize: fontSize),
         ),
         style: ButtonStyle(
           shape: MaterialStateProperty.all(
