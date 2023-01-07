@@ -32,5 +32,6 @@
   "countTypeFeatures": "Total de features por tipo",
   "productsOverview": "Dados gerais dos produtos",
   "totalTypeProducts": "Total de tipos de produtos",
-  "countTypeProducts": "Total de produtos por tipo"
+  "countTypeProducts": "Total de produtos por tipo",
+  "openLocusTable": "Abrir tabela de locus"
 }

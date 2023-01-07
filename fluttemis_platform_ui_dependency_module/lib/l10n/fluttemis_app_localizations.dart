@@ -294,6 +294,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Total de produtos por tipo'**
   String get countTypeProducts;
+
+  /// No description provided for @openLocusTable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Abrir tabela de locus'**
+  String get openLocusTable;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
