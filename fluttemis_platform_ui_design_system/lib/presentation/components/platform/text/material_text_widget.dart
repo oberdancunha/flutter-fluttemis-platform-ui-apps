@@ -43,8 +43,9 @@ class MaterialTextWidget extends PlatformTextWidget {
               color: Colors.grey.shade800,
             );
       case TextType.genomeName:
-        return Theme.of(context).textTheme.subtitle1!.copyWith(
+        return Theme.of(context).textTheme.titleLarge!.copyWith(
               fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w600,
             );
     }
   }

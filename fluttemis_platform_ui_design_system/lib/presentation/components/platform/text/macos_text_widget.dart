@@ -47,6 +47,7 @@ class MacosTextWidget extends PlatformTextWidget {
       case TextType.genomeName:
         return MacosTheme.of(context).typography.title2.copyWith(
               fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.w500,
             );
     }
   }
