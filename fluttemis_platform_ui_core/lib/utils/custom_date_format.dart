@@ -1,3 +1,5 @@
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
+
 class CustomDateFormat {
   final String _dateFormatted;
 
@@ -9,6 +11,16 @@ class CustomDateFormat {
     final month = dateSplitted.elementAt(1);
     final year = dateSplitted.elementAt(2);
     final dateFormatted = '$year-$month-$day';
+
+    return CustomDateFormat._(dateFormatted);
+  }
+
+  factory CustomDateFormat.fromyMdToyMMMMd(String localeName, String date) {
+    final dateFormatted = DateFormat.yMMMMd(localeName).format(
+      DateTime.parse(
+        CustomDateFormat.yMd(date).dateFormatted,
+      ),
+    );
 
     return CustomDateFormat._(dateFormatted);
   }

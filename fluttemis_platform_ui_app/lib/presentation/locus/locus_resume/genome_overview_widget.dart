@@ -47,11 +47,10 @@ class GenomeOverviewWidget extends StatelessWidget {
             ),
           if (locus.releaseDate != null)
             OverviewDataModel(
-              value: DateFormat.yMMMMd(FluttemisAppLocalizations.of(context)!.localeName).format(
-                DateTime.parse(
-                  CustomDateFormat.yMd(locus.releaseDate!).dateFormatted,
-                ),
-              ),
+              value: CustomDateFormat.fromyMdToyMMMMd(
+                FluttemisAppLocalizations.of(context)!.localeName,
+                locus.releaseDate!,
+              ).dateFormatted,
               description: FluttemisAppLocalizations.of(context)!.annotationDate,
               image: 'assets/images/data/genome_date.png',
             ),
