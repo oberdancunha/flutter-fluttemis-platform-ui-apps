@@ -108,4 +108,19 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get openLocusTable => 'Abrir tabela de locus';
+
+  @override
+  String get tblGenomeName => 'Genoma';
+
+  @override
+  String get tblGenomeLength => 'Bases';
+
+  @override
+  String get tblGenomeCodeAccession => 'Acesso';
+
+  @override
+  String get tblTotalFeatures => 'Features';
+
+  @override
+  String get tblAnnotationDate => 'Data';
 }

@@ -33,5 +33,10 @@
   "productsOverview": "Dados gerais dos produtos",
   "totalTypeProducts": "Total de tipos de produtos",
   "countTypeProducts": "Total de produtos por tipo",
-  "openLocusTable": "Abrir tabela de locus"
+  "openLocusTable": "Abrir tabela de locus",
+  "tblGenomeName": "Genoma",
+  "tblGenomeLength": "Bases",
+  "tblGenomeCodeAccession": "Acesso",
+  "tblTotalFeatures": "Features",
+  "tblAnnotationDate": "Data"
 }

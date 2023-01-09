@@ -300,6 +300,36 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Abrir tabela de locus'**
   String get openLocusTable;
+
+  /// No description provided for @tblGenomeName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Genoma'**
+  String get tblGenomeName;
+
+  /// No description provided for @tblGenomeLength.
+  ///
+  /// In pt, this message translates to:
+  /// **'Bases'**
+  String get tblGenomeLength;
+
+  /// No description provided for @tblGenomeCodeAccession.
+  ///
+  /// In pt, this message translates to:
+  /// **'Acesso'**
+  String get tblGenomeCodeAccession;
+
+  /// No description provided for @tblTotalFeatures.
+  ///
+  /// In pt, this message translates to:
+  /// **'Features'**
+  String get tblTotalFeatures;
+
+  /// No description provided for @tblAnnotationDate.
+  ///
+  /// In pt, this message translates to:
+  /// **'Data'**
+  String get tblAnnotationDate;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

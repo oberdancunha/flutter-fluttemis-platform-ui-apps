@@ -8,6 +8,8 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/plat
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/show_dialog/platform_show_dialog.dart';
 import 'package:flutter/widgets.dart';
 
+import 'locus_table_widget.dart';
+
 class LocusResumeHeaderWidget extends StatelessWidget {
   final KtList<Locus> locus;
 
@@ -34,10 +36,8 @@ class LocusResumeHeaderWidget extends StatelessWidget {
               onPressed: () {
                 platformShowDialog(
                   context: context,
-                  builder: (_) => const PlatformDialogWidget(
-                    child: Center(
-                      child: Text('Oi'),
-                    ),
+                  builder: (_) => PlatformDialogWidget(
+                    child: LocusTableWidget(locus: locus),
                   ),
                 );
               },
