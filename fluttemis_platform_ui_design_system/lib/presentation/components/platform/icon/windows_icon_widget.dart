@@ -29,6 +29,8 @@ class WindowsIconWidget extends PlatformIconWidget {
         return FluentIcons.sync;
       case IconType.table:
         return FluentIcons.table;
+      case IconType.change:
+        return FluentIcons.sync;
     }
   }
 }

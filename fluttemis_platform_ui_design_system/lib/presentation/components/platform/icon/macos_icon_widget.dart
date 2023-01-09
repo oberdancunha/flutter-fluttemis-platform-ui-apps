@@ -30,6 +30,8 @@ class MacosIconWidget extends PlatformIconWidget {
         return CupertinoIcons.arrow_2_circlepath;
       case IconType.table:
         return CupertinoIcons.table;
+      case IconType.change:
+        return CupertinoIcons.arrow_2_circlepath;
     }
   }
 }

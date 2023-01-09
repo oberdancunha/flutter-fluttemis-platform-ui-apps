@@ -29,6 +29,8 @@ class MaterialIconWidget extends PlatformIconWidget {
         return Icons.loop;
       case IconType.table:
         return Icons.table_chart;
+      case IconType.change:
+        return Icons.loop;
     }
   }
 }
