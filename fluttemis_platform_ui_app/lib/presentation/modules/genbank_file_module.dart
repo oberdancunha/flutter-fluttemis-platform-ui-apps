@@ -19,7 +19,7 @@ class GenbankFileModule extends Module {
       },
     ),
     ...locusModuleBinds,
-    Bind.factory<LocusShowStore>((_) => LocusShowStore()),
+    Bind.lazySingleton<LocusShowStore>((_) => LocusShowStore()),
   ];
 
   @override

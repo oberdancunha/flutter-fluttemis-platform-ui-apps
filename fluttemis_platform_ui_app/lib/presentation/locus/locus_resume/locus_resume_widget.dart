@@ -21,18 +21,19 @@ class LocusResumeWidget extends StatefulWidget {
 }
 
 class _LocusResumeWidgetState extends State<LocusResumeWidget> {
-  final locusShowStore = Modular.get<LocusShowStore>();
+  final _locusShowStore = Modular.get<LocusShowStore>();
 
   @override
   void initState() {
     super.initState();
-    locusShowStore.locusToBeShown = widget.locus.get(0);
+    _locusShowStore.locusToBeShown = widget.locus.get(0);
   }
 
   @override
   Widget build(BuildContext context) => AnimatedBuilder(
-        animation: locusShowStore,
-        child: Column(
+        animation: _locusShowStore,
+        builder: (_, __) => Column(
+          key: GlobalKey(),
           children: [
             const LocusMapWidget(),
             const SizedBox(height: 15),
@@ -40,21 +41,20 @@ class _LocusResumeWidgetState extends State<LocusResumeWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  GenomeOverviewWidget(locus: locusShowStore.locusToBeShown),
+                  GenomeOverviewWidget(locus: _locusShowStore.locusToBeShown),
                   LocusFeaturesOverviewWidget(
-                    total: locusShowStore.locusToBeShown.features.count(),
+                    total: _locusShowStore.locusToBeShown.features.count(),
                     featuresTypesCount:
-                        locusShowStore.locusToBeShown.featuresReport.featuresTypesCount,
+                        _locusShowStore.locusToBeShown.featuresReport.featuresTypesCount,
                   ),
                   LocusProductsOverviewWidget(
                     featuresTypesProductsCount:
-                        locusShowStore.locusToBeShown.featuresReport.featuresTypesProductsCount,
+                        _locusShowStore.locusToBeShown.featuresReport.featuresTypesProductsCount,
                   ),
                 ],
               ),
             ),
           ],
         ),
-        builder: (_, locusResumeWidget) => locusResumeWidget!,
       );
 }
