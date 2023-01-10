@@ -39,6 +39,4 @@ class PlatformIconWidget
         size: size,
         color: color,
       );
-
-  IconData? getIconData() => null;
 }

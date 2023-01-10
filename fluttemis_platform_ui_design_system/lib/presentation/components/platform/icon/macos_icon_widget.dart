@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import 'icon_type_enum.dart';
+import 'platform_icon.dart';
 import 'platform_icon_widget.dart';
 
 class MacosIconWidget extends PlatformIconWidget {
@@ -14,24 +14,8 @@ class MacosIconWidget extends PlatformIconWidget {
 
   @override
   Widget build(BuildContext context) => MacosIcon(
-        getIconData(),
+        getPlatformIcon(iconType),
         size: size,
         color: color,
       );
-
-  @override
-  IconData? getIconData() {
-    switch (iconType) {
-      case IconType.openFile:
-        return CupertinoIcons.doc_text_fill;
-      case IconType.menu:
-        return CupertinoIcons.rectangle_grid_2x2;
-      case IconType.recovery:
-        return CupertinoIcons.arrow_2_circlepath;
-      case IconType.table:
-        return CupertinoIcons.table;
-      case IconType.change:
-        return CupertinoIcons.arrow_2_circlepath;
-    }
-  }
 }
