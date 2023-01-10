@@ -1,4 +1,4 @@
-import '../platform/text/text_type_enum.dart';
+import 'package:flutter/widgets.dart';
 
 class DataTableModel {
   final List<DataTableColumnModel> columns;
@@ -13,19 +13,21 @@ class DataTableModel {
 class DataTableColumnModel {
   final String label;
   final bool isNumeric;
+  final bool isSortable;
 
   DataTableColumnModel({
     required this.label,
     required this.isNumeric,
+    required this.isSortable,
   });
 }
 
-class DataTableRowModel {
-  final String data;
-  final TextType textType;
+class DataTableRowModel<T> {
+  final Widget dataToShow;
+  final T? rawData;
 
   DataTableRowModel({
-    required this.data,
-    required this.textType,
+    required this.dataToShow,
+    this.rawData,
   });
 }
