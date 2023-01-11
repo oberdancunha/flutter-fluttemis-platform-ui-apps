@@ -4,4 +4,5 @@ enum IconType {
   recovery,
   table,
   change,
+  arrow,
 }
