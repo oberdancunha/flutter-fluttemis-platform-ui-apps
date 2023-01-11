@@ -22,8 +22,8 @@ final materialThemeDataLight = ThemeData.light().copyWith(
     crossAxisMargin: 0,
     mainAxisMargin: 0,
   ),
-  iconTheme: const IconThemeData(
-    color: Colors.white,
+  iconTheme: IconThemeData(
+    color: Colors.blue.shade800,
   ),
   useMaterial3: true,
   extensions: <ThemeExtension<FluttemisMaterialThemeExtension>>[
