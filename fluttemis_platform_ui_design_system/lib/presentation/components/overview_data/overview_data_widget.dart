@@ -33,6 +33,12 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (_, constraints) => SizedBox(
           width: constraints.maxWidth,

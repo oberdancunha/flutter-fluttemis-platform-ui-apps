@@ -37,6 +37,12 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   }
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => Material(
         child: Padding(
           padding: const EdgeInsets.all(16),

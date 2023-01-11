@@ -29,6 +29,12 @@ class _OverviewMultipleDataListWidgetState extends State<OverviewMultipleDataLis
   }
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => SizedBox(
         height: 200,
         child: PlatformCardWidget(

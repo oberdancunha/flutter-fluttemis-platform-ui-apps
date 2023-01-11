@@ -37,6 +37,12 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
   }
 
   @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) => SizedBox(
         width: 300,
         child: Column(
