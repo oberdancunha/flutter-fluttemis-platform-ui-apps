@@ -5,4 +5,5 @@ enum IconType {
   table,
   change,
   arrow,
+  search,
 }

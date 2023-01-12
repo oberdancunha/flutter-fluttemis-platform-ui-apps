@@ -22,6 +22,8 @@ IconData getPlatformIcon(IconType iconType) {
           return CupertinoIcons.arrow_2_circlepath;
         case IconType.arrow:
           return CupertinoIcons.up_arrow;
+        case IconType.search:
+          return CupertinoIcons.search;
       }
     case CurrentPlatform.isWindows:
       switch (iconType) {
@@ -37,6 +39,8 @@ IconData getPlatformIcon(IconType iconType) {
           return FluentIcons.sync;
         case IconType.arrow:
           return FluentIcons.up;
+        case IconType.search:
+          return FluentIcons.search;
       }
     case CurrentPlatform.isLinux:
       switch (iconType) {
@@ -52,6 +56,8 @@ IconData getPlatformIcon(IconType iconType) {
           return Icons.loop;
         case IconType.arrow:
           return Icons.arrow_upward;
+        case IconType.search:
+          return Icons.search;
       }
   }
 }
