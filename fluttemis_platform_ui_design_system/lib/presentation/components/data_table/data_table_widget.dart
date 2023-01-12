@@ -11,9 +11,11 @@ import 'data_table_model.dart';
 
 class DataTableWidget extends StatefulWidget {
   final DataTableModel dataTableModel;
+  final String hintTextSearch;
 
   const DataTableWidget({
     required this.dataTableModel,
+    required this.hintTextSearch,
     super.key,
   });
 
@@ -54,6 +56,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             header: DataTableHeaderWidget(
               onChanged: (p0) => {},
               onClear: () => {},
+              hintTextSearch: widget.hintTextSearch,
             ),
             columnSpacing: 12,
             horizontalMargin: 12,

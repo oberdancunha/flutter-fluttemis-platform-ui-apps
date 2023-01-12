@@ -5,7 +5,12 @@ import '../platform/icon/platform_icon_widget.dart';
 import '../platform/text_field/platform_text_field_widget.dart';
 
 class DataTableTextSearchWidget extends StatefulWidget {
-  const DataTableTextSearchWidget({super.key});
+  final String hintText;
+
+  const DataTableTextSearchWidget({
+    required this.hintText,
+    super.key,
+  });
 
   @override
   State<DataTableTextSearchWidget> createState() => _DataTableTextSearchWidgetState();
@@ -36,5 +41,6 @@ class _DataTableTextSearchWidgetState extends State<DataTableTextSearchWidget> {
           iconType: IconType.search,
           size: 15,
         ),
+        hintText: widget.hintText,
       );
 }
