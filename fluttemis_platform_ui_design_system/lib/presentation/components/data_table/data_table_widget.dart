@@ -6,6 +6,7 @@ import '../platform/icon/platform_icon.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
 import 'custom_data_table_source.dart';
+import 'data_table_header_widget.dart';
 import 'data_table_model.dart';
 
 class DataTableWidget extends StatefulWidget {
@@ -43,13 +44,20 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   }
 
   @override
-  Widget build(BuildContext context) => Material(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(16),
+        child: Material(
+          color: Colors.transparent,
           child: PaginatedDataTable2(
+            wrapInCard: false,
             scrollController: _scrollController,
+            header: DataTableHeaderWidget(
+              onChanged: (p0) => {},
+              onClear: () => {},
+            ),
             columnSpacing: 12,
             horizontalMargin: 12,
+            headingRowColor: MaterialStateProperty.all(Colors.transparent),
             sortArrowIcon: getPlatformIcon(IconType.arrow),
             sortColumnIndex: _sortColumnIndex,
             sortAscending: _sortAscending,
