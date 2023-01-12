@@ -30,4 +30,9 @@ final windowsThemeDataLight = ThemeData.light().copyWith(
     hoveringMainAxisMargin: 0,
     mainAxisMargin: 0,
   ),
+  dialogTheme: const ContentDialogThemeData(
+    decoration: BoxDecoration(
+      color: Colors.white,
+    ),
+  ),
 );
