@@ -9,6 +9,7 @@ class WindowsTextFieldWidget extends PlatformTextFieldWidget {
     super.fontSize,
     super.showCursor,
     super.prefixIcon,
+    super.hintText,
     super.suffixIcon,
     super.key,
   });
@@ -22,5 +23,6 @@ class WindowsTextFieldWidget extends PlatformTextFieldWidget {
         style: const TextStyle().copyWith(
           fontSize: fontSize,
         ),
+        placeholder: hintText,
       );
 }

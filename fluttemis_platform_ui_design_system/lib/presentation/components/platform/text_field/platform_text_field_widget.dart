@@ -12,6 +12,7 @@ class PlatformTextFieldWidget
   final bool? autoFocus;
   final bool? showCursor;
   final Widget? prefixIcon;
+  final String? hintText;
   final Widget? suffixIcon;
 
   const PlatformTextFieldWidget({
@@ -20,6 +21,7 @@ class PlatformTextFieldWidget
     this.autoFocus = false,
     this.showCursor,
     this.prefixIcon,
+    this.hintText,
     this.suffixIcon,
     super.key,
   });
@@ -31,6 +33,7 @@ class PlatformTextFieldWidget
         fontSize: fontSize,
         showCursor: showCursor,
         prefixIcon: prefixIcon,
+        hintText: hintText,
       );
 
   @override
@@ -40,6 +43,7 @@ class PlatformTextFieldWidget
         fontSize: fontSize,
         showCursor: showCursor,
         prefixIcon: prefixIcon,
+        hintText: hintText,
       );
 
   @override
@@ -49,5 +53,6 @@ class PlatformTextFieldWidget
         fontSize: fontSize,
         showCursor: showCursor,
         prefixIcon: prefixIcon,
+        hintText: hintText,
       );
 }

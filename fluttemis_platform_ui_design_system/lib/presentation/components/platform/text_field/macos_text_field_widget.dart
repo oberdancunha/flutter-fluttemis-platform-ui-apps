@@ -10,6 +10,7 @@ class MacosTextFieldWidget extends PlatformTextFieldWidget {
     super.fontSize,
     super.showCursor,
     super.prefixIcon,
+    super.hintText,
     super.suffixIcon,
     super.key,
   });
@@ -28,5 +29,6 @@ class MacosTextFieldWidget extends PlatformTextFieldWidget {
             color: const Color.fromARGB(59, 103, 103, 103),
           ),
         ),
+        placeholder: hintText,
       );
 }

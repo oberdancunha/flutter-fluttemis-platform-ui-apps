@@ -9,6 +9,7 @@ class MaterialTextFieldWidget extends PlatformTextFieldWidget {
     super.fontSize,
     super.showCursor,
     super.prefixIcon,
+    super.hintText,
     super.suffixIcon,
     super.key,
   });
@@ -24,6 +25,7 @@ class MaterialTextFieldWidget extends PlatformTextFieldWidget {
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
           contentPadding: const EdgeInsets.only(top: 15),
+          hintText: hintText,
         ),
       );
 }
