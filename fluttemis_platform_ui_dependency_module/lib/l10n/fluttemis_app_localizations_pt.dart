@@ -123,4 +123,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get tblAnnotationDate => 'Data';
+
+  @override
+  String get locusHintTextSearch => 'Filtrar dados dos locus';
 }

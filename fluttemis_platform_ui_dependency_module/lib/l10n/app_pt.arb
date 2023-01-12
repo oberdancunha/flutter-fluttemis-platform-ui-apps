@@ -38,5 +38,6 @@
   "tblGenomeLength": "Bases",
   "tblGenomeCodeAccession": "Acesso",
   "tblTotalFeatures": "Features",
-  "tblAnnotationDate": "Data"
+  "tblAnnotationDate": "Data",
+  "locusHintTextSearch": "Filtrar dados dos locus"
 }

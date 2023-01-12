@@ -330,6 +330,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Data'**
   String get tblAnnotationDate;
+
+  /// No description provided for @locusHintTextSearch.
+  ///
+  /// In pt, this message translates to:
+  /// **'Filtrar dados dos locus'**
+  String get locusHintTextSearch;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

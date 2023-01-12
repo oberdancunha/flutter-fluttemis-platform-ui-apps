@@ -26,6 +26,7 @@ class LocusTableWidget extends StatelessWidget {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
     return DataTableWidget(
+      hintTextSearch: fluttemisAppLocalizations.locusHintTextSearch,
       dataTableModel: DataTableModel(
         columns: [
           DataTableColumnModel(
