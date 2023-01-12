@@ -10,5 +10,8 @@ class MacosDialogWidget extends PlatformDialogWidget {
   });
 
   @override
-  Widget build(BuildContext context) => MacosSheet(child: child);
+  Widget build(BuildContext context) => MacosSheet(
+        backgroundColor: MacosTheme.of(context).canvasColor,
+        child: child,
+      );
 }
