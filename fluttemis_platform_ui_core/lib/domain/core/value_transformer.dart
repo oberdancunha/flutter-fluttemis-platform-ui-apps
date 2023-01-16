@@ -19,3 +19,5 @@ int colorLocusFeatureByProduct(String product) {
 
 bool shouldDrawFeature(String type) =>
     type.toLowerCase() != 'source' && type.toLowerCase() != 'gene' && type.toLowerCase() != 'mrna';
+
+String removeExcessiveWhiteSpaces(String value) => value.trim().replaceAll(RegExp(' +'), ' ');
