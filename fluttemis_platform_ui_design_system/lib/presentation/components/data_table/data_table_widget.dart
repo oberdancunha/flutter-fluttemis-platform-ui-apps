@@ -6,6 +6,7 @@ import '../platform/icon/platform_icon.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
 import 'custom_data_table_source.dart';
+import 'data_table_controller.dart';
 import 'data_table_header_widget.dart';
 import 'data_table_model.dart';
 
@@ -25,18 +26,25 @@ class DataTableWidget extends StatefulWidget {
 
 class _DataTableWidgetState extends State<DataTableWidget> {
   late ScrollController _scrollController;
+  late DataTableController _dataTableController;
   late int _sortColumnIndex;
   late bool _sortAscending;
   late List<List<DataTableRowModel>> _listData;
   static const _maxRowsPerPage = 12;
+  late int _rowsPerPage;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    _dataTableController = DataTableController();
     _sortColumnIndex = 0;
     _sortAscending = true;
     _listData = widget.dataTableModel.data;
+    _rowsPerPage = _dataTableController.setRowsPerPage(
+      listData: _listData,
+      maxRowsPerPage: _maxRowsPerPage,
+    );
   }
 
   @override
@@ -54,7 +62,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             wrapInCard: false,
             scrollController: _scrollController,
             header: DataTableHeaderWidget(
-              onChanged: (p0) => {},
+              onChanged: _changeTextSearch,
               onClear: () => {},
               hintTextSearch: widget.hintTextSearch,
             ),
@@ -64,59 +72,61 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             sortArrowIcon: getPlatformIcon(IconType.arrow),
             sortColumnIndex: _sortColumnIndex,
             sortAscending: _sortAscending,
-            rowsPerPage: widget.dataTableModel.data.length < _maxRowsPerPage
-                ? widget.dataTableModel.data.length
-                : _maxRowsPerPage,
-            columns: widget.dataTableModel.columns
-                .map(
-                  (column) => DataColumn2(
-                    label: PlatformTextWidget(
-                      column.label,
-                      textType: TextType.title,
-                      fontSize: 15,
-                    ),
-                    numeric: column.isNumeric,
-                    onSort: column.isSortable
-                        ? (columnIndex, ascending) {
-                            column.isNumeric
-                                ? _sort<num>(
-                                    columnIndex,
-                                    ascending,
-                                  )
-                                : _sort<String>(
-                                    columnIndex,
-                                    ascending,
-                                  );
-                          }
-                        : null,
-                  ),
-                )
-                .toList(),
+            rowsPerPage: _rowsPerPage,
+            renderEmptyRowsInTheEnd: false,
+            empty: const Text('Lista Vazia'),
+            columns: _buildColumns(),
             source: CustomDataTableSource(listData: _listData),
           ),
         ),
       );
 
-  void _sort<T>(int columnIndex, bool ascending) {
-    _listData.sort(
-      (listDataA, listDataB) {
-        var dataA = listDataA.elementAt(columnIndex);
-        var dataB = listDataB.elementAt(columnIndex);
-        if (!ascending) {
-          final auxDataA = dataA;
-          dataA = dataB;
-          dataB = auxDataA;
-        }
-
-        final Comparable<T> comparableDataA = dataA.rawData as Comparable<T>;
-        final Comparable<T> comparableDataB = dataB.rawData as Comparable<T>;
-
-        return Comparable.compare(comparableDataA, comparableDataB);
-      },
+  void _changeTextSearch(String textSearch) {
+    _listData = _dataTableController.changeTextSearch(
+      dataTableModel: widget.dataTableModel,
+      textSearch: textSearch,
+      updateState: () => setState(
+        () => _rowsPerPage = _dataTableController.setRowsPerPage(
+          listData: _listData,
+          maxRowsPerPage: _maxRowsPerPage,
+        ),
+      ),
     );
-    setState(() {
-      _sortColumnIndex = columnIndex;
-      _sortAscending = ascending;
-    });
   }
+
+  List<DataColumn> _buildColumns() => widget.dataTableModel.columns
+      .map(
+        (column) => DataColumn2(
+          label: PlatformTextWidget(
+            column.label,
+            textType: TextType.title,
+            fontSize: 15,
+          ),
+          numeric: column.isNumeric,
+          onSort: column.isSortable
+              ? (columnIndex, ascending) {
+                  _listData = column.isNumeric
+                      ? _dataTableController.sort<num>(
+                          listData: _listData,
+                          columnIndex: columnIndex,
+                          ascending: ascending,
+                          updateState: () => setState(() {
+                            _sortColumnIndex = columnIndex;
+                            _sortAscending = ascending;
+                          }),
+                        )
+                      : _dataTableController.sort<String>(
+                          listData: _listData,
+                          columnIndex: columnIndex,
+                          ascending: ascending,
+                          updateState: () => setState(() {
+                            _sortColumnIndex = columnIndex;
+                            _sortAscending = ascending;
+                          }),
+                        );
+                }
+              : null,
+        ),
+      )
+      .toList();
 }
