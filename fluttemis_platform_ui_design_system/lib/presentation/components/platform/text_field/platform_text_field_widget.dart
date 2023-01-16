@@ -13,6 +13,7 @@ class PlatformTextFieldWidget
   final bool? showCursor;
   final Widget? prefixIcon;
   final String? hintText;
+  final Function(String)? onChanged;
   final Widget? suffixIcon;
 
   const PlatformTextFieldWidget({
@@ -22,6 +23,7 @@ class PlatformTextFieldWidget
     this.showCursor,
     this.prefixIcon,
     this.hintText,
+    this.onChanged,
     this.suffixIcon,
     super.key,
   });
@@ -34,6 +36,7 @@ class PlatformTextFieldWidget
         showCursor: showCursor,
         prefixIcon: prefixIcon,
         hintText: hintText,
+        onChanged: onChanged,
       );
 
   @override
@@ -44,6 +47,7 @@ class PlatformTextFieldWidget
         showCursor: showCursor,
         prefixIcon: prefixIcon,
         hintText: hintText,
+        onChanged: onChanged,
       );
 
   @override
@@ -54,5 +58,6 @@ class PlatformTextFieldWidget
         showCursor: showCursor,
         prefixIcon: prefixIcon,
         hintText: hintText,
+        onChanged: onChanged,
       );
 }

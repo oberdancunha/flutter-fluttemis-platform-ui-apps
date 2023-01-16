@@ -11,6 +11,7 @@ class MacosTextFieldWidget extends PlatformTextFieldWidget {
     super.showCursor,
     super.prefixIcon,
     super.hintText,
+    super.onChanged,
     super.suffixIcon,
     super.key,
   });
@@ -30,5 +31,6 @@ class MacosTextFieldWidget extends PlatformTextFieldWidget {
           ),
         ),
         placeholder: hintText,
+        onChanged: onChanged,
       );
 }

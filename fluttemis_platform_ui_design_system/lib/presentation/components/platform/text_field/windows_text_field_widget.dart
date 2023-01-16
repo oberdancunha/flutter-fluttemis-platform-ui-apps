@@ -10,6 +10,7 @@ class WindowsTextFieldWidget extends PlatformTextFieldWidget {
     super.showCursor,
     super.prefixIcon,
     super.hintText,
+    super.onChanged,
     super.suffixIcon,
     super.key,
   });
@@ -24,5 +25,6 @@ class WindowsTextFieldWidget extends PlatformTextFieldWidget {
           fontSize: fontSize,
         ),
         placeholder: hintText,
+        onChanged: onChanged,
       );
 }

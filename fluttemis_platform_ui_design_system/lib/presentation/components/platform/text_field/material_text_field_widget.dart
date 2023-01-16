@@ -10,6 +10,7 @@ class MaterialTextFieldWidget extends PlatformTextFieldWidget {
     super.showCursor,
     super.prefixIcon,
     super.hintText,
+    super.onChanged,
     super.suffixIcon,
     super.key,
   });
@@ -27,5 +28,6 @@ class MaterialTextFieldWidget extends PlatformTextFieldWidget {
           contentPadding: const EdgeInsets.only(top: 15),
           hintText: hintText,
         ),
+        onChanged: onChanged,
       );
 }
