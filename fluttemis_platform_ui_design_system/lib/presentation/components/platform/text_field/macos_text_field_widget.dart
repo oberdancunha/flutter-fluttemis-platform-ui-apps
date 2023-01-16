@@ -32,5 +32,23 @@ class MacosTextFieldWidget extends PlatformTextFieldWidget {
         ),
         placeholder: hintText,
         onChanged: onChanged,
+        suffix: suffixIcon != null
+            ? Padding(
+                padding: const EdgeInsets.only(
+                  top: 2,
+                  bottom: 2,
+                  left: 6,
+                  right: 6,
+                ),
+                child: MacosIconTheme(
+                  data: MacosIconThemeData(
+                    color: MacosTheme.of(context).brightness.isDark
+                        ? const Color.fromRGBO(255, 255, 255, 0.55)
+                        : const Color.fromRGBO(0, 0, 0, 0.5),
+                  ),
+                  child: suffixIcon!,
+                ),
+              )
+            : null,
       );
 }

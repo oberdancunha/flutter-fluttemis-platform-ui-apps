@@ -37,6 +37,7 @@ class PlatformTextFieldWidget
         prefixIcon: prefixIcon,
         hintText: hintText,
         onChanged: onChanged,
+        suffixIcon: suffixIcon,
       );
 
   @override
@@ -48,6 +49,7 @@ class PlatformTextFieldWidget
         prefixIcon: prefixIcon,
         hintText: hintText,
         onChanged: onChanged,
+        suffixIcon: suffixIcon,
       );
 
   @override
@@ -59,5 +61,6 @@ class PlatformTextFieldWidget
         prefixIcon: prefixIcon,
         hintText: hintText,
         onChanged: onChanged,
+        suffixIcon: suffixIcon,
       );
 }

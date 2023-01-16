@@ -26,5 +26,6 @@ class WindowsTextFieldWidget extends PlatformTextFieldWidget {
         ),
         placeholder: hintText,
         onChanged: onChanged,
+        suffix: suffixIcon,
       );
 }
