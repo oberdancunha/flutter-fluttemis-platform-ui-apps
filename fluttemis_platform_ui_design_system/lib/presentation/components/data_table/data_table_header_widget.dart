@@ -21,6 +21,8 @@ class DataTableHeaderWidget extends StatelessWidget {
           height: 60,
           child: Center(
             child: DataTableTextSearchWidget(
+              onChanged: onChanged,
+              onClear: onClear,
               hintText: hintTextSearch,
             ),
           ),

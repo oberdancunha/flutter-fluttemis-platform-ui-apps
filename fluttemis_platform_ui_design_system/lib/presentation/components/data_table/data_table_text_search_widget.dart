@@ -5,9 +5,13 @@ import '../platform/icon/platform_icon_widget.dart';
 import '../platform/text_field/platform_text_field_widget.dart';
 
 class DataTableTextSearchWidget extends StatefulWidget {
+  final Function(String) onChanged;
+  final VoidCallback onClear;
   final String hintText;
 
   const DataTableTextSearchWidget({
+    required this.onChanged,
+    required this.onClear,
     required this.hintText,
     super.key,
   });
@@ -42,5 +46,6 @@ class _DataTableTextSearchWidgetState extends State<DataTableTextSearchWidget> {
           size: 15,
         ),
         hintText: widget.hintText,
+        onChanged: widget.onChanged,
       );
 }
