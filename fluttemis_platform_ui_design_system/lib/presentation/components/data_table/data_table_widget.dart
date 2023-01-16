@@ -63,7 +63,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             scrollController: _scrollController,
             header: DataTableHeaderWidget(
               onChanged: _changeTextSearch,
-              onClear: () => {},
+              onClear: _clear,
               hintTextSearch: widget.hintTextSearch,
             ),
             columnSpacing: 12,
@@ -129,4 +129,14 @@ class _DataTableWidgetState extends State<DataTableWidget> {
         ),
       )
       .toList();
+
+  void _clear() {
+    _listData = widget.dataTableModel.data;
+    setState(() {
+      _rowsPerPage = _dataTableController.setRowsPerPage(
+        listData: _listData,
+        maxRowsPerPage: _maxRowsPerPage,
+      );
+    });
+  }
 }

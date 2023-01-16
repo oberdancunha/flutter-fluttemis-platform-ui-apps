@@ -21,11 +21,13 @@ class DataTableTextSearchWidget extends StatefulWidget {
 }
 
 class _DataTableTextSearchWidgetState extends State<DataTableTextSearchWidget> {
+  late GlobalKey _clearGlobalKey;
   late TextEditingController _controller;
 
   @override
   void initState() {
     super.initState();
+    _clearGlobalKey = GlobalKey();
     _controller = TextEditingController();
   }
 
@@ -47,5 +49,19 @@ class _DataTableTextSearchWidgetState extends State<DataTableTextSearchWidget> {
         ),
         hintText: widget.hintText,
         onChanged: widget.onChanged,
+        suffixIcon: MouseRegion(
+          cursor: SystemMouseCursors.click,
+          child: GestureDetector(
+            key: _clearGlobalKey,
+            onTap: () {
+              _controller.clear();
+              widget.onClear();
+            },
+            child: const PlatformIconWidget(
+              iconType: IconType.clear,
+              size: 15,
+            ),
+          ),
+        ),
       );
 }
