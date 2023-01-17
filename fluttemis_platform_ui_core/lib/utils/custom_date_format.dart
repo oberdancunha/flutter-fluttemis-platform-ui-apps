@@ -25,6 +25,13 @@ class CustomDateFormat {
     return CustomDateFormat._(dateFormatted);
   }
 
+  factory CustomDateFormat.fromyMdToMillisecondsSinceEpoch(String date) {
+    final dateFormatted =
+        DateTime.parse(CustomDateFormat.yMd(date).dateFormatted).millisecondsSinceEpoch.toString();
+
+    return CustomDateFormat._(dateFormatted);
+  }
+
   String get dateFormatted => _dateFormatted;
 }
 
