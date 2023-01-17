@@ -20,8 +20,10 @@ class DataTableController {
           dataB = auxDataA;
         }
 
-        final Comparable<T> comparableDataA = dataA.rawData as Comparable<T>;
-        final Comparable<T> comparableDataB = dataB.rawData as Comparable<T>;
+        final Comparable<T> comparableDataA =
+            (dataA.rawDataToSort ?? dataA.rawData) as Comparable<T>;
+        final Comparable<T> comparableDataB =
+            (dataB.rawDataToSort ?? dataB.rawData) as Comparable<T>;
 
         return Comparable.compare(comparableDataA, comparableDataB);
       },
