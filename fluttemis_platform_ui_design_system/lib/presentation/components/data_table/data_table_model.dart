@@ -25,9 +25,11 @@ class DataTableColumnModel {
 class DataTableRowModel<T> {
   final Widget dataToShow;
   final T? rawData;
+  final T? rawDataToSort;
 
   DataTableRowModel({
     required this.dataToShow,
     this.rawData,
+    this.rawDataToSort,
   });
 }
