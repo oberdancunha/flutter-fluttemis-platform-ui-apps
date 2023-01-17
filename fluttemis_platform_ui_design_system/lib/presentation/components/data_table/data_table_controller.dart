@@ -34,7 +34,6 @@ class DataTableController {
   List<List<DataTableRowModel<dynamic>>> changeTextSearch({
     required DataTableModel dataTableModel,
     required String textSearch,
-    required VoidCallback updateState,
   }) {
     final textSearchTrimmed = removeExcessiveWhiteSpaces(textSearch);
     final listData = dataTableModel.data.where(
@@ -52,7 +51,6 @@ class DataTableController {
         return found;
       },
     ).toList();
-    updateState();
 
     return listData;
   }
