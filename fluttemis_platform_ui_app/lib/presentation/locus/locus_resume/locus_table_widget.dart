@@ -67,6 +67,9 @@ class LocusTableWidget extends StatelessWidget {
               locus.releaseDate!,
             ).dateFormatted;
 
+            final dateToMillisecondsSinceEpoch =
+                CustomDateFormat.fromyMdToMillisecondsSinceEpoch(locus.releaseDate!).dateFormatted;
+
             return [
               DataTableRowModel<String>(
                 dataToShow: PlatformTextWidget(
@@ -107,6 +110,7 @@ class LocusTableWidget extends StatelessWidget {
                   fontSize: _fontSize,
                 ),
                 rawData: date,
+                rawDataToSort: dateToMillisecondsSinceEpoch,
               ),
               DataTableRowModel(
                 dataToShow: SizedBox(
