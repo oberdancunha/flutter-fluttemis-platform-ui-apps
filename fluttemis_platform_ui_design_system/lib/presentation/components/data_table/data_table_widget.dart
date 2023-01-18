@@ -13,10 +13,12 @@ import 'data_table_model.dart';
 class DataTableWidget extends StatefulWidget {
   final DataTableModel dataTableModel;
   final String hintTextSearch;
+  final String emptyTableMessage;
 
   const DataTableWidget({
     required this.dataTableModel,
     required this.hintTextSearch,
+    required this.emptyTableMessage,
     super.key,
   });
 
@@ -61,7 +63,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             showFirstLastButtons: true,
             headingRowColor: MaterialStateProperty.all(Colors.transparent),
             controller: _paginatorController,
-            empty: const Center(child: Text('Lista Vazia')),
+            empty: Center(child: Text(widget.emptyTableMessage)),
             header: DataTableHeaderWidget(
               onChanged: _changeTextSearch,
               onClear: _clear,
