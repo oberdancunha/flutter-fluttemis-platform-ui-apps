@@ -56,17 +56,4 @@ class DataTableController {
 
     return listData;
   }
-
-  int setRowsPerPage({
-    required List<List<DataTableRowModel<dynamic>>> listData,
-    required int maxRowsPerPage,
-  }) {
-    final rowsPerPage = listData.isNotEmpty
-        ? listData.length < maxRowsPerPage
-            ? listData.length
-            : maxRowsPerPage
-        : 1;
-
-    return rowsPerPage;
-  }
 }
