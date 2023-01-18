@@ -34,11 +34,11 @@ class DataTableController {
   }
 
   List<List<DataTableRowModel<dynamic>>> changeTextSearch({
-    required DataTableModel dataTableModel,
+    required List<List<DataTableRowModel<dynamic>>> originalListData,
     required String textSearch,
   }) {
     final textSearchTrimmed = removeExcessiveWhiteSpaces(textSearch);
-    final listData = dataTableModel.data.where(
+    final listData = originalListData.where(
       (dataRow) {
         var found = false;
         for (final data in dataRow) {

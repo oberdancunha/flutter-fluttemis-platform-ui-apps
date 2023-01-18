@@ -32,7 +32,10 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   late PaginatorController _paginatorController;
   late int _sortColumnIndex;
   late bool _sortAscending;
+  late int _historySortColumnIndex;
+  late bool _historySortAscending;
   late List<List<DataTableRowModel>> _listData;
+  late List<List<DataTableRowModel>> _historyListData;
 
   @override
   void initState() {
@@ -41,7 +44,10 @@ class _DataTableWidgetState extends State<DataTableWidget> {
     _paginatorController = PaginatorController();
     _sortColumnIndex = 0;
     _sortAscending = true;
+    _historySortColumnIndex = 0;
+    _historySortAscending = true;
     _listData = widget.dataTableModel.data;
+    _historyListData = widget.dataTableModel.data;
   }
 
   @override
@@ -84,10 +90,16 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   void _changeTextSearch(String textSearch) {
     setState(() {
       _listData = _dataTableController.changeTextSearch(
-        dataTableModel: widget.dataTableModel,
+        originalListData: _historyListData,
         textSearch: textSearch,
       );
       _paginatorController.goToFirstPage();
+      if (_listData.isEmpty) {
+        _sortColumnIndex = 0;
+        _sortAscending = true;
+      } else {
+        _recoverySortStatusHistory();
+      }
     });
   }
 
@@ -127,6 +139,9 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                                 _sortAscending = ascending;
                               }),
                             );
+                      _historyListData = _listData;
+                      _historySortColumnIndex = _sortColumnIndex;
+                      _historySortAscending = _sortAscending;
                     }
                   : null,
             ),
@@ -135,7 +150,13 @@ class _DataTableWidgetState extends State<DataTableWidget> {
 
   void _clear() {
     setState(() {
-      _listData = widget.dataTableModel.data;
+      _listData = _historyListData;
     });
+    _recoverySortStatusHistory();
+  }
+
+  void _recoverySortStatusHistory() {
+    _sortColumnIndex = _historySortColumnIndex;
+    _sortAscending = _historySortAscending;
   }
 }
