@@ -7,6 +7,7 @@ import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_type_enum.dart';
 import 'custom_data_table_source.dart';
 import 'data_table_controller.dart';
+import 'data_table_empty_message_widget.dart';
 import 'data_table_header_widget.dart';
 import 'data_table_model.dart';
 
@@ -63,7 +64,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             showFirstLastButtons: true,
             headingRowColor: MaterialStateProperty.all(Colors.transparent),
             controller: _paginatorController,
-            empty: Center(child: Text(widget.emptyMessage)),
+            empty: DataTableEmptyMessageWidget(message: widget.emptyMessage),
             header: DataTableHeaderWidget(
               onChanged: _changeTextSearch,
               onClear: _clear,
