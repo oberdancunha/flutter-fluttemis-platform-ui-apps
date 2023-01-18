@@ -120,7 +120,7 @@ class LocusTableWidget extends StatelessWidget {
                       iconType: IconType.change,
                       size: 12,
                     ),
-                    label: 'Abrir locus',
+                    label: FluttemisAppLocalizations.of(context)!.openLocus,
                     fontSize: 11,
                     onPressed: () {
                       context.read<LocusShowStore>().locusToBeShown = locus;
@@ -133,6 +133,7 @@ class LocusTableWidget extends StatelessWidget {
           },
         ).asList(),
       ),
+      emptyTableMessage: FluttemisAppLocalizations.of(context)!.emptyLocusTable,
     );
   }
 }

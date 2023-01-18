@@ -126,4 +126,10 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get locusHintTextSearch => 'Filtrar dados dos locus';
+
+  @override
+  String get openLocus => 'Abrir locus';
+
+  @override
+  String get emptyLocusTable => 'Tabela de locus vazia';
 }

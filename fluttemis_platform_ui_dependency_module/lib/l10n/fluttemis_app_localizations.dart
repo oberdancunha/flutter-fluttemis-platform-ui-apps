@@ -336,6 +336,18 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Filtrar dados dos locus'**
   String get locusHintTextSearch;
+
+  /// No description provided for @openLocus.
+  ///
+  /// In pt, this message translates to:
+  /// **'Abrir locus'**
+  String get openLocus;
+
+  /// No description provided for @emptyLocusTable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tabela de locus vazia'**
+  String get emptyLocusTable;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

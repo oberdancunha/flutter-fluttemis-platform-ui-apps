@@ -39,5 +39,7 @@
   "tblGenomeCodeAccession": "Acesso",
   "tblTotalFeatures": "Features",
   "tblAnnotationDate": "Data",
-  "locusHintTextSearch": "Filtrar dados dos locus"
+  "locusHintTextSearch": "Filtrar dados dos locus",
+  "openLocus": "Abrir locus",
+  "emptyLocusTable": "Tabela de locus vazia"
 }
