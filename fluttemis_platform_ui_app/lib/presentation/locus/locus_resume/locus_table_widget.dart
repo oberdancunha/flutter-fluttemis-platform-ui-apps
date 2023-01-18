@@ -133,7 +133,7 @@ class LocusTableWidget extends StatelessWidget {
           },
         ).asList(),
       ),
-      emptyTableMessage: FluttemisAppLocalizations.of(context)!.emptyLocusTable,
+      emptyMessage: FluttemisAppLocalizations.of(context)!.emptyLocusTable,
     );
   }
 }
