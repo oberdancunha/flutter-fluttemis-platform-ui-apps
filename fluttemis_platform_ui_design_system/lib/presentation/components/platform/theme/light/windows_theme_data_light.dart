@@ -11,7 +11,7 @@ final windowsThemeDataLight = ThemeData(
     defaultButtonStyle: ButtonStyle(
       border: ButtonState.all(
         const BorderSide(
-          width: 1.3,
+          width: 0.7,
           color: Color.fromARGB(255, 0, 62, 246),
         ),
       ),
