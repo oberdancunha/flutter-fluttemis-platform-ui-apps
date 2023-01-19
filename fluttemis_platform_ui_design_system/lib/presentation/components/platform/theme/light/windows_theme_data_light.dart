@@ -1,6 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-final windowsThemeDataLight = ThemeData.light().copyWith(
+final windowsThemeDataLight = ThemeData(
+  fontFamily: 'Segoe UI',
   scaffoldBackgroundColor: const Color.fromARGB(255, 241, 241, 241),
   accentColor: Colors.magenta,
   cardColor: Colors.white,
