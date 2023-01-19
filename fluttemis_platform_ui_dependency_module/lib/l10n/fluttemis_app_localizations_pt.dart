@@ -132,4 +132,10 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get emptyLocusTable => 'Tabela de locus vazia';
+
+  @override
+  String get closeWindow => 'Fechar janela';
+
+  @override
+  String get escToCloseWindow => 'Você também pode fechar essa janela apertando a tecla ESC';
 }

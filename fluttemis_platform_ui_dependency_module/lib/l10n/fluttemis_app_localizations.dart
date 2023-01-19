@@ -348,6 +348,18 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Tabela de locus vazia'**
   String get emptyLocusTable;
+
+  /// No description provided for @closeWindow.
+  ///
+  /// In pt, this message translates to:
+  /// **'Fechar janela'**
+  String get closeWindow;
+
+  /// No description provided for @escToCloseWindow.
+  ///
+  /// In pt, this message translates to:
+  /// **'Você também pode fechar essa janela apertando a tecla ESC'**
+  String get escToCloseWindow;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
