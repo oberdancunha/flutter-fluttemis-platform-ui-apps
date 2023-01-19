@@ -20,9 +20,9 @@ class MaterialTextFieldWidget extends PlatformTextFieldWidget {
         controller: controller,
         autofocus: autoFocus!,
         showCursor: showCursor,
-        style: const TextStyle().copyWith(
-          fontSize: fontSize,
-        ),
+        style: Theme.of(context).textTheme.caption!.copyWith(
+              fontSize: fontSize,
+            ),
         decoration: InputDecoration(
           prefixIcon: prefixIcon,
           contentPadding: const EdgeInsets.only(top: 15),

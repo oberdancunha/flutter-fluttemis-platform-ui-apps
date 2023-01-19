@@ -21,9 +21,9 @@ class WindowsTextFieldWidget extends PlatformTextFieldWidget {
         autofocus: autoFocus!,
         showCursor: showCursor,
         prefix: prefixIcon,
-        style: const TextStyle().copyWith(
-          fontSize: fontSize,
-        ),
+        style: FluentTheme.of(context).typography.caption!.copyWith(
+              fontSize: fontSize,
+            ),
         placeholder: hintText,
         onChanged: onChanged,
         suffix: suffixIcon,

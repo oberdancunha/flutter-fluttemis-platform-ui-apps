@@ -22,9 +22,9 @@ class MacosTextFieldWidget extends PlatformTextFieldWidget {
         autofocus: autoFocus!,
         showCursor: showCursor,
         prefix: prefixIcon,
-        style: const TextStyle().copyWith(
-          fontSize: fontSize,
-        ),
+        style: MacosTheme.of(context).typography.caption1.copyWith(
+              fontSize: fontSize,
+            ),
         decoration: kDefaultFocusedBorderDecoration.copyWith(
           border: Border.all(
             color: const Color.fromARGB(59, 103, 103, 103),
