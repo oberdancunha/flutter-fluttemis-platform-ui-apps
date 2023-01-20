@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class FocusWidget extends StatefulWidget {
   final Widget child;
@@ -66,8 +66,7 @@ class _FocusWidgetState extends State<FocusWidget> {
                   color: color,
                   border: (_focused || _hovering)
                       ? Border.all(
-                          width: 1.3,
-                          color: color,
+                          color: const Color(0XFF3B76D6),
                         )
                       : null,
                 ),
