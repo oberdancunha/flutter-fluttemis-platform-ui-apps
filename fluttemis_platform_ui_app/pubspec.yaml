@@ -112,6 +112,18 @@ flutter:
         - asset: assets/fonts/segoe_ui/Segoe-UI-Semibold-Italic.ttf
           style: italic
           weight: 500
+    - family: Ubuntu
+      fonts:
+        - asset: assets/fonts/ubuntu/Ubuntu-R.ttf
+          style: normal
+        - asset: assets/fonts/ubuntu/Ubuntu-RI.ttf
+          style: italic
+        - asset: assets/fonts/ubuntu/Ubuntu-M.ttf
+          style: normal
+          weight: 500
+        - asset: assets/fonts/ubuntu/Ubuntu-MI.ttf
+          style: italic
+          weight: 500
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
