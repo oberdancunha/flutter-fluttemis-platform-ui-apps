@@ -11,6 +11,7 @@ export 'package:freezed_annotation/freezed_annotation.dart';
 export 'package:intl/intl.dart';
 export 'package:kt_dart/kt.dart' hide reverse;
 export 'package:lottie/lottie.dart';
+export 'package:touchable/touchable.dart';
 export 'package:window_manager/window_manager.dart';
 
 export './l10n/fluttemis_app_localizations.dart';
