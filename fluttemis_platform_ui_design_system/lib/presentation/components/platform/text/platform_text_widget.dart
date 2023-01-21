@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 import '../core/platform_widget.dart';
 import 'macos_text_widget.dart';
 import 'material_text_widget.dart';
@@ -39,6 +37,4 @@ class PlatformTextWidget
         textType: textType,
         fontSize: fontSize,
       );
-
-  TextStyle? getTextStyle(BuildContext context, TextType textType) => null;
 }
