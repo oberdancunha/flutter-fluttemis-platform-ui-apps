@@ -21,13 +21,13 @@ TextStyle getPlatformTextStyle(BuildContext context, TextType textType) {
 TextStyle _getMacosTextStyle(BuildContext context, TextType textType) {
   switch (textType) {
     case TextType.mainTitle:
-      return MacosTheme.of(context).typography.title1.copyWith();
+      return MacosTheme.of(context).typography.title1;
     case TextType.title:
       return MacosTheme.of(context).typography.title1.copyWith(
             color: MacosTheme.of(context).primaryColor,
           );
     case TextType.subTitle:
-      return MacosTheme.of(context).typography.title2.copyWith();
+      return MacosTheme.of(context).typography.title2;
     case TextType.error:
       return MacosTheme.of(context).typography.title3.copyWith(
             color: MacosColors.appleRed,
@@ -57,7 +57,7 @@ TextStyle _getWindowsTextStyle(BuildContext context, TextType textType) {
             color: fluent_ui.FluentTheme.of(context).accentColor,
           );
     case TextType.subTitle:
-      return fluent_ui.FluentTheme.of(context).typography.subtitle!.copyWith();
+      return fluent_ui.FluentTheme.of(context).typography.subtitle!;
     case TextType.error:
       return fluent_ui.FluentTheme.of(context).typography.body!.copyWith(
             color: fluent_ui.Colors.red,
@@ -80,13 +80,13 @@ TextStyle _getWindowsTextStyle(BuildContext context, TextType textType) {
 TextStyle _getMaterialTextStyle(BuildContext context, TextType textType) {
   switch (textType) {
     case TextType.mainTitle:
-      return material.Theme.of(context).textTheme.titleLarge!.copyWith();
+      return material.Theme.of(context).textTheme.titleLarge!;
     case TextType.title:
       return material.Theme.of(context).textTheme.titleLarge!.copyWith(
             color: material.Theme.of(context).primaryColor,
           );
     case TextType.subTitle:
-      return material.Theme.of(context).textTheme.subtitle1!.copyWith();
+      return material.Theme.of(context).textTheme.subtitle1!;
     case TextType.error:
       return material.Theme.of(context).textTheme.displaySmall!.copyWith(
             color: material.Theme.of(context).errorColor,
