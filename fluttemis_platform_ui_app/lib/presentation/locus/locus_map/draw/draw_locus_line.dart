@@ -1,7 +1,7 @@
 import 'package:flutter/rendering.dart';
 
 class DrawLocusLine extends CustomPainter {
-  final double width;
+  final double widthMapArea;
   final int locusLength;
   final double scale;
   final int pixelsPerCharacter;
@@ -9,7 +9,7 @@ class DrawLocusLine extends CustomPainter {
   final TextStyle textStyle;
 
   const DrawLocusLine({
-    required this.width,
+    required this.widthMapArea,
     required this.locusLength,
     required this.scale,
     required this.pixelsPerCharacter,
@@ -26,7 +26,7 @@ class DrawLocusLine extends CustomPainter {
 
   void _drawLine(Canvas canvas, Paint paint) {
     const factorToAdjustAngle = 28.0;
-    final rightSizeAngle = Offset(width, factorToAdjustAngle);
+    final rightSizeAngle = Offset(widthMapArea, factorToAdjustAngle);
     const leftSizeAngle = Offset(1, factorToAdjustAngle);
     canvas.drawLine(
       rightSizeAngle,
@@ -39,7 +39,7 @@ class DrawLocusLine extends CustomPainter {
       textAlign: 1,
     );
     final factorToAdjustAlign = locusLengthByCharacters * 10;
-    final finalMarkerInLine = width - factorToAdjustAlign;
+    final finalMarkerInLine = widthMapArea - factorToAdjustAlign;
     _printMarker(
       canvas: canvas,
       text: locusLength.toString(),

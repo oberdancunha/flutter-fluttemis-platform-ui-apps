@@ -3,6 +3,7 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/plat
 import 'package:flutter/widgets.dart';
 
 import 'locus_map_calculate_area_controller.dart';
+import 'locus_map_draw_features_widget.dart';
 import 'locus_map_draw_line_widget.dart';
 
 class LocusMapDrawWidget extends StatefulWidget {
@@ -52,12 +53,21 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
               child: SizedBox(
                 height: height,
                 width: screenWidthScale,
-                child: LocusMapDrawLineWidget(
-                  screenWidthScale: screenWidthScale,
-                  locusLength: widget.locus.length,
-                  scale: scale,
-                  pixelsPerCharacter: pixelsPerCharacter,
-                  locusLengthByCharacters: locusLengthByCharacters,
+                child: Stack(
+                  children: [
+                    LocusMapDrawLineWidget(
+                      widthMapArea: screenWidthScale,
+                      locusLength: widget.locus.length,
+                      scale: scale,
+                      pixelsPerCharacter: pixelsPerCharacter,
+                      locusLengthByCharacters: locusLengthByCharacters,
+                    ),
+                    LocusMapDrawFeaturesWidget(
+                      featuresTypes: widget.locus.featuresReport.featuresTypesList.values.toList(),
+                      widthMapArea: screenWidthScale,
+                      scale: scale,
+                    ),
+                  ],
                 ),
               ),
             ),

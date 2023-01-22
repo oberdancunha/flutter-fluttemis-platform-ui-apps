@@ -5,14 +5,14 @@ import 'package:flutter/widgets.dart';
 import 'draw/draw_locus_line.dart';
 
 class LocusMapDrawLineWidget extends StatelessWidget {
-  final double screenWidthScale;
+  final double widthMapArea;
   final int locusLength;
   final double scale;
   final int pixelsPerCharacter;
   final int locusLengthByCharacters;
 
   const LocusMapDrawLineWidget({
-    required this.screenWidthScale,
+    required this.widthMapArea,
     required this.locusLength,
     required this.scale,
     required this.pixelsPerCharacter,
@@ -23,7 +23,7 @@ class LocusMapDrawLineWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => CustomPaint(
         painter: DrawLocusLine(
-          width: screenWidthScale,
+          widthMapArea: widthMapArea,
           locusLength: locusLength,
           scale: scale,
           pixelsPerCharacter: pixelsPerCharacter,
