@@ -1,11 +1,12 @@
 import 'dart:math' as math;
 
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
 import 'package:flutter/painting.dart';
 
 class DrawLocusFeatureArrow {
   final double featureStart;
   final double featureEnd;
-  final int featureStrand;
+  final FeatureStrandType featureStrand;
 
   const DrawLocusFeatureArrow({
     required this.featureStart,
@@ -34,9 +35,10 @@ class DrawLocusFeatureArrow {
   int get adjustArrowLengthToDraw =>
       _isFeatureLengthLessThanMinimum() ? 6 : defaultAdjustArrowLengthToDraw;
 
-  double get radians => featureStrand == 0 ? 0.0 : 20.0;
+  double get radians => featureStrand == FeatureStrandType.upstream ? 0.0 : 20.0;
 
-  double get rightOrLeftPosition => featureStrand == 0 ? _rightPosition : _leftPosition;
+  double get rightOrLeftPosition =>
+      featureStrand == FeatureStrandType.upstream ? _rightPosition : _leftPosition;
 
   double get _rightPosition => featureEnd - adjustArrowLengthToDraw;
 

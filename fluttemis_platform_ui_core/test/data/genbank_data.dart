@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/features_report.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
 import 'package:fluttemis_platform_ui_core/utils/constants.dart';
@@ -52,7 +53,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 3300,
         end: 4037,
         type: 'gene',
-        strand: 1,
+        strand: FeatureStrandType.downstream,
         name: 'REV7',
         color: colorLocusFeatureNotProduct,
         show: false,
@@ -63,7 +64,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 3300,
         end: 4037,
         type: 'mRNA',
-        strand: 1,
+        strand: FeatureStrandType.downstream,
         product: 'Rev7p',
         name: 'REV7',
         color: colorLocusFeatureKnownProduct,
@@ -75,7 +76,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 3300,
         end: 4037,
         type: 'CDS',
-        strand: 1,
+        strand: FeatureStrandType.downstream,
         product: 'Rev7p',
         name: 'REV7',
         aminoacids:
@@ -91,7 +92,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 687,
         end: 3158,
         type: 'gene',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         name: 'AXL2',
         color: colorLocusFeatureNotProduct,
         show: false,
@@ -102,7 +103,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 687,
         end: 3158,
         type: 'mRNA',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'Axl2p',
         name: 'AXL2',
         color: colorLocusFeatureKnownProduct,
@@ -114,7 +115,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 687,
         end: 3158,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'Axl2p',
         name: 'AXL2',
         note: 'plasma membrane glycoprotein',
@@ -131,7 +132,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 1,
         end: 5028,
         type: 'source',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         color: colorLocusFeatureNotProduct,
         show: false,
         typeByOverlap: 'source',
@@ -141,7 +142,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 1,
         end: 206,
         type: 'mRNA',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'TCP1-beta',
         color: colorLocusFeatureKnownProduct,
         show: false,
@@ -152,7 +153,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         start: 1,
         end: 206,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'TCP1-beta',
         aminoacids: 'SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM',
         nucleotides:
@@ -173,7 +174,7 @@ Map<String, List<Feature>> getFeaturesByList() => {
           start: 3300,
           end: 4037,
           type: 'CDS',
-          strand: 1,
+          strand: FeatureStrandType.downstream,
           product: 'Rev7p',
           name: 'REV7',
           aminoacids:
@@ -189,7 +190,7 @@ Map<String, List<Feature>> getFeaturesByList() => {
           start: 687,
           end: 3158,
           type: 'CDS',
-          strand: 0,
+          strand: FeatureStrandType.upstream,
           product: 'Axl2p',
           name: 'AXL2',
           note: 'plasma membrane glycoprotein',
@@ -206,7 +207,7 @@ Map<String, List<Feature>> getFeaturesByList() => {
           start: 1,
           end: 206,
           type: 'CDS',
-          strand: 0,
+          strand: FeatureStrandType.upstream,
           product: 'TCP1-beta',
           aminoacids: 'SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM',
           nucleotides:
@@ -234,7 +235,7 @@ Feature getFirstFeature() => const Feature(
       start: 1,
       end: 206,
       type: 'CDS',
-      strand: 0,
+      strand: FeatureStrandType.upstream,
       product: 'TCP1-beta',
       aminoacids: 'SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM',
       nucleotides:

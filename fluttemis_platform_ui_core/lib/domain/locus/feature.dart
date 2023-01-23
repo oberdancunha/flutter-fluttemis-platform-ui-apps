@@ -1,11 +1,13 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import 'feature_strand.dart';
+
 class Feature extends Equatable {
   final String id;
   final int start;
   final int end;
   final String type;
-  final int strand;
+  final FeatureStrandType strand;
   final int color;
   final bool show;
   final String typeByOverlap;

@@ -2,12 +2,13 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 
 import '../../domain/core/value_transformer.dart';
 import '../../domain/locus/feature.dart';
+import '../../domain/locus/feature_strand.dart';
 
 class FeatureDto extends Equatable {
   final int start;
   final int end;
   final String type;
-  final int strand;
+  final FeatureStrandType strand;
   final String? typeByOverlap;
   final String? name;
   final String? product;
@@ -56,7 +57,7 @@ class FeatureDto extends Equatable {
     int? start,
     int? end,
     String? type,
-    int? strand,
+    FeatureStrandType? strand,
     String? typeByOverlap,
     String? name,
     String? product,

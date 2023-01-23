@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/color/platform_color.dart';
 import 'package:flutter/widgets.dart';
@@ -59,7 +60,7 @@ class DrawLocusFeatures extends CustomPainter {
     Paint paint, {
     required double featureStart,
     required double featureEnd,
-    required int featureStrand,
+    required FeatureStrandType featureStrand,
   }) {
     final drawLocusFeatureLine = DrawLocusFeatureLine(
       featureStart: featureStart,
@@ -77,7 +78,7 @@ class DrawLocusFeatures extends CustomPainter {
     Paint paint, {
     required double featureStart,
     required double featureEnd,
-    required int featureStrand,
+    required FeatureStrandType featureStrand,
   }) {
     final drawLocusFeatureArrow = DrawLocusFeatureArrow(
       featureStart: featureStart,

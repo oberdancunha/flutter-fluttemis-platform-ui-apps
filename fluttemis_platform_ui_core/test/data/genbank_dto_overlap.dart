@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/feature_dto.dart';
 
 List<FeatureDto> getFeatureOrder() => [
@@ -5,7 +6,7 @@ List<FeatureDto> getFeatureOrder() => [
         start: 7403,
         end: 8833,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'DNA cytosine methyltransferase',
         aminoacids:
             'MQENISVTHARNLIADDAGSEIQAMLSQLLEIYDVKTLVAHLNGLGEQHWSPAIFKRVMMNAAWHRLSDNELTCLKTGLPTPPAHHPHYAFRFIDLFAGIGGIRRGFEAIGGQCVFTSEWNKHAVRTYKANYFCDPLQHRFNEDIRDITLSHREGVSDDEAAEHIRQHIPQHDVLLAGFPCQPFSLAGVSKKNALGRAHGFACETQGTLFFDVVRIIDARRPALFVLENVKNLKSHDQGNTFRIIMQTLDELGYDVADAADNGPDDPKIIDGQHFLPQHRERIVLVGFRRDLNLKTDFTLRNIARCYPPRRPTLAELLEPVVEAKYILTPVLWKYLYRYAKKHQARGNGFGYGMVYPDNPESVARTLSARYYKDGAEILIDRGWDMAKGEVNFDDAGNQQHRPRRLTPRECARLMGFEAPQTYQFRIPVSDTQAYRQFGNSVVVPVFAAVAKLLEPKIHQAVTLRQRETVDGGRSR',
@@ -15,7 +16,7 @@ List<FeatureDto> getFeatureOrder() => [
         start: 8814,
         end: 9284,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'very short patch repair endonuclease',
         aminoacids:
             'MADVHDKATRSKNMRAIATRDTAIEKRLAGLLSAQGITFHTQDATLPGKPDFVVNDYDCVIFTHGCFWHHHHCYLFKVPATRTAFWLEKIGKNVERDERDIQRLQALGWRVLIVWECALRGRAKLSDAALAERLEEWICGGGASAQIDTQGIHLLA',
@@ -25,7 +26,7 @@ List<FeatureDto> getFeatureOrder() => [
         start: 9273,
         end: 10193,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         product: 'drug/metabolite exporter YedA',
         aminoacids:
             'MRFRQLLPLFGALFALYIIWGSTYFVIRIGVESWPPLMMAGVRFLSAGMLLMAFLLLRGEKLPPLRQTINAALIGLLLLAVGNGLVTVAEHQNVPSGIAAVVVATVPLFTLCFSYFFGIKTRKLEWVGIAIGLAGIILLNSGGNLSGNPWGAILILIGSMSWAFGSVYGSRIALPVGMMAGAIEMLAAGVVLLCAAFLSGEKLATLPGLSGFMAVGYLALFGSIIAINAYMYLIRNVSPALATSYAYVNPVVAVLLGTGLGGERLSPVEWAALGVIVFAVVLVTLGKYLFPARAVVTPCKTEDSRQ',
@@ -38,7 +39,7 @@ List<FeatureDto> getReverseFeaturesOrder() => [
         start: 9273,
         end: 10193,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         typeByOverlap: "CDS",
         product: 'drug/metabolite exporter YedA',
         aminoacids:
@@ -49,7 +50,7 @@ List<FeatureDto> getReverseFeaturesOrder() => [
         start: 8814,
         end: 9284,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         typeByOverlap: "CDS#1",
         product: 'very short patch repair endonuclease',
         aminoacids:
@@ -60,7 +61,7 @@ List<FeatureDto> getReverseFeaturesOrder() => [
         start: 7403,
         end: 8833,
         type: 'CDS',
-        strand: 0,
+        strand: FeatureStrandType.upstream,
         typeByOverlap: "CDS",
         product: 'DNA cytosine methyltransferase',
         aminoacids:

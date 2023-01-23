@@ -1,0 +1,4 @@
+enum FeatureStrandType {
+  upstream,
+  downstream,
+}

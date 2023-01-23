@@ -1,10 +1,11 @@
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/border_radius/platform_border_radius.dart';
 import 'package:flutter/painting.dart';
 
 class DrawLocusFeatureLine {
   final double featureStart;
   final double featureEnd;
-  final int featureStrand;
+  final FeatureStrandType featureStrand;
   final int minimalLengthToDrawAdjust;
   final int adjustArrowLigature;
 
@@ -39,10 +40,11 @@ class DrawLocusFeatureLine {
   int get adjustLineLengthToDraw =>
       _isFeatureLengthLessThanMinimum() ? 9 : defaultAdjustLineLengthToDraw;
 
-  double get left => featureStrand == 0
+  double get left => featureStrand == FeatureStrandType.upstream
       ? featureStart
       : featureStart + adjustLineLengthToDraw - adjustArrowLigature;
 
-  double get right =>
-      featureStrand == 0 ? featureEnd - adjustLineLengthToDraw + adjustArrowLigature : featureEnd;
+  double get right => featureStrand == FeatureStrandType.upstream
+      ? featureEnd - adjustLineLengthToDraw + adjustArrowLigature
+      : featureEnd;
 }

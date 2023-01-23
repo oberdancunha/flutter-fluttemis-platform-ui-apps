@@ -2,6 +2,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/foundation.dart';
 
 import '../../domain/core/file_failures.dart';
+import '../../domain/locus/feature_strand.dart';
 import '../../infrastructure/locus/feature_dto.dart';
 import '../../infrastructure/locus/i_locus_data_source.dart';
 import '../../infrastructure/locus/locus_dto.dart';
@@ -44,7 +45,9 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
                         start: feature.start,
                         end: feature.end,
                         type: feature.type,
-                        strand: feature.strand,
+                        strand: feature.strand == 0
+                            ? FeatureStrandType.upstream
+                            : FeatureStrandType.downstream,
                         aminoacids: feature.aminoacids,
                         nucleotides: feature.nucleotides,
                         name: feature.name,
