@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import 'locus_map_calculate_area_controller.dart';
 import 'locus_map_draw_features_widget.dart';
-import 'locus_map_draw_line_widget.dart';
+import 'locus_map_draw_ruler_widget.dart';
 
 class LocusMapDrawWidget extends StatefulWidget {
   final Locus locus;
@@ -55,7 +55,7 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
                 width: screenWidthScale,
                 child: Stack(
                   children: [
-                    LocusMapDrawLineWidget(
+                    LocusMapDrawRulerWidget(
                       widthMapArea: screenWidthScale,
                       locusLength: widget.locus.length,
                       scale: scale,
