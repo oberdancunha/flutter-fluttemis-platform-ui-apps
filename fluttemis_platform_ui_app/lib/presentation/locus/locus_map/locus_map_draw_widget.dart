@@ -28,6 +28,7 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
   late ScrollController _scrollControllerLabels;
   late ScrollController _scrollControllerLFeatures;
   static const _nextLine = 20;
+  static const _adjustFeaturesHeight = 40;
 
   @override
   void initState() {
@@ -91,7 +92,9 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
                   scrollControllerLabelsFeatures: _scrollControllerLabels,
                 ),
                 LocusMapDrawFeaturesWidget(
-                  height: labelHeight,
+                  height: labelHeight >= _adjustFeaturesHeight
+                      ? labelHeight - _adjustFeaturesHeight
+                      : labelHeight,
                   widthMapArea: screenWidthScale,
                   featuresTypes: widget.locus.featuresReport.featuresTypesList.values.toList(),
                   scale: scale,
