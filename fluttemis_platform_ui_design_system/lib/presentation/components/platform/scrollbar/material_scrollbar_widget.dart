@@ -12,6 +12,7 @@ class MaterialScrollbarWidget extends PlatformScrollbarWidget {
   @override
   Widget build(BuildContext context) => Scrollbar(
         controller: controller,
+        interactive: true,
         child: child,
       );
 }
