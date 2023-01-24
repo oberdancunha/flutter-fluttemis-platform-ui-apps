@@ -40,29 +40,32 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           child: Padding(
             padding: const EdgeInsets.only(top: 5),
-            child: SingleChildScrollView(
-              controller: scrollControllerLabelsFeatures,
-              child: SizedBox(
-                height: height,
-                width: widthMapArea,
-                child: Stack(
-                  children: [
-                    for (List<Feature> features in featuresTypes)
-                      Positioned(
-                        top: double.tryParse((nextLinePosition += nextLine).toString()),
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: CustomPaint(
-                          painter: DrawLocusFeatures(
-                            context: context,
-                            widthMapArea: widthMapArea,
-                            features: features,
-                            scale: scale,
+            child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
+              child: SingleChildScrollView(
+                controller: scrollControllerLabelsFeatures,
+                child: SizedBox(
+                  height: height,
+                  width: widthMapArea,
+                  child: Stack(
+                    children: [
+                      for (List<Feature> features in featuresTypes)
+                        Positioned(
+                          top: double.tryParse((nextLinePosition += nextLine).toString()),
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          child: CustomPaint(
+                            painter: DrawLocusFeatures(
+                              context: context,
+                              widthMapArea: widthMapArea,
+                              features: features,
+                              scale: scale,
+                            ),
                           ),
                         ),
-                      ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
