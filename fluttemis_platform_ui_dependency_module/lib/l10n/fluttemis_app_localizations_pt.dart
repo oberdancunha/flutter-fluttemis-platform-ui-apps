@@ -138,4 +138,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get escToCloseWindow => 'Você também pode fechar essa janela apertando a tecla ESC';
+
+  @override
+  String get noDataToBeDisplayedOnTheMap => 'Não há dado a ser exibido no mapa';
 }

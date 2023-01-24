@@ -360,6 +360,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Você também pode fechar essa janela apertando a tecla ESC'**
   String get escToCloseWindow;
+
+  /// No description provided for @noDataToBeDisplayedOnTheMap.
+  ///
+  /// In pt, this message translates to:
+  /// **'Não há dado a ser exibido no mapa'**
+  String get noDataToBeDisplayedOnTheMap;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

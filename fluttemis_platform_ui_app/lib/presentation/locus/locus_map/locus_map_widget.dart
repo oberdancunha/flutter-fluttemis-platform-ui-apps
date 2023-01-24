@@ -1,8 +1,9 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/card/platform_card_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'locus_map_draw_widget.dart';
+import 'locus_map_no_features_widget.dart';
 import 'locus_map_product_label_widget.dart';
 
 class LocusMapWidget extends StatelessWidget {
@@ -26,7 +27,13 @@ class LocusMapWidget extends StatelessWidget {
                   height: 78,
                   child: LocusMapProductLabelWidget(),
                 ),
-                Expanded(child: LocusMapDrawWidget(locus: locus)),
+                Expanded(
+                  child: Visibility(
+                    visible: locus.featuresReport.featuresTypesList.keys.isNotEmpty,
+                    replacement: const LocusMapNoFeaturesWidget(),
+                    child: LocusMapDrawWidget(locus: locus),
+                  ),
+                ),
               ],
             ),
           ),

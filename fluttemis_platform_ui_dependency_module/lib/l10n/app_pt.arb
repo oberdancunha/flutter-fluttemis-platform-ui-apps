@@ -43,5 +43,6 @@
   "openLocus": "Abrir locus",
   "emptyLocusTable": "Tabela de locus vazia",
   "closeWindow": "Fechar janela",
-  "escToCloseWindow": "Você também pode fechar essa janela apertando a tecla ESC"
+  "escToCloseWindow": "Você também pode fechar essa janela apertando a tecla ESC",
+  "noDataToBeDisplayedOnTheMap": "Não há dado a ser exibido no mapa"
 }
