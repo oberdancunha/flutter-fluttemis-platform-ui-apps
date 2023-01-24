@@ -3,12 +3,14 @@ class LocusMapCalculateAreaController {
   final double height;
   final int locusLength;
   final int minPixelsPerCharacter;
+  final int featuresTypesListLength;
 
   const LocusMapCalculateAreaController({
     required this.width,
     required this.height,
     required this.locusLength,
     required this.minPixelsPerCharacter,
+    required this.featuresTypesListLength,
   });
 
   int get locusLengthByCharacters => locusLength.toString().length;
@@ -25,4 +27,6 @@ class LocusMapCalculateAreaController {
   double get scale => (width / locusLength) * (pixelsPerCharacter * (locusLengthByCharacters / 10));
 
   double get screenWidthScale => locusLength * scale;
+
+  double get labelHeight => double.tryParse((featuresTypesListLength * 26).toString())!;
 }
