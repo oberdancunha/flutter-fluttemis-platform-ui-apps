@@ -39,7 +39,10 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
           controller: scrollControllerRulerFeatures,
           scrollDirection: Axis.horizontal,
           child: Padding(
-            padding: const EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(
+              top: 5,
+              bottom: 20,
+            ),
             child: ScrollConfiguration(
               behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
               child: SingleChildScrollView(

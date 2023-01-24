@@ -28,8 +28,7 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
   late ScrollController _scrollControllerLabels;
   late ScrollController _scrollControllerLFeatures;
   static const _nextLine = 20;
-  static const _adjustLabelsHeight = 55;
-  static const _adjustFeaturesHeight = 40;
+  static const _adjustLabelsFeaturesHeight = 15;
 
   @override
   void initState() {
@@ -55,7 +54,7 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (_, constraints) {
           final calculateAreaController = LocusMapCalculateAreaController(
-            height: constraints.maxHeight,
+            height: constraints.maxHeight - _adjustLabelsFeaturesHeight,
             width: constraints.maxWidth > _minimalWidth
                 ? constraints.maxWidth
                 : constraints.maxWidth * 4,
@@ -63,12 +62,11 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
             minPixelsPerCharacter: 10,
             featuresTypesListLength: widget.locus.featuresReport.featuresTypesList.keys.length,
           );
-          final height = calculateAreaController.height;
           final screenWidthScale = calculateAreaController.screenWidthScale;
           final scale = calculateAreaController.scale;
           final pixelsPerCharacter = calculateAreaController.pixelsPerCharacter;
           final locusLengthByCharacters = calculateAreaController.locusLengthByCharacters;
-          final labelHeight = calculateAreaController.labelHeight;
+          final height = calculateAreaController.mapHeight;
 
           return SizedBox(
             key: ObjectKey(widget.locus.hashCode),
@@ -86,18 +84,14 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
                   scrollControllerRulerFeatures: _scrollControllerRuler,
                 ),
                 LocusMapFeaturesLabelWidget(
-                  height: labelHeight >= _adjustLabelsHeight
-                      ? labelHeight - _adjustLabelsHeight
-                      : labelHeight,
+                  height: height,
                   featuresLabel: widget.locus.featuresReport.featuresTypesList.keys.toList(),
                   featuresTypesCount: widget.locus.featuresReport.featuresTypesCount,
                   nextLine: _nextLine,
                   scrollControllerLabelsFeatures: _scrollControllerLabels,
                 ),
                 LocusMapDrawFeaturesWidget(
-                  height: labelHeight >= _adjustFeaturesHeight
-                      ? labelHeight - _adjustFeaturesHeight
-                      : labelHeight,
+                  height: height,
                   widthMapArea: screenWidthScale,
                   featuresTypes: widget.locus.featuresReport.featuresTypesList.values.toList(),
                   scale: scale,

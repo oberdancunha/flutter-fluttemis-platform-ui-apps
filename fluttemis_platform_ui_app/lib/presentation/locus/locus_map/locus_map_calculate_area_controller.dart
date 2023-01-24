@@ -28,5 +28,7 @@ class LocusMapCalculateAreaController {
 
   double get screenWidthScale => locusLength * scale;
 
-  double get labelHeight => double.tryParse((featuresTypesListLength * 26).toString())!;
+  double get totalLabelsHeight => double.tryParse((featuresTypesListLength * 25).toString())!;
+
+  double get mapHeight => totalLabelsHeight >= height ? height : totalLabelsHeight;
 }
