@@ -52,6 +52,7 @@ dev_dependencies:
   flutter_lints: ^1.0.0
   dart_code_metrics: ^5.0.1
   lint: ^1.10.0
+  icons_launcher: ^2.0.6
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -137,3 +138,26 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+icons_launcher:
+  platforms:
+    android:
+      enable: false
+    ios:
+      enable: false
+    web:
+      enable: false
+    macos:
+      enable: true
+      image_path: assets/images/launcher/launcher_macos.png
+    windows:
+      enable: true
+      image_path: assets/images/launcher/launcher_windows.png
+    linux:
+      enable: true
+      image_path: assets/images/launcher/launcher_linux.png
+
+    
+
+      
+      
