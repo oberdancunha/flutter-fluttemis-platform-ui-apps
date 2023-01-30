@@ -1,3 +1,5 @@
+import 'package:flutter/widgets.dart';
+
 import '../core/platform_widget.dart';
 import 'macos_text_widget.dart';
 import 'material_text_widget.dart';
@@ -9,11 +11,13 @@ class PlatformTextWidget
   final String text;
   final TextType textType;
   final double fontSize;
+  final TextAlign? textAlign;
 
   const PlatformTextWidget(
     this.text, {
     required this.textType,
     required this.fontSize,
+    this.textAlign,
     super.key,
   });
 
@@ -22,6 +26,7 @@ class PlatformTextWidget
         text,
         textType: textType,
         fontSize: fontSize,
+        textAlign: textAlign,
       );
 
   @override
@@ -29,6 +34,7 @@ class PlatformTextWidget
         text,
         textType: textType,
         fontSize: fontSize,
+        textAlign: textAlign,
       );
 
   @override
@@ -36,5 +42,6 @@ class PlatformTextWidget
         text,
         textType: textType,
         fontSize: fontSize,
+        textAlign: textAlign,
       );
 }

@@ -8,6 +8,7 @@ class WindowsTextWidget extends PlatformTextWidget {
     super.text, {
     required super.textType,
     required super.fontSize,
+    super.textAlign,
     super.key,
   });
 
@@ -17,5 +18,6 @@ class WindowsTextWidget extends PlatformTextWidget {
         style: getPlatformTextStyle(context, textType).copyWith(
           fontSize: fontSize,
         ),
+        textAlign: textAlign,
       );
 }
