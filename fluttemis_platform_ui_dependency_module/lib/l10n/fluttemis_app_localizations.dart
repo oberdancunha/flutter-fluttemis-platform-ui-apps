@@ -366,6 +366,60 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Não há dado a ser exibido no mapa'**
   String get noDataToBeDisplayedOnTheMap;
+
+  /// No description provided for @featureStart.
+  ///
+  /// In pt, this message translates to:
+  /// **'Posição de início'**
+  String get featureStart;
+
+  /// No description provided for @featureEnd.
+  ///
+  /// In pt, this message translates to:
+  /// **'Posição de término'**
+  String get featureEnd;
+
+  /// No description provided for @featureStrand.
+  ///
+  /// In pt, this message translates to:
+  /// **'Orientação'**
+  String get featureStrand;
+
+  /// No description provided for @featureName.
+  ///
+  /// In pt, this message translates to:
+  /// **'Gene'**
+  String get featureName;
+
+  /// No description provided for @featureProduct.
+  ///
+  /// In pt, this message translates to:
+  /// **'Produto'**
+  String get featureProduct;
+
+  /// No description provided for @featureNote.
+  ///
+  /// In pt, this message translates to:
+  /// **'Anotação, observação ou memorando'**
+  String get featureNote;
+
+  /// No description provided for @nucleotideSequence.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sequência de nucleotídeos'**
+  String get nucleotideSequence;
+
+  /// No description provided for @aminoacidSequence.
+  ///
+  /// In pt, this message translates to:
+  /// **'Sequência de aminoácidos'**
+  String get aminoacidSequence;
+
+  /// No description provided for @copy.
+  ///
+  /// In pt, this message translates to:
+  /// **'Copiar'**
+  String get copy;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

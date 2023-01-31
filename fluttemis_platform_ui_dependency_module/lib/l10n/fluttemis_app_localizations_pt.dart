@@ -141,4 +141,31 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get noDataToBeDisplayedOnTheMap => 'Não há dado a ser exibido no mapa';
+
+  @override
+  String get featureStart => 'Posição de início';
+
+  @override
+  String get featureEnd => 'Posição de término';
+
+  @override
+  String get featureStrand => 'Orientação';
+
+  @override
+  String get featureName => 'Gene';
+
+  @override
+  String get featureProduct => 'Produto';
+
+  @override
+  String get featureNote => 'Anotação, observação ou memorando';
+
+  @override
+  String get nucleotideSequence => 'Sequência de nucleotídeos';
+
+  @override
+  String get aminoacidSequence => 'Sequência de aminoácidos';
+
+  @override
+  String get copy => 'Copiar';
 }

@@ -44,5 +44,14 @@
   "emptyLocusTable": "Tabela de locus vazia",
   "closeWindow": "Fechar janela",
   "escToCloseWindow": "Você também pode fechar essa janela apertando a tecla ESC",
-  "noDataToBeDisplayedOnTheMap": "Não há dado a ser exibido no mapa"
+  "noDataToBeDisplayedOnTheMap": "Não há dado a ser exibido no mapa",
+  "featureStart": "Posição de início",
+  "featureEnd": "Posição de término",
+  "featureStrand": "Orientação",
+  "featureName": "Gene",
+  "featureProduct": "Produto",
+  "featureNote": "Anotação, observação ou memorando",
+  "nucleotideSequence": "Sequência de nucleotídeos",
+  "aminoacidSequence": "Sequência de aminoácidos",
+  "copy": "Copiar"
 }
