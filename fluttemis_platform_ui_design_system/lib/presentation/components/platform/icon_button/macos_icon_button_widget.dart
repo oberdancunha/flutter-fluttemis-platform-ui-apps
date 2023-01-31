@@ -13,20 +13,27 @@ class MacosIconButtonWidget extends PlatformIconButtonWidget {
   });
 
   @override
-  Widget build(BuildContext context) => PushButton(
-        onPressed: onPressed,
-        buttonSize: ButtonSize.small,
-        color: MacosTheme.of(context).pushButtonTheme.color,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon,
-            const SizedBox(width: 11),
-            Text(
-              label,
-              style: TextStyle(fontSize: fontSize),
-            ),
-          ],
+  Widget build(BuildContext context) => MacosTheme(
+        data: MacosThemeData(
+          iconTheme: MacosIconThemeData(
+            color: MacosTheme.of(context).pushButtonTheme.secondaryColor,
+          ),
+        ),
+        child: PushButton(
+          onPressed: onPressed,
+          buttonSize: ButtonSize.small,
+          color: MacosTheme.of(context).pushButtonTheme.color,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              icon,
+              const SizedBox(width: 11),
+              Text(
+                label,
+                style: TextStyle(fontSize: fontSize),
+              ),
+            ],
+          ),
         ),
       );
 }
