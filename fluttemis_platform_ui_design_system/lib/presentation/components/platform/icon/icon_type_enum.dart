@@ -7,4 +7,5 @@ enum IconType {
   arrow,
   search,
   clear,
+  copy,
 }
