@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scrollbar/platform_scrollbar_widget.dart';
 import 'package:flutter/widgets.dart';
 
@@ -7,7 +8,7 @@ import 'draw/draw_locus_features.dart';
 class LocusMapDrawFeaturesWidget extends StatelessWidget {
   final double height;
   final double widthMapArea;
-  final List<List<Feature>> featuresTypes;
+  final List<List<Feature>> locusFeaturesTypes;
   final double scale;
   final int nextLine;
   final ScrollController scrollControllerRulerFeatures;
@@ -16,7 +17,7 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
   const LocusMapDrawFeaturesWidget({
     required this.height,
     required this.widthMapArea,
-    required this.featuresTypes,
+    required this.locusFeaturesTypes,
     required this.scale,
     required this.nextLine,
     required this.scrollControllerRulerFeatures,
@@ -52,18 +53,23 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
                   width: widthMapArea,
                   child: Stack(
                     children: [
-                      for (List<Feature> features in featuresTypes)
+                      for (List<Feature> locusFeatures in locusFeaturesTypes)
                         Positioned(
                           top: double.tryParse((nextLinePosition += nextLine).toString()),
                           bottom: 0,
                           left: 0,
                           right: 0,
-                          child: CustomPaint(
-                            painter: DrawLocusFeatures(
-                              context: context,
-                              widthMapArea: widthMapArea,
-                              features: features,
-                              scale: scale,
+                          child: CanvasTouchDetector(
+                            gesturesToOverride: const [
+                              GestureType.onTapUp,
+                            ],
+                            builder: (context) => CustomPaint(
+                              painter: DrawLocusFeatures(
+                                context: context,
+                                widthMapArea: widthMapArea,
+                                locusFeatures: locusFeatures,
+                                scale: scale,
+                              ),
                             ),
                           ),
                         ),

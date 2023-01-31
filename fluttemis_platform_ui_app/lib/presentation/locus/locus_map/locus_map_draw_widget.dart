@@ -93,7 +93,7 @@ class _LocusMapDrawWidgetState extends State<LocusMapDrawWidget> {
                 LocusMapDrawFeaturesWidget(
                   height: height,
                   widthMapArea: screenWidthScale,
-                  featuresTypes: widget.locus.featuresReport.featuresTypesList.values.toList(),
+                  locusFeaturesTypes: widget.locus.featuresReport.featuresTypesList.values.toList(),
                   scale: scale,
                   nextLine: _nextLine,
                   scrollControllerRulerFeatures: _scrollControllerRFeatures,
