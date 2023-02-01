@@ -3,8 +3,21 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 
 import '../tooltip/windows_tooltip_widget.dart';
 
-class WindowsCloseDialogButtonWidget extends StatelessWidget {
+class WindowsCloseDialogButtonWidget extends StatefulWidget {
   const WindowsCloseDialogButtonWidget({super.key});
+
+  @override
+  State<WindowsCloseDialogButtonWidget> createState() => _WindowsCloseDialogButtonWidgetState();
+}
+
+class _WindowsCloseDialogButtonWidgetState extends State<WindowsCloseDialogButtonWidget> {
+  late bool _onHover;
+
+  @override
+  void initState() {
+    super.initState();
+    _onHover = false;
+  }
 
   @override
   Widget build(BuildContext context) => Align(
@@ -12,27 +25,36 @@ class WindowsCloseDialogButtonWidget extends StatelessWidget {
         child: SizedBox(
           height: 40,
           width: 40,
-          child: WindowsTooltipWidget(
-            message: FluttemisAppLocalizations.of(context)!.closeWindow,
-            child: Button(
-              style: ButtonStyle(
-                backgroundColor: ButtonState.all(const Color(0XFFC51A2A)),
-                border: ButtonState.all(
-                  const BorderSide(
-                    color: Colors.transparent,
+          child: FocusableActionDetector(
+            onShowHoverHighlight: (onHover) {
+              setState(() {
+                _onHover = onHover;
+              });
+            },
+            child: WindowsTooltipWidget(
+              message: FluttemisAppLocalizations.of(context)!.closeWindow,
+              child: Button(
+                style: ButtonStyle(
+                  backgroundColor: ButtonState.all(
+                    _onHover ? const Color.fromARGB(255, 153, 21, 34) : const Color(0XFFC51A2A),
+                  ),
+                  border: ButtonState.all(
+                    const BorderSide(
+                      color: Colors.transparent,
+                    ),
+                  ),
+                  shape: ButtonState.all(
+                    const RoundedRectangleBorder(),
                   ),
                 ),
-                shape: ButtonState.all(
-                  const RoundedRectangleBorder(),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Icon(
+                  FluentIcons.clear,
+                  color: Colors.white,
+                  size: 13,
                 ),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Icon(
-                FluentIcons.clear,
-                color: Colors.white,
-                size: 13,
               ),
             ),
           ),
