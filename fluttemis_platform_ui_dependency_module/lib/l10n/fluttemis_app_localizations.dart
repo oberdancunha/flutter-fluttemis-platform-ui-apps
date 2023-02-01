@@ -391,6 +391,12 @@ abstract class FluttemisAppLocalizations {
   /// **'Gene'**
   String get featureName;
 
+  /// No description provided for @featureType.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tipo'**
+  String get featureType;
+
   /// No description provided for @featureProduct.
   ///
   /// In pt, this message translates to:

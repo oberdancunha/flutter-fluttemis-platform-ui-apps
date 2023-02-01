@@ -56,6 +56,12 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                           image: 'assets/images/feature/feature_name.png',
                           textType: TextType.label,
                         ),
+                      OverviewDataWidget(
+                        value: locusFeature.type,
+                        description: FluttemisAppLocalizations.of(context)!.featureType,
+                        image: 'assets/images/feature/feature_type.png',
+                        textType: TextType.label,
+                      ),
                     ],
                   ),
                   if (locusFeature.product != null)

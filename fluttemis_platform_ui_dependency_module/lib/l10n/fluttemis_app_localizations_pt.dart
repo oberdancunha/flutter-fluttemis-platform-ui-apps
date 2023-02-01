@@ -155,6 +155,9 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get featureName => 'Gene';
 
   @override
+  String get featureType => 'Tipo';
+
+  @override
   String get featureProduct => 'Produto';
 
   @override

@@ -49,6 +49,7 @@
   "featureEnd": "Posição de término",
   "featureStrand": "Orientação",
   "featureName": "Gene",
+  "featureType": "Tipo",
   "featureProduct": "Produto",
   "featureNote": "Anotação, observação ou memorando",
   "nucleotideSequence": "Sequência de nucleotídeos",
