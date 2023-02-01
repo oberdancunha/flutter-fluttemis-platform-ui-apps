@@ -50,23 +50,25 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
           const SizedBox(height: 10),
           Row(
             children: [
-              SizedBox(
-                height: 80,
-                width: 670,
-                child: PlatformScrollbarWidget(
-                  controller: _scrollController,
-                  child: SingleChildScrollView(
+              Expanded(
+                child: SizedBox(
+                  height: 80,
+                  width: 670,
+                  child: PlatformScrollbarWidget(
                     controller: _scrollController,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: PlatformTextWidget(
-                        widget.sequences.replaceAllMapped(
-                          RegExp(r'(\w{1})'),
-                          (match) => '${match[1]} ',
+                    child: SingleChildScrollView(
+                      controller: _scrollController,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: PlatformTextWidget(
+                          widget.sequences.replaceAllMapped(
+                            RegExp(r'(\w{1})'),
+                            (match) => '${match[1]} ',
+                          ),
+                          textType: TextType.label,
+                          fontSize: 11.5,
+                          textAlign: TextAlign.justify,
                         ),
-                        textType: TextType.label,
-                        fontSize: 11.5,
-                        textAlign: TextAlign.justify,
                       ),
                     ),
                   ),
