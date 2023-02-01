@@ -8,20 +8,36 @@ import 'windows_dialog_widget.dart';
 class PlatformDialogWidget
     extends PlatformWidget<MacosDialogWidget, WindowsDialogWidget, MaterialDialogWidget> {
   final Widget child;
+  final double? height;
+  final double? width;
 
   const PlatformDialogWidget({
     required this.child,
+    this.height,
+    this.width,
     super.key,
   });
 
   @override
-  MacosDialogWidget buildMacosWidget() => MacosDialogWidget(child: child);
+  MacosDialogWidget buildMacosWidget() => MacosDialogWidget(
+        height: height,
+        width: width,
+        child: child,
+      );
 
   @override
-  WindowsDialogWidget buildWindowsWidget() => WindowsDialogWidget(child: child);
+  WindowsDialogWidget buildWindowsWidget() => WindowsDialogWidget(
+        height: height,
+        width: width,
+        child: child,
+      );
 
   @override
-  MaterialDialogWidget buildMaterialWidget() => MaterialDialogWidget(child: child);
+  MaterialDialogWidget buildMaterialWidget() => MaterialDialogWidget(
+        height: height,
+        width: width,
+        child: child,
+      );
 
   EdgeInsets calculateArea(BuildContext context) {
     const EdgeInsets insetPadding = EdgeInsets.symmetric(horizontal: 140, vertical: 48);

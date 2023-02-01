@@ -7,6 +7,8 @@ import 'platform_dialog_widget.dart';
 class WindowsDialogWidget extends PlatformDialogWidget {
   const WindowsDialogWidget({
     required super.child,
+    super.height,
+    super.width,
     super.key,
   });
 
@@ -15,7 +17,8 @@ class WindowsDialogWidget extends PlatformDialogWidget {
         padding: calculateArea(context),
         child: ContentDialog(
           constraints: BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width,
+            maxHeight: height ?? MediaQuery.of(context).size.height,
+            maxWidth: width ?? MediaQuery.of(context).size.width,
           ),
           style: const ContentDialogThemeData(
             padding: EdgeInsets.zero,
