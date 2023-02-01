@@ -29,7 +29,6 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                     childAspectRatio: 2.5,
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    padding: const EdgeInsets.only(top: 30),
                     children: [
                       OverviewDataWidget(
                         value: locusFeature.start.toString(),

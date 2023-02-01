@@ -57,33 +57,30 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   }
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(16),
-        child: Material(
-          color: Colors.transparent,
-          child: PaginatedDataTable2(
-            wrapInCard: false,
-            columnSpacing: 12,
-            horizontalMargin: 12,
-            autoRowsToHeight: true,
-            renderEmptyRowsInTheEnd: false,
-            showFirstLastButtons: true,
-            headingRowColor: MaterialStateProperty.all(Colors.transparent),
-            controller: _paginatorController,
-            empty: DataTableEmptyMessageWidget(message: widget.emptyMessage),
-            header: DataTableHeaderWidget(
-              onChanged: _changeTextSearch,
-              onClear: _clear,
-              hintTextSearch: widget.hintTextSearch,
-            ),
-            sortArrowIcon: getPlatformIcon(IconType.arrow),
-            sortColumnIndex: _sortColumnIndex,
-            sortAscending: _sortAscending,
-            columns: _buildColumns(),
-            source: CustomDataTableSource(listData: _listData),
-            hidePaginator: _listData.isEmpty,
-            dividerThickness: _listData.isEmpty ? 0 : 1,
+  Widget build(BuildContext context) => Material(
+        color: Colors.transparent,
+        child: PaginatedDataTable2(
+          wrapInCard: false,
+          columnSpacing: 12,
+          horizontalMargin: 12,
+          autoRowsToHeight: true,
+          renderEmptyRowsInTheEnd: false,
+          showFirstLastButtons: true,
+          headingRowColor: MaterialStateProperty.all(Colors.transparent),
+          controller: _paginatorController,
+          empty: DataTableEmptyMessageWidget(message: widget.emptyMessage),
+          header: DataTableHeaderWidget(
+            onChanged: _changeTextSearch,
+            onClear: _clear,
+            hintTextSearch: widget.hintTextSearch,
           ),
+          sortArrowIcon: getPlatformIcon(IconType.arrow),
+          sortColumnIndex: _sortColumnIndex,
+          sortAscending: _sortAscending,
+          columns: _buildColumns(),
+          source: CustomDataTableSource(listData: _listData),
+          hidePaginator: _listData.isEmpty,
+          dividerThickness: _listData.isEmpty ? 0 : 1,
         ),
       );
 

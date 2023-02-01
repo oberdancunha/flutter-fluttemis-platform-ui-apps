@@ -8,12 +8,15 @@ class CloseDialogByEscMessageWidget extends StatelessWidget {
   const CloseDialogByEscMessageWidget({super.key});
 
   @override
-  Widget build(BuildContext context) => Align(
-        alignment: Alignment.topCenter,
-        child: PlatformTextWidget(
-          FluttemisAppLocalizations.of(context)!.escToCloseWindow,
-          textType: TextType.caption,
-          fontSize: 13,
+  Widget build(BuildContext context) => SizedBox(
+        height: 20,
+        child: Align(
+          alignment: Alignment.topCenter,
+          child: PlatformTextWidget(
+            FluttemisAppLocalizations.of(context)!.escToCloseWindow,
+            textType: TextType.caption,
+            fontSize: 13,
+          ),
         ),
       );
 }

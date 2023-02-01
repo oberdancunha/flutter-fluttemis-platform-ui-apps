@@ -23,16 +23,22 @@ class WindowsDialogWidget extends PlatformDialogWidget {
           style: const ContentDialogThemeData(
             padding: EdgeInsets.zero,
           ),
-          content: Stack(
+          content: Column(
             children: [
-              const WindowsCloseDialogButtonWidget(),
-              Padding(
-                padding: const EdgeInsets.all(20),
+              SizedBox(
+                height: 40,
                 child: Stack(
-                  children: [
-                    const CloseDialogByEscMessageWidget(),
-                    child,
+                  alignment: Alignment.center,
+                  children: const [
+                    CloseDialogByEscMessageWidget(),
+                    WindowsCloseDialogButtonWidget(),
                   ],
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: child,
                 ),
               ),
             ],

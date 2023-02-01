@@ -30,16 +30,22 @@ class MacosDialogWidget extends PlatformDialogWidget {
           return MacosSheet(
             backgroundColor: MacosTheme.of(context).canvasColor,
             insetPadding: effectivePadding,
-            child: Stack(
+            child: Column(
               children: [
-                const MacosCloseDialogButtonWidget(),
-                Padding(
-                  padding: const EdgeInsets.all(20),
+                SizedBox(
+                  height: 40,
                   child: Stack(
-                    children: [
-                      const CloseDialogByEscMessageWidget(),
-                      child,
+                    alignment: Alignment.center,
+                    children: const [
+                      MacosCloseDialogButtonWidget(),
+                      CloseDialogByEscMessageWidget(),
                     ],
+                  ),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: child,
                   ),
                 ),
               ],

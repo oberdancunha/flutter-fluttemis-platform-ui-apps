@@ -20,16 +20,22 @@ class MaterialDialogWidget extends PlatformDialogWidget {
             maxHeight: height ?? MediaQuery.of(context).size.height,
             maxWidth: width ?? MediaQuery.of(context).size.width,
           ),
-          child: Stack(
+          child: Column(
             children: [
-              const MaterialCloseDialogButtonWidget(),
-              Padding(
-                padding: const EdgeInsets.all(20),
+              SizedBox(
+                height: 40,
                 child: Stack(
-                  children: [
-                    const CloseDialogByEscMessageWidget(),
-                    child,
+                  alignment: Alignment.center,
+                  children: const [
+                    CloseDialogByEscMessageWidget(),
+                    MaterialCloseDialogButtonWidget(),
                   ],
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: child,
                 ),
               ),
             ],
