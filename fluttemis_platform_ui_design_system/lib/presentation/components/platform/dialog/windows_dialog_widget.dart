@@ -14,7 +14,7 @@ class WindowsDialogWidget extends PlatformDialogWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: calculateArea(context),
+        padding: (width == null && height == null) ? calculateArea(context) : EdgeInsets.zero,
         child: ContentDialog(
           constraints: BoxConstraints(
             maxHeight: height ?? MediaQuery.of(context).size.height,

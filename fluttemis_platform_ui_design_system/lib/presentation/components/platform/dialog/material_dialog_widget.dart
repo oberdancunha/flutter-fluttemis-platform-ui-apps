@@ -14,7 +14,7 @@ class MaterialDialogWidget extends PlatformDialogWidget {
 
   @override
   Widget build(BuildContext context) => Dialog(
-        insetPadding: calculateArea(context),
+        insetPadding: (width == null && height == null) ? calculateArea(context) : EdgeInsets.zero,
         child: ConstrainedBox(
           constraints: BoxConstraints(
             maxHeight: height ?? MediaQuery.of(context).size.height,
