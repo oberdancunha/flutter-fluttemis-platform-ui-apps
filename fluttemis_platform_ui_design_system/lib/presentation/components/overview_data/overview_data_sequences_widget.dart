@@ -54,7 +54,6 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
               Expanded(
                 child: SizedBox(
                   height: 80,
-                  width: 670,
                   child: PlatformScrollbarWidget(
                     controller: _scrollController,
                     child: SingleChildScrollView(
