@@ -8,25 +8,26 @@ class MaterialCloseDialogButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.bottomLeft,
-        child: SizedBox(
-          height: 50,
-          width: 100,
+        alignment: Alignment.topRight,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 10),
           child: MaterialTooltipWidget(
             message: FluttemisAppLocalizations.of(context)!.closeWindow,
             child: ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(
-                  Theme.of(context).primaryColor,
-                ),
-                shape: MaterialStateProperty.all(
-                  const CircleBorder(),
+              style: ElevatedButton.styleFrom(
+                fixedSize: const Size(30, 30),
+                backgroundColor: Theme.of(context).primaryColor,
+                shape: const CircleBorder(),
+              ),
+              child: const Center(
+                child: Icon(
+                  Icons.close,
+                  size: 15,
                 ),
               ),
-              child: const Icon(Icons.close),
             ),
           ),
         ),
