@@ -16,7 +16,7 @@ dependencies:
   fluttemis_platform_ui_core:
     path: ../fluttemis_platform_ui_core
   fluent_ui: ^4.0.3
-  macos_ui: ^1.7.5
+  macos_ui: ^1.7.6
  
 dev_dependencies:
   dart_code_metrics: ^5.0.1
