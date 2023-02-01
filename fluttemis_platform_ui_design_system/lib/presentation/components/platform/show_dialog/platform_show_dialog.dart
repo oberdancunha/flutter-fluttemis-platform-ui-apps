@@ -1,6 +1,6 @@
-// ignore_for_file: no_default_cases
-
-import 'package:flutter/material.dart';
+import 'package:fluent_ui/fluent_ui.dart' as fluent_ui;
+import 'package:flutter/material.dart' as material;
+import 'package:flutter/widgets.dart';
 import 'package:macos_ui/macos_ui.dart';
 
 import '../core/platform.dart';
@@ -18,8 +18,14 @@ Future<T?> platformShowDialog<T>({
         barrierDismissible: barrierDismissible,
         builder: builder,
       );
-    default:
-      return showDialog(
+    case CurrentPlatform.isWindows:
+      return fluent_ui.showDialog(
+        context: context,
+        builder: builder,
+        barrierDismissible: barrierDismissible,
+      );
+    case CurrentPlatform.isLinux:
+      return material.showDialog(
         context: context,
         builder: builder,
         barrierDismissible: barrierDismissible,
