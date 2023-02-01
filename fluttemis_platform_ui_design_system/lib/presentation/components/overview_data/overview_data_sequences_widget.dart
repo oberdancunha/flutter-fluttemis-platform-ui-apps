@@ -49,6 +49,7 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
           ),
           const SizedBox(height: 10),
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
                 child: SizedBox(
