@@ -8,6 +8,7 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/plat
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/show_dialog/platform_show_dialog.dart';
 import 'package:flutter/widgets.dart';
 
+import 'locus_resume_total_widget.dart';
 import 'locus_table_widget.dart';
 
 class LocusResumeHeaderWidget extends StatelessWidget {
@@ -23,6 +24,9 @@ class LocusResumeHeaderWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const DataSourceInputWidget(),
+          const SizedBox(height: 10),
+          LocusResumeTotalWidget(total: locus.size),
+          const SizedBox(height: 10),
           SizedBox(
             height: 25,
             width: 200,
