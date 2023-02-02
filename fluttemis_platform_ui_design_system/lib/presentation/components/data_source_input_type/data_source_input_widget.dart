@@ -34,7 +34,6 @@ class _DataSourceInputWidgetState extends State<DataSourceInputWidget> {
 
       return SizedBox(
         height: 25,
-        width: MediaQuery.of(context).size.width / 2,
         child: Row(
           children: [
             Image.asset(

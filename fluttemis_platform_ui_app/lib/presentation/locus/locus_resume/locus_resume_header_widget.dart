@@ -20,33 +20,36 @@ class LocusResumeHeaderWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const DataSourceInputWidget(),
-          const SizedBox(height: 10),
-          LocusResumeTotalWidget(total: locus.size),
-          const SizedBox(height: 10),
-          SizedBox(
-            height: 25,
-            width: 200,
-            child: PlatformIconButtonWidget(
-              icon: const PlatformIconWidget(
-                iconType: IconType.table,
-                size: 13,
+  Widget build(BuildContext context) => SizedBox(
+        width: MediaQuery.of(context).size.width / 2,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const DataSourceInputWidget(),
+            const SizedBox(height: 10),
+            LocusResumeTotalWidget(total: locus.size),
+            const SizedBox(height: 10),
+            SizedBox(
+              height: 25,
+              width: 200,
+              child: PlatformIconButtonWidget(
+                icon: const PlatformIconWidget(
+                  iconType: IconType.table,
+                  size: 13,
+                ),
+                label: FluttemisAppLocalizations.of(context)!.openLocusTable,
+                fontSize: 11,
+                onPressed: () {
+                  platformShowDialog(
+                    context: context,
+                    builder: (_) => PlatformDialogWidget(
+                      child: LocusTableWidget(locus: locus),
+                    ),
+                  );
+                },
               ),
-              label: FluttemisAppLocalizations.of(context)!.openLocusTable,
-              fontSize: 11,
-              onPressed: () {
-                platformShowDialog(
-                  context: context,
-                  builder: (_) => PlatformDialogWidget(
-                    child: LocusTableWidget(locus: locus),
-                  ),
-                );
-              },
             ),
-          ),
-        ],
+          ],
+        ),
       );
 }
