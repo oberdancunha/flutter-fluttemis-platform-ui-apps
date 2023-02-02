@@ -80,7 +80,7 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                   if (locusFeature.nucleotides != null) ...[
                     const SizedBox(height: 10),
                     OverviewDataSequencesWidget(
-                      height: locusFeature.aminoacids != null ? 92 : 233,
+                      height: locusFeature.aminoacids != null ? 92 : 295,
                       title: FluttemisAppLocalizations.of(context)!.nucleotideSequence,
                       sequences: locusFeature.nucleotides!,
                     ),
