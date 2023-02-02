@@ -36,7 +36,7 @@ class _LocusResumeWidgetState extends State<LocusResumeWidget> {
           key: GlobalKey(),
           children: [
             LocusMapWidget(locus: _locusShowStore.locusToBeShown),
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,

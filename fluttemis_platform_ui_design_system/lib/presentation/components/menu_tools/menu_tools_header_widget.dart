@@ -14,7 +14,7 @@ class MenuToolsHeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.all(7),
+        padding: const EdgeInsets.all(10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -25,7 +25,7 @@ class MenuToolsHeaderWidget extends StatelessWidget {
                 if (horizontalReportWidget != null) horizontalReportWidget!,
               ],
             ),
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
             Expanded(child: child),
           ],
         ),

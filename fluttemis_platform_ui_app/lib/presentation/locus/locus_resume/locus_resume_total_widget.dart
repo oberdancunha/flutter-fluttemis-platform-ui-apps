@@ -18,6 +18,7 @@ class LocusResumeTotalWidget extends StatelessWidget {
             Image.asset(
               'assets/images/data/total_locus.png',
             ),
+            const SizedBox(width: 7),
             PlatformTextWidget(
               total.toString(),
               textType: TextType.title,
