@@ -22,12 +22,12 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
           OverviewDataModel(
             value: total.toString(),
             description: FluttemisAppLocalizations.of(context)!.totalFeatures,
-            image: 'assets/images/data/total_locus.png',
+            image: 'assets/images/data/total_features.png',
           ),
           OverviewDataModel(
             value: featuresTypesCount.length.toString(),
             description: FluttemisAppLocalizations.of(context)!.totalTypeFeatures,
-            image: 'assets/images/data/total_locus_types.png',
+            image: 'assets/images/data/total_type_features.png',
           ),
         ],
         widgets: [
@@ -39,7 +39,7 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
                     value: featuresTypesCount[featureType].toString(),
                     label: featureType,
                     representativeWidget: Image.asset(
-                      'assets/images/data/count_type_locus.png',
+                      'assets/images/data/count_type_features.png',
                       width: 28,
                       fit: BoxFit.cover,
                     ),

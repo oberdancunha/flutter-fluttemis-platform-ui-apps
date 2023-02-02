@@ -75,16 +75,17 @@ flutter:
     - assets/images/menu.png
     - assets/images/recovery.png
     - assets/images/data/genome_file.png
+    - assets/images/data/total_locus.png
     - assets/images/data/genome_api.png
     - assets/images/data/genome_name.png
     - assets/images/data/genome_code.png
-    - assets/images/data/dna.png
+    - assets/images/data/genome_length.png
     - assets/images/data/genome_type.png
     - assets/images/data/genome_shape.png
     - assets/images/data/genome_date.png
-    - assets/images/data/total_locus.png
-    - assets/images/data/total_locus_types.png
-    - assets/images/data/count_type_locus.png
+    - assets/images/data/total_features.png
+    - assets/images/data/total_type_features.png
+    - assets/images/data/count_type_features.png
     - assets/images/data/total_locus_products.png
     - assets/images/feature/feature_start.png
     - assets/images/feature/feature_end.png

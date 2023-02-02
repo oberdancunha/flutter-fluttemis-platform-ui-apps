@@ -32,7 +32,7 @@ class GenomeOverviewWidget extends StatelessWidget {
           OverviewDataModel(
             value: locus.length.toString(),
             description: FluttemisAppLocalizations.of(context)!.genomeLength,
-            image: 'assets/images/data/dna.png',
+            image: 'assets/images/data/genome_length.png',
           ),
           OverviewDataModel(
             value: locus.type,
