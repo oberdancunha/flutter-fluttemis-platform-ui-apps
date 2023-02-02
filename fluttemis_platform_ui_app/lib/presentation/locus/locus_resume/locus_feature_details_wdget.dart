@@ -80,6 +80,7 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                   if (locusFeature.nucleotides != null) ...[
                     const SizedBox(height: 10),
                     OverviewDataSequencesWidget(
+                      height: locusFeature.aminoacids != null ? 100 : 300,
                       title: FluttemisAppLocalizations.of(context)!.nucleotideSequence,
                       sequences: locusFeature.nucleotides!,
                     ),
@@ -87,6 +88,7 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                   if (locusFeature.aminoacids != null) ...[
                     const SizedBox(height: 20),
                     OverviewDataSequencesWidget(
+                      height: 100,
                       title: FluttemisAppLocalizations.of(context)!.aminoacidSequence,
                       sequences: locusFeature.aminoacids!,
                     ),

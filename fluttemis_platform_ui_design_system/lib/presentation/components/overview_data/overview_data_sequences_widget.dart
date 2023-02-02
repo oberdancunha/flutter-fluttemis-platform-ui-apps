@@ -10,10 +10,12 @@ import '../platform/text/text_type_enum.dart';
 import '../platform/tooltip/platform_tooltip_widget.dart';
 
 class OverviewDataSequencesWidget extends StatefulWidget {
+  final double height;
   final String title;
   final String sequences;
 
   const OverviewDataSequencesWidget({
+    required this.height,
     required this.title,
     required this.sequences,
     super.key,
@@ -53,7 +55,7 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
             children: [
               Expanded(
                 child: SizedBox(
-                  height: 80,
+                  height: widget.height,
                   child: PlatformScrollbarWidget(
                     controller: _scrollController,
                     child: SingleChildScrollView(
