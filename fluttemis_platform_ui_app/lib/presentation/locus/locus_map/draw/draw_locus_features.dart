@@ -6,7 +6,7 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/plat
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/show_dialog/platform_show_dialog.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../locus_resume/locus_feature_details_wdget.dart';
+import '../../locus_resume/locus_feature_details_widget.dart';
 import 'draw_locus_features_arrow.dart';
 import 'draw_locus_features_line.dart';
 
