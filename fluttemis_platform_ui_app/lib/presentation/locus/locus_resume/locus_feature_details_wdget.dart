@@ -14,89 +14,93 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => LayoutBuilder(
-        builder: (_, constraints) {
-          final crossAxisCount = (constraints.maxWidth / 180).ceil();
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
-          return SizedBox(
-            height: constraints.maxHeight,
-            width: constraints.maxWidth,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  GridView.count(
-                    crossAxisCount: crossAxisCount > 0 ? crossAxisCount : 1,
-                    childAspectRatio: 2.5,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    children: [
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        final crossAxisCount = (constraints.maxWidth / 180).ceil();
+
+        return SizedBox(
+          height: constraints.maxHeight,
+          width: constraints.maxWidth,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                GridView.count(
+                  crossAxisCount: crossAxisCount > 0 ? crossAxisCount : 1,
+                  childAspectRatio: 2.5,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: [
+                    OverviewDataWidget(
+                      value: locusFeature.start.toString(),
+                      description: fluttemisAppLocalizations.featureStart,
+                      image: 'assets/images/feature/feature_start.png',
+                      textType: TextType.label,
+                    ),
+                    OverviewDataWidget(
+                      value: locusFeature.end.toString(),
+                      description: fluttemisAppLocalizations.featureEnd,
+                      image: 'assets/images/feature/feature_end.png',
+                      textType: TextType.label,
+                    ),
+                    OverviewDataWidget(
+                      value: locusFeature.strand.label,
+                      description: fluttemisAppLocalizations.featureStrand,
+                      image: 'assets/images/feature/feature_strand.png',
+                      textType: TextType.label,
+                    ),
+                    if (locusFeature.name != null)
                       OverviewDataWidget(
-                        value: locusFeature.start.toString(),
-                        description: FluttemisAppLocalizations.of(context)!.featureStart,
-                        image: 'assets/images/feature/feature_start.png',
+                        value: locusFeature.name!,
+                        description: fluttemisAppLocalizations.featureName,
+                        image: 'assets/images/feature/feature_name.png',
                         textType: TextType.label,
                       ),
-                      OverviewDataWidget(
-                        value: locusFeature.end.toString(),
-                        description: FluttemisAppLocalizations.of(context)!.featureEnd,
-                        image: 'assets/images/feature/feature_end.png',
-                        textType: TextType.label,
-                      ),
-                      OverviewDataWidget(
-                        value: locusFeature.strand.label,
-                        description: FluttemisAppLocalizations.of(context)!.featureStrand,
-                        image: 'assets/images/feature/feature_strand.png',
-                        textType: TextType.label,
-                      ),
-                      if (locusFeature.name != null)
-                        OverviewDataWidget(
-                          value: locusFeature.name!,
-                          description: FluttemisAppLocalizations.of(context)!.featureName,
-                          image: 'assets/images/feature/feature_name.png',
-                          textType: TextType.label,
-                        ),
-                      OverviewDataWidget(
-                        value: locusFeature.type,
-                        description: FluttemisAppLocalizations.of(context)!.featureType,
-                        image: 'assets/images/feature/feature_type.png',
-                        textType: TextType.label,
-                      ),
-                    ],
+                    OverviewDataWidget(
+                      value: locusFeature.type,
+                      description: fluttemisAppLocalizations.featureType,
+                      image: 'assets/images/feature/feature_type.png',
+                      textType: TextType.label,
+                    ),
+                  ],
+                ),
+                if (locusFeature.product != null)
+                  OverviewDataWidget(
+                    value: locusFeature.product!,
+                    description: fluttemisAppLocalizations.featureProduct,
+                    image: 'assets/images/feature/feature_product.png',
+                    textType: TextType.label,
                   ),
-                  if (locusFeature.product != null)
-                    OverviewDataWidget(
-                      value: locusFeature.product!,
-                      description: FluttemisAppLocalizations.of(context)!.featureProduct,
-                      image: 'assets/images/feature/feature_product.png',
-                      textType: TextType.label,
-                    ),
-                  if (locusFeature.note != null)
-                    OverviewDataWidget(
-                      value: locusFeature.note!,
-                      description: FluttemisAppLocalizations.of(context)!.featureNote,
-                      image: 'assets/images/feature/feature_note.png',
-                      textType: TextType.label,
-                    ),
-                  if (locusFeature.nucleotides != null) ...[
-                    const SizedBox(height: 10),
-                    OverviewDataSequencesWidget(
-                      height: locusFeature.aminoacids != null ? 92 : 295,
-                      title: FluttemisAppLocalizations.of(context)!.nucleotideSequence,
-                      sequences: locusFeature.nucleotides!,
-                    ),
-                  ],
-                  if (locusFeature.aminoacids != null) ...[
-                    const SizedBox(height: 20),
-                    OverviewDataSequencesWidget(
-                      height: 92,
-                      title: FluttemisAppLocalizations.of(context)!.aminoacidSequence,
-                      sequences: locusFeature.aminoacids!,
-                    ),
-                  ],
+                if (locusFeature.note != null)
+                  OverviewDataWidget(
+                    value: locusFeature.note!,
+                    description: fluttemisAppLocalizations.featureNote,
+                    image: 'assets/images/feature/feature_note.png',
+                    textType: TextType.label,
+                  ),
+                if (locusFeature.nucleotides != null) ...[
+                  const SizedBox(height: 10),
+                  OverviewDataSequencesWidget(
+                    height: locusFeature.aminoacids != null ? 92 : 295,
+                    title: fluttemisAppLocalizations.nucleotideSequence,
+                    sequences: locusFeature.nucleotides!,
+                  ),
                 ],
-              ),
+                if (locusFeature.aminoacids != null) ...[
+                  const SizedBox(height: 20),
+                  OverviewDataSequencesWidget(
+                    height: 92,
+                    title: fluttemisAppLocalizations.aminoacidSequence,
+                    sequences: locusFeature.aminoacids!,
+                  ),
+                ],
+              ],
             ),
-          );
-        },
-      );
+          ),
+        );
+      },
+    );
+  }
 }

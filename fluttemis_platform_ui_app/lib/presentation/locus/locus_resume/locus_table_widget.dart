@@ -63,7 +63,7 @@ class LocusTableWidget extends StatelessWidget {
         data: locus.toMutableList().map(
           (locus) {
             final date = CustomDateFormat.fromyMdToyMMMMd(
-              FluttemisAppLocalizations.of(context)!.localeName,
+              fluttemisAppLocalizations.localeName,
               locus.releaseDate!,
             ).dateFormatted;
 
@@ -120,7 +120,7 @@ class LocusTableWidget extends StatelessWidget {
                       iconType: IconType.change,
                       size: 12,
                     ),
-                    label: FluttemisAppLocalizations.of(context)!.openLocus,
+                    label: fluttemisAppLocalizations.openLocus,
                     fontSize: 11,
                     onPressed: () {
                       context.read<LocusShowStore>().locusToBeShown = locus;
@@ -133,7 +133,7 @@ class LocusTableWidget extends StatelessWidget {
           },
         ).asList(),
       ),
-      emptyMessage: FluttemisAppLocalizations.of(context)!.emptyLocusTable,
+      emptyMessage: fluttemisAppLocalizations.emptyLocusTable,
     );
   }
 }

@@ -15,45 +15,49 @@ class GenomeOverviewWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => OverviewDataListWidget(
-        title: FluttemisAppLocalizations.of(context)!.genomeOverview,
-        listOverviewData: [
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+
+    return OverviewDataListWidget(
+      title: fluttemisAppLocalizations.genomeOverview,
+      listOverviewData: [
+        OverviewDataModel(
+          value: locus.organism,
+          description: fluttemisAppLocalizations.genomeName,
+          image: 'assets/images/data/genome_name.png',
+          textType: TextType.genomeName,
+        ),
+        OverviewDataModel(
+          value: locus.name,
+          description: fluttemisAppLocalizations.genomeCodeAccession,
+          image: 'assets/images/data/genome_code.png',
+        ),
+        OverviewDataModel(
+          value: locus.length.toString(),
+          description: fluttemisAppLocalizations.genomeLength,
+          image: 'assets/images/data/genome_length.png',
+        ),
+        OverviewDataModel(
+          value: locus.type,
+          description: fluttemisAppLocalizations.genomeType,
+          image: 'assets/images/data/genome_type.png',
+        ),
+        if (locus.shape != null)
           OverviewDataModel(
-            value: locus.organism,
-            description: FluttemisAppLocalizations.of(context)!.genomeName,
-            image: 'assets/images/data/genome_name.png',
-            textType: TextType.genomeName,
+            value: locus.shape!,
+            description: fluttemisAppLocalizations.genomeShape,
+            image: 'assets/images/data/genome_shape.png',
           ),
+        if (locus.releaseDate != null)
           OverviewDataModel(
-            value: locus.name,
-            description: FluttemisAppLocalizations.of(context)!.genomeCodeAccession,
-            image: 'assets/images/data/genome_code.png',
+            value: CustomDateFormat.fromyMdToyMMMMd(
+              fluttemisAppLocalizations.localeName,
+              locus.releaseDate!,
+            ).dateFormatted,
+            description: fluttemisAppLocalizations.annotationDate,
+            image: 'assets/images/data/genome_date.png',
           ),
-          OverviewDataModel(
-            value: locus.length.toString(),
-            description: FluttemisAppLocalizations.of(context)!.genomeLength,
-            image: 'assets/images/data/genome_length.png',
-          ),
-          OverviewDataModel(
-            value: locus.type,
-            description: FluttemisAppLocalizations.of(context)!.genomeType,
-            image: 'assets/images/data/genome_type.png',
-          ),
-          if (locus.shape != null)
-            OverviewDataModel(
-              value: locus.shape!,
-              description: FluttemisAppLocalizations.of(context)!.genomeShape,
-              image: 'assets/images/data/genome_shape.png',
-            ),
-          if (locus.releaseDate != null)
-            OverviewDataModel(
-              value: CustomDateFormat.fromyMdToyMMMMd(
-                FluttemisAppLocalizations.of(context)!.localeName,
-                locus.releaseDate!,
-              ).dateFormatted,
-              description: FluttemisAppLocalizations.of(context)!.annotationDate,
-              image: 'assets/images/data/genome_date.png',
-            ),
-        ],
-      );
+      ],
+    );
+  }
 }

@@ -17,36 +17,40 @@ class LocusProductsOverviewWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => OverviewDataListWidget(
-        title: FluttemisAppLocalizations.of(context)!.productsOverview,
-        listOverviewData: [
-          OverviewDataModel(
-            value: featuresTypesProductsCount.length.toString(),
-            description: FluttemisAppLocalizations.of(context)!.totalTypeProducts,
-            image: 'assets/images/data/total_locus_products.png',
-          ),
-        ],
-        widgets: [
-          OverviewMultipleDataListWidget(
-            title: FluttemisAppLocalizations.of(context)!.countTypeProducts,
-            children: featuresTypesProductsCount.keys
-                .map(
-                  (productType) => OverviewMultipleDataItemWidget(
-                    value: featuresTypesProductsCount[productType].toString(),
-                    label: productType,
-                    representativeWidget: PlatformContainerWidget(
-                      backgroundColor: getPlatformColor(
-                        productDictionaryLabel.keys.firstWhere(
-                          (color) => productDictionaryLabel[color] == productType,
-                        ),
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+
+    return OverviewDataListWidget(
+      title: fluttemisAppLocalizations.productsOverview,
+      listOverviewData: [
+        OverviewDataModel(
+          value: featuresTypesProductsCount.length.toString(),
+          description: fluttemisAppLocalizations.totalTypeProducts,
+          image: 'assets/images/data/total_locus_products.png',
+        ),
+      ],
+      widgets: [
+        OverviewMultipleDataListWidget(
+          title: fluttemisAppLocalizations.countTypeProducts,
+          children: featuresTypesProductsCount.keys
+              .map(
+                (productType) => OverviewMultipleDataItemWidget(
+                  value: featuresTypesProductsCount[productType].toString(),
+                  label: productType,
+                  representativeWidget: PlatformContainerWidget(
+                    backgroundColor: getPlatformColor(
+                      productDictionaryLabel.keys.firstWhere(
+                        (color) => productDictionaryLabel[color] == productType,
                       ),
-                      width: 30,
-                      height: 4,
                     ),
+                    width: 30,
+                    height: 4,
                   ),
-                )
-                .toList(),
-          ),
-        ],
-      );
+                ),
+              )
+              .toList(),
+        ),
+      ],
+    );
+  }
 }

@@ -16,37 +16,41 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => OverviewDataListWidget(
-        title: FluttemisAppLocalizations.of(context)!.featuresOverview,
-        listOverviewData: [
-          OverviewDataModel(
-            value: total.toString(),
-            description: FluttemisAppLocalizations.of(context)!.totalFeatures,
-            image: 'assets/images/data/total_features.png',
-          ),
-          OverviewDataModel(
-            value: featuresTypesCount.length.toString(),
-            description: FluttemisAppLocalizations.of(context)!.totalTypeFeatures,
-            image: 'assets/images/data/total_type_features.png',
-          ),
-        ],
-        widgets: [
-          OverviewMultipleDataListWidget(
-            title: FluttemisAppLocalizations.of(context)!.countTypeFeatures,
-            children: featuresTypesCount.keys
-                .map(
-                  (featureType) => OverviewMultipleDataItemWidget(
-                    value: featuresTypesCount[featureType].toString(),
-                    label: featureType,
-                    representativeWidget: Image.asset(
-                      'assets/images/data/count_type_features.png',
-                      width: 28,
-                      fit: BoxFit.cover,
-                    ),
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+
+    return OverviewDataListWidget(
+      title: fluttemisAppLocalizations.featuresOverview,
+      listOverviewData: [
+        OverviewDataModel(
+          value: total.toString(),
+          description: fluttemisAppLocalizations.totalFeatures,
+          image: 'assets/images/data/total_features.png',
+        ),
+        OverviewDataModel(
+          value: featuresTypesCount.length.toString(),
+          description: fluttemisAppLocalizations.totalTypeFeatures,
+          image: 'assets/images/data/total_type_features.png',
+        ),
+      ],
+      widgets: [
+        OverviewMultipleDataListWidget(
+          title: fluttemisAppLocalizations.countTypeFeatures,
+          children: featuresTypesCount.keys
+              .map(
+                (featureType) => OverviewMultipleDataItemWidget(
+                  value: featuresTypesCount[featureType].toString(),
+                  label: featureType,
+                  representativeWidget: Image.asset(
+                    'assets/images/data/count_type_features.png',
+                    width: 28,
+                    fit: BoxFit.cover,
                   ),
-                )
-                .toList(),
-          ),
-        ],
-      );
+                ),
+              )
+              .toList(),
+        ),
+      ],
+    );
+  }
 }

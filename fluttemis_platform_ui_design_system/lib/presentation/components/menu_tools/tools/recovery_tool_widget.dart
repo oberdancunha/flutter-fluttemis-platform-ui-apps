@@ -8,19 +8,23 @@ class RecoveryToolWidget extends StatelessWidget {
   const RecoveryToolWidget({super.key});
 
   @override
-  Widget build(BuildContext context) => PlatformToolCardWidget(
-        image: 'assets/images/recovery.png',
-        mainTitle: FluttemisAppLocalizations.of(context)!.again,
-        secondaryTitle: FluttemisAppLocalizations.of(context)!.tryMessage,
-        toolActionButtonIconType: IconType.recovery,
-        toolActionButtonDescription: FluttemisAppLocalizations.of(context)!.tryAgain,
-        description: FluttemisAppLocalizations.of(context)!.tryAgainDescription,
-        toolAction: () {
-          if (Modular.args.data != null) {
-            Modular.to.pushNamed(Modular.to.path, arguments: Modular.args.data);
-          } else {
-            Modular.to.pushNamed(Modular.to.path);
-          }
-        },
-      );
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+
+    return PlatformToolCardWidget(
+      image: 'assets/images/recovery.png',
+      mainTitle: fluttemisAppLocalizations.again,
+      secondaryTitle: fluttemisAppLocalizations.tryMessage,
+      toolActionButtonIconType: IconType.recovery,
+      toolActionButtonDescription: fluttemisAppLocalizations.tryAgain,
+      description: fluttemisAppLocalizations.tryAgainDescription,
+      toolAction: () {
+        if (Modular.args.data != null) {
+          Modular.to.pushNamed(Modular.to.path, arguments: Modular.args.data);
+        } else {
+          Modular.to.pushNamed(Modular.to.path);
+        }
+      },
+    );
+  }
 }

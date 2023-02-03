@@ -54,26 +54,28 @@ class ErrorMessageTextWidget extends StatelessWidget {
   }
 
   ErrorMessageModel _getErrorWidgetByType(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+
     switch (failure.runtimeType) {
       case FileFailureEmpty:
         return ErrorMessageModel(
           image: 'file_empty.png',
-          message: FluttemisAppLocalizations.of(context)!.fileEmpty,
+          message: fluttemisAppLocalizations.fileEmpty,
         );
       case FileFailureFormatIncorrect:
         return ErrorMessageModel(
           image: 'file_format_error.png',
-          message: FluttemisAppLocalizations.of(context)!.fileFormatError,
+          message: fluttemisAppLocalizations.fileFormatError,
         );
       case FileFailureNotFound:
         return ErrorMessageModel(
           image: 'file_not_found.png',
-          message: FluttemisAppLocalizations.of(context)!.fileNotFound,
+          message: fluttemisAppLocalizations.fileNotFound,
         );
       default:
         return ErrorMessageModel(
           image: 'file_unexpected_error.png',
-          message: FluttemisAppLocalizations.of(context)!.fileUnexpectedError,
+          message: fluttemisAppLocalizations.fileUnexpectedError,
         );
     }
   }

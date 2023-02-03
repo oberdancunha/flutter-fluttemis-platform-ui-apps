@@ -47,11 +47,12 @@ class DataSourceDetailsWidget extends StatelessWidget {
     required BuildContext context,
     required AccessHistoryResourceTypes resourceType,
   }) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
     switch (resourceType) {
       case AccessHistoryResourceTypes.file:
-        return FluttemisAppLocalizations.of(context)!.fileReading;
+        return fluttemisAppLocalizations.fileReading;
       case AccessHistoryResourceTypes.api:
-        return FluttemisAppLocalizations.of(context)!.apiReading;
+        return fluttemisAppLocalizations.apiReading;
     }
   }
 }
