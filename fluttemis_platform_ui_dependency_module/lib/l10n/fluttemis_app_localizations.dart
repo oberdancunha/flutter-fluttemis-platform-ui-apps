@@ -421,11 +421,23 @@ abstract class FluttemisAppLocalizations {
   /// **'Sequência de aminoácidos'**
   String get aminoacidSequence;
 
-  /// No description provided for @copy.
+  /// No description provided for @copyExplanation.
   ///
   /// In pt, this message translates to:
-  /// **'Copiar'**
-  String get copy;
+  /// **'Para selecionar a sequência para cópia, dê um duplo clique no início e arraste até a posição de interesse'**
+  String get copyExplanation;
+
+  /// No description provided for @copySelected.
+  ///
+  /// In pt, this message translates to:
+  /// **'Copiar selecionado'**
+  String get copySelected;
+
+  /// No description provided for @copyAll.
+  ///
+  /// In pt, this message translates to:
+  /// **'Copiar tudo'**
+  String get copyAll;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

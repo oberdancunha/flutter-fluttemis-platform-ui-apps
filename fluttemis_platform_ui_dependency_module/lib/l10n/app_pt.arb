@@ -54,5 +54,7 @@
   "featureNote": "Anotação, observação ou memorando",
   "nucleotideSequence": "Sequência de nucleotídeos",
   "aminoacidSequence": "Sequência de aminoácidos",
-  "copy": "Copiar"
+  "copyExplanation": "Para selecionar a sequência para cópia, dê um duplo clique no início e arraste até a posição de interesse",
+  "copySelected": "Copiar selecionado",
+  "copyAll": "Copiar tudo"
 }
