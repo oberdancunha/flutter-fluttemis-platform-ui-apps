@@ -21,3 +21,8 @@ bool shouldDrawFeature(String type) =>
     type.toLowerCase() != 'source' && type.toLowerCase() != 'gene' && type.toLowerCase() != 'mrna';
 
 String removeExcessiveWhiteSpaces(String value) => value.trim().replaceAll(RegExp(' +'), ' ');
+
+String breakSequencesEvery60Characters(String sequences) => sequences.replaceAllMapped(
+      RegExp(r'(\w{60})'),
+      (match) => '${match[1]}\n',
+    );
