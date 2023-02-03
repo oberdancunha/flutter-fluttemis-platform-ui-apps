@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -27,41 +28,78 @@ class OverviewDataSequencesWidget extends StatefulWidget {
 
 class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidget> {
   late ScrollController _scrollController;
+  late SelectableController _selectionController;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    _selectionController = SelectableController();
   }
 
   @override
   void dispose() {
     _scrollController.dispose();
+    _selectionController.dispose();
     super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          PlatformTextWidget(
-            widget.title,
-            textType: TextType.subTitle,
-            fontSize: 13,
-          ),
-          const SizedBox(height: 10),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                child: SizedBox(
-                  height: widget.height,
-                  child: PlatformScrollbarWidget(
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          children: [
+            PlatformTextWidget(
+              widget.title,
+              textType: TextType.subTitle,
+              fontSize: 13,
+            ),
+            const SizedBox(width: 5),
+            PlatformTextWidget(
+              '(${fluttemisAppLocalizations.copyExplanation})',
+              textType: TextType.caption,
+              fontSize: 11,
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(
+              child: SizedBox(
+                height: widget.height,
+                child: PlatformScrollbarWidget(
+                  controller: _scrollController,
+                  child: SingleChildScrollView(
                     controller: _scrollController,
-                    child: SingleChildScrollView(
-                      controller: _scrollController,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Selectable(
+                        selectWordOnDoubleTap: true,
+                        selectionController: _selectionController,
+                        scrollController: _scrollController,
+                        popupMenuItems: [
+                          SelectableMenuItem(
+                            type: SelectableMenuItemType.copy,
+                            title: fluttemisAppLocalizations.copySelected,
+                            handler: (controller) {
+                              final selectedSequencesWithoutSpaces =
+                                  controller!.getSelection()!.text!.replaceAll(' ', '');
+                              final selectedSequencesBreakedEvery60Characters =
+                                  breakSequencesEvery60Characters(selectedSequencesWithoutSpaces);
+                              Clipboard.setData(
+                                ClipboardData(text: selectedSequencesBreakedEvery60Characters),
+                              );
+
+                              return true;
+                            },
+                          ),
+                        ],
                         child: PlatformTextWidget(
                           widget.sequences.replaceAllMapped(
                             RegExp(r'(\w{1})'),
@@ -76,25 +114,29 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                   ),
                 ),
               ),
-              const SizedBox(width: 15),
-              PlatformTooltipWidget(
-                message: FluttemisAppLocalizations.of(context)!.copy,
-                child: GestureDetector(
-                  onTap: () {
-                    Clipboard.setData(
-                      ClipboardData(
-                        text: widget.sequences,
-                      ),
-                    );
-                  },
-                  child: const PlatformIconWidget(
-                    iconType: IconType.copy,
-                    size: 15,
-                  ),
+            ),
+            const SizedBox(width: 15),
+            PlatformTooltipWidget(
+              message: fluttemisAppLocalizations.copyAll,
+              child: GestureDetector(
+                onTap: () {
+                  final sequencesBreakedEvery60Characters =
+                      breakSequencesEvery60Characters(widget.sequences);
+                  Clipboard.setData(
+                    ClipboardData(
+                      text: sequencesBreakedEvery60Characters,
+                    ),
+                  );
+                },
+                child: const PlatformIconWidget(
+                  iconType: IconType.copy,
+                  size: 15,
                 ),
               ),
-            ],
-          ),
-        ],
-      );
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }
