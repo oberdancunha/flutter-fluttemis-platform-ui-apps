@@ -28,6 +28,7 @@ dependencies:
   data_table_2: ^2.3.10
   touchable: ^1.0.2
   linked_scroll_controller: ^0.2.0
+  selectable: ^0.2.9
 
 dev_dependencies:
   flutter_test:
