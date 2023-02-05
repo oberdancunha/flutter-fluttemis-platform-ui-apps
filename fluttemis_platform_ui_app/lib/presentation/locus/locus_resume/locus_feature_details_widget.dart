@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_sequences_widget.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_sequences/overview_data_sequences_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
 import 'package:flutter/widgets.dart';
