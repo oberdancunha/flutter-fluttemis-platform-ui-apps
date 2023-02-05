@@ -1,6 +1,7 @@
 library fluttemis_fluent_ui_dependency_modules;
 
 export 'package:bio/seqio/genbank.dart';
+export 'package:clipboard_watcher/clipboard_watcher.dart';
 export 'package:collection/collection.dart';
 export 'package:data_table_2/data_table_2.dart';
 export 'package:equatable/equatable.dart';
