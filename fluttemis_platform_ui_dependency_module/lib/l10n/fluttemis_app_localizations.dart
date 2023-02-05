@@ -438,6 +438,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Copiar tudo'**
   String get copyAll;
+
+  /// No description provided for @copied.
+  ///
+  /// In pt, this message translates to:
+  /// **'Copiado'**
+  String get copied;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

@@ -177,4 +177,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get copyAll => 'Copiar tudo';
+
+  @override
+  String get copied => 'Copiado';
 }

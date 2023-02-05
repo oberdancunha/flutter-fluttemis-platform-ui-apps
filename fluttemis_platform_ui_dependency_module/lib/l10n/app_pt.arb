@@ -56,5 +56,6 @@
   "aminoacidSequence": "Sequência de aminoácidos",
   "copyExplanation": "Para selecionar a sequência para cópia, dê um duplo clique no início e arraste até a posição de interesse",
   "copySelected": "Copiar selecionado",
-  "copyAll": "Copiar tudo"
+  "copyAll": "Copiar tudo",
+  "copied": "Copiado"
 }
