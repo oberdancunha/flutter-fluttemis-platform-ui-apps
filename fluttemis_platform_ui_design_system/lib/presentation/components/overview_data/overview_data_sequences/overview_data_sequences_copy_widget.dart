@@ -1,11 +1,10 @@
-// ignore_for_file: prefer_mixin
-
 import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../mixins/clipboard_watcher_mixin.dart';
 import '../../platform/color/platform_color.dart';
 import '../../platform/icon/icon_type_enum.dart';
 import '../../platform/icon/platform_icon_widget.dart';
@@ -24,41 +23,15 @@ class OverviewDataSequencesCopyWidget extends StatefulWidget {
 }
 
 class _OverviewDataSequencesCopyWidgetState extends State<OverviewDataSequencesCopyWidget>
-    with ClipboardListener {
-  late String _sequencesBreakedEvery60Characters;
-  final _clipboardCopy = ValueNotifier<String>('');
-
-  @override
-  void initState() {
-    super.initState();
-    _sequencesBreakedEvery60Characters = breakSequencesEvery60Characters(widget.sequences);
-    clipboardWatcher
-      ..addListener(this)
-      ..start();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      onClipboardChanged();
-    });
-  }
-
-  @override
-  void dispose() {
-    clipboardWatcher
-      ..removeListener(this)
-      ..stop();
-    super.dispose();
-  }
-
-  @override
-  Future<void> onClipboardChanged() async {
-    _clipboardCopy.value = (await Clipboard.getData(Clipboard.kTextPlain))?.text ?? '';
-  }
+    with ClipboardWatcherMixin<OverviewDataSequencesCopyWidget> {
+  late final _sequencesBreakedEvery60Characters = breakSequencesEvery60Characters(widget.sequences);
 
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
     return ValueListenableBuilder(
-      valueListenable: _clipboardCopy,
+      valueListenable: clipboardCopy,
       builder: (_, value, __) => PlatformTooltipWidget(
         message: value == _sequencesBreakedEvery60Characters
             ? fluttemisAppLocalizations.copied
