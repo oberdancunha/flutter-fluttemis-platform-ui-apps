@@ -24,7 +24,7 @@ class OverviewDataSequencesCopyWidget extends StatefulWidget {
 
 class _OverviewDataSequencesCopyWidgetState extends State<OverviewDataSequencesCopyWidget>
     with ClipboardWatcherMixin<OverviewDataSequencesCopyWidget> {
-  late final _sequencesBreakedEvery60Characters = breakSequencesEvery60Characters(widget.sequences);
+  late final _sequencesBreakedEvery60Characters = widget.sequences.breakEvery60Characters;
 
   @override
   Widget build(BuildContext context) {
