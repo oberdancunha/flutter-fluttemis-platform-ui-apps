@@ -3,13 +3,18 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../mixins/clipboard_watcher_mixin.dart';
+import '../../platform/color/platform_color.dart';
+import '../../platform/icon/icon_type_enum.dart';
+import '../../platform/icon/platform_icon.dart';
+
 class OverviewDataSequencesCopySelectableWidget extends StatefulWidget {
-  final Widget child;
   final ScrollController scrollController;
+  final Widget child;
 
   const OverviewDataSequencesCopySelectableWidget({
-    required this.child,
     required this.scrollController,
+    required this.child,
     super.key,
   });
 
@@ -19,43 +24,85 @@ class OverviewDataSequencesCopySelectableWidget extends StatefulWidget {
 }
 
 class _OverviewDataSequencesCopySelectableWidgetState
-    extends State<OverviewDataSequencesCopySelectableWidget> {
+    extends State<OverviewDataSequencesCopySelectableWidget> with ClipboardWatcherMixin {
   late SelectableController _selectionController;
+  late final _sequencesSelected = ValueNotifier<String>('');
 
   @override
   void initState() {
     super.initState();
     _selectionController = SelectableController();
+    _selectionController.addListener(() async {
+      _sequencesSelected.value = _selectionController.getSelection()?.text?.removeWhiteSpace ?? '';
+    });
   }
 
   @override
   void dispose() {
-    super.dispose();
     _selectionController.dispose();
+    super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) => Selectable(
-        selectWordOnDoubleTap: true,
-        selectionController: _selectionController,
-        scrollController: widget.scrollController,
-        popupMenuItems: [
-          SelectableMenuItem(
-            type: SelectableMenuItemType.copy,
-            title: FluttemisAppLocalizations.of(context)!.copySelected,
-            handler: (controller) {
-              final selectedSequencesWithoutSpaces =
-                  controller!.getSelection()!.text!.replaceAll(' ', '');
-              final selectedSequencesBreakedEvery60Characters =
-                  breakSequencesEvery60Characters(selectedSequencesWithoutSpaces);
-              Clipboard.setData(
-                ClipboardData(text: selectedSequencesBreakedEvery60Characters),
-              );
+  Widget build(BuildContext context) {
+    final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
-              return true;
-            },
-          ),
-        ],
-        child: widget.child,
-      );
+    return ValueListenableBuilder(
+      valueListenable: clipboardCopy,
+      builder: (context, clipboardValue, child) {
+        bool isSequencesCopied = false;
+        final String sequencesCopied = clipboardCopy.value.removeBreaks;
+        final String sequencesCopiedSameAsShown = sequencesCopied.insertWhiteSpaceInside;
+        final start = _selectionController.getContainedText().indexOf(sequencesCopiedSameAsShown);
+        final end = start + sequencesCopiedSameAsShown.length;
+        if (start > -1) {
+          _selectionController.selectWordsBetweenIndexes(
+            start,
+            end,
+          );
+          isSequencesCopied = true;
+        }
+
+        return ValueListenableBuilder(
+          valueListenable: _sequencesSelected,
+          builder: (_, sequencesSelected, __) {
+            isSequencesCopied = isSequencesCopied && sequencesCopied == sequencesSelected;
+
+            return SizedBox(
+              height: _selectionController.getContainedText().length.toDouble(),
+              child: Selectable(
+                selectWordOnDoubleTap: true,
+                scrollController: widget.scrollController,
+                selectionController: _selectionController,
+                selectionColor: getPlatformColor(isSequencesCopied ? 0x73F44336 : 0x702195F3),
+                popupMenuItems: [
+                  SelectableMenuItem(
+                    type: SelectableMenuItemType.copy,
+                    icon: getPlatformIcon(IconType.copy),
+                    title: isSequencesCopied
+                        ? fluttemisAppLocalizations.copied
+                        : fluttemisAppLocalizations.copySelected,
+                    handler: (controller) {
+                      final selectedSequencesWithoutSpaces =
+                          controller!.getSelection()!.text!.replaceAll(' ', '');
+                      final selectedSequencesBreakedEvery60Characters =
+                          selectedSequencesWithoutSpaces.breakEvery60Characters;
+                      Clipboard.setData(
+                        ClipboardData(
+                          text: selectedSequencesBreakedEvery60Characters,
+                        ),
+                      );
+
+                      return true;
+                    },
+                  ),
+                ],
+                child: widget.child,
+              ),
+            );
+          },
+        );
+      },
+    );
+  }
 }
