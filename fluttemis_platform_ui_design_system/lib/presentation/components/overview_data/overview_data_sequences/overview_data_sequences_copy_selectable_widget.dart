@@ -69,7 +69,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
             isSequencesCopied = isSequencesCopied && sequencesCopied == sequencesSelected;
 
             return SizedBox(
-              height: _selectionController.getContainedText().length.toDouble(),
+              height: (_selectionController.getContainedText().length / 64) * 10 + 50,
               child: Selectable(
                 selectWordOnDoubleTap: true,
                 scrollController: widget.scrollController,
