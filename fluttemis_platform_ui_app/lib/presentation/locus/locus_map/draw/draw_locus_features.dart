@@ -37,8 +37,8 @@ class DrawLocusFeatures extends CustomPainter {
         platformShowDialog(
           context: context,
           builder: (_) => PlatformDialogWidget(
-            width: 810,
-            height: 512,
+            width: 820,
+            height: 518,
             child: LocusFeatureDetailsWidget(locusFeature: locusFeature),
           ),
         );
