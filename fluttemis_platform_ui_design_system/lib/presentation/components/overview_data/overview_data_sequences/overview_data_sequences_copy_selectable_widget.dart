@@ -51,7 +51,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
       valueListenable: clipboardCopy,
       builder: (_, clipboardValue, __) {
         final String sequencesCopied = clipboardCopy.value.removeBreaks;
-        final String sequencesCopiedSameAsShown = sequencesCopied.insertWhiteSpaceInside;
+        final String sequencesCopiedSameAsShown = sequencesCopied.insertInnerWhiteSpace;
         final start = _selectionController.getContainedText().indexOf(sequencesCopiedSameAsShown);
         final end = start + sequencesCopiedSameAsShown.length;
         if (start > -1) {

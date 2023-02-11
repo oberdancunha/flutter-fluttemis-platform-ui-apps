@@ -32,5 +32,5 @@ extension ValueTransformer on String {
 
   String get removeWhiteSpace => trim().replaceAll(' ', '');
 
-  String get insertWhiteSpaceInside => replaceAllMapped('', (_) => ' ').trim();
+  String get insertInnerWhiteSpace => replaceAllMapped('', (_) => ' ').trim();
 }
