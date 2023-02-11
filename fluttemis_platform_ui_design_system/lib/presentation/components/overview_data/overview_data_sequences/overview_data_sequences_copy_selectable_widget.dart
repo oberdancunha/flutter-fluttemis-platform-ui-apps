@@ -49,8 +49,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
 
     return ValueListenableBuilder(
       valueListenable: clipboardCopy,
-      builder: (context, clipboardValue, child) {
-        bool isSequencesCopied = false;
+      builder: (_, clipboardValue, __) {
         final String sequencesCopied = clipboardCopy.value.removeBreaks;
         final String sequencesCopiedSameAsShown = sequencesCopied.insertWhiteSpaceInside;
         final start = _selectionController.getContainedText().indexOf(sequencesCopiedSameAsShown);
@@ -60,13 +59,12 @@ class _OverviewDataSequencesCopySelectableWidgetState
             start,
             end,
           );
-          isSequencesCopied = true;
         }
 
         return ValueListenableBuilder(
           valueListenable: _sequencesSelected,
           builder: (_, sequencesSelected, __) {
-            isSequencesCopied = isSequencesCopied && sequencesCopied == sequencesSelected;
+            final isSequencesCopied = sequencesCopied == sequencesSelected;
 
             return SizedBox(
               height: (_selectionController.getContainedText().length / 64) * 10 + 50,
