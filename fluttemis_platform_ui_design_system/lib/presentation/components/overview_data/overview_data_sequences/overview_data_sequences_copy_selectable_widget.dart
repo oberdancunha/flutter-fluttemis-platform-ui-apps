@@ -72,6 +72,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
                 selectWordOnDoubleTap: true,
                 scrollController: widget.scrollController,
                 selectionController: _selectionController,
+                topOverlayHeight: 30,
                 selectionColor: getPlatformColor(isSequencesCopied ? 0x73F44336 : 0x702195F3),
                 popupMenuItems: [
                   SelectableMenuItem(
@@ -82,7 +83,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
                         : fluttemisAppLocalizations.copySelected,
                     handler: (controller) {
                       final selectedSequencesWithoutSpaces =
-                          controller!.getSelection()!.text!.replaceAll(' ', '');
+                          controller!.getSelection()!.text!.removeWhiteSpace;
                       final selectedSequencesBreakedEvery60Characters =
                           selectedSequencesWithoutSpaces.breakEvery60Characters;
                       Clipboard.setData(
