@@ -53,33 +53,35 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
                   ),
                   const SizedBox(width: 8),
                   Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        PlatformScrollbarWidget(
-                          controller: _controller,
-                          child: Padding(
-                            padding: const EdgeInsets.only(bottom: 2),
-                            child: SingleChildScrollView(
-                              physics: const ClampingScrollPhysics(),
-                              controller: _controller,
-                              scrollDirection: Axis.horizontal,
-                              padding: const EdgeInsets.only(bottom: 6),
-                              child: PlatformTextWidget(
-                                widget.value,
-                                textType: widget.textType ?? TextType.label,
-                                fontSize: 13,
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          PlatformScrollbarWidget(
+                            controller: _controller,
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 2),
+                              child: SingleChildScrollView(
+                                physics: const ClampingScrollPhysics(),
+                                controller: _controller,
+                                scrollDirection: Axis.horizontal,
+                                padding: const EdgeInsets.only(bottom: 6),
+                                child: PlatformTextWidget(
+                                  widget.value,
+                                  textType: widget.textType ?? TextType.label,
+                                  fontSize: 13,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        PlatformTextWidget(
-                          widget.description,
-                          textType: TextType.caption,
-                          fontSize: 10,
-                        ),
-                      ],
+                          PlatformTextWidget(
+                            widget.description,
+                            textType: TextType.caption,
+                            fontSize: 10,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
