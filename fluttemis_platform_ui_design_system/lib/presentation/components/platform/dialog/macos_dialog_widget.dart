@@ -14,43 +14,28 @@ class MacosDialogWidget extends PlatformDialogWidget {
   });
 
   @override
-  Widget build(BuildContext context) => LayoutBuilder(
-        builder: (_, constraints) {
-          EdgeInsets effectivePadding = calculateArea(context);
-          if (width != null && height != null) {
-            final horizontal = (constraints.maxWidth - width!) / 2 - 5;
-            final vertical = (constraints.maxHeight - height!) / 2;
-            final EdgeInsets insetPadding = EdgeInsets.symmetric(
-              horizontal: horizontal,
-              vertical: vertical,
-            );
-            effectivePadding = MediaQuery.of(context).viewInsets + insetPadding;
-          }
-
-          return MacosSheet(
-            backgroundColor: MacosTheme.of(context).canvasColor,
-            insetPadding: effectivePadding,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: const [
-                      MacosCloseDialogButtonWidget(),
-                      CloseDialogByEscMessageWidget(),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: child,
-                  ),
-                ),
-              ],
+  Widget build(BuildContext context) => MacosSheet(
+        backgroundColor: MacosTheme.of(context).canvasColor,
+        insetPadding: calculateArea(context),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+              child: Stack(
+                alignment: Alignment.center,
+                children: const [
+                  MacosCloseDialogButtonWidget(),
+                  CloseDialogByEscMessageWidget(),
+                ],
+              ),
             ),
-          );
-        },
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: child,
+              ),
+            ),
+          ],
+        ),
       );
 }
