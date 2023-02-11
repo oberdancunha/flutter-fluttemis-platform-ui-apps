@@ -1,5 +1,5 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../../platform/text/platform_text_widget.dart';
