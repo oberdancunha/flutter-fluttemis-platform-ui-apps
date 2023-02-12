@@ -1,13 +1,9 @@
 import 'package:flutter/widgets.dart';
 
-import '../core/platform_widget.dart';
-import 'macos_text_widget.dart';
-import 'material_text_widget.dart';
+import 'platform_text_style.dart';
 import 'text_type_enum.dart';
-import 'windows_text_widget.dart';
 
-class PlatformTextWidget
-    extends PlatformWidget<MacosTextWidget, WindowsTextWidget, MaterialTextWidget> {
+class PlatformTextWidget extends StatelessWidget {
   final String text;
   final TextType textType;
   final double fontSize;
@@ -22,26 +18,11 @@ class PlatformTextWidget
   });
 
   @override
-  MacosTextWidget buildMacosWidget() => MacosTextWidget(
+  Widget build(BuildContext context) => Text(
         text,
-        textType: textType,
-        fontSize: fontSize,
-        textAlign: textAlign,
-      );
-
-  @override
-  WindowsTextWidget buildWindowsWidget() => WindowsTextWidget(
-        text,
-        textType: textType,
-        fontSize: fontSize,
-        textAlign: textAlign,
-      );
-
-  @override
-  MaterialTextWidget buildMaterialWidget() => MaterialTextWidget(
-        text,
-        textType: textType,
-        fontSize: fontSize,
+        style: getPlatformTextStyle(context, textType).copyWith(
+          fontSize: fontSize,
+        ),
         textAlign: textAlign,
       );
 }
