@@ -80,6 +80,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
                     title: isSequencesCopied
                         ? fluttemisAppLocalizations.copied
                         : fluttemisAppLocalizations.copySelected,
+                    isEnabled: (controller) => controller!.isTextSelected,
                     handler: (controller) {
                       final selectedSequencesWithoutSpaces =
                           controller!.getSelection()!.text!.removeWhiteSpace;
