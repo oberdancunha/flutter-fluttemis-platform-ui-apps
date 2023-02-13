@@ -80,7 +80,7 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                           widget.sequences.insertInnerWhiteSpace,
                           textType: TextType.label,
                           fontSize: 11.5,
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.start,
                         ),
                       ),
                     ),
