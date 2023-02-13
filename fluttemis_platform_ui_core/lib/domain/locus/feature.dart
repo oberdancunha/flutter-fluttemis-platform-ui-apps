@@ -49,4 +49,12 @@ class Feature extends Equatable {
         aminoacids,
         note,
       ];
+
+  int get length {
+    if (end < start) {
+      return 0;
+    }
+
+    return (end - start) + 1;
+  }
 }
