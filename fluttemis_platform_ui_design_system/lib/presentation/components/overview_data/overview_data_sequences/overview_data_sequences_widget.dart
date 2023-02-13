@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
@@ -71,18 +72,15 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                   controller: _scrollController,
                   child: SingleChildScrollView(
                     controller: _scrollController,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: OverviewDataSequencesCopySelectableWidget(
-                        scrollController: _scrollController,
+                    child: OverviewDataSequencesCopySelectableWidget(
+                      scrollController: _scrollController,
+                      child: Padding(
+                        padding: const EdgeInsets.all(10),
                         child: PlatformTextWidget(
-                          widget.sequences.replaceAllMapped(
-                            RegExp(r'(\w{1})'),
-                            (match) => '${match[1]} ',
-                          ),
+                          widget.sequences.insertInnerWhiteSpace,
                           textType: TextType.label,
                           fontSize: 11.5,
-                          textAlign: TextAlign.justify,
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
