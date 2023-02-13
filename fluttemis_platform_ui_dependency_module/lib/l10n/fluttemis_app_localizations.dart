@@ -376,7 +376,7 @@ abstract class FluttemisAppLocalizations {
   /// No description provided for @featureEnd.
   ///
   /// In pt, this message translates to:
-  /// **'Posição de término'**
+  /// **'Término'**
   String get featureEnd;
 
   /// No description provided for @featureStrand.
@@ -396,6 +396,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Tipo'**
   String get featureType;
+
+  /// No description provided for @featureLength.
+  ///
+  /// In pt, this message translates to:
+  /// **'Bases de dna'**
+  String get featureLength;
 
   /// No description provided for @featureProduct.
   ///

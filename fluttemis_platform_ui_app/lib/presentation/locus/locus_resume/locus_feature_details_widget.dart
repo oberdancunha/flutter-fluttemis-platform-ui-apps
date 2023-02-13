@@ -45,6 +45,12 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                     textType: TextType.label,
                   ),
                   OverviewDataWidget(
+                    value: locusFeature.length.toString(),
+                    description: fluttemisAppLocalizations.featureLength,
+                    image: 'assets/images/feature/feature_length.png',
+                    textType: TextType.label,
+                  ),
+                  OverviewDataWidget(
                     value: locusFeature.strand.label,
                     description: fluttemisAppLocalizations.featureStrand,
                     image: 'assets/images/feature/feature_strand.png',

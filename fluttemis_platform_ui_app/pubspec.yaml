@@ -92,6 +92,7 @@ flutter:
     - assets/images/feature/feature_strand.png
     - assets/images/feature/feature_name.png
     - assets/images/feature/feature_type.png
+    - assets/images/feature/feature_length.png
     - assets/images/feature/feature_product.png
     - assets/images/feature/feature_note.png
     - assets/lotties/dna-loader.json

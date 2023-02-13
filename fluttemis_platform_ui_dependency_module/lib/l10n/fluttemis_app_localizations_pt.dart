@@ -146,7 +146,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get featureStart => 'Posição de início';
 
   @override
-  String get featureEnd => 'Posição de término';
+  String get featureEnd => 'Término';
 
   @override
   String get featureStrand => 'Orientação';
@@ -156,6 +156,9 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get featureType => 'Tipo';
+
+  @override
+  String get featureLength => 'Bases de dna';
 
   @override
   String get featureProduct => 'Produto';
