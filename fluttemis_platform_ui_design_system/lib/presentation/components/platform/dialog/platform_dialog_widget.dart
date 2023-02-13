@@ -40,7 +40,7 @@ class PlatformDialogWidget
       );
 
   EdgeInsets calculateArea(BuildContext context) {
-    const EdgeInsets insetPadding = EdgeInsets.symmetric(horizontal: 100, vertical: 48);
+    const EdgeInsets insetPadding = EdgeInsets.symmetric(horizontal: 38, vertical: 48);
     final EdgeInsets effectivePadding = MediaQuery.of(context).viewInsets + insetPadding;
 
     return effectivePadding;
