@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../theme/dark/material_theme_data_dark.dart';
 import '../theme/light/material_theme_data_light.dart';
 import 'platform_app_widget.dart';
 
@@ -18,6 +19,7 @@ class MaterialAppWidget extends PlatformAppWidget {
   Widget build(BuildContext context) => MaterialApp.router(
         title: title,
         theme: materialThemeDataLight,
+        darkTheme: materialThemeDataDark,
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
