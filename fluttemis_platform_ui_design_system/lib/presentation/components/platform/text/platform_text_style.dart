@@ -67,9 +67,7 @@ TextStyle _getWindowsTextStyle(BuildContext context, TextType textType) {
             color: fluent_ui.Colors.grey[90],
           );
     case TextType.label:
-      return fluent_ui.FluentTheme.of(context).typography.caption!.copyWith(
-            color: fluent_ui.Colors.grey[160],
-          );
+      return fluent_ui.FluentTheme.of(context).typography.caption!;
     case TextType.genomeName:
       return fluent_ui.FluentTheme.of(context).typography.subtitle!.copyWith(
             fontStyle: FontStyle.italic,
