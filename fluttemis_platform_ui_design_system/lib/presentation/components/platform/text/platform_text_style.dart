@@ -94,9 +94,7 @@ TextStyle _getMaterialTextStyle(BuildContext context, TextType textType) {
             color: material.Colors.grey.shade500,
           );
     case TextType.label:
-      return material.Theme.of(context).textTheme.caption!.copyWith(
-            color: material.Colors.grey.shade800,
-          );
+      return material.Theme.of(context).textTheme.caption!;
     case TextType.genomeName:
       return material.Theme.of(context).textTheme.titleLarge!.copyWith(
             fontStyle: FontStyle.italic,
