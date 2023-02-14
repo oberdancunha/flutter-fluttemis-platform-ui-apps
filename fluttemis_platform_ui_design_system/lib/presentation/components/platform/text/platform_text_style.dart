@@ -37,9 +37,7 @@ TextStyle _getMacosTextStyle(BuildContext context, TextType textType) {
             color: MacosColors.systemGrayColor,
           );
     case TextType.label:
-      return MacosTheme.of(context).typography.caption1.copyWith(
-            color: const MacosColor(0xFF323130),
-          );
+      return MacosTheme.of(context).typography.caption1;
     case TextType.genomeName:
       return MacosTheme.of(context).typography.title2.copyWith(
             fontStyle: FontStyle.italic,
