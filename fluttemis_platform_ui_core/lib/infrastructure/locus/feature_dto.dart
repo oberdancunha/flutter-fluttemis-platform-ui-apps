@@ -38,7 +38,7 @@ class FeatureDto extends Equatable {
       ];
 
   Feature toDomain() => Feature(
-        id: start.toString() + end.toString() + strand.toString() + type,
+        id: start.toString() + end.toString() + strand.fileRawData.toString() + type,
         start: start,
         end: end,
         strand: strand,
