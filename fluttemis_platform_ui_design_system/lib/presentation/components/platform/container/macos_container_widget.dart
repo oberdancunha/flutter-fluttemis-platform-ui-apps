@@ -36,7 +36,9 @@ class MacosContainerWidget extends PlatformContainerWidget {
   Color getContainerBackgroundColor(BuildContext context) {
     switch (containerType) {
       case ContainerType.error:
-        return MacosColors.windowFrameColor;
+        return MacosTheme.of(context).brightness == Brightness.light
+            ? MacosColors.windowFrameColor
+            : MacosColors.alternatingContentBackgroundColor;
       case null:
         return MacosTheme.of(context).primaryColor;
     }
