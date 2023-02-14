@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 
+import '../theme/dark/macos_theme_data_dark.dart';
 import '../theme/light/macos_theme_data_light.dart';
 import 'platform_app_widget.dart';
 
@@ -19,8 +20,7 @@ class MacosAppWidget extends PlatformAppWidget {
   Widget build(BuildContext context) => MacosApp.router(
         title: title,
         theme: macosThemeDataLight,
-        themeMode:
-            macosThemeDataLight.brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light,
+        darkTheme: macosThemeDataDark,
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
