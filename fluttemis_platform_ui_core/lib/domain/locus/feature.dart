@@ -1,5 +1,6 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import 'feature_product_type.dart';
 import 'feature_strand.dart';
 
 class Feature extends Equatable {
@@ -8,7 +9,7 @@ class Feature extends Equatable {
   final int end;
   final String type;
   final FeatureStrandType strand;
-  final int color;
+  final FeatureProductType productType;
   final bool show;
   final String typeByOverlap;
   final String? name;
@@ -23,7 +24,7 @@ class Feature extends Equatable {
     required this.end,
     required this.type,
     required this.strand,
-    required this.color,
+    required this.productType,
     required this.show,
     required this.typeByOverlap,
     this.name,
@@ -40,7 +41,7 @@ class Feature extends Equatable {
         end,
         type,
         strand,
-        color,
+        productType,
         show,
         typeByOverlap,
         name,

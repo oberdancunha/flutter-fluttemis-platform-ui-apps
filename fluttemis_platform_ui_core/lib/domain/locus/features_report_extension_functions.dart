@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
-import '../../utils/product_dictionary.dart';
+import '../core/value_transformer.dart';
 import 'feature.dart';
 
 Map<String, List<Feature>> getTypesList(List<Feature> features) => Map.fromEntries(
@@ -48,11 +48,11 @@ Map<String, int> getTypesCount(List<Feature> features) => Map.fromEntries(
 Map<String, int> getTypesProductsCount(List<Feature> features) => Map.fromEntries(
       features
           .where((feature) => feature.show)
-          .groupSetsBy((feature) => feature.color)
+          .groupSetsBy((feature) => feature.productType)
           .map(
-            (featureColor, featureColorData) => MapEntry(
-              productDictionaryLabel[featureColor].toString(),
-              featureColorData.length,
+            (featureProductType, featureProductTypeData) => MapEntry(
+              featureProductType.name.capitalizeFirstLetter,
+              featureProductTypeData.length,
             ),
           )
           .entries

@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/utils/product_dictionary.dart';
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_product_type.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_list_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_model.dart';
@@ -40,9 +40,13 @@ class LocusProductsOverviewWidget extends StatelessWidget {
                     label: productType,
                     representativeWidget: PlatformContainerWidget(
                       backgroundColor: getPlatformColor(
-                        productDictionaryLabel.keys.firstWhere(
-                          (color) => productDictionaryLabel[color] == productType,
-                        ),
+                        FeatureProductType.values
+                            .firstWhere(
+                              (featureProductType) =>
+                                  featureProductType.name.toLowerCase() ==
+                                  productType.toLowerCase(),
+                            )
+                            .color,
                       ),
                       width: 30,
                       height: 4,

@@ -2,6 +2,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 
 import '../../domain/core/value_transformer.dart';
 import '../../domain/locus/feature.dart';
+import '../../domain/locus/feature_product_type.dart';
 import '../../domain/locus/feature_strand.dart';
 
 class FeatureDto extends Equatable {
@@ -49,7 +50,7 @@ class FeatureDto extends Equatable {
         name: name,
         note: note,
         product: product,
-        color: colorLocusFeatureByProduct(product ?? ''),
+        productType: FeatureProductType.detectTerm(product),
         show: shouldDrawFeature(type),
       );
 

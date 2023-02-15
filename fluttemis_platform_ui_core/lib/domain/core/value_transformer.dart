@@ -1,22 +1,3 @@
-import '../../utils/constants.dart';
-import '../../utils/product_dictionary.dart';
-
-int colorLocusFeatureByProduct(String product) {
-  if (product.isEmpty) {
-    return colorLocusFeatureNotProduct;
-  }
-  final productColor = productDictionary.keys.firstWhere(
-    (termColor) => productDictionary[termColor]!
-        .where(
-          (term) => product.toLowerCase().contains(term),
-        )
-        .isNotEmpty,
-    orElse: () => colorLocusFeatureKnownProduct,
-  );
-
-  return productColor;
-}
-
 bool shouldDrawFeature(String type) =>
     type.toLowerCase() != 'source' && type.toLowerCase() != 'gene' && type.toLowerCase() != 'mrna';
 
@@ -33,4 +14,6 @@ extension ValueTransformer on String {
   String get removeWhiteSpace => trim().replaceAll(' ', '');
 
   String get insertInnerWhiteSpace => replaceAllMapped('', (_) => ' ').trim();
+
+  String get capitalizeFirstLetter => "${this[0].toUpperCase()}${substring(1)}";
 }

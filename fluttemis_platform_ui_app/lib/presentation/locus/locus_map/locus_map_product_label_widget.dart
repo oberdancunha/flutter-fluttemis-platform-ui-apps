@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/utils/product_dictionary.dart';
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_product_type.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/color/platform_color.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/container/platform_container_widget.dart';
@@ -22,14 +22,14 @@ class LocusMapProductLabelWidget extends StatelessWidget {
             ),
             const SizedBox(height: 9),
             Row(
-              children: productDictionaryLabel.keys
+              children: FeatureProductType.values
                   .map<Widget>(
-                    (productLabelColor) => Row(
+                    (productType) => Row(
                       children: [
                         Column(
                           children: [
                             PlatformTextWidget(
-                              '${productDictionaryLabel[productLabelColor]} product',
+                              '${productType.name} product',
                               textType: TextType.label,
                               fontSize: 10,
                             ),
@@ -37,7 +37,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
                             PlatformContainerWidget(
                               width: 100,
                               height: 2.5,
-                              backgroundColor: getPlatformColor(productLabelColor),
+                              backgroundColor: getPlatformColor(productType.color),
                             ),
                           ],
                         ),
