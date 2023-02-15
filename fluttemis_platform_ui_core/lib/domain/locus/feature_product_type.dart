@@ -24,7 +24,7 @@ enum FeatureProductType {
     ],
   ),
   without(
-    color: 0xFF000000,
+    color: 0xFF909090,
     terms: [],
   );
 
