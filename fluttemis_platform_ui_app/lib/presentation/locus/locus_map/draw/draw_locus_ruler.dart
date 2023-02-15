@@ -4,6 +4,7 @@ import 'draw_locus_ruler_inner_position_marker.dart';
 import 'draw_locus_ruler_outer_position_marker.dart';
 
 class DrawLocusRuler extends CustomPainter {
+  final Color color;
   final double widthMapArea;
   final int locusLength;
   final double scale;
@@ -12,6 +13,7 @@ class DrawLocusRuler extends CustomPainter {
   final TextStyle textStyle;
 
   const DrawLocusRuler({
+    required this.color,
     required this.widthMapArea,
     required this.locusLength,
     required this.scale,
@@ -22,7 +24,9 @@ class DrawLocusRuler extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final paint = Paint()..strokeWidth = 1;
+    final paint = Paint()
+      ..strokeWidth = 1
+      ..color = color;
     _drawLine(canvas, paint);
     DrawLocusRulerOuterPositionMarker(
       canvas: canvas,
