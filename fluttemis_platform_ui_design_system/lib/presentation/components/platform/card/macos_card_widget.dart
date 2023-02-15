@@ -13,7 +13,6 @@ class MacosCardWidget extends PlatformCardWidget {
   @override
   Widget build(BuildContext context) => MacosContainerWidget(
         backgroundColor: MacosTheme.of(context).canvasColor,
-        shadowColor: const MacosColor(0xFF8E8E93),
         child: child,
       );
 }

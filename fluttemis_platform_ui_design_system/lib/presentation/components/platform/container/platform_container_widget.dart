@@ -32,7 +32,6 @@ class PlatformContainerWidget
         height: height,
         width: width,
         backgroundColor: backgroundColor,
-        shadowColor: shadowColor,
         containerType: containerType,
         child: child,
       );

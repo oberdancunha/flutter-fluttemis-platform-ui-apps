@@ -10,27 +10,50 @@ class MacosContainerWidget extends PlatformContainerWidget {
     super.height,
     super.width,
     super.backgroundColor,
-    super.shadowColor,
     super.containerType,
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) {
+    final brightness = MacosTheme.brightnessOf(context);
+    const kSheetBorderRadius = BorderRadius.all(Radius.circular(12));
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: brightness.resolve(
+          CupertinoColors.systemGrey6.color,
+          MacosColors.controlBackgroundColor.darkColor,
+        ),
+        borderRadius: kSheetBorderRadius,
+      ),
+      child: Container(
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
           color: backgroundColor ?? getContainerBackgroundColor(context),
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: shadowColor ?? const MacosColor(0x00000000),
-              blurRadius: 10,
+          borderRadius: kSheetBorderRadius,
+          border: Border.all(
+            width: 2,
+            color: brightness.resolve(
+              MacosColors.white.withOpacity(0.45),
+              MacosColors.white.withOpacity(0.15),
             ),
-          ],
+          ),
+        ),
+        foregroundDecoration: BoxDecoration(
+          border: Border.all(
+            color: brightness.resolve(
+              MacosColors.black.withOpacity(0.23),
+              MacosColors.black.withOpacity(0.76),
+            ),
+          ),
+          borderRadius: kSheetBorderRadius,
         ),
         child: child,
-      );
+      ),
+    );
+  }
 
   @override
   Color getContainerBackgroundColor(BuildContext context) {
