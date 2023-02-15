@@ -47,9 +47,8 @@ class _OverviewDataSequencesCopyWidgetState extends State<OverviewDataSequencesC
           child: PlatformIconWidget(
             iconType: IconType.copy,
             size: 15,
-            color: getPlatformColor(
-              value == _sequencesBreakedEvery60Characters ? 0xFF8B8B8B : 0XFF000000,
-            ),
+            color:
+                value == _sequencesBreakedEvery60Characters ? getPlatformColor(0xFF8B8B8B) : null,
           ),
         ),
       ),
