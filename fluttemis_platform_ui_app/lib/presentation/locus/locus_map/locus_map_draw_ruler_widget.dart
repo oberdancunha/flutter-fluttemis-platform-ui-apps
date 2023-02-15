@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/draw_ruler_color/platform_draw_ruler_color.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_style.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
 import 'package:flutter/widgets.dart';
@@ -30,21 +31,25 @@ class LocusMapDrawRulerWidget extends StatelessWidget {
         bottom: height - 40,
         top: 0,
         right: 20,
-        child: SingleChildScrollView(
-          controller: scrollControllerRulerFeatures,
-          scrollDirection: Axis.horizontal,
-          physics: const NeverScrollableScrollPhysics(),
+        child: ScrollConfiguration(
+          behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
           child: SingleChildScrollView(
-            child: SizedBox(
-              width: widthMapArea,
-              child: CustomPaint(
-                painter: DrawLocusRuler(
-                  widthMapArea: widthMapArea,
-                  locusLength: locusLength,
-                  scale: scale,
-                  pixelsPerCharacter: pixelsPerCharacter,
-                  locusLengthByCharacters: locusLengthByCharacters,
-                  textStyle: getPlatformTextStyle(context, TextType.subTitle),
+            controller: scrollControllerRulerFeatures,
+            scrollDirection: Axis.horizontal,
+            physics: const NeverScrollableScrollPhysics(),
+            child: SingleChildScrollView(
+              child: SizedBox(
+                width: widthMapArea,
+                child: CustomPaint(
+                  painter: DrawLocusRuler(
+                    color: platformDrawRulerColor(context),
+                    widthMapArea: widthMapArea,
+                    locusLength: locusLength,
+                    scale: scale,
+                    pixelsPerCharacter: pixelsPerCharacter,
+                    locusLengthByCharacters: locusLengthByCharacters,
+                    textStyle: getPlatformTextStyle(context, TextType.subTitle),
+                  ),
                 ),
               ),
             ),
