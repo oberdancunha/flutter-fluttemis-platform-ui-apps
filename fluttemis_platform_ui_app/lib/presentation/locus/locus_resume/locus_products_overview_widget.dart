@@ -30,26 +30,27 @@ class LocusProductsOverviewWidget extends StatelessWidget {
         ),
       ],
       widgets: [
-        OverviewMultipleDataListWidget(
-          title: fluttemisAppLocalizations.countTypeProducts,
-          children: featuresTypesProductsCount.keys
-              .map(
-                (productType) => OverviewMultipleDataItemWidget(
-                  value: featuresTypesProductsCount[productType].toString(),
-                  label: productType,
-                  representativeWidget: PlatformContainerWidget(
-                    backgroundColor: getPlatformColor(
-                      productDictionaryLabel.keys.firstWhere(
-                        (color) => productDictionaryLabel[color] == productType,
+        if (featuresTypesProductsCount.isNotEmpty)
+          OverviewMultipleDataListWidget(
+            title: fluttemisAppLocalizations.countTypeProducts,
+            children: featuresTypesProductsCount.keys
+                .map(
+                  (productType) => OverviewMultipleDataItemWidget(
+                    value: featuresTypesProductsCount[productType].toString(),
+                    label: productType,
+                    representativeWidget: PlatformContainerWidget(
+                      backgroundColor: getPlatformColor(
+                        productDictionaryLabel.keys.firstWhere(
+                          (color) => productDictionaryLabel[color] == productType,
+                        ),
                       ),
+                      width: 30,
+                      height: 4,
                     ),
-                    width: 30,
-                    height: 4,
                   ),
-                ),
-              )
-              .toList(),
-        ),
+                )
+                .toList(),
+          ),
       ],
     );
   }
