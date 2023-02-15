@@ -38,7 +38,7 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
                 return const Color.fromARGB(255, 196, 222, 255);
               }
 
-              return const Color.fromARGB(255, 209, 209, 209);
+              return const Color.fromARGB(255, 235, 235, 235);
             },
           ),
         ),
