@@ -89,10 +89,10 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                 const SizedBox(height: 10),
                 OverviewDataSequencesWidget(
                   height: locusFeature.aminoacids != null
-                      ? 92
+                      ? constraints.maxHeight * 0.25
                       : locusFeature.product == null || locusFeature.note == null
-                          ? 295
-                          : 250,
+                          ? constraints.maxHeight * 0.65
+                          : constraints.maxHeight * 0.53,
                   title: fluttemisAppLocalizations.nucleotideSequence,
                   sequences: locusFeature.nucleotides!,
                 ),
@@ -100,7 +100,7 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
               if (locusFeature.aminoacids != null) ...[
                 const SizedBox(height: 20),
                 OverviewDataSequencesWidget(
-                  height: 92,
+                  height: constraints.maxHeight * 0.15,
                   title: fluttemisAppLocalizations.aminoacidSequence,
                   sequences: locusFeature.aminoacids!,
                 ),
