@@ -16,6 +16,6 @@ class MacosIconWidget extends PlatformIconWidget {
   Widget build(BuildContext context) => MacosIcon(
         getPlatformIcon(iconType),
         size: size,
-        color: color,
+        color: color ?? MacosTheme.of(context).iconTheme.color,
       );
 }
