@@ -26,13 +26,16 @@ ThemeData get materialThemeDataLight => ThemeData(
         crossAxisMargin: 0,
         mainAxisMargin: 0,
       ),
-      iconTheme: IconThemeData(
-        color: Colors.blue.shade800,
+      iconTheme: const IconThemeData(
+        color: Colors.black,
       ),
       textTheme: TextTheme(
         caption: TextStyle(
           color: Colors.grey.shade800,
         ),
+      ),
+      dividerTheme: DividerThemeData(
+        color: Colors.grey.shade300,
       ),
       useMaterial3: true,
       extensions: <ThemeExtension<FluttemisMaterialThemeExtension>>[

@@ -35,4 +35,9 @@ ThemeData get windowsThemeDataDark => ThemeData(
           color: Colors.white,
         ),
       ),
+      dividerTheme: const DividerThemeData(
+        decoration: BoxDecoration(
+          color: Colors.white,
+        ),
+      ),
     );

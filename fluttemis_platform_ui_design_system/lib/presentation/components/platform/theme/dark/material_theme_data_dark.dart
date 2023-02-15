@@ -27,18 +27,21 @@ ThemeData get materialThemeDataDark => ThemeData(
         crossAxisMargin: 0,
         mainAxisMargin: 0,
       ),
-      iconTheme: IconThemeData(
-        color: Colors.blue.shade200,
+      iconTheme: const IconThemeData(
+        color: Colors.white,
       ),
       textTheme: TextTheme(
         caption: TextStyle(
           color: Colors.grey.shade300,
         ),
       ),
+      dividerTheme: DividerThemeData(
+        color: Colors.grey.shade700,
+      ),
       useMaterial3: true,
       extensions: <ThemeExtension<FluttemisMaterialThemeExtension>>[
         FluttemisMaterialThemeExtension(
-          errorBackgroundColor: Colors.grey.shade300,
+          errorBackgroundColor: Colors.grey.shade900,
         ),
       ],
     );

@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-MacosThemeData get macosThemeDataLight => MacosThemeData.light().copyWith(
+MacosThemeData get macosThemeDataLight => MacosThemeData(
+      brightness: Brightness.light,
       primaryColor: const MacosColor.fromRGBO(156, 39, 176, 1),
       canvasColor: MacosColors.white,
       pushButtonTheme: const PushButtonThemeData(
@@ -25,4 +26,5 @@ MacosThemeData get macosThemeDataLight => MacosThemeData.light().copyWith(
           color: MacosColor(0xFF323130),
         ),
       ),
+      dividerColor: MacosColors.textBackgroundColor,
     );

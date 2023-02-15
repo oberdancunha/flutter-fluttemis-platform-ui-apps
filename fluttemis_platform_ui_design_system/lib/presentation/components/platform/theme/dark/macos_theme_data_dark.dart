@@ -8,7 +8,7 @@ MacosThemeData get macosThemeDataDark => MacosThemeData.dark().copyWith(
         secondaryColor: MacosColors.white,
       ),
       iconTheme: const MacosIconThemeData(
-        color: MacosColors.windowFrameColor,
+        color: MacosColors.white,
       ),
       scrollbarTheme: const MacosScrollbarThemeData().copyWith(
         radius: const Radius.elliptical(2, 2),
@@ -24,4 +24,5 @@ MacosThemeData get macosThemeDataDark => MacosThemeData.dark().copyWith(
           color: MacosColors.windowFrameColor,
         ),
       ),
+      dividerColor: MacosColors.windowFrameColor,
     );
