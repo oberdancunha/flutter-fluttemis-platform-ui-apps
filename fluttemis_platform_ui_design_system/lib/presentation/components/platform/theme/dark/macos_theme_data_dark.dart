@@ -4,7 +4,7 @@ import 'package:macos_ui/macos_ui.dart';
 MacosThemeData get macosThemeDataDark => MacosThemeData.dark().copyWith(
       primaryColor: MacosColors.systemPurpleColor,
       pushButtonTheme: const PushButtonThemeData(
-        color: MacosColors.appleBlue,
+        color: MacosColors.systemBlueColor,
         secondaryColor: MacosColors.white,
       ),
       iconTheme: const MacosIconThemeData(

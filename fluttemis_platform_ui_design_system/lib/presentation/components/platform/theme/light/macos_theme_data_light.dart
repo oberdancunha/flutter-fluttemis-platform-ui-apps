@@ -6,7 +6,7 @@ MacosThemeData get macosThemeDataLight => MacosThemeData(
       primaryColor: const MacosColor.fromRGBO(156, 39, 176, 1),
       canvasColor: MacosColors.white,
       pushButtonTheme: const PushButtonThemeData(
-        color: MacosColors.appleBlue,
+        color: MacosColors.systemBlueColor,
         secondaryColor: MacosColors.white,
       ),
       iconTheme: const MacosIconThemeData(
