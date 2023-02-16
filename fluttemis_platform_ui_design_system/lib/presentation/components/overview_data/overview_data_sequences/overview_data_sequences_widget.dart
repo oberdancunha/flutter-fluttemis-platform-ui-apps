@@ -26,11 +26,13 @@ class OverviewDataSequencesWidget extends StatefulWidget {
 
 class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidget> {
   late ScrollController _scrollController;
+  late String _sequencesWithInnerWhiteSpace;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    _sequencesWithInnerWhiteSpace = widget.sequences.insertInnerWhiteSpace;
   }
 
   @override
@@ -73,11 +75,12 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                   child: SingleChildScrollView(
                     controller: _scrollController,
                     child: OverviewDataSequencesCopySelectableWidget(
+                      sequenceLength: _sequencesWithInnerWhiteSpace.length,
                       scrollController: _scrollController,
                       child: Padding(
                         padding: const EdgeInsets.all(10),
                         child: PlatformTextWidget(
-                          widget.sequences.insertInnerWhiteSpace,
+                          _sequencesWithInnerWhiteSpace,
                           textType: TextType.label,
                           fontSize: 11.5,
                           textAlign: TextAlign.start,

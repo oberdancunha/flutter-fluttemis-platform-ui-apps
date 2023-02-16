@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/services.dart';
@@ -9,10 +11,12 @@ import '../../platform/icon/icon_type_enum.dart';
 import '../../platform/icon/platform_icon.dart';
 
 class OverviewDataSequencesCopySelectableWidget extends StatefulWidget {
+  final int sequenceLength;
   final ScrollController scrollController;
   final Widget child;
 
   const OverviewDataSequencesCopySelectableWidget({
+    required this.sequenceLength,
     required this.scrollController,
     required this.child,
     super.key,
@@ -65,9 +69,10 @@ class _OverviewDataSequencesCopySelectableWidgetState
           valueListenable: _sequencesSelected,
           builder: (_, sequencesSelected, __) {
             final isSequencesCopied = sequencesCopied == sequencesSelected;
+            log(_selectionController.getContainedText().length.toString());
 
             return SizedBox(
-              height: (_selectionController.getContainedText().length / 64) * 10 + 50,
+              height: (widget.sequenceLength / 64) * 10 + 50,
               child: Selectable(
                 selectWordOnDoubleTap: true,
                 scrollController: widget.scrollController,
