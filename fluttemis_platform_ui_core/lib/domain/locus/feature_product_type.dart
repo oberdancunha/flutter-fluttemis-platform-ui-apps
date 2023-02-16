@@ -23,6 +23,12 @@ enum FeatureProductType {
       'uncharacterized',
     ],
   ),
+  truncated(
+    color: 0xFFF9A825,
+    terms: [
+      'truncated',
+    ],
+  ),
   without(
     color: 0xFF909090,
     terms: [],

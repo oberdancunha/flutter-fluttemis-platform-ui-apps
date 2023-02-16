@@ -46,6 +46,13 @@ void main() {
     expect(featureProductType, equals(FeatureProductType.uncharacterized));
   });
 
+  test('Should detect a TRUNCATED product', () {
+    const product = "truncated gag-pol fusion protein";
+    final featureProductType = detectTerm(product);
+    expect(featureProductType, isA<FeatureProductType>());
+    expect(featureProductType, equals(FeatureProductType.truncated));
+  });
+
   test('Should detect WITHOUT when product is empty', () {
     const product = "";
     final featureProductType = detectTerm(product);
