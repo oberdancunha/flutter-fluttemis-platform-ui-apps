@@ -307,11 +307,11 @@ abstract class FluttemisAppLocalizations {
   /// **'Genoma'**
   String get tblGenomeName;
 
-  /// No description provided for @tblGenomeLength.
+  /// No description provided for @tblSequencesLength.
   ///
   /// In pt, this message translates to:
   /// **'Bases'**
-  String get tblGenomeLength;
+  String get tblSequencesLength;
 
   /// No description provided for @tblGenomeCodeAccession.
   ///
@@ -450,6 +450,18 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Copiado'**
   String get copied;
+
+  /// No description provided for @tblStart.
+  ///
+  /// In pt, this message translates to:
+  /// **'Início'**
+  String get tblStart;
+
+  /// No description provided for @tblNote.
+  ///
+  /// In pt, this message translates to:
+  /// **'Nota'**
+  String get tblNote;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

@@ -113,7 +113,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get tblGenomeName => 'Genoma';
 
   @override
-  String get tblGenomeLength => 'Bases';
+  String get tblSequencesLength => 'Bases';
 
   @override
   String get tblGenomeCodeAccession => 'Acesso';
@@ -183,4 +183,10 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get copied => 'Copiado';
+
+  @override
+  String get tblStart => 'Início';
+
+  @override
+  String get tblNote => 'Nota';
 }

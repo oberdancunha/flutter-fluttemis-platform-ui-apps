@@ -40,7 +40,7 @@ class LocusTableWidget extends StatelessWidget {
             isSortable: true,
           ),
           DataTableColumnModel(
-            label: fluttemisAppLocalizations.tblGenomeLength,
+            label: fluttemisAppLocalizations.tblSequencesLength,
             isNumeric: true,
             isSortable: true,
           ),
