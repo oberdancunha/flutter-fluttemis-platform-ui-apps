@@ -19,7 +19,7 @@ class MacosScrollbarWidget extends PlatformScrollbarWidget {
       radius: macosScrollbarTheme.radius,
       isAlwaysShown: macosScrollbarTheme.isAlwaysShown,
       thickness: macosScrollbarTheme.thickness,
-      interactive: true,
+      interactive: macosScrollbarTheme.interactive,
       child: Padding(
         padding: const EdgeInsets.only(right: 5, bottom: 5),
         child: child,

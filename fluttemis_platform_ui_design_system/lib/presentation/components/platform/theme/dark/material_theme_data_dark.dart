@@ -26,6 +26,7 @@ ThemeData get materialThemeDataDark => ThemeData(
         thickness: MaterialStateProperty.all(5),
         crossAxisMargin: 0,
         mainAxisMargin: 0,
+        interactive: true,
       ),
       iconTheme: const IconThemeData(
         color: Colors.white,

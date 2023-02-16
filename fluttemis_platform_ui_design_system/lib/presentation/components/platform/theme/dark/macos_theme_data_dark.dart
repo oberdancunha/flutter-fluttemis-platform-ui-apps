@@ -11,12 +11,13 @@ MacosThemeData get macosThemeDataDark => MacosThemeData.dark().copyWith(
         color: MacosColors.white,
       ),
       scrollbarTheme: const MacosScrollbarThemeData().copyWith(
-        radius: const Radius.elliptical(2, 2),
         isAlwaysShown: true,
-        thickness: 5,
-        hoveringThickness: 5,
+        thickness: 0,
+        hoveringThickness: 0,
         crossAxisMargin: 0,
         mainAxisMargin: 0,
+        showTrackOnHover: true,
+        interactive: true,
       ),
       typography: MacosTypography(
         color: MacosColors.windowFrameColor,
