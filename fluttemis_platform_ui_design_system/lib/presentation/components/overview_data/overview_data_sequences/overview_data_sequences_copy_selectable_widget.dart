@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/services.dart';
@@ -69,7 +67,6 @@ class _OverviewDataSequencesCopySelectableWidgetState
           valueListenable: _sequencesSelected,
           builder: (_, sequencesSelected, __) {
             final isSequencesCopied = sequencesCopied == sequencesSelected;
-            log(_selectionController.getContainedText().length.toString());
 
             return SizedBox(
               height: (widget.sequencesLength / 64) * 10 + 50,
