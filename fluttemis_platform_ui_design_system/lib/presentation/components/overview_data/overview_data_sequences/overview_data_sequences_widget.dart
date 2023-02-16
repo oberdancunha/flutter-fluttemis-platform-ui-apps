@@ -75,7 +75,7 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                   child: SingleChildScrollView(
                     controller: _scrollController,
                     child: OverviewDataSequencesCopySelectableWidget(
-                      sequenceLength: _sequencesWithInnerWhiteSpace.length,
+                      sequencesLength: _sequencesWithInnerWhiteSpace.length,
                       scrollController: _scrollController,
                       child: Padding(
                         padding: const EdgeInsets.all(10),

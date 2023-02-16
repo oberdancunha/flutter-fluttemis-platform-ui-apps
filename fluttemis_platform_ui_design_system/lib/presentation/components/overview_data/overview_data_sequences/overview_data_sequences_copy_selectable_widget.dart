@@ -11,12 +11,12 @@ import '../../platform/icon/icon_type_enum.dart';
 import '../../platform/icon/platform_icon.dart';
 
 class OverviewDataSequencesCopySelectableWidget extends StatefulWidget {
-  final int sequenceLength;
+  final int sequencesLength;
   final ScrollController scrollController;
   final Widget child;
 
   const OverviewDataSequencesCopySelectableWidget({
-    required this.sequenceLength,
+    required this.sequencesLength,
     required this.scrollController,
     required this.child,
     super.key,
@@ -72,7 +72,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
             log(_selectionController.getContainedText().length.toString());
 
             return SizedBox(
-              height: (widget.sequenceLength / 64) * 10 + 50,
+              height: (widget.sequencesLength / 64) * 10 + 50,
               child: Selectable(
                 selectWordOnDoubleTap: true,
                 scrollController: widget.scrollController,
