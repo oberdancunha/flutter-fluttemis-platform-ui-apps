@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import '../locus_map/locus_map_widget.dart';
 import 'genome_overview_widget.dart';
-import 'locus_features_overview_widget.dart';
+import 'locus_features/locus_features_overview_widget.dart';
 import 'locus_products_overview_widget.dart';
 
 class LocusResumeWidget extends StatefulWidget {
