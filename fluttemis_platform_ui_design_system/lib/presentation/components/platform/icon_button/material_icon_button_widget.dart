@@ -19,7 +19,7 @@ class MaterialIconButtonWidget extends PlatformIconButtonWidget {
           label,
           style: TextStyle(fontSize: fontSize),
         ),
-        style: ButtonStyle(
+        style: const ButtonStyle().copyWith(
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5),
