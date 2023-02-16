@@ -8,12 +8,14 @@ class PlatformTextWidget extends StatelessWidget {
   final TextType textType;
   final double fontSize;
   final TextAlign? textAlign;
+  final Color? color;
 
   const PlatformTextWidget(
     this.text, {
     required this.textType,
     required this.fontSize,
     this.textAlign,
+    this.color,
     super.key,
   });
 
@@ -22,6 +24,7 @@ class PlatformTextWidget extends StatelessWidget {
         text,
         style: getPlatformTextStyle(context, textType).copyWith(
           fontSize: fontSize,
+          color: color,
         ),
         textAlign: textAlign,
       );
