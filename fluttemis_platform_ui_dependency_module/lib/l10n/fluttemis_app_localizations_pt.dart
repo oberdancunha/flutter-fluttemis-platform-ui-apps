@@ -185,6 +185,15 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get copied => 'Copiado';
 
   @override
+  String get featuresTable => 'Tabela de features';
+
+  @override
+  String get featuresHintTextSearch => 'Filtrar dados de features';
+
+  @override
+  String get emptyFeaturesTable => 'Tabela de features vazia';
+
+  @override
   String get tblStart => 'Início';
 
   @override

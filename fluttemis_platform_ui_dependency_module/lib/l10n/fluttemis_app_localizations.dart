@@ -451,6 +451,24 @@ abstract class FluttemisAppLocalizations {
   /// **'Copiado'**
   String get copied;
 
+  /// No description provided for @featuresTable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tabela de features'**
+  String get featuresTable;
+
+  /// No description provided for @featuresHintTextSearch.
+  ///
+  /// In pt, this message translates to:
+  /// **'Filtrar dados de features'**
+  String get featuresHintTextSearch;
+
+  /// No description provided for @emptyFeaturesTable.
+  ///
+  /// In pt, this message translates to:
+  /// **'Tabela de features vazia'**
+  String get emptyFeaturesTable;
+
   /// No description provided for @tblStart.
   ///
   /// In pt, this message translates to:

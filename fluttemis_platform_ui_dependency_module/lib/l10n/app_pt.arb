@@ -59,6 +59,9 @@
   "copySelected": "Copiar selecionado",
   "copyAll": "Copiar tudo",
   "copied": "Copiado",
+  "featuresTable": "Tabela de features",
+  "featuresHintTextSearch": "Filtrar dados de features",
+  "emptyFeaturesTable": "Tabela de features vazia",
   "tblStart": "Início",
   "tblNote": "Nota"
 }
