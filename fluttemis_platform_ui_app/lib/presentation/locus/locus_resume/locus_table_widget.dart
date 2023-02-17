@@ -20,120 +20,126 @@ class LocusTableWidget extends StatelessWidget {
   });
 
   static const double _fontSize = 13;
+  static const TextType _defaultTextType = TextType.label;
 
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
-    return DataTableWidget(
-      hintTextSearch: fluttemisAppLocalizations.locusHintTextSearch,
-      dataTableModel: DataTableModel(
-        columns: [
-          DataTableColumnModel(
-            label: fluttemisAppLocalizations.tblGenomeName,
-            isNumeric: false,
-            isSortable: true,
-          ),
-          DataTableColumnModel(
-            label: fluttemisAppLocalizations.tblGenomeCodeAccession,
-            isNumeric: false,
-            isSortable: true,
-          ),
-          DataTableColumnModel(
-            label: fluttemisAppLocalizations.tblSequencesLength,
-            isNumeric: true,
-            isSortable: true,
-          ),
-          DataTableColumnModel(
-            label: fluttemisAppLocalizations.tblTotalFeatures,
-            isNumeric: true,
-            isSortable: true,
-          ),
-          DataTableColumnModel(
-            label: fluttemisAppLocalizations.tblAnnotationDate,
-            isNumeric: false,
-            isSortable: true,
-          ),
-          DataTableColumnModel(
-            label: '',
-            isNumeric: false,
-            isSortable: false,
-          ),
-        ],
-        data: locus.toMutableList().map(
-          (locus) {
-            final date = CustomDateFormat.fromyMdToyMMMMd(
-              fluttemisAppLocalizations.localeName,
-              locus.releaseDate!,
-            ).dateFormatted;
+    return LayoutBuilder(
+      builder: (_, constraints) => DataTableWidget(
+        hintTextSearch: fluttemisAppLocalizations.locusHintTextSearch,
+        dataTableModel: DataTableModel(
+          columns: [
+            DataTableColumnModel(
+              label: fluttemisAppLocalizations.tblGenomeName,
+              isNumeric: false,
+              isSortable: true,
+              width: constraints.maxWidth * 0.3,
+            ),
+            DataTableColumnModel(
+              label: fluttemisAppLocalizations.tblGenomeCodeAccession,
+              isNumeric: false,
+              isSortable: true,
+              width: constraints.maxWidth * 0.2,
+            ),
+            DataTableColumnModel(
+              label: fluttemisAppLocalizations.tblSequencesLength,
+              isNumeric: true,
+              isSortable: true,
+            ),
+            DataTableColumnModel(
+              label: fluttemisAppLocalizations.tblTotalFeatures,
+              isNumeric: true,
+              isSortable: true,
+            ),
+            DataTableColumnModel(
+              label: fluttemisAppLocalizations.tblAnnotationDate,
+              isNumeric: false,
+              isSortable: true,
+            ),
+            DataTableColumnModel(
+              label: '',
+              isNumeric: false,
+              isSortable: false,
+            ),
+          ],
+          data: locus.toMutableList().map(
+            (locus) {
+              final date = CustomDateFormat.fromyMdToyMMMMd(
+                fluttemisAppLocalizations.localeName,
+                locus.releaseDate!,
+              ).dateFormatted;
 
-            final dateToMillisecondsSinceEpoch =
-                CustomDateFormat.fromyMdToMillisecondsSinceEpoch(locus.releaseDate!).dateFormatted;
+              final dateToMillisecondsSinceEpoch =
+                  CustomDateFormat.fromyMdToMillisecondsSinceEpoch(locus.releaseDate!)
+                      .dateFormatted;
 
-            return [
-              DataTableRowModel<String>(
-                dataToShow: PlatformTextWidget(
-                  locus.organism,
-                  textType: TextType.genomeName,
-                  fontSize: _fontSize,
+              return [
+                DataTableRowModel<String>(
+                  dataToShow: PlatformTextWidget(
+                    locus.organism,
+                    textType: TextType.genomeName,
+                    fontSize: _fontSize,
+                  ),
+                  rawData: locus.organism,
                 ),
-                rawData: locus.organism,
-              ),
-              DataTableRowModel<String>(
-                dataToShow: PlatformTextWidget(
-                  locus.name,
-                  textType: TextType.label,
-                  fontSize: _fontSize,
+                DataTableRowModel<String>(
+                  dataToShow: PlatformTextWidget(
+                    locus.name,
+                    textType: _defaultTextType,
+                    fontSize: _fontSize,
+                  ),
+                  rawData: locus.name,
                 ),
-                rawData: locus.name,
-              ),
-              DataTableRowModel<int>(
-                dataToShow: PlatformTextWidget(
-                  locus.length.toString(),
-                  textType: TextType.label,
-                  fontSize: _fontSize,
+                DataTableRowModel<int>(
+                  dataToShow: PlatformTextWidget(
+                    locus.length.toString(),
+                    textType: _defaultTextType,
+                    fontSize: _fontSize,
+                  ),
+                  rawData: locus.length,
                 ),
-                rawData: locus.length,
-              ),
-              DataTableRowModel<int>(
-                dataToShow: PlatformTextWidget(
-                  locus.features.size.toString(),
-                  textType: TextType.label,
-                  fontSize: _fontSize,
+                DataTableRowModel<int>(
+                  dataToShow: PlatformTextWidget(
+                    locus.features.size.toString(),
+                    textType: _defaultTextType,
+                    fontSize: _fontSize,
+                  ),
+                  rawData: locus.features.size,
                 ),
-                rawData: locus.features.size,
-              ),
-              DataTableRowModel<String>(
-                dataToShow: PlatformTextWidget(
-                  date,
-                  textType: TextType.label,
-                  fontSize: _fontSize,
+                DataTableRowModel<String>(
+                  dataToShow: PlatformTextWidget(
+                    date,
+                    textType: _defaultTextType,
+                    fontSize: _fontSize,
+                  ),
+                  rawData: date,
+                  rawDataToSort: dateToMillisecondsSinceEpoch,
                 ),
-                rawData: date,
-                rawDataToSort: dateToMillisecondsSinceEpoch,
-              ),
-              DataTableRowModel(
-                dataToShow: SizedBox(
-                  height: 25,
-                  child: PlatformIconButtonWidget(
-                    icon: const PlatformIconWidget(
-                      iconType: IconType.change,
-                      size: 12,
+                DataTableRowModel(
+                  dataToShow: SizedBox(
+                    height: 25,
+                    child: PlatformIconButtonWidget(
+                      icon: const PlatformIconWidget(
+                        iconType: IconType.change,
+                        size: 12,
+                      ),
+                      label: fluttemisAppLocalizations.openLocus,
+                      fontSize: 11,
+                      onPressed: () {
+                        context.read<LocusShowStore>().locusToBeShown = locus;
+                        Navigator.of(context).pop();
+                      },
                     ),
-                    label: fluttemisAppLocalizations.openLocus,
-                    fontSize: 11,
-                    onPressed: () {
-                      context.read<LocusShowStore>().locusToBeShown = locus;
-                      Navigator.of(context).pop();
-                    },
                   ),
                 ),
-              ),
-            ];
-          },
-        ).asList(),
+              ];
+            },
+          ).asList(),
+        ),
+        emptyMessage: fluttemisAppLocalizations.emptyLocusTable,
       ),
-      emptyMessage: fluttemisAppLocalizations.emptyLocusTable,
     );
   }
 }
