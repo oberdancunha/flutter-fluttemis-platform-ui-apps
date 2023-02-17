@@ -14,11 +14,13 @@ class DataTableColumnModel {
   final String label;
   final bool isNumeric;
   final bool isSortable;
+  final double? width;
 
   DataTableColumnModel({
     required this.label,
     required this.isNumeric,
     required this.isSortable,
+    this.width,
   });
 }
 
