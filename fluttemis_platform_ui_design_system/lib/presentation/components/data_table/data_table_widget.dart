@@ -112,7 +112,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
               label: PlatformTextWidget(
                 column.label,
                 textType: TextType.title,
-                fontSize: 15,
+                fontSize: 14,
               ),
               numeric: column.isNumeric,
               onSort: column.isSortable
@@ -141,6 +141,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                       _historySortAscending = _sortAscending;
                     }
                   : null,
+              fixedWidth: column.width,
             ),
           )
           .toList();
