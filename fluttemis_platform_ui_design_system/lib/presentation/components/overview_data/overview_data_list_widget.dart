@@ -10,11 +10,13 @@ class OverviewDataListWidget extends StatefulWidget {
   final String title;
   final List<OverviewDataModel> listOverviewData;
   final List<Widget>? widgets;
+  final List<Widget>? titleComplementWidgets;
 
   const OverviewDataListWidget({
     required this.title,
     required this.listOverviewData,
     this.widgets,
+    this.titleComplementWidgets,
     super.key,
   });
 
@@ -50,10 +52,17 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
           children: [
             SizedBox(
               height: 35,
-              child: PlatformTextWidget(
-                widget.title,
-                textType: TextType.subTitle,
-                fontSize: 15,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  PlatformTextWidget(
+                    widget.title,
+                    textType: TextType.subTitle,
+                    fontSize: 15,
+                  ),
+                  ...widget.titleComplementWidgets ?? [],
+                ],
               ),
             ),
             Expanded(
