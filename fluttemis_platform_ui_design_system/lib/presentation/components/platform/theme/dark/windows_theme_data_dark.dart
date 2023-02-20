@@ -40,4 +40,9 @@ ThemeData get windowsThemeDataDark => ThemeData(
           color: Colors.white,
         ),
       ),
+      dialogTheme: const ContentDialogThemeData(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 28, 28, 28),
+        ),
+      ),
     );
