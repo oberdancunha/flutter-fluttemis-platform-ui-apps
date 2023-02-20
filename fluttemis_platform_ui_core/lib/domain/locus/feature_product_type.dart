@@ -17,7 +17,7 @@ enum FeatureProductType {
     ],
   ),
   uncharacterized(
-    color: 0xFF3F51B5,
+    color: 0xFF448AFF,
     terms: [
       'unknown',
       'uncharacterized',
