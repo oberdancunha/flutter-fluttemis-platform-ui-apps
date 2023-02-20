@@ -120,17 +120,27 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel(
                   dataToShow: SizedBox(
                     height: 25,
-                    child: PlatformIconButtonWidget(
-                      icon: const PlatformIconWidget(
-                        iconType: IconType.change,
-                        size: 12,
+                    child: Visibility(
+                      visible: context.read<LocusShowStore>().locusToBeShown != locus,
+                      replacement: Center(
+                        child: PlatformTextWidget(
+                          fluttemisAppLocalizations.locusOpened,
+                          textType: TextType.title,
+                          fontSize: _fontSize,
+                        ),
                       ),
-                      label: fluttemisAppLocalizations.openLocus,
-                      fontSize: 11,
-                      onPressed: () {
-                        context.read<LocusShowStore>().locusToBeShown = locus;
-                        Navigator.of(context).pop();
-                      },
+                      child: PlatformIconButtonWidget(
+                        icon: const PlatformIconWidget(
+                          iconType: IconType.change,
+                          size: 12,
+                        ),
+                        label: fluttemisAppLocalizations.openLocus,
+                        fontSize: 11,
+                        onPressed: () {
+                          context.watch<LocusShowStore>().locusToBeShown = locus;
+                          Navigator.of(context).pop();
+                        },
+                      ),
                     ),
                   ),
                 ),

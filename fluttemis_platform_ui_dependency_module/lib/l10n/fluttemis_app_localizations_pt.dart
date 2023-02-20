@@ -198,4 +198,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get tblNote => 'Nota';
+
+  @override
+  String get locusOpened => 'Locus aberto';
 }

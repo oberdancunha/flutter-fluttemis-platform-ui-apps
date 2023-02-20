@@ -480,6 +480,12 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Nota'**
   String get tblNote;
+
+  /// No description provided for @locusOpened.
+  ///
+  /// In pt, this message translates to:
+  /// **'Locus aberto'**
+  String get locusOpened;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {

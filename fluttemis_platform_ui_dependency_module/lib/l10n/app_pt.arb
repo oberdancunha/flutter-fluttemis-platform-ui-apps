@@ -63,5 +63,6 @@
   "featuresHintTextSearch": "Filtrar dados de features",
   "emptyFeaturesTable": "Tabela de features vazia",
   "tblStart": "Início",
-  "tblNote": "Nota"
+  "tblNote": "Nota",
+  "locusOpened": "Locus aberto"
 }
