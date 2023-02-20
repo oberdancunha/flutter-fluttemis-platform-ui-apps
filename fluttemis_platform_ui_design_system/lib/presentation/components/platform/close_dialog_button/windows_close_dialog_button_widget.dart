@@ -38,7 +38,7 @@ class WindowsCloseDialogButtonWidget extends StatelessWidget {
                     return const Color(0XFFF9DBDD);
                   }
 
-                  return const Color(0XFF050708);
+                  return FluentTheme.of(context).iconTheme.color;
                 }),
               ),
               onPressed: () {
