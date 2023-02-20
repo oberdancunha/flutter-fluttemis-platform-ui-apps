@@ -19,10 +19,10 @@ class WindowsCloseDialogButtonWidget extends StatelessWidget {
                 backgroundColor: ButtonState.resolveWith(
                   (states) {
                     if (states.isHovering || states.isFocused) {
-                      return const Color.fromARGB(255, 153, 21, 34);
+                      return const Color(0XFFDD2622);
                     }
 
-                    return const Color(0XFFC51A2A);
+                    return const Color(0x00000000);
                   },
                 ),
                 border: ButtonState.all(
@@ -33,13 +33,19 @@ class WindowsCloseDialogButtonWidget extends StatelessWidget {
                 shape: ButtonState.all(
                   const RoundedRectangleBorder(),
                 ),
+                foregroundColor: ButtonState.resolveWith((states) {
+                  if (states.isHovering || states.isFocused) {
+                    return const Color(0XFFF9DBDD);
+                  }
+
+                  return const Color(0XFF050708);
+                }),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
               },
               child: const Icon(
                 FluentIcons.clear,
-                color: Colors.white,
                 size: 13,
               ),
             ),

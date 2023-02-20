@@ -23,19 +23,19 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
               if (states.isHovering || states.isFocused) {
                 return const BorderSide(
                   color: Color(0XFF3B76D6),
-                  width: 2,
                 );
               }
 
               return const BorderSide(
                 color: Color(0XFF3B76D6),
+                width: 2,
               );
             },
           ),
           backgroundColor: ButtonState.resolveWith(
             (states) {
               if (states.isHovering || states.isFocused) {
-                return const Color.fromARGB(255, 196, 222, 255);
+                return const Color(0XFFE7F1FB);
               }
 
               return const Color.fromARGB(255, 235, 235, 235);
