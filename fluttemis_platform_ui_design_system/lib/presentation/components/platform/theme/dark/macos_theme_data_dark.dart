@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-MacosThemeData get macosThemeDataDark => MacosThemeData.dark().copyWith(
+MacosThemeData get macosThemeDataDark => MacosThemeData(
+      brightness: Brightness.dark,
       primaryColor: MacosColors.systemPurpleColor,
       pushButtonTheme: const PushButtonThemeData(
         color: MacosColors.systemBlueColor,
