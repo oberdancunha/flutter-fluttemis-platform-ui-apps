@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import '../fluttemis_material_theme_extension.dart';
 
-const fontFamily = 'Ubuntu';
+const _fontFamily = 'Ubuntu';
 
 ThemeData get materialThemeDataDark => ThemeData(
-      fontFamily: fontFamily,
       brightness: Brightness.dark,
+      fontFamily: _fontFamily,
       primaryColor: Colors.brown.shade400,
       backgroundColor: const Color.fromARGB(255, 39, 39, 39),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -16,7 +16,7 @@ ThemeData get materialThemeDataDark => ThemeData(
           textStyle: MaterialStateProperty.all(
             const TextStyle(
               color: Colors.white,
-              fontFamily: fontFamily,
+              fontFamily: _fontFamily,
             ),
           ),
         ),
