@@ -39,6 +39,7 @@ ThemeData get materialThemeDataDark => ThemeData(
       dividerTheme: DividerThemeData(
         color: Colors.grey.shade700,
       ),
+      dialogBackgroundColor: const Color.fromARGB(255, 39, 39, 39),
       useMaterial3: true,
       extensions: <ThemeExtension<FluttemisMaterialThemeExtension>>[
         FluttemisMaterialThemeExtension(
