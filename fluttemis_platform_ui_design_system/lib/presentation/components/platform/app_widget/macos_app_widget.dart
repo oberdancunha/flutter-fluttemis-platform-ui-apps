@@ -21,6 +21,7 @@ class MacosAppWidget extends PlatformAppWidget {
         title: title,
         theme: macosThemeDataLight,
         darkTheme: macosThemeDataDark,
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,

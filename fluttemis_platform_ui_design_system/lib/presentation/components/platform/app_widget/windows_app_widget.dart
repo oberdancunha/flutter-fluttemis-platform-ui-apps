@@ -20,6 +20,7 @@ class WindowsAppWidget extends PlatformAppWidget {
         title: title,
         theme: windowsThemeDataLight,
         darkTheme: windowsThemeDataDark,
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: debugShowCheckedModeBanner,
         routeInformationParser: routeInformationParser,
         routerDelegate: routerDelegate,
