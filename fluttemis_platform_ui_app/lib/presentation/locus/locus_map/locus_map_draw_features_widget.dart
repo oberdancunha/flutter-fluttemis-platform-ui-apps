@@ -64,6 +64,7 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
                               GestureType.onTapUp,
                             ],
                             builder: (context) => CustomPaint(
+                              isComplex: true,
                               painter: DrawLocusFeatures(
                                 context: context,
                                 widthMapArea: widthMapArea,

@@ -41,6 +41,7 @@ class LocusMapDrawRulerWidget extends StatelessWidget {
               child: SizedBox(
                 width: widthMapArea,
                 child: CustomPaint(
+                  isComplex: true,
                   painter: DrawLocusRuler(
                     color: platformDrawRulerColor(context),
                     widthMapArea: widthMapArea,
