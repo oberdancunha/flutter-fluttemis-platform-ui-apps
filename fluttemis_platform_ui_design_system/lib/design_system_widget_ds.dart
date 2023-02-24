@@ -8,7 +8,7 @@ class DesignSystemWidgetDS extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PlatformAppWidget(
-        title: 'Fluttemis platform ui',
+        title: 'Fluttemis',
         debugShowCheckedModeBanner: false,
         routeInformationParser: Modular.routeInformationParser,
         routerDelegate: Modular.routerDelegate,
