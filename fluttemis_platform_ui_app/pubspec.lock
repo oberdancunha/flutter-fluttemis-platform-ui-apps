@@ -220,6 +220,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  fluttemis_platform_ui_locus:
+    dependency: "direct main"
+    description:
+      path: "../fluttemis_platform_ui_locus"
+      relative: true
+    source: path
+    version: "0.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
