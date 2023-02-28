@@ -1,9 +1,8 @@
 enum FeatureStrandType {
-  upstream("5' -> 3' (+)", 0),
-  downstream("3' -> 5' (-)", 1);
+  upstream("5' -> 3' (+)"),
+  downstream("3' -> 5' (-)");
 
   final String label;
-  final int fileRawData;
 
-  const FeatureStrandType(this.label, this.fileRawData);
+  const FeatureStrandType(this.label);
 }
