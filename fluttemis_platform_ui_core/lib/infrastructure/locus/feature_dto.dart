@@ -3,13 +3,13 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import '../../domain/core/value_transformer.dart';
 import '../../domain/locus/feature.dart';
 import '../../domain/locus/feature_product_type.dart';
-import '../../domain/locus/feature_strand.dart';
+import '../../domain/locus/feature_value_object.dart';
 
 class FeatureDto extends Equatable {
   final int start;
   final int end;
   final String type;
-  final FeatureStrandType strand;
+  final int strand;
   final String? typeByOverlap;
   final String? name;
   final String? product;
@@ -39,10 +39,10 @@ class FeatureDto extends Equatable {
       ];
 
   Feature toDomain() => Feature(
-        id: start.toString() + end.toString() + strand.fileRawData.toString() + type,
+        id: start.toString() + end.toString() + strand.toString() + type,
         start: start,
         end: end,
-        strand: strand,
+        strand: FeatureStrandTypeValueObject(strand),
         type: type,
         typeByOverlap: typeByOverlap ?? type,
         aminoacids: aminoacids,
@@ -58,7 +58,7 @@ class FeatureDto extends Equatable {
     int? start,
     int? end,
     String? type,
-    FeatureStrandType? strand,
+    int? strand,
     String? typeByOverlap,
     String? name,
     String? product,

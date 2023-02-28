@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature_product_type.dart';
-import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
+import 'package:fluttemis_platform_ui_core/domain/locus/feature_value_object.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/features_report.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
@@ -48,35 +48,35 @@ KtList<Locus> getMoreOneLocus() => KtList.of(
     );
 
 KtList<Feature> getLocusFeatures() => KtList.of(
-      const Feature(
+      Feature(
         id: '330040371gene',
         start: 3300,
         end: 4037,
         type: 'gene',
-        strand: FeatureStrandType.downstream,
+        strand: FeatureStrandTypeValueObject(1),
         name: 'REV7',
         productType: FeatureProductType.without,
         show: false,
         typeByOverlap: 'gene',
       ),
-      const Feature(
+      Feature(
         id: '330040371mRNA',
         start: 3300,
         end: 4037,
         type: 'mRNA',
-        strand: FeatureStrandType.downstream,
+        strand: FeatureStrandTypeValueObject(1),
         product: 'Rev7p',
         name: 'REV7',
         productType: FeatureProductType.known,
         show: false,
         typeByOverlap: 'mRNA',
       ),
-      const Feature(
+      Feature(
         id: '330040371CDS',
         start: 3300,
         end: 4037,
         type: 'CDS',
-        strand: FeatureStrandType.downstream,
+        strand: FeatureStrandTypeValueObject(1),
         product: 'Rev7p',
         name: 'REV7',
         aminoacids:
@@ -87,35 +87,35 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         show: true,
         typeByOverlap: 'CDS',
       ),
-      const Feature(
+      Feature(
         id: '68731580gene',
         start: 687,
         end: 3158,
         type: 'gene',
-        strand: FeatureStrandType.upstream,
+        strand: FeatureStrandTypeValueObject(0),
         name: 'AXL2',
         productType: FeatureProductType.without,
         show: false,
         typeByOverlap: 'gene',
       ),
-      const Feature(
+      Feature(
         id: '68731580mRNA',
         start: 687,
         end: 3158,
         type: 'mRNA',
-        strand: FeatureStrandType.upstream,
+        strand: FeatureStrandTypeValueObject(0),
         product: 'Axl2p',
         name: 'AXL2',
         productType: FeatureProductType.known,
         show: false,
         typeByOverlap: 'mRNA',
       ),
-      const Feature(
+      Feature(
         id: '68731580CDS',
         start: 687,
         end: 3158,
         type: 'CDS',
-        strand: FeatureStrandType.upstream,
+        strand: FeatureStrandTypeValueObject(0),
         product: 'Axl2p',
         name: 'AXL2',
         note: 'plasma membrane glycoprotein',
@@ -127,33 +127,33 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         show: true,
         typeByOverlap: 'CDS',
       ),
-      const Feature(
+      Feature(
         id: '150280source',
         start: 1,
         end: 5028,
         type: 'source',
-        strand: FeatureStrandType.upstream,
+        strand: FeatureStrandTypeValueObject(0),
         productType: FeatureProductType.without,
         show: false,
         typeByOverlap: 'source',
       ),
-      const Feature(
+      Feature(
         id: '12060mRNA',
         start: 1,
         end: 206,
         type: 'mRNA',
-        strand: FeatureStrandType.upstream,
+        strand: FeatureStrandTypeValueObject(0),
         product: 'TCP1-beta',
         productType: FeatureProductType.known,
         show: false,
         typeByOverlap: 'mRNA',
       ),
-      const Feature(
+      Feature(
         id: '12060CDS',
         start: 1,
         end: 206,
         type: 'CDS',
-        strand: FeatureStrandType.upstream,
+        strand: FeatureStrandTypeValueObject(0),
         product: 'TCP1-beta',
         aminoacids: 'SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM',
         nucleotides:
@@ -169,12 +169,12 @@ String getLocusSequenceFormatted() =>
 
 Map<String, List<Feature>> getFeaturesByList() => {
       'CDS': [
-        const Feature(
+        Feature(
           id: '330040371CDS',
           start: 3300,
           end: 4037,
           type: 'CDS',
-          strand: FeatureStrandType.downstream,
+          strand: FeatureStrandTypeValueObject(1),
           product: 'Rev7p',
           name: 'REV7',
           aminoacids:
@@ -185,12 +185,12 @@ Map<String, List<Feature>> getFeaturesByList() => {
           show: true,
           typeByOverlap: 'CDS',
         ),
-        const Feature(
+        Feature(
           id: '68731580CDS',
           start: 687,
           end: 3158,
           type: 'CDS',
-          strand: FeatureStrandType.upstream,
+          strand: FeatureStrandTypeValueObject(0),
           product: 'Axl2p',
           name: 'AXL2',
           note: 'plasma membrane glycoprotein',
@@ -202,12 +202,12 @@ Map<String, List<Feature>> getFeaturesByList() => {
           show: true,
           typeByOverlap: 'CDS',
         ),
-        const Feature(
+        Feature(
           id: '12060CDS',
           start: 1,
           end: 206,
           type: 'CDS',
-          strand: FeatureStrandType.upstream,
+          strand: FeatureStrandTypeValueObject(0),
           product: 'TCP1-beta',
           aminoacids: 'SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM',
           nucleotides:
@@ -230,12 +230,12 @@ Map<String, int> getFeaturesByTypesProductsCount() => {
       'Known': 3,
     };
 
-Feature getFirstFeature() => const Feature(
+Feature getFirstFeature() => Feature(
       id: '12060CDS',
       start: 1,
       end: 206,
       type: 'CDS',
-      strand: FeatureStrandType.upstream,
+      strand: FeatureStrandTypeValueObject(0),
       product: 'TCP1-beta',
       aminoacids: 'SSIYNGISTSGLDLNNGTIADMRQLGIVESYKLKRAVVSSASEAAEVLLRVDNIIRARPRTANRQHM',
       nucleotides:

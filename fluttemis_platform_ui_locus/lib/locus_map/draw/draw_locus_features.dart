@@ -50,7 +50,7 @@ class DrawLocusFeatures extends CustomPainter {
           paint,
           featureStart: featureStart,
           featureEnd: featureEnd,
-          featureStrand: locusFeature.strand,
+          featureStrand: locusFeature.strand.getOrError(),
           onTapUp: onTapUp,
         );
         _drawArrow(
@@ -58,7 +58,7 @@ class DrawLocusFeatures extends CustomPainter {
           paint,
           featureStart: featureStart,
           featureEnd: featureEnd,
-          featureStrand: locusFeature.strand,
+          featureStrand: locusFeature.strand.getOrError(),
           onTapUp: onTapUp,
         );
       } else {

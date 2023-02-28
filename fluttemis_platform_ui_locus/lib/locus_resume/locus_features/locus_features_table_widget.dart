@@ -102,11 +102,11 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   ),
                   DataTableRowModel<String>(
                     dataToShow: PlatformTextWidget(
-                      feature.strand.label,
+                      feature.strand.getOrError().label,
                       textType: _defaultTextType,
                       fontSize: _fontSize,
                     ),
-                    rawData: feature.strand.name,
+                    rawData: feature.strand.getOrError().name,
                   ),
                   DataTableRowModel<String>(
                     dataToShow: PlatformTextWidget(
