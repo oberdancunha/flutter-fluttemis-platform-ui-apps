@@ -1,5 +1,6 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import '../../domain/core/value_objects.dart';
 import '../../domain/locus/features_report.dart';
 import '../../domain/locus/locus.dart';
 import 'feature_dto.dart';
@@ -35,6 +36,7 @@ class LocusDto extends Equatable {
       ];
 
   Locus toDomain() => Locus(
+        id: UniqueIdValueObject(),
         name: name,
         length: length,
         organism: organism,

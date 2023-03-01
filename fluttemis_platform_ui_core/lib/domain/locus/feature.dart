@@ -1,10 +1,11 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import '../core/value_objects.dart';
 import 'feature_product_type.dart';
 import 'feature_value_object.dart';
 
 class Feature extends Equatable {
-  final String id;
+  final UniqueIdValueObject id;
   final int start;
   final int end;
   final String type;
@@ -36,7 +37,6 @@ class Feature extends Equatable {
 
   @override
   List<Object?> get props => [
-        id,
         start,
         end,
         type,

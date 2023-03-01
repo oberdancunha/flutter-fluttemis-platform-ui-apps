@@ -1,9 +1,11 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import '../core/value_objects.dart';
 import 'feature.dart';
 import 'features_report.dart';
 
 class Locus extends Equatable {
+  final UniqueIdValueObject id;
   final String name;
   final int length;
   final String type;
@@ -15,6 +17,7 @@ class Locus extends Equatable {
   final String? sequence;
 
   const Locus({
+    required this.id,
     required this.name,
     required this.length,
     required this.type,

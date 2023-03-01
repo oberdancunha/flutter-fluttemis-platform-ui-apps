@@ -25,3 +25,14 @@ abstract class ValueObject<E, T> {
   @override
   int get hashCode => value.hashCode;
 }
+
+class UniqueIdValueObject extends ValueObject<String, String> {
+  @override
+  final Either<ValueFailure<String>, String> value;
+
+  factory UniqueIdValueObject() => UniqueIdValueObject._(
+        right(const Uuid().v4()),
+      );
+
+  const UniqueIdValueObject._(this.value);
+}

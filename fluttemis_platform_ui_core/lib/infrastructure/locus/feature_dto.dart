@@ -1,5 +1,6 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import '../../domain/core/value_objects.dart';
 import '../../domain/core/value_transformer.dart';
 import '../../domain/locus/feature.dart';
 import '../../domain/locus/feature_product_type.dart';
@@ -39,7 +40,7 @@ class FeatureDto extends Equatable {
       ];
 
   Feature toDomain() => Feature(
-        id: start.toString() + end.toString() + strand.toString() + type,
+        id: UniqueIdValueObject(),
         start: start,
         end: end,
         strand: FeatureStrandTypeValueObject(strand),

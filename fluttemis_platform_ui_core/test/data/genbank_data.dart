@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/domain/core/value_objects.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature_product_type.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature_value_object.dart';
@@ -7,6 +8,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 
 KtList<Locus> getLocus() => KtList.of(
       Locus(
+        id: UniqueIdValueObject(),
         name: 'SCU49845',
         length: 5028,
         type: 'DNA',
@@ -22,6 +24,7 @@ KtList<Locus> getLocus() => KtList.of(
 
 KtList<Locus> getMoreOneLocus() => KtList.of(
       Locus(
+        id: UniqueIdValueObject(),
         name: 'SCU49845',
         length: 5028,
         type: 'DNA',
@@ -34,6 +37,7 @@ KtList<Locus> getMoreOneLocus() => KtList.of(
         featuresReport: FeaturesReport(getLocusFeatures().asList()),
       ),
       Locus(
+        id: UniqueIdValueObject(),
         name: 'SCU49845_1',
         length: 5028,
         type: 'DNA',
@@ -49,7 +53,7 @@ KtList<Locus> getMoreOneLocus() => KtList.of(
 
 KtList<Feature> getLocusFeatures() => KtList.of(
       Feature(
-        id: '330040371gene',
+        id: UniqueIdValueObject(),
         start: 3300,
         end: 4037,
         type: 'gene',
@@ -60,7 +64,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'gene',
       ),
       Feature(
-        id: '330040371mRNA',
+        id: UniqueIdValueObject(),
         start: 3300,
         end: 4037,
         type: 'mRNA',
@@ -72,7 +76,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'mRNA',
       ),
       Feature(
-        id: '330040371CDS',
+        id: UniqueIdValueObject(),
         start: 3300,
         end: 4037,
         type: 'CDS',
@@ -88,7 +92,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'CDS',
       ),
       Feature(
-        id: '68731580gene',
+        id: UniqueIdValueObject(),
         start: 687,
         end: 3158,
         type: 'gene',
@@ -99,7 +103,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'gene',
       ),
       Feature(
-        id: '68731580mRNA',
+        id: UniqueIdValueObject(),
         start: 687,
         end: 3158,
         type: 'mRNA',
@@ -111,7 +115,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'mRNA',
       ),
       Feature(
-        id: '68731580CDS',
+        id: UniqueIdValueObject(),
         start: 687,
         end: 3158,
         type: 'CDS',
@@ -128,7 +132,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'CDS',
       ),
       Feature(
-        id: '150280source',
+        id: UniqueIdValueObject(),
         start: 1,
         end: 5028,
         type: 'source',
@@ -138,7 +142,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'source',
       ),
       Feature(
-        id: '12060mRNA',
+        id: UniqueIdValueObject(),
         start: 1,
         end: 206,
         type: 'mRNA',
@@ -149,7 +153,7 @@ KtList<Feature> getLocusFeatures() => KtList.of(
         typeByOverlap: 'mRNA',
       ),
       Feature(
-        id: '12060CDS',
+        id: UniqueIdValueObject(),
         start: 1,
         end: 206,
         type: 'CDS',
@@ -170,7 +174,7 @@ String getLocusSequenceFormatted() =>
 Map<String, List<Feature>> getFeaturesByList() => {
       'CDS': [
         Feature(
-          id: '330040371CDS',
+          id: UniqueIdValueObject(),
           start: 3300,
           end: 4037,
           type: 'CDS',
@@ -186,7 +190,7 @@ Map<String, List<Feature>> getFeaturesByList() => {
           typeByOverlap: 'CDS',
         ),
         Feature(
-          id: '68731580CDS',
+          id: UniqueIdValueObject(),
           start: 687,
           end: 3158,
           type: 'CDS',
@@ -203,7 +207,7 @@ Map<String, List<Feature>> getFeaturesByList() => {
           typeByOverlap: 'CDS',
         ),
         Feature(
-          id: '12060CDS',
+          id: UniqueIdValueObject(),
           start: 1,
           end: 206,
           type: 'CDS',
@@ -231,7 +235,7 @@ Map<String, int> getFeaturesByTypesProductsCount() => {
     };
 
 Feature getFirstFeature() => Feature(
-      id: '12060CDS',
+      id: UniqueIdValueObject(),
       start: 1,
       end: 206,
       type: 'CDS',
