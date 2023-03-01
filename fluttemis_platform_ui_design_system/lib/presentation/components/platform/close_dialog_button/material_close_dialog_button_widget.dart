@@ -8,7 +8,7 @@ class MaterialCloseDialogButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Align(
-        alignment: Alignment.centerRight,
+        alignment: Alignment.bottomRight,
         child: MaterialTooltipWidget(
           message: FluttemisAppLocalizations.of(context)!.closeWindow,
           child: ElevatedButton(
@@ -20,11 +20,9 @@ class MaterialCloseDialogButtonWidget extends StatelessWidget {
               backgroundColor: Theme.of(context).primaryColor,
               shape: const CircleBorder(),
             ),
-            child: const Center(
-              child: Icon(
-                Icons.close,
-                size: 15,
-              ),
+            child: const Icon(
+              Icons.close,
+              size: 15,
             ),
           ),
         ),
