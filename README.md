@@ -83,3 +83,27 @@ O core é onde os dados estão organizados. É a localização das entidades, do
 #### fluttemis_platform_ui_design_system
 
 É onde estão os componentes visuais e de funcionalidades para serem usados/reaproveitados durante todo o projeto. Nestes componentes visuais, há os componentes de identidade visual baseado na plataforma e componentes visual comum entre elas.
+
+#### fluttemis_platform_ui_locus
+
+É a aplicação voltada aos relatórios com os dados detalhados dos locus e features. Além disso, é nessa aplicação onde está localizado o mapa com o desenho gráfico das features, como a posição, organização e orientação de cada uma.
+
+### Fluttemis original
+
+O projeto Fluttemis original foi construído dando ênfase a 3 etapas:
+
+1. <b>bio-dart-package:</b> O pacote bio dart é o responsável por receber um arquivo, genbank, por exemplo, realizar a leitura desse arquivo e armazenar o conteúdo em uma estrutura de dados.
+
+2. <b>fluttemis core:</b> Aplicação core descrito anteriormente. É onde estão as implementações e testes dos domínios, stores, repositórios e data sources dos locus.
+
+3. <b>mapa dos locus:</b> É o desenho gráfico do conjunto de features de um determinado locus. É um mapa que possui uma certa complexidade, pois é necessário que a posição, organização e orientação de cada feature seja representada de forma precisa para o correto entendimento dos dados. Além disso, o mapa possibilita a navegação horizontal (através das posições) e vertical (através dos seus tipos). Por fim, há também o cálculo da escala do desenho, baseado no tamanho do respectivo genoma, pois um genoma com cinco milhões de bases não deve ter a mesma métrica de desenho de um genoma de cem mil bases, pois tornaria a navegação do mapa cansativo e desconfortável.
+
+Terminada a etapa do mapa, a ideia para o restante da aplicação era a construção de algo bem simples e sóbrio. Talvez essa ideia tenha resultado em uma aplicação menos criativa do que o seu potencial. E essa nova versão vem justamente com o propósito de melhorar essa questão.
+
+### Fluttemis platform UI
+
+Para essa versão, a interface não apenas foi completamente remodelada, como também possui a sua identidade visual de acordo com a respectiva plataforma. Windows, Macos e Linux, para cada uma dessas plataformas, o Fluttemis possui sua própria paleta de cores, fontes, bordas e sombreamentos completamente distintos, tanto no modo claro, como no modo escuro.
+
+O desenvolvimento para Windows e Macos contou com uso das bibliotecas [fluent_ui](https://pub.dev/packages/fluent_ui) e o [macos_ui](https://pub.dev/packages/macos_ui), repectivamente. Ambas as bibliotecas possuem um completo conjunto de widgets com o propósito de permitir que cada detalhe da aplicação, desde uma caixa de texto, um botão, um ícone, a tonalidade das cores e seus efeitos tenham características semelhantes à plataforma de interesse.
+
+Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. Portanto, seu desenvolvimento baseou-se nos aspectos visuais do material design. Não deixa de fazer um certo sentido a falta dessa biblioteca, já que com tantas distribuições (Ubuntu, Mint, Deepin, Manjaro e etc...) e ambientes gráficos (Gnome, KDE, XFCE, Cinnamon e etc...) distintos, realmente não é muito trivial chegar a um consenso visual.
