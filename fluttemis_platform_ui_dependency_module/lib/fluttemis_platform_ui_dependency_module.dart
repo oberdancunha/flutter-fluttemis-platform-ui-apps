@@ -15,6 +15,7 @@ export 'package:linked_scroll_controller/linked_scroll_controller.dart';
 export 'package:lottie/lottie.dart';
 export 'package:selectable/selectable.dart';
 export 'package:touchable/touchable.dart';
+export 'package:uuid/uuid.dart';
 export 'package:window_manager/window_manager.dart';
 
 export './l10n/fluttemis_app_localizations.dart';
