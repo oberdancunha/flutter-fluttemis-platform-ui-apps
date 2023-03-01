@@ -7,18 +7,16 @@ import 'platform_dialog_widget.dart';
 class MaterialDialogWidget extends PlatformDialogWidget {
   const MaterialDialogWidget({
     required super.child,
-    super.height,
-    super.width,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) => Dialog(
-        insetPadding: (width == null && height == null) ? calculateArea(context) : EdgeInsets.zero,
+        insetPadding: calculateArea(context),
         child: ConstrainedBox(
           constraints: BoxConstraints(
-            maxHeight: height ?? MediaQuery.of(context).size.height,
-            maxWidth: width ?? MediaQuery.of(context).size.width,
+            maxHeight: MediaQuery.of(context).size.height,
+            maxWidth: MediaQuery.of(context).size.width,
           ),
           child: Column(
             children: [

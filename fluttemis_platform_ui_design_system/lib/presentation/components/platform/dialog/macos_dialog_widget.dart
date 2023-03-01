@@ -8,8 +8,6 @@ import 'platform_dialog_widget.dart';
 class MacosDialogWidget extends PlatformDialogWidget {
   const MacosDialogWidget({
     required super.child,
-    super.height,
-    super.width,
     super.key,
   });
 
