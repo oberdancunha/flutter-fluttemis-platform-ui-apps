@@ -114,16 +114,20 @@ flutter:
   fonts:
     - family: Segoe UI
       fonts:
-        - asset: assets/fonts/segoe_ui/Segoe-UI.ttf
+        - asset: assets/fonts/segoe/segoe_ui/Segoe-UI.ttf
           style: normal
-        - asset: assets/fonts/segoe_ui/Segoe-UI-Italic.ttf
+        - asset: assets/fonts/segoe/segoe_ui/Segoe-UI-Italic.ttf
           style: italic
-        - asset: assets/fonts/segoe_ui/Segoe-UI-Semibold.ttf
+        - asset: assets/fonts/segoe/segoe_ui/Segoe-UI-Semibold.ttf
           style: normal
           weight: 500
-        - asset: assets/fonts/segoe_ui/Segoe-UI-Semibold-Italic.ttf
+        - asset: assets/fonts/segoe/segoe_ui/Segoe-UI-Semibold-Italic.ttf
           style: italic
           weight: 500
+    - family: Segoe Mono
+      fonts:
+        - asset: assets/fonts/segoe/segoe_mono/Segoe_Mono_Boot_Regular.ttf
+          style: normal
     - family: Ubuntu
       fonts:
         - asset: assets/fonts/ubuntu/Ubuntu-R.ttf
@@ -136,6 +140,14 @@ flutter:
         - asset: assets/fonts/ubuntu/Ubuntu-MI.ttf
           style: italic
           weight: 500
+    - family: Ubuntu Mono
+      fonts:
+        - asset: assets/fonts/ubuntu/ubuntu_mono/UbuntuMono-Regular.ttf
+          style: normal
+    - family: SF Mono
+      fonts:
+        - asset: assets/fonts/sf_mono/SF-Mono-Regular.ttf
+          style: normal
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf
