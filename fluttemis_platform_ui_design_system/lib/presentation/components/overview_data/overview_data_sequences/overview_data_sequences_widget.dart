@@ -2,6 +2,7 @@ import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
+import '../../platform/font_family/platform_font_family_mono.dart';
 import '../../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../../platform/text/platform_text_widget.dart';
 import '../../platform/text/text_type_enum.dart';
@@ -82,8 +83,9 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                         child: PlatformTextWidget(
                           _sequencesWithInnerWhiteSpace,
                           textType: TextType.label,
-                          fontSize: 11.5,
+                          fontSize: getPlatformFontFamilyMonoSize(),
                           textAlign: TextAlign.start,
+                          fontFamily: getPlatformFontFamilyMono(),
                         ),
                       ),
                     ),
