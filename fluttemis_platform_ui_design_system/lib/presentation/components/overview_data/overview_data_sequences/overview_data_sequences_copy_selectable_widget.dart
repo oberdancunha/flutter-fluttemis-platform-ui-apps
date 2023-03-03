@@ -56,12 +56,14 @@ class _OverviewDataSequencesCopySelectableWidgetState
     return ValueListenableBuilder(
       valueListenable: clipboardCopy,
       builder: (_, clipboardValue, __) {
+        String sequencesCopiedWithoutBreaks = "";
         if (clipboardValue.isNotEmpty) {
-          final String sequencesCopiedSameAsShown = clipboardValue.insertInnerWhiteSpace;
-
+          sequencesCopiedWithoutBreaks = clipboardValue.removeBreaks;
+          final String sequencesCopiedSameAsShown =
+              sequencesCopiedWithoutBreaks.insertInnerWhiteSpace;
           final start = _selectionController.getContainedText().indexOf(sequencesCopiedSameAsShown);
           final end = start + sequencesCopiedSameAsShown.length;
-          if (start > 0 && end > 0) {
+          if (start > -1) {
             _selectionController.selectWordsBetweenIndexes(
               start,
               end,
@@ -72,7 +74,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
         return ValueListenableBuilder(
           valueListenable: _sequencesSelected,
           builder: (_, sequencesSelected, __) {
-            final isSequencesCopied = clipboardValue == sequencesSelected;
+            final isSequencesCopied = sequencesCopiedWithoutBreaks == sequencesSelected;
 
             return SizedBox(
               height: (widget.sequencesLength / 64) * 10 + 50,
