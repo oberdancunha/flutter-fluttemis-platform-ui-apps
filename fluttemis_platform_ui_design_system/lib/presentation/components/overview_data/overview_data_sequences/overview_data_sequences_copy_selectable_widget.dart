@@ -34,15 +34,19 @@ class _OverviewDataSequencesCopySelectableWidgetState
   void initState() {
     super.initState();
     _selectionController = SelectableController();
-    _selectionController.addListener(() async {
-      _sequencesSelected.value = _selectionController.getSelection()?.text?.removeWhiteSpace ?? '';
-    });
+    _selectionController.addListener(_selectionChangeListener);
   }
 
   @override
   void dispose() {
-    _selectionController.dispose();
+    _selectionController
+      ..removeListener(_selectionChangeListener)
+      ..dispose();
     super.dispose();
+  }
+
+  void _selectionChangeListener() {
+    _sequencesSelected.value = _selectionController.getSelection()?.text?.removeWhiteSpace ?? '';
   }
 
   @override
@@ -52,21 +56,23 @@ class _OverviewDataSequencesCopySelectableWidgetState
     return ValueListenableBuilder(
       valueListenable: clipboardCopy,
       builder: (_, clipboardValue, __) {
-        final String sequencesCopied = clipboardCopy.value.removeBreaks;
-        final String sequencesCopiedSameAsShown = sequencesCopied.insertInnerWhiteSpace;
-        final start = _selectionController.getContainedText().indexOf(sequencesCopiedSameAsShown);
-        final end = start + sequencesCopiedSameAsShown.length;
-        if (start > -1) {
-          _selectionController.selectWordsBetweenIndexes(
-            start,
-            end,
-          );
+        if (clipboardValue.isNotEmpty) {
+          final String sequencesCopiedSameAsShown = clipboardValue.insertInnerWhiteSpace;
+
+          final start = _selectionController.getContainedText().indexOf(sequencesCopiedSameAsShown);
+          final end = start + sequencesCopiedSameAsShown.length;
+          if (start > 0 && end > 0) {
+            _selectionController.selectWordsBetweenIndexes(
+              start,
+              end,
+            );
+          }
         }
 
         return ValueListenableBuilder(
           valueListenable: _sequencesSelected,
           builder: (_, sequencesSelected, __) {
-            final isSequencesCopied = sequencesCopied == sequencesSelected;
+            final isSequencesCopied = clipboardValue == sequencesSelected;
 
             return SizedBox(
               height: (widget.sequencesLength / 64) * 10 + 50,
