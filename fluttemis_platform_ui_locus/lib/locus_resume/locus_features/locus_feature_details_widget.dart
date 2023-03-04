@@ -16,6 +16,7 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+    const assetsImagesPath = 'assets/images/feature';
 
     return LayoutBuilder(
       builder: (_, constraints) {
@@ -35,38 +36,38 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                   OverviewDataWidget(
                     value: locusFeature.start.toString(),
                     description: fluttemisAppLocalizations.featureStart,
-                    image: 'assets/images/feature/feature_start.png',
+                    image: '$assetsImagesPath/feature_start.png',
                     textType: TextType.label,
                   ),
                   OverviewDataWidget(
                     value: locusFeature.end.toString(),
                     description: fluttemisAppLocalizations.featureEnd,
-                    image: 'assets/images/feature/feature_end.png',
+                    image: '$assetsImagesPath/feature_end.png',
                     textType: TextType.label,
                   ),
                   OverviewDataWidget(
                     value: locusFeature.length.toString(),
                     description: fluttemisAppLocalizations.featureLength,
-                    image: 'assets/images/feature/feature_length.png',
+                    image: '$assetsImagesPath/feature_length.png',
                     textType: TextType.label,
                   ),
                   OverviewDataWidget(
                     value: locusFeature.strand.getOrError().label,
                     description: fluttemisAppLocalizations.featureStrand,
-                    image: 'assets/images/feature/feature_strand.png',
+                    image: '$assetsImagesPath/feature_strand.png',
                     textType: TextType.label,
                   ),
                   if (locusFeature.name != null)
                     OverviewDataWidget(
                       value: locusFeature.name!,
                       description: fluttemisAppLocalizations.featureName,
-                      image: 'assets/images/feature/feature_name.png',
+                      image: '$assetsImagesPath/feature_name.png',
                       textType: TextType.label,
                     ),
                   OverviewDataWidget(
                     value: locusFeature.type,
                     description: fluttemisAppLocalizations.featureType,
-                    image: 'assets/images/feature/feature_type.png',
+                    image: '$assetsImagesPath/feature_type.png',
                     textType: TextType.label,
                   ),
                 ],
@@ -75,14 +76,14 @@ class LocusFeatureDetailsWidget extends StatelessWidget {
                 OverviewDataWidget(
                   value: locusFeature.product!,
                   description: fluttemisAppLocalizations.featureProduct,
-                  image: 'assets/images/feature/feature_product.png',
+                  image: '$assetsImagesPath/feature_product.png',
                   textType: TextType.label,
                 ),
               if (locusFeature.note != null)
                 OverviewDataWidget(
                   value: locusFeature.note!,
                   description: fluttemisAppLocalizations.featureNote,
-                  image: 'assets/images/feature/feature_note.png',
+                  image: '$assetsImagesPath/feature_note.png',
                   textType: TextType.label,
                 ),
               if (locusFeature.nucleotides != null) ...[

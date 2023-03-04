@@ -28,6 +28,7 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+    const assetsImagesPath = 'assets/images/data';
 
     return OverviewDataListWidget(
       title: fluttemisAppLocalizations.featuresOverview,
@@ -35,12 +36,12 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
         OverviewDataModel(
           value: total.toString(),
           description: fluttemisAppLocalizations.totalFeatures,
-          image: 'assets/images/data/total_features.png',
+          image: '$assetsImagesPath/total_features.png',
         ),
         OverviewDataModel(
           value: featuresTypesCount.length.toString(),
           description: fluttemisAppLocalizations.totalTypeFeatures,
-          image: 'assets/images/data/total_type_features.png',
+          image: '$assetsImagesPath/total_type_features.png',
         ),
       ],
       widgets: [
@@ -52,7 +53,7 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
                   value: featuresTypesCount[featureType].toString(),
                   label: featureType,
                   representativeWidget: Image.asset(
-                    'assets/images/data/count_type_features.png',
+                    '$assetsImagesPath/count_type_features.png',
                     width: 28,
                     fit: BoxFit.cover,
                   ),

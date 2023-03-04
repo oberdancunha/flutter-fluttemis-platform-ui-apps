@@ -17,6 +17,7 @@ class GenomeOverviewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+    const assetsImagesPath = 'assets/images/data';
 
     return OverviewDataListWidget(
       title: fluttemisAppLocalizations.genomeOverview,
@@ -24,29 +25,29 @@ class GenomeOverviewWidget extends StatelessWidget {
         OverviewDataModel(
           value: locus.organism,
           description: fluttemisAppLocalizations.genomeName,
-          image: 'assets/images/data/genome_name.png',
+          image: '$assetsImagesPath/genome_name.png',
           textType: TextType.genomeName,
         ),
         OverviewDataModel(
           value: locus.name,
           description: fluttemisAppLocalizations.genomeCodeAccession,
-          image: 'assets/images/data/genome_code.png',
+          image: '$assetsImagesPath/genome_code.png',
         ),
         OverviewDataModel(
           value: locus.length.toString(),
           description: fluttemisAppLocalizations.genomeLength,
-          image: 'assets/images/data/genome_length.png',
+          image: '$assetsImagesPath/genome_length.png',
         ),
         OverviewDataModel(
           value: locus.type,
           description: fluttemisAppLocalizations.genomeType,
-          image: 'assets/images/data/genome_type.png',
+          image: '$assetsImagesPath/genome_type.png',
         ),
         if (locus.shape != null)
           OverviewDataModel(
             value: locus.shape!,
             description: fluttemisAppLocalizations.genomeShape,
-            image: 'assets/images/data/genome_shape.png',
+            image: '$assetsImagesPath/genome_shape.png',
           ),
         if (locus.releaseDate != null)
           OverviewDataModel(
@@ -55,7 +56,7 @@ class GenomeOverviewWidget extends StatelessWidget {
               locus.releaseDate!,
             ).dateFormatted,
             description: fluttemisAppLocalizations.annotationDate,
-            image: 'assets/images/data/genome_date.png',
+            image: '$assetsImagesPath/genome_date.png',
           ),
       ],
     );
