@@ -71,21 +71,28 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
             Expanded(
               child: SizedBox(
                 height: widget.height,
-                child: PlatformScrollbarWidget(
-                  controller: _scrollController,
-                  child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 10,
+                  ),
+                  child: PlatformScrollbarWidget(
                     controller: _scrollController,
-                    child: OverviewDataSequencesCopySelectableWidget(
-                      sequencesLength: _sequencesWithInnerWhiteSpace.length,
-                      scrollController: _scrollController,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: PlatformTextWidget(
-                          _sequencesWithInnerWhiteSpace,
-                          textType: TextType.label,
-                          fontSize: getPlatformFontFamilyMonoSize(),
-                          textAlign: TextAlign.start,
-                          fontFamily: getPlatformFontFamilyMono(),
+                    child: SingleChildScrollView(
+                      controller: _scrollController,
+                      child: OverviewDataSequencesCopySelectableWidget(
+                        scrollController: _scrollController,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 11,
+                          ),
+                          child: PlatformTextWidget(
+                            _sequencesWithInnerWhiteSpace,
+                            textType: TextType.label,
+                            fontSize: getPlatformFontFamilyMonoSize(),
+                            textAlign: TextAlign.start,
+                            fontFamily: getPlatformFontFamilyMono(),
+                          ),
                         ),
                       ),
                     ),
