@@ -430,14 +430,8 @@ abstract class FluttemisAppLocalizations {
   /// No description provided for @copyExplanation.
   ///
   /// In pt, this message translates to:
-  /// **'Para selecionar a sequência para cópia, dê um duplo clique no início e arraste até a posição de interesse'**
+  /// **'Para copiar parte da sequência, dê um duplo clique no início e arraste até a posição de interesse. Após a cópia, a seleção mudará de cor.'**
   String get copyExplanation;
-
-  /// No description provided for @copySelected.
-  ///
-  /// In pt, this message translates to:
-  /// **'Copiar selecionado'**
-  String get copySelected;
 
   /// No description provided for @copyAll.
   ///

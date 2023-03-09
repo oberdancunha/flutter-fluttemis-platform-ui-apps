@@ -173,10 +173,7 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get aminoacidSequence => 'Sequência de aminoácidos';
 
   @override
-  String get copyExplanation => 'Para selecionar a sequência para cópia, dê um duplo clique no início e arraste até a posição de interesse';
-
-  @override
-  String get copySelected => 'Copiar selecionado';
+  String get copyExplanation => 'Para copiar parte da sequência, dê um duplo clique no início e arraste até a posição de interesse. Após a cópia, a seleção mudará de cor.';
 
   @override
   String get copyAll => 'Copiar tudo';
