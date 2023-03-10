@@ -28,7 +28,7 @@ class LocusMapDrawRulerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Positioned(
         left: 125,
-        bottom: height - 40,
+        bottom: 0,
         top: 0,
         right: 20,
         child: ScrollConfiguration(
@@ -40,6 +40,7 @@ class LocusMapDrawRulerWidget extends StatelessWidget {
             child: SingleChildScrollView(
               child: SizedBox(
                 width: widthMapArea,
+                height: height,
                 child: CustomPaint(
                   isComplex: true,
                   painter: DrawLocusRuler(
