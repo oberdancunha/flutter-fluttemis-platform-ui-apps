@@ -12,7 +12,7 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
   final double scale;
   final int nextLine;
   final ScrollController scrollControllerRulerFeatures;
-  final ScrollController scrollControllerLabelsFeatures;
+  final ScrollController scrollControllerTypesFeatures;
 
   const LocusMapDrawFeaturesWidget({
     required this.height,
@@ -21,7 +21,7 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
     required this.scale,
     required this.nextLine,
     required this.scrollControllerRulerFeatures,
-    required this.scrollControllerLabelsFeatures,
+    required this.scrollControllerTypesFeatures,
     super.key,
   });
 
@@ -47,7 +47,7 @@ class LocusMapDrawFeaturesWidget extends StatelessWidget {
             child: ScrollConfiguration(
               behavior: ScrollConfiguration.of(context).copyWith(scrollbars: false),
               child: SingleChildScrollView(
-                controller: scrollControllerLabelsFeatures,
+                controller: scrollControllerTypesFeatures,
                 child: SizedBox(
                   height: height,
                   width: widthMapArea,
