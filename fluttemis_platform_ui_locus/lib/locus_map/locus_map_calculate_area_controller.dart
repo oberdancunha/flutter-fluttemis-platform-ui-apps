@@ -1,16 +1,22 @@
 class LocusMapCalculateAreaController {
   final double width;
-  final double height;
+  final double maxHeight;
   final int locusLength;
   final int minPixelsPerCharacter;
   final int featuresTypesListLength;
+  final double minHeight;
+  final int distanceBetweenLines;
+  final double locusRulerHeight;
 
   const LocusMapCalculateAreaController({
     required this.width,
-    required this.height,
+    required this.maxHeight,
     required this.locusLength,
     required this.minPixelsPerCharacter,
     required this.featuresTypesListLength,
+    required this.minHeight,
+    required this.distanceBetweenLines,
+    required this.locusRulerHeight,
   });
 
   int get locusLengthByCharacters => locusLength.toString().length;
@@ -28,7 +34,15 @@ class LocusMapCalculateAreaController {
 
   double get screenWidthScale => locusLength * scale;
 
-  double get totalLabelsHeight => double.tryParse((featuresTypesListLength * 25).toString())!;
+  int get totalFeaturesTypesHeight => featuresTypesListLength * distanceBetweenLines;
 
-  double get mapHeight => totalLabelsHeight >= height ? height : totalLabelsHeight;
+  double get mapHeight {
+    final totalMapHeight = totalFeaturesTypesHeight + locusRulerHeight + minHeight;
+
+    return totalMapHeight >= maxHeight
+        ? maxHeight
+        : totalMapHeight >= minHeight
+            ? totalMapHeight
+            : minHeight;
+  }
 }
