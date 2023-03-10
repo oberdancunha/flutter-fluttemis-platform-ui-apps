@@ -25,7 +25,7 @@ class LocusMapFeaturesLabelWidget extends StatelessWidget {
 
     return Positioned(
       left: 2,
-      bottom: 20,
+      bottom: 0,
       top: 40,
       right: 0,
       child: PlatformScrollbarWidget(
