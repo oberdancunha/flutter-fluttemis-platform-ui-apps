@@ -40,6 +40,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
     _selectionController
       ..removeListener(_selectionChangeListener)
       ..dispose();
+    _sequencesSelected.dispose();
     super.dispose();
   }
 

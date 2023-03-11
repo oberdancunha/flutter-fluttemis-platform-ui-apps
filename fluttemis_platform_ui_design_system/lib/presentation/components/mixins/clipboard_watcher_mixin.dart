@@ -21,6 +21,7 @@ mixin ClipboardWatcherMixin<T extends StatefulWidget> on State<T> implements Cli
     clipboardWatcher
       ..removeListener(this)
       ..stop();
+    clipboardCopy.dispose();
     super.dispose();
   }
 
