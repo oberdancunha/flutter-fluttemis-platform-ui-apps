@@ -33,6 +33,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
         if (featuresTypesProductsCount.isNotEmpty)
           OverviewMultipleDataListWidget(
             title: fluttemisAppLocalizations.countTypeProducts,
+            dataListLength: featuresTypesProductsCount.keys.length,
             children: featuresTypesProductsCount.keys
                 .map(
                   (productType) => OverviewMultipleDataItemWidget(

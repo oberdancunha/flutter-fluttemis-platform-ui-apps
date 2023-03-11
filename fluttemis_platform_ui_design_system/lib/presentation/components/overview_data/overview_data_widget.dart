@@ -39,53 +39,51 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
 
   @override
   Widget build(BuildContext context) => LayoutBuilder(
-        builder: (_, constraints) => Center(
-          child: SizedBox(
-            width: constraints.maxWidth,
-            height: 60,
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: Row(
-                children: [
-                  Image.asset(
-                    widget.image,
-                    width: 35,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          PlatformScrollbarWidget(
-                            controller: _controller,
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 2),
-                              child: SingleChildScrollView(
-                                physics: const ClampingScrollPhysics(),
-                                controller: _controller,
-                                scrollDirection: Axis.horizontal,
-                                padding: const EdgeInsets.only(bottom: 6),
-                                child: PlatformTextWidget(
-                                  widget.value,
-                                  textType: widget.textType ?? TextType.label,
-                                  fontSize: 13,
-                                ),
+        builder: (_, constraints) => SizedBox(
+          width: constraints.maxWidth,
+          height: 60,
+          child: Padding(
+            padding: EdgeInsets.zero,
+            child: Row(
+              children: [
+                Image.asset(
+                  widget.image,
+                  width: 35,
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        PlatformScrollbarWidget(
+                          controller: _controller,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 2),
+                            child: SingleChildScrollView(
+                              physics: const ClampingScrollPhysics(),
+                              controller: _controller,
+                              scrollDirection: Axis.horizontal,
+                              padding: const EdgeInsets.only(bottom: 6),
+                              child: PlatformTextWidget(
+                                widget.value,
+                                textType: widget.textType ?? TextType.label,
+                                fontSize: 13,
                               ),
                             ),
                           ),
-                          PlatformTextWidget(
-                            widget.description,
-                            textType: TextType.caption,
-                            fontSize: 10,
-                          ),
-                        ],
-                      ),
+                        ),
+                        PlatformTextWidget(
+                          widget.description,
+                          textType: TextType.caption,
+                          fontSize: 10,
+                        ),
+                      ],
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
