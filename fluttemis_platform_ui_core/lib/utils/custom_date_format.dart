@@ -38,6 +38,7 @@ class CustomDateFormat {
 extension DetectDate on String {
   List<String> get splitByFormat {
     final typesFunctions = {
+      // For genbank date, for example like 27-MAY-2021, call _parserDayMonthThreeWordsYear function
       RegExp(r'\d{2}\-[A-Z]{3}\-\d{4}'): () => _parserDayMonthThreeWordsYear,
     };
 
@@ -52,6 +53,10 @@ extension DetectDate on String {
     return dayMonthYear;
   }
 
+  // Take the date format as 27-MAY-2021 and return an array with three positions:
+  // 0 - day: 27
+  // 1 - month in numerical representation: MAY is equal to 05
+  // 2 - year: 2021
   List<String> get _parserDayMonthThreeWordsYear {
     final stringToIntMonth = {
       'JAN': 1,
