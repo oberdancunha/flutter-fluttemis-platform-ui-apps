@@ -18,7 +18,7 @@ class LocusOverlap {
           _overlap = _getOverlap(
             featuresWithOverlap: featuresWithOverlap,
             featureType: feature.type,
-            featureEnd: feature.end,
+            featureEnd: feature.endToDraw,
           );
           if (_overlap > 0) {
             if (_isOverlapLevelGreaterThanZero(_adjustOverlapLevel, _overlap)) {
@@ -43,7 +43,7 @@ class LocusOverlap {
   List<FeatureDto> _reverseFeaturesOrder(List<FeatureDto> locusDtoFeatures) =>
       List<FeatureDto>.from(locusDtoFeatures)
         ..sort(
-          (featureDtoA, featureDtoB) => featureDtoB.start.compareTo(featureDtoA.start),
+          (featureDtoA, featureDtoB) => featureDtoB.startToDraw.compareTo(featureDtoA.startToDraw),
         );
 
   int _getOverlap({
@@ -54,7 +54,8 @@ class LocusOverlap {
       featuresWithOverlap
           .where(
             (featureWithOverlap) =>
-                featureType == featureWithOverlap.type && featureWithOverlap.start <= featureEnd,
+                featureType == featureWithOverlap.type &&
+                featureWithOverlap.startToDraw <= featureEnd,
           )
           .length;
 

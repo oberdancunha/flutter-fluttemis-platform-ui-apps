@@ -1,9 +1,16 @@
+import 'package:fluttemis_platform_ui_core/domain/locus/location_position.dart';
 import 'package:fluttemis_platform_ui_core/infrastructure/locus/feature_dto.dart';
 
 List<FeatureDto> getFeatureOrder() => [
       const FeatureDto(
-        start: 7403,
-        end: 8833,
+        positions: [
+          LocationPosition(
+            start: 7403,
+            end: 8833,
+          ),
+        ],
+        startToDraw: 7403,
+        endToDraw: 8833,
         type: 'CDS',
         strand: 0,
         product: 'DNA cytosine methyltransferase',
@@ -12,8 +19,14 @@ List<FeatureDto> getFeatureOrder() => [
         nucleotides: '',
       ),
       const FeatureDto(
-        start: 8814,
-        end: 9284,
+        positions: [
+          LocationPosition(
+            start: 8814,
+            end: 9284,
+          ),
+        ],
+        startToDraw: 8814,
+        endToDraw: 9284,
         type: 'CDS',
         strand: 0,
         product: 'very short patch repair endonuclease',
@@ -22,8 +35,14 @@ List<FeatureDto> getFeatureOrder() => [
         nucleotides: '',
       ),
       const FeatureDto(
-        start: 9273,
-        end: 10193,
+        positions: [
+          LocationPosition(
+            start: 9273,
+            end: 10193,
+          ),
+        ],
+        startToDraw: 9273,
+        endToDraw: 10193,
         type: 'CDS',
         strand: 0,
         product: 'drug/metabolite exporter YedA',
@@ -35,8 +54,14 @@ List<FeatureDto> getFeatureOrder() => [
 
 List<FeatureDto> getReverseFeaturesOrder() => [
       const FeatureDto(
-        start: 9273,
-        end: 10193,
+        positions: [
+          LocationPosition(
+            start: 9273,
+            end: 10193,
+          ),
+        ],
+        startToDraw: 9273,
+        endToDraw: 10193,
         type: 'CDS',
         strand: 0,
         typeByOverlap: "CDS",
@@ -46,8 +71,14 @@ List<FeatureDto> getReverseFeaturesOrder() => [
         nucleotides: '',
       ),
       const FeatureDto(
-        start: 8814,
-        end: 9284,
+        positions: [
+          LocationPosition(
+            start: 8814,
+            end: 9284,
+          ),
+        ],
+        startToDraw: 8814,
+        endToDraw: 9284,
         type: 'CDS',
         strand: 0,
         typeByOverlap: "CDS#1",
@@ -57,8 +88,14 @@ List<FeatureDto> getReverseFeaturesOrder() => [
         nucleotides: '',
       ),
       const FeatureDto(
-        start: 7403,
-        end: 8833,
+        positions: [
+          LocationPosition(
+            start: 7403,
+            end: 8833,
+          ),
+        ],
+        startToDraw: 7403,
+        endToDraw: 8833,
         type: 'CDS',
         strand: 0,
         typeByOverlap: "CDS",

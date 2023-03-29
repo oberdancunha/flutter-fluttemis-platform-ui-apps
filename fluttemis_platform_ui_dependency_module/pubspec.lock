@@ -15,15 +15,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.9.0"
-  bio:
-    dependency: "direct main"
-    description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "2ec90ffcc2ef638ab2d17f67d250264544bcd813"
-      url: "https://github.com/oberdancunha/dart-bio-package.git"
-    source: git
-    version: "0.0.1"
   boolean_selector:
     dependency: transitive
     description:
@@ -73,13 +64,42 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.2"
-  dartz:
+  dart_bio_core:
     dependency: transitive
     description:
-      name: dartz
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.10.1"
+      path: dart_bio_core
+      ref: "2.0.0"
+      resolved-ref: bee83fbbd2084a1f65c44cfe340ea1d681abc2ae
+      url: "https://github.com/oberdancunha/dart-bio-package.git"
+    source: git
+    version: "2.0.0"
+  dart_bio_dependency_module:
+    dependency: transitive
+    description:
+      path: dart_bio_dependency_module
+      ref: "2.0.0"
+      resolved-ref: aca83984323afd5a9020d9fc8a49f2ee438e6cc3
+      url: "https://github.com/oberdancunha/dart-bio-package.git"
+    source: git
+    version: "2.0.0"
+  dart_bio_package:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: "2.0.0"
+      resolved-ref: bee83fbbd2084a1f65c44cfe340ea1d681abc2ae
+      url: "https://github.com/oberdancunha/dart-bio-package.git"
+    source: git
+    version: "2.0.0"
+  dart_bio_seqio:
+    dependency: transitive
+    description:
+      path: dart_bio_seqio
+      ref: "2.0.0"
+      resolved-ref: bee83fbbd2084a1f65c44cfe340ea1d681abc2ae
+      url: "https://github.com/oberdancunha/dart-bio-package.git"
+    source: git
+    version: "2.0.0"
   data_table_2:
     dependency: "direct main"
     description:
@@ -176,14 +196,7 @@ packages:
       name: fpdart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.0"
-  freezed_annotation:
-    dependency: "direct main"
-    description:
-      name: freezed_annotation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.2.0"
+    version: "0.5.0"
   intl:
     dependency: "direct main"
     description:
@@ -198,20 +211,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
-  json_annotation:
-    dependency: transitive
-    description:
-      name: json_annotation
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "4.7.0"
   kt_dart:
     dependency: "direct main"
     description:
       name: kt_dart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1"
+    version: "1.1.0"
   linked_scroll_controller:
     dependency: "direct main"
     description:
@@ -296,6 +302,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
+  sealed_unions:
+    dependency: transitive
+    description:
+      name: sealed_unions
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.3+1"
   selectable:
     dependency: "direct main"
     description:

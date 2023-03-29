@@ -31,8 +31,8 @@ class DrawLocusFeatures extends CustomPainter {
     final touchyCanvas = TouchyCanvas(context, canvas);
     locusFeatures.forEach((locusFeature) {
       final paint = Paint()..color = getPlatformColor(locusFeature.productType.color);
-      final featureStart = locusFeature.start * scale;
-      final featureEnd = locusFeature.end * scale;
+      final featureStart = locusFeature.startToDraw * scale;
+      final featureEnd = locusFeature.endToDraw * scale;
       final onTapUp = (_) {
         platformShowDialog(
           context: context,

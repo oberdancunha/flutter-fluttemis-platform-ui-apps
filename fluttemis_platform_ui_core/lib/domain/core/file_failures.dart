@@ -8,8 +8,7 @@ class FileFailureNotFound extends FileFailure {
 }
 
 class FileFailureParseError extends FileFailure {
-  // ignore: no-object-declaration
-  final Object error;
+  final dynamic error;
 
   FileFailureParseError({required this.error});
 

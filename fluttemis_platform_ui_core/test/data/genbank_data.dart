@@ -3,6 +3,7 @@ import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature_product_type.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature_value_object.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/features_report.dart';
+import 'package:fluttemis_platform_ui_core/domain/locus/location_position.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/locus.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
@@ -54,8 +55,14 @@ KtList<Locus> getMoreOneLocus() => KtList.of(
 KtList<Feature> getLocusFeatures() => KtList.of(
       Feature(
         id: UniqueIdValueObject(),
-        start: 3300,
-        end: 4037,
+        positions: const [
+          LocationPosition(
+            start: 3300,
+            end: 4037,
+          ),
+        ],
+        startToDraw: 3300,
+        endToDraw: 4037,
         type: 'gene',
         strand: FeatureStrandTypeValueObject(1),
         name: 'REV7',
@@ -65,8 +72,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 3300,
-        end: 4037,
+        positions: const [
+          LocationPosition(
+            start: 3300,
+            end: 4037,
+          ),
+        ],
+        startToDraw: 3300,
+        endToDraw: 4037,
         type: 'mRNA',
         strand: FeatureStrandTypeValueObject(1),
         product: 'Rev7p',
@@ -77,8 +90,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 3300,
-        end: 4037,
+        positions: const [
+          LocationPosition(
+            start: 3300,
+            end: 4037,
+          ),
+        ],
+        startToDraw: 3300,
+        endToDraw: 4037,
         type: 'CDS',
         strand: FeatureStrandTypeValueObject(1),
         product: 'Rev7p',
@@ -93,8 +112,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 687,
-        end: 3158,
+        positions: const [
+          LocationPosition(
+            start: 687,
+            end: 3158,
+          ),
+        ],
+        startToDraw: 687,
+        endToDraw: 3158,
         type: 'gene',
         strand: FeatureStrandTypeValueObject(0),
         name: 'AXL2',
@@ -104,8 +129,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 687,
-        end: 3158,
+        positions: const [
+          LocationPosition(
+            start: 687,
+            end: 3158,
+          ),
+        ],
+        startToDraw: 687,
+        endToDraw: 3158,
         type: 'mRNA',
         strand: FeatureStrandTypeValueObject(0),
         product: 'Axl2p',
@@ -116,8 +147,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 687,
-        end: 3158,
+        positions: const [
+          LocationPosition(
+            start: 687,
+            end: 3158,
+          ),
+        ],
+        startToDraw: 687,
+        endToDraw: 3158,
         type: 'CDS',
         strand: FeatureStrandTypeValueObject(0),
         product: 'Axl2p',
@@ -133,8 +170,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 1,
-        end: 5028,
+        positions: const [
+          LocationPosition(
+            start: 1,
+            end: 5028,
+          ),
+        ],
+        startToDraw: 1,
+        endToDraw: 5028,
         type: 'source',
         strand: FeatureStrandTypeValueObject(0),
         productType: FeatureProductType.without,
@@ -143,8 +186,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 1,
-        end: 206,
+        positions: const [
+          LocationPosition(
+            start: 1,
+            end: 206,
+          ),
+        ],
+        startToDraw: 1,
+        endToDraw: 206,
         type: 'mRNA',
         strand: FeatureStrandTypeValueObject(0),
         product: 'TCP1-beta',
@@ -154,8 +203,14 @@ KtList<Feature> getLocusFeatures() => KtList.of(
       ),
       Feature(
         id: UniqueIdValueObject(),
-        start: 1,
-        end: 206,
+        positions: const [
+          LocationPosition(
+            start: 1,
+            end: 206,
+          ),
+        ],
+        startToDraw: 1,
+        endToDraw: 206,
         type: 'CDS',
         strand: FeatureStrandTypeValueObject(0),
         product: 'TCP1-beta',
@@ -175,8 +230,14 @@ Map<String, List<Feature>> getFeaturesByList() => {
       'CDS': [
         Feature(
           id: UniqueIdValueObject(),
-          start: 3300,
-          end: 4037,
+          positions: const [
+            LocationPosition(
+              start: 3300,
+              end: 4037,
+            ),
+          ],
+          startToDraw: 3300,
+          endToDraw: 4037,
           type: 'CDS',
           strand: FeatureStrandTypeValueObject(1),
           product: 'Rev7p',
@@ -191,8 +252,14 @@ Map<String, List<Feature>> getFeaturesByList() => {
         ),
         Feature(
           id: UniqueIdValueObject(),
-          start: 687,
-          end: 3158,
+          positions: const [
+            LocationPosition(
+              start: 687,
+              end: 3158,
+            ),
+          ],
+          startToDraw: 687,
+          endToDraw: 3158,
           type: 'CDS',
           strand: FeatureStrandTypeValueObject(0),
           product: 'Axl2p',
@@ -208,8 +275,14 @@ Map<String, List<Feature>> getFeaturesByList() => {
         ),
         Feature(
           id: UniqueIdValueObject(),
-          start: 1,
-          end: 206,
+          positions: const [
+            LocationPosition(
+              start: 1,
+              end: 206,
+            ),
+          ],
+          startToDraw: 1,
+          endToDraw: 206,
           type: 'CDS',
           strand: FeatureStrandTypeValueObject(0),
           product: 'TCP1-beta',
@@ -236,8 +309,14 @@ Map<String, int> getFeaturesByTypesProductsCount() => {
 
 Feature getFirstFeature() => Feature(
       id: UniqueIdValueObject(),
-      start: 1,
-      end: 206,
+      positions: const [
+        LocationPosition(
+          start: 1,
+          end: 206,
+        ),
+      ],
+      startToDraw: 1,
+      endToDraw: 206,
       type: 'CDS',
       strand: FeatureStrandTypeValueObject(0),
       product: 'TCP1-beta',

@@ -2,6 +2,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/foundation.dart';
 
 import '../../domain/core/file_failures.dart';
+import '../../domain/locus/location_position.dart';
 import '../../infrastructure/locus/feature_dto.dart';
 import '../../infrastructure/locus/i_locus_data_source.dart';
 import '../../infrastructure/locus/locus_dto.dart';
@@ -18,15 +19,15 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
   Future<Either<FileFailure, List<LocusDto>>> getLocus() async {
     final locus = await compute(genbank.open, genbankFile);
 
-    return locus.when(
-      failure: (failure) => failure.when(
-        fileNotFound: () => left(FileFailureNotFound()),
-        fileParseError: (error) => left(FileFailureParseError(error: error)),
-        fileEmpty: () => left(FileFailureEmpty()),
-        fileFormatIncorrect: () => left(FileFailureFormatIncorrect()),
+    return locus.join(
+      (genbankError) => genbankError.failure.join(
+        (fileNotFound) => left(FileFailureNotFound()),
+        (fileParseError) => left(FileFailureParseError(error: fileParseError.error)),
+        (fileEmpty) => left(FileFailureEmpty()),
+        (fileFormatIncorrect) => left(FileFailureFormatIncorrect()),
       ),
-      data: (genbankData) => right(
-        genbankData
+      (genbank) => right(
+        genbank.data
             .asList()
             .map(
               (data) => LocusDto(
@@ -41,8 +42,20 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
                     .asList()
                     .map(
                       (feature) => FeatureDto(
-                        start: feature.start,
-                        end: feature.end,
+                        positions: feature.positions
+                            .map(
+                              (position) => LocationPosition(
+                                start: position.start,
+                                end: position.end,
+                              ),
+                            )
+                            .toList(),
+                        startToDraw: feature.positions.first.end == data.locus.length
+                            ? feature.positions.last.start
+                            : feature.positions.first.start,
+                        endToDraw: feature.positions.first.end == data.locus.length
+                            ? feature.positions.last.end
+                            : feature.positions.first.end,
                         type: feature.type,
                         strand: feature.strand,
                         aminoacids: feature.aminoacids,

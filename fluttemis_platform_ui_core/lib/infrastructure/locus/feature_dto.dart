@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
 import '../../domain/core/value_objects.dart';
@@ -5,10 +6,12 @@ import '../../domain/core/value_transformer.dart';
 import '../../domain/locus/feature.dart';
 import '../../domain/locus/feature_product_type.dart';
 import '../../domain/locus/feature_value_object.dart';
+import '../../domain/locus/location_position.dart';
 
 class FeatureDto extends Equatable {
-  final int start;
-  final int end;
+  final List<LocationPosition> positions;
+  final int startToDraw;
+  final int endToDraw;
   final String type;
   final int strand;
   final String? typeByOverlap;
@@ -19,8 +22,9 @@ class FeatureDto extends Equatable {
   final String? note;
 
   const FeatureDto({
-    required this.start,
-    required this.end,
+    required this.positions,
+    required this.startToDraw,
+    required this.endToDraw,
     required this.type,
     required this.strand,
     this.typeByOverlap,
@@ -33,16 +37,25 @@ class FeatureDto extends Equatable {
 
   @override
   List<Object> get props => [
-        start,
-        end,
+        positions,
+        startToDraw,
+        endToDraw,
         type,
         strand,
       ];
 
   Feature toDomain() => Feature(
         id: UniqueIdValueObject(),
-        start: start,
-        end: end,
+        positions: positions
+            .map(
+              (position) => LocationPosition(
+                start: position.start,
+                end: position.end,
+              ),
+            )
+            .toList(),
+        startToDraw: startToDraw,
+        endToDraw: endToDraw,
         strand: FeatureStrandTypeValueObject(strand),
         type: type,
         typeByOverlap: typeByOverlap ?? type,
@@ -56,8 +69,9 @@ class FeatureDto extends Equatable {
       );
 
   FeatureDto copyWith({
-    int? start,
-    int? end,
+    List<LocationPosition>? positions,
+    int? startToDraw,
+    int? endToDraw,
     String? type,
     int? strand,
     String? typeByOverlap,
@@ -68,8 +82,9 @@ class FeatureDto extends Equatable {
     String? note,
   }) =>
       FeatureDto(
-        start: start ?? this.start,
-        end: end ?? this.end,
+        positions: positions ?? this.positions,
+        startToDraw: startToDraw ?? this.startToDraw,
+        endToDraw: endToDraw ?? this.endToDraw,
         type: type ?? this.type,
         strand: strand ?? this.strand,
         typeByOverlap: typeByOverlap ?? this.typeByOverlap,

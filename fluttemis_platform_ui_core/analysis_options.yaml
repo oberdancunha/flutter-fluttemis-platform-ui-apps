@@ -31,6 +31,7 @@ dart_code_metrics:
     number-of-arguments: 5
     maximum-nesting: 5
     root-folder: ./
+    source-lines-of-code: 53
   metrics-exclude:
     - test/**
   rules:

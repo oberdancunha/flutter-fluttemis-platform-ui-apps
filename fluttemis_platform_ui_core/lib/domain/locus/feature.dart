@@ -3,11 +3,13 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import '../core/value_objects.dart';
 import 'feature_product_type.dart';
 import 'feature_value_object.dart';
+import 'location_position.dart';
 
 class Feature extends Equatable {
   final UniqueIdValueObject id;
-  final int start;
-  final int end;
+  final List<LocationPosition> positions;
+  final int startToDraw;
+  final int endToDraw;
   final String type;
   final FeatureStrandTypeValueObject strand;
   final FeatureProductType productType;
@@ -21,8 +23,9 @@ class Feature extends Equatable {
 
   const Feature({
     required this.id,
-    required this.start,
-    required this.end,
+    required this.positions,
+    required this.startToDraw,
+    required this.endToDraw,
     required this.type,
     required this.strand,
     required this.productType,
@@ -37,8 +40,9 @@ class Feature extends Equatable {
 
   @override
   List<Object?> get props => [
-        start,
-        end,
+        positions,
+        startToDraw,
+        endToDraw,
         type,
         strand,
         productType,
@@ -52,10 +56,11 @@ class Feature extends Equatable {
       ];
 
   int get length {
-    if (end < start) {
-      return 0;
-    }
+    int length = 0;
+    positions.forEach((position) {
+      length += position.start <= position.end ? (position.end - position.start) + 1 : 0;
+    });
 
-    return (end - start) + 1;
+    return length;
   }
 }
