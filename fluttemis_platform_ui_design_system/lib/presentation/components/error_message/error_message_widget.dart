@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/domain/core/failure.dart';
+import 'package:fluttemis_platform_ui_core/domain/failure.dart';
 import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';

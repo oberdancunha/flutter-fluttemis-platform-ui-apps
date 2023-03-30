@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/domain/core/strand_type.dart';
+import 'package:fluttemis_platform_ui_core/domain/strand_type.dart';
 import 'package:flutter/rendering.dart';
 
 import '../core/platform.dart';

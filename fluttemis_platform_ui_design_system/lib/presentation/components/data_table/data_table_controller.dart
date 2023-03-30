@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
+import 'package:fluttemis_platform_ui_core/domain/value_transformer.dart';
 import 'package:flutter/material.dart';
 
 import 'data_table_model.dart';

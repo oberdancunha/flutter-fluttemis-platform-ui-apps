@@ -1,5 +1,5 @@
-import 'package:fluttemis_platform_ui_core/domain/core/failure.dart';
-import 'package:fluttemis_platform_ui_core/domain/core/file_failures.dart';
+import 'package:fluttemis_platform_ui_core/domain/failure.dart';
+import 'package:fluttemis_platform_ui_core/domain/file_failures.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 

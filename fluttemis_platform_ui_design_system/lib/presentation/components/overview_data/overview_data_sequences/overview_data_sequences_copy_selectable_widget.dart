@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/domain/core/value_transformer.dart';
+import 'package:fluttemis_platform_ui_core/domain/value_transformer.dart';
 import 'package:fluttemis_platform_ui_core/utils/debouncer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/services.dart';
