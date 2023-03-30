@@ -5,7 +5,6 @@ import '../../domain/core/value_objects.dart';
 import '../../domain/core/value_transformer.dart';
 import '../../domain/locus/feature.dart';
 import '../../domain/locus/feature_product_type.dart';
-import '../../domain/locus/feature_value_object.dart';
 import '../../domain/locus/location_position.dart';
 
 class FeatureDto extends Equatable {
@@ -56,7 +55,7 @@ class FeatureDto extends Equatable {
             .toList(),
         startToDraw: startToDraw,
         endToDraw: endToDraw,
-        strand: FeatureStrandTypeValueObject(strand),
+        strand: StrandTypeValueObject(strand),
         type: type,
         typeByOverlap: typeByOverlap ?? type,
         aminoacids: aminoacids,

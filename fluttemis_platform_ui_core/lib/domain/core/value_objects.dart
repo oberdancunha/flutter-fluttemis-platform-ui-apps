@@ -1,7 +1,9 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/foundation.dart';
 
+import 'strand_type.dart';
 import 'value_failure.dart';
+import 'value_validators.dart';
 
 @immutable
 abstract class ValueObject<E, T> {
@@ -36,4 +38,15 @@ class UniqueIdValueObject extends ValueObject<String, String> {
       );
 
   const UniqueIdValueObject._(this.value);
+}
+
+class StrandTypeValueObject extends ValueObject<int, StrandType> {
+  @override
+  final Either<ValueFailure<int>, StrandType> value;
+
+  factory StrandTypeValueObject(int strand) => StrandTypeValueObject._(
+        getStrandType(strand),
+      );
+
+  const StrandTypeValueObject._(this.value);
 }

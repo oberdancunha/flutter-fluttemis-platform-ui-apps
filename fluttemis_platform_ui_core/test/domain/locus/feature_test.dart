@@ -1,7 +1,6 @@
 import 'package:fluttemis_platform_ui_core/domain/core/value_objects.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/feature_product_type.dart';
-import 'package:fluttemis_platform_ui_core/domain/locus/feature_value_object.dart';
 import 'package:fluttemis_platform_ui_core/domain/locus/location_position.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -18,7 +17,7 @@ void main() {
       startToDraw: 3300,
       endToDraw: 4037,
       type: 'CDS',
-      strand: FeatureStrandTypeValueObject(1),
+      strand: StrandTypeValueObject(1),
       productType: FeatureProductType.known,
       show: true,
       typeByOverlap: 'CDS',
@@ -42,7 +41,7 @@ void main() {
       startToDraw: 147594,
       endToDraw: 151006,
       type: 'CDS',
-      strand: FeatureStrandTypeValueObject(1),
+      strand: StrandTypeValueObject(1),
       productType: FeatureProductType.known,
       show: true,
       typeByOverlap: 'CDS',

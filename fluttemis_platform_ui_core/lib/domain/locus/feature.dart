@@ -2,7 +2,6 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 
 import '../core/value_objects.dart';
 import 'feature_product_type.dart';
-import 'feature_value_object.dart';
 import 'location_position.dart';
 
 class Feature extends Equatable {
@@ -11,7 +10,7 @@ class Feature extends Equatable {
   final int startToDraw;
   final int endToDraw;
   final String type;
-  final FeatureStrandTypeValueObject strand;
+  final StrandTypeValueObject strand;
   final FeatureProductType productType;
   final bool show;
   final String typeByOverlap;

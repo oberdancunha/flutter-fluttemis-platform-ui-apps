@@ -1,13 +1,13 @@
-import 'package:fluttemis_platform_ui_core/domain/locus/feature_strand.dart';
+import 'package:fluttemis_platform_ui_core/domain/core/strand_type.dart';
 import 'package:flutter/rendering.dart';
 
 import '../core/platform.dart';
 
-BorderRadius getPlatformBorderRadiusToDrawFeature(FeatureStrandType fearureStrand) {
+BorderRadius getPlatformBorderRadiusToDrawFeature(StrandType fearureStrand) {
   final platform = getCurrentPlatform();
   switch (platform) {
     case CurrentPlatform.isMacOS:
-      return fearureStrand == FeatureStrandType.upstream
+      return fearureStrand == StrandType.upstream
           ? const BorderRadius.only(
               topLeft: Radius.circular(2),
               bottomLeft: Radius.circular(2),
