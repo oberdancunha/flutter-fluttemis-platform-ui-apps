@@ -73,25 +73,25 @@ class LocusFeaturesTableWidget extends StatelessWidget {
           ],
           data: features
               .toMutableList()
-              .sortedBy((feature) => feature.positions.first.start)
+              .sortedBy((feature) => feature.start)
               .filter((feature) => feature.show)
               .map(
                 (feature) => [
                   DataTableRowModel<int>(
                     dataToShow: PlatformTextWidget(
-                      feature.positions.first.start.toString(),
+                      feature.start.toString(),
                       textType: _defaultTextType,
                       fontSize: _fontSize,
                     ),
-                    rawData: feature.positions.first.start,
+                    rawData: feature.start,
                   ),
                   DataTableRowModel<int>(
                     dataToShow: PlatformTextWidget(
-                      feature.positions.last.end.toString(),
+                      feature.end.toString(),
                       textType: _defaultTextType,
                       fontSize: _fontSize,
                     ),
-                    rawData: feature.positions.last.end,
+                    rawData: feature.end,
                   ),
                   DataTableRowModel<int>(
                     dataToShow: PlatformTextWidget(

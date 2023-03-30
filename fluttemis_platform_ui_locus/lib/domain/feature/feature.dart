@@ -7,6 +7,8 @@ import 'feature_product_type.dart';
 class Feature extends Equatable {
   final UniqueIdValueObject id;
   final List<LocationPosition> positions;
+  final int start;
+  final int end;
   final int startToDraw;
   final int endToDraw;
   final String type;
@@ -23,6 +25,8 @@ class Feature extends Equatable {
   const Feature({
     required this.id,
     required this.positions,
+    required this.start,
+    required this.end,
     required this.startToDraw,
     required this.endToDraw,
     required this.type,
@@ -40,6 +44,8 @@ class Feature extends Equatable {
   @override
   List<Object?> get props => [
         positions,
+        start,
+        end,
         startToDraw,
         endToDraw,
         type,

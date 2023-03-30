@@ -50,6 +50,16 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
                               ),
                             )
                             .toList(),
+                        start: feature.positions
+                            .reduce(
+                              (value, element) => value.start < element.start ? value : element,
+                            )
+                            .start,
+                        end: feature.positions
+                            .reduce(
+                              (value, element) => value.end > element.end ? value : element,
+                            )
+                            .end,
                         startToDraw: feature.positions.first.end == data.locus.length
                             ? feature.positions.last.start
                             : feature.positions.first.start,

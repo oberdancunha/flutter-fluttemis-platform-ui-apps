@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:fluttemis_platform_ui_core/domain/value_objects.dart';
 import 'package:fluttemis_platform_ui_core/domain/value_transformer.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
@@ -8,6 +9,8 @@ import '../../domain/locus/location_position.dart';
 
 class FeatureDto extends Equatable {
   final List<LocationPosition> positions;
+  final int start;
+  final int end;
   final int startToDraw;
   final int endToDraw;
   final String type;
@@ -21,6 +24,8 @@ class FeatureDto extends Equatable {
 
   const FeatureDto({
     required this.positions,
+    required this.start,
+    required this.end,
     required this.startToDraw,
     required this.endToDraw,
     required this.type,
@@ -52,6 +57,8 @@ class FeatureDto extends Equatable {
               ),
             )
             .toList(),
+        start: start,
+        end: end,
         startToDraw: startToDraw,
         endToDraw: endToDraw,
         strand: StrandTypeValueObject(strand),
@@ -68,6 +75,8 @@ class FeatureDto extends Equatable {
 
   FeatureDto copyWith({
     List<LocationPosition>? positions,
+    int? start,
+    int? end,
     int? startToDraw,
     int? endToDraw,
     String? type,
@@ -81,6 +90,8 @@ class FeatureDto extends Equatable {
   }) =>
       FeatureDto(
         positions: positions ?? this.positions,
+        start: start ?? this.start,
+        end: end ?? this.end,
         startToDraw: startToDraw ?? this.startToDraw,
         endToDraw: endToDraw ?? this.endToDraw,
         type: type ?? this.type,

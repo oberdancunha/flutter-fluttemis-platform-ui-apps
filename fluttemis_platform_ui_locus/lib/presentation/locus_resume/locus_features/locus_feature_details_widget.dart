@@ -41,19 +41,13 @@ class _LocusFeatureDetailsWidgetState extends State<LocusFeatureDetailsWidget> {
                 physics: const NeverScrollableScrollPhysics(),
                 children: [
                   OverviewDataWidget(
-                    value: widget.locusFeature.positions
-                        .reduce((value, element) => value.start < element.start ? value : element)
-                        .start
-                        .toString(),
+                    value: widget.locusFeature.start.toString(),
                     description: fluttemisAppLocalizations.featureStart,
                     image: '$_assetsImagesPath/feature_start.png',
                     textType: TextType.label,
                   ),
                   OverviewDataWidget(
-                    value: widget.locusFeature.positions
-                        .reduce((value, element) => value.end > element.end ? value : element)
-                        .end
-                        .toString(),
+                    value: widget.locusFeature.end.toString(),
                     description: fluttemisAppLocalizations.featureEnd,
                     image: '$_assetsImagesPath/feature_end.png',
                     textType: TextType.label,

@@ -54,6 +54,8 @@ void main() {
             expect(feature.positions.elementAt(0).end, equals(62813));
             expect(feature.positions.elementAt(1).start, equals(1));
             expect(feature.positions.elementAt(1).end, equals(1487));
+            expect(feature.start, equals(1));
+            expect(feature.end, equals(62813));
             expect(feature.startToDraw, equals(1));
             expect(feature.endToDraw, equals(1487));
           },
@@ -73,6 +75,8 @@ void main() {
             expect(feature.positions.elementAt(0).end, equals(1487));
             expect(feature.positions.elementAt(1).start, equals(62795));
             expect(feature.positions.elementAt(1).end, equals(62813));
+            expect(feature.start, equals(1));
+            expect(feature.end, equals(62813));
             expect(feature.startToDraw, equals(1));
             expect(feature.endToDraw, equals(1487));
           },
