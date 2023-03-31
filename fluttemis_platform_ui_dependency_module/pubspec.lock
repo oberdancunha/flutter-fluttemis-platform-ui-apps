@@ -296,7 +296,7 @@ packages:
     source: hosted
     version: "0.1.4"
   sealed_unions:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: sealed_unions
       url: "https://pub.dartlang.org"

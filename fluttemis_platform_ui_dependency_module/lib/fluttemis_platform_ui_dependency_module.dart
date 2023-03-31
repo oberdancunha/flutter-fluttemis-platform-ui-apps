@@ -12,6 +12,7 @@ export 'package:intl/intl.dart';
 export 'package:kt_dart/kt.dart' hide reverse;
 export 'package:linked_scroll_controller/linked_scroll_controller.dart';
 export 'package:lottie/lottie.dart';
+export 'package:sealed_unions/sealed_unions.dart';
 export 'package:selectable/selectable.dart';
 export 'package:touchable/touchable.dart';
 export 'package:uuid/uuid.dart';
