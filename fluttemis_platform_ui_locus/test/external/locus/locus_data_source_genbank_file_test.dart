@@ -1,6 +1,6 @@
 import 'dart:io' show Platform;
 
-import 'package:fluttemis_platform_ui_core/domain/file_failures.dart';
+import 'package:fluttemis_platform_ui_core/domain/file_failure.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_locus/external/locus/locus_data_source_genbank_file.dart';
 import 'package:fluttemis_platform_ui_locus/infrastructure/locus/locus_dto.dart';
@@ -89,7 +89,7 @@ void main() {
     'Failure |',
     () {
       test(
-        'Should return a Failure.fileNotFound when file not exists',
+        'Should return a FileFailure.notFound() when file not exists',
         () async {
           const fileName = 'sequence1.gb';
           final genbankFileNotFound = path.join(basePath, '$testDataPath/$fileName');
@@ -98,14 +98,14 @@ void main() {
           expect(
             listLocus,
             equals(
-              left(FileFailureNotFound()),
+              left(FileFailure.notFound()),
             ),
           );
         },
       );
 
       test(
-        'Should return a Failure.fileIsEmpty when file is empty',
+        'Should return a FileFailure.empty when file is empty',
         () async {
           const fileName = 'sequence_empty.gb';
           final genbankFileEmpty = path.join(basePath, '$testDataPath/$fileName');
@@ -114,14 +114,14 @@ void main() {
           expect(
             listLocus,
             equals(
-              left(FileFailureEmpty()),
+              left(FileFailure.empty()),
             ),
           );
         },
       );
 
       test(
-        'Should return a Failure.fileFormatIncorrect when file format is not a genbank',
+        'Should return a FileFailure.formatIncorrect when file format is not a genbank',
         () async {
           const fileName = 'sequence_invalid_format.gb';
           final genbankFileInvalidFormat = path.join(basePath, '$testDataPath/$fileName');
@@ -131,14 +131,14 @@ void main() {
           expect(
             listLocus,
             equals(
-              left(FileFailureFormatIncorrect()),
+              left(FileFailure.formatIncorrect()),
             ),
           );
         },
       );
 
       test(
-        'Should return a Failure.fileFailureParseError when file format is not a genbank',
+        'Should return a FileFailure.parseError when file format is not a genbank',
         () async {
           const fileName = 'CP003200.gb';
           final genbankFileInvalidFormat = path.join(basePath, '$testDataPath/$fileName');
@@ -148,7 +148,7 @@ void main() {
           expect(
             listLocus.toString(),
             left<FileFailure, List<LocusDto>>(
-              FileFailureParseError(error: 'Null check operator used on a null value'),
+              FileFailure.parseError('Null check operator used on a null value'),
             ).toString(),
           );
         },

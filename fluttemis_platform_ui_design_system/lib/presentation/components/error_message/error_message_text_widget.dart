@@ -1,5 +1,4 @@
 import 'package:fluttemis_platform_ui_core/domain/failure.dart';
-import 'package:fluttemis_platform_ui_core/domain/file_failures.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
@@ -56,27 +55,32 @@ class ErrorMessageTextWidget extends StatelessWidget {
   ErrorMessageModel _getErrorWidgetByType(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
-    switch (failure.runtimeType) {
-      case FileFailureEmpty:
-        return ErrorMessageModel(
-          image: 'file_empty.png',
-          message: fluttemisAppLocalizations.fileEmpty,
-        );
-      case FileFailureFormatIncorrect:
-        return ErrorMessageModel(
-          image: 'file_format_error.png',
-          message: fluttemisAppLocalizations.fileFormatError,
-        );
-      case FileFailureNotFound:
-        return ErrorMessageModel(
-          image: 'file_not_found.png',
-          message: fluttemisAppLocalizations.fileNotFound,
-        );
-      default:
-        return ErrorMessageModel(
-          image: 'file_unexpected_error.png',
-          message: fluttemisAppLocalizations.fileUnexpectedError,
-        );
-    }
+    return ErrorMessageModel(
+      image: 'file_unexpected_error.png',
+      message: fluttemisAppLocalizations.fileUnexpectedError,
+    );
+
+    // switch (failure.runtimeType) {
+    //   case FileFailureEmpty:
+    //     return ErrorMessageModel(
+    //       image: 'file_empty.png',
+    //       message: fluttemisAppLocalizations.fileEmpty,
+    //     );
+    //   case FileFailureFormatIncorrect:
+    //     return ErrorMessageModel(
+    //       image: 'file_format_error.png',
+    //       message: fluttemisAppLocalizations.fileFormatError,
+    //     );
+    //   case FileFailureNotFound:
+    //     return ErrorMessageModel(
+    //       image: 'file_not_found.png',
+    //       message: fluttemisAppLocalizations.fileNotFound,
+    //     );
+    //   default:
+    //     return ErrorMessageModel(
+    //       image: 'file_unexpected_error.png',
+    //       message: fluttemisAppLocalizations.fileUnexpectedError,
+    //     );
+    // }
   }
 }

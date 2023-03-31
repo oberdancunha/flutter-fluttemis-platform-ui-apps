@@ -1,5 +1,21 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
-abstract class Failure extends Equatable {
+import 'file_failure.dart';
+
+class Failure extends Union1Impl<_File> {
   bool get tryAgain => false;
+  static const _factory = Singlet<_File>();
+
+  Failure._(super.union);
+
+  factory Failure.file(FileFailure failure) => Failure._(_factory.first(_File(failure)));
+}
+
+class _File extends Equatable {
+  final FileFailure failure;
+
+  const _File(this.failure);
+
+  @override
+  List<Object?> get props => [failure];
 }

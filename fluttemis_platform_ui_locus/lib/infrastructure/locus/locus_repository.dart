@@ -20,7 +20,7 @@ class LocusRepository implements ILocusRepository {
     final locus = await locusDataSource.getLocus();
 
     return locus.fold(
-      left,
+      (fileFailure) => left(Failure.file(fileFailure)),
       (locusList) => right(
         locusList
             .map(

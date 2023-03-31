@@ -1,4 +1,4 @@
-import 'package:fluttemis_platform_ui_core/domain/file_failures.dart';
+import 'package:fluttemis_platform_ui_core/domain/file_failure.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/foundation.dart';
 
@@ -21,10 +21,10 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
 
     return locus.join(
       (genbankError) => genbankError.failure.join(
-        (fileNotFound) => left(FileFailureNotFound()),
-        (fileParseError) => left(FileFailureParseError(error: fileParseError.error)),
-        (fileEmpty) => left(FileFailureEmpty()),
-        (fileFormatIncorrect) => left(FileFailureFormatIncorrect()),
+        (fileNotFound) => left(FileFailure.notFound()),
+        (fileParseError) => left(FileFailure.parseError(fileParseError.error)),
+        (fileEmpty) => left(FileFailure.empty()),
+        (fileFormatIncorrect) => left(FileFailure.formatIncorrect()),
       ),
       (genbank) => right(
         genbank.data
