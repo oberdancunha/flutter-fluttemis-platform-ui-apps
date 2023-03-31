@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
 
-class ErrorRecoveryOptionWidget extends StatelessWidget {
+class FailureRecoveryWidget extends StatelessWidget {
   final Widget child;
 
-  const ErrorRecoveryOptionWidget({
+  const FailureRecoveryWidget({
     required this.child,
     super.key,
   });

@@ -3,7 +3,6 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'file_failure.dart';
 
 class Failure extends Union1Impl<_File> {
-  bool get tryAgain => false;
   static const _factory = Singlet<_File>();
 
   Failure._(super.union);
