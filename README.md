@@ -15,9 +15,9 @@ Algumas das tecnologias/bibliotecas utilizadas na construção do software foram
  - [bio-dart-package](https://github.com/oberdancunha/dart-bio-package)
  - collection: 1.16.0
  - equatable: 2.0.5
- - fpdart: 0.3.0
- - freezed_annotation: 2.2.0
- - kt_dart: 0.9.1
+ - fpdart: 0.5.0
+ - kt_dart: 1.1.0
+ - sealed_unions: 3.0.3+1
  - window_manager: 0.2.7
  - intl: 0.17.0
  - lottie: 2.0.0
@@ -26,7 +26,7 @@ Algumas das tecnologias/bibliotecas utilizadas na construção do software foram
  - linked_scroll_controller: 0.2.0
  - selectable: 0.2.9
  - clipboard_watcher: 0.1.3
- - dart_code_metrics: 5.0.1
+ - dart_code_metrics: 4.19.2 ou 5.0.1
  - lint: 1.10.0
  - mocktail: 0.3.0
  - value_listenable_test: 0.0.1
