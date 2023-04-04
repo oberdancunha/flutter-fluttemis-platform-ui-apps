@@ -33,18 +33,14 @@ class _LocusWidgetState extends State<LocusWidget> {
         body: Center(
           child: ValueListenableBuilder(
             valueListenable: widget.locusStore,
-            builder: (_, locusState, __) {
-              if (locusState.isLoading) {
-                return LottieLoadingDataSourceDetailsWidget(
-                  accessHistoryStore: widget.accessHistoryStore,
-                );
-              }
-              if (locusState.failure != null) {
-                return FailureWidget(failure: locusState.failure!);
-              }
-
-              return LocusPage(locus: locusState.locus);
-            },
+            builder: (_, locusState, __) => locusState.join(
+              (initial) => const SizedBox.shrink(),
+              (loading) => LottieLoadingDataSourceDetailsWidget(
+                accessHistoryStore: widget.accessHistoryStore,
+              ),
+              (success) => LocusPage(locus: success.locus),
+              (failure) => FailureWidget(failure: failure.message),
+            ),
           ),
         ),
       );

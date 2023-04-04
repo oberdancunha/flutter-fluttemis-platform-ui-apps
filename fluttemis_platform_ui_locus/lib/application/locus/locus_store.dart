@@ -11,16 +11,11 @@ class LocusStore extends ValueNotifier<LocusState> {
   }) : super(LocusState.initial());
 
   Future<void> getLocus() async {
-    value = value.copyWith(
-      isLoading: true,
-    );
+    value = LocusState.loading();
     final locusOrFailure = await locusRepository.getLocus();
     locusOrFailure.fold(
-      (failure) => value = value.copyWith(failure: failure),
-      (locus) => value = value.copyWith(locus: locus),
-    );
-    value = value.copyWith(
-      isLoading: false,
+      (failure) => value = LocusState.failure(failure),
+      (locus) => value = LocusState.success(locus),
     );
   }
 }

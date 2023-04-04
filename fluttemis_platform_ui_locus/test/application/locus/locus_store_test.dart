@@ -29,13 +29,7 @@ void main() {
   test('Should verify initial state', () {
     expect(
       locusStore.value,
-      equals(
-        const LocusState(
-          locus: KtList.empty(),
-          isLoading: false,
-          failure: null,
-        ),
-      ),
+      equals(LocusState.initial()),
     );
   });
 
@@ -51,21 +45,8 @@ void main() {
       verify(() => mockLocusRepository.getLocus()).called(1);
     },
     expect: () => [
-      const LocusState(
-        locus: KtList.empty(),
-        isLoading: true,
-        failure: null,
-      ),
-      LocusState(
-        locus: getLocus(),
-        isLoading: true,
-        failure: null,
-      ),
-      LocusState(
-        locus: getLocus(),
-        isLoading: false,
-        failure: null,
-      ),
+      LocusState.loading(),
+      LocusState.success(getLocus()),
     ],
   );
 
@@ -85,21 +66,8 @@ void main() {
       verify(() => mockLocusRepository.getLocus()).called(1);
     },
     expect: () => [
-      const LocusState(
-        locus: KtList.empty(),
-        isLoading: true,
-        failure: null,
-      ),
-      LocusState(
-        locus: const KtList.empty(),
-        isLoading: true,
-        failure: Failure.file(FileFailure.formatIncorrect()),
-      ),
-      LocusState(
-        locus: const KtList.empty(),
-        isLoading: false,
-        failure: Failure.file(FileFailure.formatIncorrect()),
-      ),
+      LocusState.loading(),
+      LocusState.failure(Failure.file(FileFailure.formatIncorrect())),
     ],
   );
 
