@@ -44,7 +44,6 @@ jobs:
           directory: ${{env.fluttemis_app}}/build/macos/Build/Products/Release
       - name: macOS release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
