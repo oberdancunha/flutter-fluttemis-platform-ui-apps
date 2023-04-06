@@ -2,6 +2,8 @@ name: Fluttemis build release
 
 env:
   flutter_version: "3.3.6"
+  flutter_channel: "stable"
+  flutter_architecture: x64
   melos_version: "2.9.0"
   fluttemis_app: "fluttemis_platform_ui_app"
 
@@ -19,8 +21,8 @@ jobs:
       - name: "Install flutter ${{env.flutter_version}} version"
         uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
-          architecture: x64
+          channel: ${{env.flutter_channel}}
+          architecture: ${{env.flutter_architecture}}
           flutter-version: ${{env.flutter_version}}
       - name: "Install Melos ${{env.melos_version}} tool"
         run: flutter pub global activate melos ${{env.melos_version}}
@@ -36,14 +38,15 @@ jobs:
         run: melos run enable:macos:build
       - name: Build macOS release
         run: melos run macos:build
-      - name: Archive release
+      - name: Zip macOS release
         uses: thedoctor0/zip-release@master
         with:
           type: zip
           filename: Fluttemis-macos.zip
           directory: ${{env.fluttemis_app}}/build/macos/Build/Products/Release
-      - name: macOS release
+      - name: Creating Github macOS release
         uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
