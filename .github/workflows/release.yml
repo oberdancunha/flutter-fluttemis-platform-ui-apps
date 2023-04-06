@@ -8,7 +8,7 @@ env:
   fluttemis_app: "fluttemis_platform_ui_app"
 
 on: push
-
+   
 jobs:
   build-and-release-macos:
     runs-on: macos-latest
