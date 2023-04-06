@@ -1,0 +1,53 @@
+name: Fluttemis build release
+
+env:
+  flutter_version: "3.3.6"
+  melos_version: "2.9.0"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-release-macos:
+    runs-on: macos-latest
+    steps:
+      - name: "Git checkout"
+        uses: actions/checkout@v2
+      - name: "Install flutter ${{env.flutter_version}} version"
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          architecture: x64
+          flutter-version: ${{env.flutter_version}}
+      - name: "Install Melos ${{env.melos_version}} tool"
+        run: flutter pub global activate melos ${{env.melos_version}}
+      - name: "Melos bootstrap"
+        run: melos bootstrap --verbose
+      - name: "Melos analyze"
+        run: melos run analyze
+      - name: "Flutter test"
+        run: melos run test:flutter
+      - name: Generate localizations files
+        run: melos run localization:flutter
+      - name: Enable macOS build
+        run: melos run enable:macos:build
+      - name: Build macOS release
+        run: melos run macos:build
+      - name: Archive release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          filename: Fluttemis-macos.zip
+          directory: build/macos/Build/Products/Release
+      - name: macOS release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          files: build/macos/Build/Products/Release/Fluttemis-macos.zip
+
+
+      
