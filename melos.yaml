@@ -19,9 +19,10 @@ command:
     branch: main
 
 scripts:
+
   test:flutter:
-    run: melos exec flutter test --coverage
-    description: Run test in all projects packages.
+    run:  melos exec -c 4 --fail-fast -- "flutter test --coverage"
+    description: Run Flutter test in all projects packages.
     select-package:
       flutter: true
       dir-exists: test
@@ -31,8 +32,22 @@ scripts:
 
   localization:flutter:
     exec: flutter gen-l10n
-    description: Run gen-l10n to generate localizations files
+    description: Run gen-l10n to generate localizations files.
     select-package:
       flutter: true
       file-exists: lib/l10n/app_pt.arb
+
+  enable:macos:build:
+    exec: flutter config --enable-macos-desktop
+    description: Enable macOS build
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
+
+  macos:build:
+    exec: flutter build macos --release
+    description: Run fluttemis build in release mode.
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
       
