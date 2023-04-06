@@ -3,6 +3,7 @@ name: Fluttemis build release
 env:
   flutter_version: "3.3.6"
   melos_version: "2.9.0"
+  fluttemis_app: "fluttemis_platform_ui_app"
 
 on:
   push:
@@ -40,14 +41,11 @@ jobs:
         with:
           type: zip
           filename: Fluttemis-macos.zip
-          directory: build/macos/Build/Products/Release
+          directory: ${{env.fluttemis_app}}/build/macos/Build/Products/Release
       - name: macOS release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          files: build/macos/Build/Products/Release/Fluttemis-macos.zip
-
-
-      
+          files: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis-macos.zip
