@@ -50,4 +50,11 @@ scripts:
     select-package:
       flutter: true
       file-exists: lib/main.dart
-      
+
+  macos:create-dmg:
+    run: | 
+      /bin/sh ./scripts/create_mac_dmg.sh
+    description: Create fluttemis macos dmg file
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
