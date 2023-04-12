@@ -19,6 +19,7 @@ Algumas das tecnologias/bibliotecas utilizadas na construção do software foram
  - kt_dart: 1.1.0
  - sealed_unions: 3.0.3+1
  - window_manager: 0.2.7
+ - bitsdojo_window: 0.1.5
  - intl: 0.17.0
  - lottie: 2.0.0
  - data_table_2: 2.3.10

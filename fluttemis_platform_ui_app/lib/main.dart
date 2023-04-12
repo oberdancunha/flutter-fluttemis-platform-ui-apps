@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
@@ -5,19 +7,23 @@ import 'presentation/core/app_module.dart';
 import 'presentation/core/app_widget.dart';
 
 Future<void> main() async {
+  if (!(Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+    exit(0);
+  }
   WidgetsFlutterBinding.ensureInitialized();
   await windowManager.ensureInitialized();
-  const WindowOptions windowOptions = WindowOptions(
-    title: 'Fluttemis',
-    minimumSize: Size(1024, 640),
-    center: true,
-    skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.normal,
-  );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-    await windowManager.setPreventClose(true);
+  const minimumSize = Size(1024, 640);
+  windowManager
+    ..setMinimumSize(minimumSize)
+    ..setSize(minimumSize);
+  if (!Platform.isMacOS) {
+    windowManager.setAsFrameless();
+  }
+  doWhenWindowReady(() {
+    appWindow.minSize = minimumSize;
+    appWindow.size = minimumSize;
+    appWindow.alignment = Alignment.center;
+    appWindow.show();
   });
   runApp(
     ModularApp(

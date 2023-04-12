@@ -1,5 +1,6 @@
 library fluttemis_fluent_ui_dependency_modules;
 
+export 'package:bitsdojo_window/bitsdojo_window.dart';
 export 'package:clipboard_watcher/clipboard_watcher.dart';
 export 'package:collection/collection.dart';
 export 'package:dart_bio_package/dart_bio_package.dart';
