@@ -70,17 +70,150 @@ jobs:
           directory: ${{env.fluttemis_app}}/build/macos/Build/Products/Release
 
       - name: Creating Github DMG macOS release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: svenstaro/upload-release-action@2.5.0
         with:
-          files: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis.dmg
-          
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis.dmg
+          asset_name: fluttemis-macos-${{ github.event.release.tag_name }}.dmg
+          tag: ${{ github.ref }}
+      
       - name: Creating Github ZIP macOS release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: svenstaro/upload-release-action@2.5.0
         with:
-          files: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis-macos.zip
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis-macos.zip
+          asset_name: macos-${{ github.event.release.tag_name }}.zip
+          tag: ${{ github.ref }}
+
+  build-and-release-windows:
+    runs-on: windows-latest
+    steps:
+      - name: ${{env.git_checkout_title}}
+        uses: actions/checkout@v2
+
+      - name: "Install flutter ${{env.flutter_version}} version"
+        uses: subosito/flutter-action@v2.10.0
+        with:
+          channel: ${{env.flutter_channel}}
+          architecture: ${{env.flutter_architecture}}
+          flutter-version: ${{env.flutter_version}}
+      
+      - name: ${{env.install_melos_title}}
+        run: flutter pub global activate melos ${{env.melos_version}}
+
+      - name: ${{env.melos_bootstrap_title}}
+        run: melos bootstrap --verbose
+
+      - name: ${{env.melos_analyze_title}}
+        run: melos run analyze
+
+      - name: ${{env.flutter_test_title}}
+        run: melos run test:flutter
+
+      - name: ${{env.generate_localizations_files_title}}
+        run: melos run localization:flutter
+
+      - name: Enable windows build
+        run: melos run enable:windows:build
+
+      - name: Build windows release
+        run: melos run windows:build
+
+      - name: Create windows MSIX
+        run: melos run windows:create-msix
+
+      - name: Zip windows release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          filename: Fluttemis-windows.zip
+          directory: ${{env.fluttemis_app}}/build/windows/Build/Products/Release
+
+      - name: Creating Github MSIX windows release
+        uses: svenstaro/upload-release-action@2.5.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.fluttemis_app}}/build/windows/Runner/release/fluttemis.msix
+          asset_name: fluttemis-windows-${{ github.event.release.tag_name }}.msix
+          tag: ${{ github.ref }}
+      
+      - name: Creating Github ZIP windows release
+        uses: svenstaro/upload-release-action@2.5.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.fluttemis_app}}/build/windows/Build/Products/Release/Fluttemis-windows.zip
+          asset_name: windows-${{ github.event.release.tag_name }}.zip
+          tag: ${{ github.ref }}
+
+  build-and-release-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ${{env.git_checkout_title}}
+        uses: actions/checkout@v2
+
+      - name: "Install flutter ${{env.flutter_version}} version"
+        uses: subosito/flutter-action@v2.10.0
+        with:
+          channel: ${{env.flutter_channel}}
+          architecture: ${{env.flutter_architecture}}
+          flutter-version: ${{env.flutter_version}}
+      
+      - name: ${{env.install_melos_title}}
+        run: flutter pub global activate melos ${{env.melos_version}}
+
+      - name: ${{env.melos_bootstrap_title}}
+        run: melos bootstrap --verbose
+
+      - name: ${{env.melos_analyze_title}}
+        run: melos run analyze
+
+      - name: ${{env.flutter_test_title}}
+        run: melos run test:flutter
+
+      - name: ${{env.generate_localizations_files_title}}
+        run: melos run localization:flutter
+
+      - name: Enable linux build
+        run: melos run enable:linux:build
+
+      - name: Build linux release
+        run: melos run linux:build
+
+      - name: Set fluttemis.desktop version
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          path: ${{env.fluttemis_app}}/fluttemis.desktop
+          contents: Version=${{ github.event.release.tag_name }}
+          write-mode: append
+
+      - name: Set fluttemis.desktop version (snap version)
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          path: ${{env.fluttemis_app}}/snap/gui/fluttemis.desktop
+          contents: Version=${{ github.event.release.tag_name }}
+          write-mode: append
+      
+      - name: Set snapcraft.yaml version
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: ${{env.fluttemis_app}}/snap/snapcraft.yaml
+          contents: 'version: "${{ github.event.release.tag_name }}"'
+          write-mode: append
+
+      - name: Zip linux release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          filename: Fluttemis-linux.zip
+          directory: ${{env.fluttemis_app}}/build/linux/Build/Products/Release
+
+      - name: Creating Github ZIP linux release
+        uses: svenstaro/upload-release-action@2.5.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.fluttemis_app}}/build/linux/Build/Products/Release/Fluttemis-linux.zip
+          asset_name: linux-${{ github.event.release.tag_name }}.zip
+          tag: ${{ github.ref }}
+
+
+
