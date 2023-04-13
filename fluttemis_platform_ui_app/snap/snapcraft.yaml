@@ -1,0 +1,28 @@
+# This is a development snapcraft file, no version is specified. Uncomment the line below to build a snap.
+name: fluttemis
+summary: Fluttemis
+description: |
+  Fluttemis is an application that provides tools for genome analysis, such as a genome browser, for example.
+version: 0.0.1
+
+grade: stable
+confinement: strict
+base: core22
+icon: snap/gui/fluttemis.png
+
+apps:
+  fluttemis:
+    command: desktop-launch Fluttemis
+    extensions: [flutter-stable]
+    plugs: [
+      home,
+      network,
+      desktop
+    ]
+
+parts:
+  fluttemis:
+    plugin: flutter
+    source: https://github.com/oberdancunha/flutter-fluttemis-platform-ui-apps
+    flutter-target: fluttemis_platform_ui_app/lib/main.dart
+    
