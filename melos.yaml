@@ -46,7 +46,7 @@ scripts:
 
   macos:build:
     exec: flutter build macos --release
-    description: Run fluttemis build in release mode.
+    description: Run fluttemis build macos in release mode.
     select-package:
       flutter: true
       file-exists: lib/main.dart
@@ -55,6 +55,41 @@ scripts:
     run: | 
       /bin/sh ./scripts/create_mac_dmg.sh
     description: Create fluttemis macos dmg file
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
+
+  enable:windows:build:
+    exec: flutter config --enable-windows-desktop
+    description: Enable windows build
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
+
+  windows:build:
+    exec: flutter build windows --release
+    description: Run fluttemis build windows in release mode.
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
+
+  windows:create-msix:
+    exec: flutter pub run msix:create
+    description: Create windows msix file
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
+
+  enable:linux:build:
+    exec: flutter config --enable-linux-desktop
+    description: Enable linux build
+    select-package:
+      flutter: true
+      file-exists: lib/main.dart
+
+  linux:build:
+    exec: flutter build linux --release
+    description: Run fluttemis build linux in release mode.
     select-package:
       flutter: true
       file-exists: lib/main.dart
