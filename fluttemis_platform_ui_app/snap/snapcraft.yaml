@@ -3,7 +3,7 @@ name: fluttemis
 summary: Fluttemis
 description: |
   Fluttemis is an application that provides tools for genome analysis, such as a genome browser, for example.
-version: 0.0.1
+version: 1.0.0
 
 grade: stable
 confinement: strict
