@@ -208,13 +208,13 @@ jobs:
         with:
           type: zip
           filename: Fluttemis-linux.zip
-          directory: ${{env.fluttemis_app}}/build/linux/Build/Products/Release
+          directory: ${{env.fluttemis_app}}/build/linux/x64/release/bundle
 
       - name: Creating Github ZIP release
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{env.fluttemis_app}}/build/linux/Build/Products/Release/Fluttemis-linux.zip
+          file: ${{env.fluttemis_app}}/build/linux/x64/release/bundle/Fluttemis-linux.zip
           asset_name: linux-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.ref }}
 
