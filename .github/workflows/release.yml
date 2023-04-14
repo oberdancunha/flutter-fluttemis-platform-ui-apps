@@ -7,16 +7,16 @@ env:
   melos_version: "2.9.0"
   fluttemis_app: "fluttemis_platform_ui_app"
   git_checkout_title: "Git checkout"
-  install_melos_title: "Install Melos tool"
+  install_melos_title: "Install melos tool"
   melos_bootstrap_title: "Melos bootstrap"
   melos_analyze_title: "Melos analyze"
   flutter_test_title: "Flutter test"
   generate_localizations_files_title: "Generate localizations files"
 
 on:
-  push:
-    tags:
-      - "v*.*.*"
+  release:
+    types:
+      - created
    
 jobs:
   build-and-release-macos:
@@ -50,26 +50,26 @@ jobs:
       - name: ${{env.generate_localizations_files_title}}
         run: melos run localization:flutter
 
-      - name: Enable macOS build
+      - name: Enable build
         run: melos run enable:macos:build
 
-      - name: Build macOS release
+      - name: Build release
         run: melos run macos:build
 
       - name: Install create-dmg
         run: brew install create-dmg
 
-      - name: Create mac dmg
+      - name: Create dmg
         run: melos run macos:create-dmg
 
-      - name: Zip macOS release
+      - name: Zip release
         uses: thedoctor0/zip-release@master
         with:
           type: zip
           filename: Fluttemis-macos.zip
           directory: ${{env.fluttemis_app}}/build/macos/Build/Products/Release
 
-      - name: Creating Github DMG macOS release
+      - name: Creating Github DMG release
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -77,7 +77,7 @@ jobs:
           asset_name: fluttemis-macos-${{ github.event.release.tag_name }}.dmg
           tag: ${{ github.ref }}
       
-      - name: Creating Github ZIP macOS release
+      - name: Creating Github ZIP release
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -113,23 +113,23 @@ jobs:
       - name: ${{env.generate_localizations_files_title}}
         run: melos run localization:flutter
 
-      - name: Enable windows build
+      - name: Enable build
         run: melos run enable:windows:build
 
-      - name: Build windows release
+      - name: Build release
         run: melos run windows:build
 
-      - name: Create windows MSIX
+      - name: Create MSIX
         run: melos run windows:create-msix
 
-      - name: Zip windows release
+      - name: Zip release
         uses: thedoctor0/zip-release@master
         with:
           type: zip
           filename: Fluttemis-windows.zip
           directory: ${{env.fluttemis_app}}/build/windows/Build/Products/Release
 
-      - name: Creating Github MSIX windows release
+      - name: Creating Github MSIX release
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -137,7 +137,7 @@ jobs:
           asset_name: fluttemis-windows-${{ github.event.release.tag_name }}.msix
           tag: ${{ github.ref }}
       
-      - name: Creating Github ZIP windows release
+      - name: Creating Github ZIP release
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
@@ -157,6 +157,9 @@ jobs:
           channel: ${{env.flutter_channel}}
           architecture: ${{env.flutter_architecture}}
           flutter-version: ${{env.flutter_version}}
+
+      - name: Install dependencies
+        run: sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-0 libgtk-3-dev libblkid1 liblzma5
       
       - name: ${{env.install_melos_title}}
         run: flutter pub global activate melos ${{env.melos_version}}
@@ -173,10 +176,10 @@ jobs:
       - name: ${{env.generate_localizations_files_title}}
         run: melos run localization:flutter
 
-      - name: Enable linux build
+      - name: Enable build
         run: melos run enable:linux:build
 
-      - name: Build linux release
+      - name: Build release
         run: melos run linux:build
 
       - name: Set fluttemis.desktop version
@@ -200,14 +203,14 @@ jobs:
           contents: 'version: "${{ github.event.release.tag_name }}"'
           write-mode: append
 
-      - name: Zip linux release
+      - name: Zip release
         uses: thedoctor0/zip-release@master
         with:
           type: zip
           filename: Fluttemis-linux.zip
           directory: ${{env.fluttemis_app}}/build/linux/Build/Products/Release
 
-      - name: Creating Github ZIP linux release
+      - name: Creating Github ZIP release
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
