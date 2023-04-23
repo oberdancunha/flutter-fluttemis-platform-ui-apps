@@ -2,7 +2,7 @@
 Name=Fluttemis
 Comment=Fluttemis is an application that provides tools for genome analysis, such as a genome browser, for example.
 Exec=fluttemis %f
-Icon=fluttemis.png
+Icon=${SNAP}/meta/gui/fluttemis.png
 Terminal=false
 Type=Application
 Categories=Utility;
