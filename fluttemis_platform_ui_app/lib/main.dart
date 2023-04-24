@@ -16,6 +16,9 @@ Future<void> main() async {
   windowManager
     ..setMinimumSize(minimumSize)
     ..setSize(minimumSize);
+  if (!Platform.isMacOS) {
+    windowManager.setAsFrameless();
+  }
   doWhenWindowReady(() {
     appWindow.minSize = minimumSize;
     appWindow.size = minimumSize;
