@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_core/utils/constants.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
@@ -8,7 +9,7 @@ class DesignSystemWidgetDS extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PlatformAppWidget(
-        title: 'Fluttemis',
+        title: kAppTitle,
         debugShowCheckedModeBanner: false,
         routeInformationParser: Modular.routeInformationParser,
         routerDelegate: Modular.routerDelegate,
