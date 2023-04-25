@@ -21,9 +21,10 @@ class MaterialScaffoldWidget extends PlatformScaffoldWidget {
           centerTitle: true,
           automaticallyImplyLeading: false,
           titleSpacing: 0,
+          toolbarHeight: 35,
           actions: [
             Padding(
-              padding: const EdgeInsets.only(right: 30),
+              padding: const EdgeInsets.only(right: 30, top: 7),
               child: Row(
                 children: [
                   MaterialChangeWindowButtonWidget(
@@ -33,7 +34,9 @@ class MaterialScaffoldWidget extends PlatformScaffoldWidget {
                   ),
                   const SizedBox(width: 10),
                   MaterialChangeWindowButtonWidget(
-                    icon: appWindow.isMaximized ? Icons.copy_outlined : Icons.square_outlined,
+                    icon: appWindow.isMaximized
+                        ? Icons.close_fullscreen_outlined
+                        : Icons.fullscreen_outlined,
                     message: appWindow.isMaximized
                         ? FluttemisAppLocalizations.of(context)!.restoreSize
                         : FluttemisAppLocalizations.of(context)!.maximize,
