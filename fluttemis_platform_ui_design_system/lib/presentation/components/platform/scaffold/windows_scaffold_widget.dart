@@ -14,37 +14,40 @@ class WindowsScaffoldWidget extends PlatformScaffoldWidget {
 
   @override
   Widget build(BuildContext context) => ScaffoldPage(
-        header: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              title,
-              Row(
-                children: [
-                  WindowsChangeWindowButtonWidget(
-                    tooltip: FluttemisAppLocalizations.of(context)!.minimize,
-                    icon: FluentIcons.chrome_minimize,
-                    action: () => appWindow.minimize(),
-                  ),
-                  WindowsChangeWindowButtonWidget(
-                    tooltip: appWindow.isMaximized
-                        ? FluttemisAppLocalizations.of(context)!.restoreSize
-                        : FluttemisAppLocalizations.of(context)!.maximize,
-                    icon: appWindow.isMaximized
-                        ? FluentIcons.chrome_restore
-                        : FluentIcons.square_shape,
-                    action: () {
-                      appWindow.maximizeOrRestore();
-                    },
-                  ),
-                  WindowsCloseWindowButtonWidget(
-                    tooltip: FluttemisAppLocalizations.of(context)!.closeApplication,
-                    action: () => appWindow.close(),
-                  ),
-                ],
-              ),
-            ],
+        header: SizedBox(
+          height: 30,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                title,
+                Row(
+                  children: [
+                    WindowsChangeWindowButtonWidget(
+                      tooltip: FluttemisAppLocalizations.of(context)!.minimize,
+                      icon: FluentIcons.chrome_minimize,
+                      action: () => appWindow.minimize(),
+                    ),
+                    WindowsChangeWindowButtonWidget(
+                      tooltip: appWindow.isMaximized
+                          ? FluttemisAppLocalizations.of(context)!.restoreSize
+                          : FluttemisAppLocalizations.of(context)!.maximize,
+                      icon: appWindow.isMaximized
+                          ? FluentIcons.chrome_restore
+                          : FluentIcons.square_shape,
+                      action: () {
+                        appWindow.maximizeOrRestore();
+                      },
+                    ),
+                    WindowsCloseWindowButtonWidget(
+                      tooltip: FluttemisAppLocalizations.of(context)!.closeApplication,
+                      action: () => appWindow.close(),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
         content: body,
