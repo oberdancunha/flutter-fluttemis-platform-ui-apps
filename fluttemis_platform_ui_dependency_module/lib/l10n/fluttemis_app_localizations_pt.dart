@@ -198,4 +198,16 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
 
   @override
   String get locusOpened => 'Locus aberto';
+
+  @override
+  String get closeApplication => 'Fechar';
+
+  @override
+  String get minimize => 'Minimizar';
+
+  @override
+  String get maximize => 'Maximizar';
+
+  @override
+  String get restoreSize => 'Restaurar Tamanho';
 }

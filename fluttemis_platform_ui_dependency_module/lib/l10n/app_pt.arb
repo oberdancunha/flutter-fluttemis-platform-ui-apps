@@ -63,5 +63,9 @@
   "emptyFeaturesTable": "Tabela de features vazia",
   "tblStart": "Início",
   "tblNote": "Nota",
-  "locusOpened": "Locus aberto"
+  "locusOpened": "Locus aberto",
+  "closeApplication": "Fechar",
+  "minimize": "Minimizar",
+  "maximize": "Maximizar",
+  "restoreSize": "Restaurar Tamanho"
 }

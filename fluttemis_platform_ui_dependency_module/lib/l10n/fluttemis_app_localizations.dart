@@ -480,6 +480,30 @@ abstract class FluttemisAppLocalizations {
   /// In pt, this message translates to:
   /// **'Locus aberto'**
   String get locusOpened;
+
+  /// No description provided for @closeApplication.
+  ///
+  /// In pt, this message translates to:
+  /// **'Fechar'**
+  String get closeApplication;
+
+  /// No description provided for @minimize.
+  ///
+  /// In pt, this message translates to:
+  /// **'Minimizar'**
+  String get minimize;
+
+  /// No description provided for @maximize.
+  ///
+  /// In pt, this message translates to:
+  /// **'Maximizar'**
+  String get maximize;
+
+  /// No description provided for @restoreSize.
+  ///
+  /// In pt, this message translates to:
+  /// **'Restaurar Tamanho'**
+  String get restoreSize;
 }
 
 class _FluttemisAppLocalizationsDelegate extends LocalizationsDelegate<FluttemisAppLocalizations> {
