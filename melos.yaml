@@ -13,7 +13,7 @@ packages:
 
 command:
   bootstrap:
-    usePubspecOverrides: true
+    runPubGetInParallel: true
   version:
     updateGitTagRefs: true
     branch: main
@@ -23,9 +23,9 @@ scripts:
   test:flutter:
     run:  melos exec -c 4 --fail-fast -- "flutter test --coverage"
     description: Run Flutter test in all projects packages.
-    select-package:
+    packageFilters:      
       flutter: true
-      dir-exists: test
+      dirExists: test
 
   analyze:
     exec: dart analyze .
@@ -33,63 +33,63 @@ scripts:
   localization:flutter:
     exec: flutter gen-l10n
     description: Run gen-l10n to generate localizations files.
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/l10n/app_pt.arb
+      fileExists: lib/l10n/app_pt.arb
 
   enable:macos:build:
     exec: flutter config --enable-macos-desktop
     description: Enable macOS build
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   macos:build:
     exec: flutter build macos --release
     description: Run fluttemis build macos in release mode.
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   macos:create-dmg:
     run: | 
       /bin/sh ./scripts/create_mac_dmg.sh
     description: Create fluttemis macos dmg file
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   enable:windows:build:
     exec: flutter config --enable-windows-desktop
     description: Enable windows build
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   windows:build:
     exec: flutter build windows --release
     description: Run fluttemis build windows in release mode.
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   windows:create-msix:
     exec: flutter pub run msix:create
     description: Create windows msix file
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   enable:linux:build:
     exec: flutter config --enable-linux-desktop
     description: Enable linux build
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
 
   linux:build:
     exec: flutter build linux --release
     description: Run fluttemis build linux in release mode.
-    select-package:
+    packageFilters:
       flutter: true
-      file-exists: lib/main.dart
+      fileExists: lib/main.dart
