@@ -24,7 +24,7 @@ class MaterialScaffoldWidget extends PlatformScaffoldWidget {
           toolbarHeight: 35,
           actions: [
             Padding(
-              padding: const EdgeInsets.only(right: 30, top: 7),
+              padding: const EdgeInsets.only(right: 30, top: 4, bottom: 4),
               child: Row(
                 children: [
                   MaterialChangeWindowButtonWidget(
