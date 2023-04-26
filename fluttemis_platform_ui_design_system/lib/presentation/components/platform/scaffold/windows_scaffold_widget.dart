@@ -14,6 +14,7 @@ class WindowsScaffoldWidget extends PlatformScaffoldWidget {
 
   @override
   Widget build(BuildContext context) => ScaffoldPage(
+        padding: const EdgeInsets.only(top: 10),
         header: SizedBox(
           height: 30,
           child: Padding(
