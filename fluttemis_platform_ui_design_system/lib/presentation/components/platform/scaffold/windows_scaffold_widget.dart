@@ -16,7 +16,7 @@ class WindowsScaffoldWidget extends PlatformScaffoldWidget {
   Widget build(BuildContext context) => ScaffoldPage(
         padding: const EdgeInsets.only(top: 10),
         header: SizedBox(
-          height: 30,
+          height: 35,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
