@@ -28,7 +28,6 @@ class MaterialWindowButtonWidget extends StatelessWidget {
             ),
             icon: Icon(
               icon,
-              size: constraints.maxHeight * 0.7,
               color: Colors.white,
             ),
           ),
