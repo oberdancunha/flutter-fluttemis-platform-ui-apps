@@ -19,17 +19,15 @@ class MaterialWindowButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialTooltipWidget(
         message: message,
-        child: LayoutBuilder(
-          builder: (_, constraints) => IconButton(
-            onPressed: onPressed,
-            style: IconButton.styleFrom(
-              backgroundColor: backgroundColor,
-              shape: const CircleBorder(),
-            ),
-            icon: Icon(
-              icon,
-              color: Colors.white,
-            ),
+        child: IconButton(
+          onPressed: onPressed,
+          style: IconButton.styleFrom(
+            backgroundColor: backgroundColor,
+            shape: const CircleBorder(),
+          ),
+          icon: Icon(
+            icon,
+            color: Colors.white,
           ),
         ),
       );
