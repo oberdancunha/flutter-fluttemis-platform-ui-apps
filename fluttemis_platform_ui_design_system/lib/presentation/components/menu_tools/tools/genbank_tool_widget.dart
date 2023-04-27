@@ -63,7 +63,7 @@ class _GenbankToolWidgetState extends ITemplateToolState<GenbankToolWidget> {
             AccessHistoryResourceTypes.file,
             getFileNameFromPath(filePath),
           );
-          Modular.to.popAndPushNamed('/genbankfile/', arguments: filePath);
+          Modular.to.navigate('/genbankfile/?filepath=$filePath');
         }
       };
 }

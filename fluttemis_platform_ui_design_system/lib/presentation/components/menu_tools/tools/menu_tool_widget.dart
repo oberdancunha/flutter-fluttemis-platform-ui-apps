@@ -30,7 +30,7 @@ class _MenuToolWidgetState extends ITemplateToolState<MenuToolWidget> {
   @override
   VoidCallback? get toolAction => () {
         Modular.dispose<AccessHistoryStore>();
-        Modular.to.popAndPushNamed('/');
+        Modular.to.navigate('/menutools/');
       };
 
   @override

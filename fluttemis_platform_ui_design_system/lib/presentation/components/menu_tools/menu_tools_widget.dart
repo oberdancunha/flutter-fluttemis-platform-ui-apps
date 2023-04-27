@@ -9,18 +9,23 @@ class MenuToolsWidget extends StatelessWidget {
   const MenuToolsWidget({super.key});
 
   @override
-  Widget build(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const MenuTitleWidget(),
-          const SizedBox(height: 20),
-          SizedBox(
-            height: 240,
-            width: 240,
-            child: GenbankToolWidget(
-              filePicker: Modular.get<IFilePicker>(),
-            ),
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.all(20),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const MenuTitleWidget(),
+              const SizedBox(height: 20),
+              SizedBox(
+                height: 240,
+                width: 240,
+                child: GenbankToolWidget(
+                  filePicker: Modular.get<IFilePicker>(),
+                ),
+              ),
+            ],
           ),
-        ],
+        ),
       );
 }

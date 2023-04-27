@@ -1,10 +1,11 @@
 import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/app_scaffold/app_scaffold_widget.dart';
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/failure_message/failure_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/loading/lottie_loading_data_source_details_widget.dart';
 import 'package:flutter/widgets.dart';
 
 import '../application/locus/locus_store.dart';
+import '../application/locusShow/locus_show_store.dart';
 import 'locus_page.dart';
 
 class LocusWidget extends StatefulWidget {
@@ -29,18 +30,22 @@ class _LocusWidgetState extends State<LocusWidget> {
   }
 
   @override
-  Widget build(BuildContext context) => AppScaffoldWidget(
-        body: Center(
-          child: ValueListenableBuilder(
-            valueListenable: widget.locusStore,
-            builder: (_, locusState, __) => locusState.join(
-              (initial) => const SizedBox.shrink(),
-              (loading) => LottieLoadingDataSourceDetailsWidget(
-                accessHistoryStore: widget.accessHistoryStore,
-              ),
-              (success) => LocusPage(locus: success.locus),
-              (failure) => FailureWidget(failure: failure.message),
+  void dispose() {
+    Modular.dispose<LocusShowStore>();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => Center(
+        child: ValueListenableBuilder(
+          valueListenable: widget.locusStore,
+          builder: (_, locusState, __) => locusState.join(
+            (initial) => const SizedBox.shrink(),
+            (loading) => LottieLoadingDataSourceDetailsWidget(
+              accessHistoryStore: widget.accessHistoryStore,
             ),
+            (success) => LocusPage(locus: success.locus),
+            (failure) => FailureWidget(failure: failure.message),
           ),
         ),
       );

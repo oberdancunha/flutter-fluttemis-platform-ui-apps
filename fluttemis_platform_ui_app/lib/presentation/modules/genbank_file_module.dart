@@ -12,13 +12,18 @@ class GenbankFileModule extends Module {
   final List<Bind> binds = [
     Bind.factory<ILocusDataSource>(
       (i) {
-        final genbankFile = i.args.data.toString();
+        final genbankFile = i.args.queryParams['filepath'].toString();
 
         return LocusDataSourceGenbankFile(genbankFile: genbankFile);
       },
     ),
     ...locusModuleBinds,
-    Bind.lazySingleton<LocusShowStore>((_) => LocusShowStore()),
+    Bind.lazySingleton<LocusShowStore>(
+      (_) => LocusShowStore(),
+      onDispose: (locusShowStore) {
+        locusShowStore.dispose();
+      },
+    ),
   ];
 
   @override
