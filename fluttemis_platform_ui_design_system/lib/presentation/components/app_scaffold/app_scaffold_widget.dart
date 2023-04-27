@@ -14,18 +14,20 @@ class AppScaffoldWidget extends StatelessWidget {
     super.key,
   });
 
+  static const titleSize = 15.0;
+
   @override
   Widget build(BuildContext context) => MoveWindow(
         child: PlatformScaffoldWidget(
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset('assets/images/fluttemis.png', width: 15),
-              const SizedBox(width: 5),
+              Image.asset('assets/images/fluttemis.png', width: titleSize),
+              const SizedBox(width: 10),
               const PlatformTextWidget(
                 kAppTitle,
                 textType: TextType.title,
-                fontSize: 13,
+                fontSize: titleSize,
               ),
             ],
           ),
