@@ -30,10 +30,14 @@ class GenbankFileModule extends Module {
   final List<ModularRoute> routes = [
     ChildRoute(
       '/',
-      child: (_, args) => LocusWidget(
-        locusStore: Modular.get<LocusStore>(),
-        accessHistoryStore: Modular.get<AccessHistoryStore>(),
-      ),
+      child: (_, args) {
+        Modular.dispose<LocusShowStore>();
+
+        return LocusWidget(
+          locusStore: Modular.get<LocusStore>(),
+          accessHistoryStore: Modular.get<AccessHistoryStore>(),
+        );
+      },
       transition: TransitionType.fadeIn,
     ),
   ];
