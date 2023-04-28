@@ -12,6 +12,10 @@ mixin TemplateOpenFileToolMixin<TemplateOpenFileTool extends ITemplateTool>
 
   List<String> get extensionsAccepted;
 
+  late String _filePath;
+  set filePath(String filePath) => _filePath = filePath;
+  String get filePath => _filePath;
+
   @override
   Future<void> coreToolAction() async {
     final filePickerPath = await filePicker.filePickerByExtensions(extensionsAccepted);
@@ -24,9 +28,4 @@ mixin TemplateOpenFileToolMixin<TemplateOpenFileTool extends ITemplateTool>
       filePath = filePickerPath;
     }
   }
-
-  late String _filePath;
-
-  set filePath(String filePath) => _filePath = filePath;
-  String get filePath => _filePath;
 }
