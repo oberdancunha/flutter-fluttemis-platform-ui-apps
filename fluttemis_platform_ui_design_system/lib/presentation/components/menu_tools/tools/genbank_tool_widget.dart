@@ -40,7 +40,14 @@ class _GenbankToolWidgetState extends ITemplateToolState<GenbankToolWidget>
   String? get toolActionButtonDescription => FluttemisAppLocalizations.of(context)!.openFile;
 
   @override
-  String get route => '/genbankfile/?filepath=$filePath';
+  String get route {
+    var route = '/genbankfile/';
+    if (filePath.isNotEmpty) {
+      route += '?filepath=$filePath';
+    }
+
+    return route;
+  }
 
   @override
   List<String> get extensionsAccepted => ['genbank', 'gbk', 'gb', 'gbff'];
