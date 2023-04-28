@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:fluttemis_platform_ui_core/store/access_history/access_history_store.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
@@ -28,14 +30,16 @@ class _MenuToolWidgetState extends ITemplateToolState<MenuToolWidget> {
   String get secondaryTitle => FluttemisAppLocalizations.of(context)!.backTo;
 
   @override
-  VoidCallback? get toolAction => () {
-        Modular.dispose<AccessHistoryStore>();
-        Modular.to.navigate('/menutools/');
-      };
-
-  @override
   String? get toolActionButtonDescription => FluttemisAppLocalizations.of(context)!.goToMenu;
 
   @override
   IconType? get toolActionButtonIconType => IconType.menu;
+
+  @override
+  FutureOr<void> coreToolAction() {
+    Modular.dispose<AccessHistoryStore>();
+  }
+
+  @override
+  String get route => '/menutools/';
 }

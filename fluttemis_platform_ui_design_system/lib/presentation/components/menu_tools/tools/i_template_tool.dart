@@ -1,3 +1,6 @@
+import 'dart:async';
+
+import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../platform/icon/icon_type_enum.dart';
@@ -14,12 +17,18 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
   String get image;
   String get mainTitle;
   String get secondaryTitle;
-  String? get description => null;
+  String? get description;
   String? get mainDescriptionExtend => null;
   String? get secondaryDescriptionExtend => null;
-  IconType? get toolActionButtonIconType => null;
-  String? get toolActionButtonDescription => null;
-  VoidCallback? get toolAction => null;
+  IconType? get toolActionButtonIconType;
+  String? get toolActionButtonDescription;
+  String get route;
+  FutureOr<void> coreToolAction();
+  VoidCallback get callRoute => () => Modular.to.navigate(route);
+  VoidCallback? get toolAction => () async {
+        await coreToolAction.call();
+        callRoute();
+      };
 
   PlatformToolCardWidget get platformToolCardWidget => PlatformToolCardWidget(
         image: image,
