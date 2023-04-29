@@ -283,6 +283,12 @@ abstract class FluttemisAppLocalizations {
   /// **'Dados gerais dos produtos'**
   String get productsOverview;
 
+  /// No description provided for @totalFeatureProduct.
+  ///
+  /// In pt, this message translates to:
+  /// **'Total de features com produtos'**
+  String get totalFeatureProduct;
+
   /// No description provided for @totalTypeProducts.
   ///
   /// In pt, this message translates to:

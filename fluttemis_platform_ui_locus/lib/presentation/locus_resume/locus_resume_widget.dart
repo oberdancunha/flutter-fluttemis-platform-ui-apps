@@ -49,6 +49,8 @@ class _LocusResumeWidgetState extends State<LocusResumeWidget> {
                         _locusShowStore.locusToBeShown.featuresReport.featuresTypesCount,
                   ),
                   LocusProductsOverviewWidget(
+                    totalProductsFeatures:
+                        _locusShowStore.locusToBeShown.featuresReport.totalProductsFeatures,
                     featuresTypesProductsCount:
                         _locusShowStore.locusToBeShown.featuresReport.featuresTypesProductsCount,
                   ),

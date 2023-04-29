@@ -87,6 +87,7 @@ flutter:
     - assets/images/data/genome_shape.png
     - assets/images/data/genome_date.png
     - assets/images/data/total_features.png
+    - assets/images/data/total_product_feature.png
     - assets/images/data/total_type_features.png
     - assets/images/data/count_type_features.png
     - assets/images/data/total_locus_products.png

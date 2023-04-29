@@ -101,6 +101,9 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get productsOverview => 'Dados gerais dos produtos';
 
   @override
+  String get totalFeatureProduct => 'Total de features com produtos';
+
+  @override
   String get totalTypeProducts => 'Total de tipos de produtos';
 
   @override

@@ -70,8 +70,10 @@ DA:24,2
 DA:25,2
 DA:26,2
 DA:27,2
-LF:10
-LH:10
+DA:30,3
+DA:31,3
+LF:12
+LH:12
 end_of_record
 SF:lib/domain/locus/location_position.dart
 DA:8,11

@@ -14,7 +14,7 @@ void main() {
   });
 
   test(
-    'Get features list separated by types',
+    'Should get features list separated by types',
     () {
       final mockFeaturesTypesList = getFeaturesByList();
       expect(featuresReport.featuresTypesList, equals(mockFeaturesTypesList));
@@ -22,7 +22,7 @@ void main() {
   );
 
   test(
-    'Get count of features list separated by types',
+    'Should get count of features list separated by types',
     () {
       final mockFeaturesTypesListCount = getFeaturesByTypesCount();
       expect(featuresReport.featuresTypesCount, equals(mockFeaturesTypesListCount));
@@ -30,10 +30,14 @@ void main() {
   );
 
   test(
-    'Get products count of features separated by types',
+    'Should get products count of features separated by types',
     () {
       final mockFeaturesByTypesProductsCount = getFeaturesByTypesProductsCount();
       expect(featuresReport.featuresTypesProductsCount, equals(mockFeaturesByTypesProductsCount));
     },
   );
+
+  test('Should count total products for all features', () {
+    expect(featuresReport.totalProductsFeatures, equals(3));
+  });
 }

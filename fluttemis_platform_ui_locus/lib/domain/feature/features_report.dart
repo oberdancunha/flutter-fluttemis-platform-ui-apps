@@ -26,4 +26,8 @@ class FeaturesReport extends Equatable {
         featuresTypesCount,
         featuresTypesCount,
       ];
+
+  int get totalProductsFeatures => featuresTypesProductsCount.isNotEmpty
+      ? featuresTypesProductsCount.values.reduce((value, element) => value + element)
+      : 0;
 }

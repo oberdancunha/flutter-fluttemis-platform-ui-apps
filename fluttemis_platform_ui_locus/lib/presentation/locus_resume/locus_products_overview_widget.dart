@@ -10,9 +10,11 @@ import 'package:flutter/widgets.dart';
 import '../../domain/feature/feature_product_type.dart';
 
 class LocusProductsOverviewWidget extends StatelessWidget {
+  final int totalProductsFeatures;
   final Map<String, int> featuresTypesProductsCount;
 
   const LocusProductsOverviewWidget({
+    required this.totalProductsFeatures,
     required this.featuresTypesProductsCount,
     super.key,
   });
@@ -24,6 +26,11 @@ class LocusProductsOverviewWidget extends StatelessWidget {
     return OverviewDataListWidget(
       title: fluttemisAppLocalizations.productsOverview,
       listOverviewData: [
+        OverviewDataModel(
+          value: totalProductsFeatures.toString(),
+          description: fluttemisAppLocalizations.totalFeatureProduct,
+          image: 'assets/images/data/total_product_feature.png',
+        ),
         OverviewDataModel(
           value: featuresTypesProductsCount.length.toString(),
           description: fluttemisAppLocalizations.totalTypeProducts,
