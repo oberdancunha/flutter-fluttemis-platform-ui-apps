@@ -36,8 +36,10 @@ class _MenuToolWidgetState extends ITemplateToolState<MenuToolWidget> {
   IconType? get toolActionButtonIconType => IconType.menu;
 
   @override
-  FutureOr<void> coreToolAction() {
+  FutureOr<bool> coreToolAction() {
     Modular.dispose<AccessHistoryStore>();
+
+    return true;
   }
 
   @override

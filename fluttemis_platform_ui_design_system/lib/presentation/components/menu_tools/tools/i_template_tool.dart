@@ -23,11 +23,13 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
   IconType? get toolActionButtonIconType;
   String? get toolActionButtonDescription;
   String get route;
-  FutureOr<void> coreToolAction();
+  FutureOr<bool> coreToolAction();
   VoidCallback get callRoute => () => Modular.to.navigate(route);
   VoidCallback? get toolAction => () async {
-        await coreToolAction.call();
-        callRoute();
+        final goToTheNext = await coreToolAction.call();
+        if (goToTheNext) {
+          callRoute();
+        }
       };
 
   PlatformToolCardWidget get platformToolCardWidget => PlatformToolCardWidget(

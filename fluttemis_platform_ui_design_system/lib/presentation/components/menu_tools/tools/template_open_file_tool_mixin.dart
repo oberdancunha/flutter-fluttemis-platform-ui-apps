@@ -17,7 +17,7 @@ mixin TemplateOpenFileToolMixin<TemplateOpenFileTool extends ITemplateTool>
   String get filePath => _filePath;
 
   @override
-  Future<void> coreToolAction() async {
+  Future<bool> coreToolAction() async {
     final filePickerPath = await filePicker.filePickerByExtensions(extensionsAccepted);
     if (filePickerPath != null) {
       Modular.get<AccessHistoryStore>().setLastToolAccessed(widget);
@@ -26,6 +26,10 @@ mixin TemplateOpenFileToolMixin<TemplateOpenFileTool extends ITemplateTool>
         getFileNameFromPath(filePickerPath),
       );
       filePath = filePickerPath;
+
+      return true;
     }
+
+    return false;
   }
 }
