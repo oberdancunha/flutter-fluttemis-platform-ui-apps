@@ -43,12 +43,12 @@ class _LocusResumeWidgetState extends State<LocusResumeWidget> {
                 children: [
                   GenomeOverviewWidget(locus: _locusShowStore.locusToBeShown),
                   LocusFeaturesOverviewWidget(
-                    features: _locusShowStore.locusToBeShown.features,
                     total: _locusShowStore.locusToBeShown.features.count(),
                     featuresTypesCount:
                         _locusShowStore.locusToBeShown.featuresReport.featuresTypesCount,
                   ),
                   LocusProductsOverviewWidget(
+                    features: _locusShowStore.locusToBeShown.features,
                     totalProductsFeatures:
                         _locusShowStore.locusToBeShown.featuresReport.totalProductsFeatures,
                     featuresTypesProductsCount:
