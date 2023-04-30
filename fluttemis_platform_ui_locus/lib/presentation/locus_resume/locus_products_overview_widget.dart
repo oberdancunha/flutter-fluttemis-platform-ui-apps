@@ -34,7 +34,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
         OverviewDataModel(
           value: featuresTypesProductsCount.length.toString(),
           description: fluttemisAppLocalizations.totalTypeProducts,
-          image: 'assets/images/data/total_locus_products.png',
+          image: 'assets/images/data/total_type_product.png',
         ),
       ],
       widgets: [
