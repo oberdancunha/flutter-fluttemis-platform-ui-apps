@@ -24,7 +24,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
 
     return OverviewDataListWidget(
-      title: fluttemisAppLocalizations.productsOverview,
+      title: fluttemisAppLocalizations.productOverview,
       listOverviewData: [
         OverviewDataModel(
           value: totalProductsFeatures.toString(),
@@ -33,14 +33,14 @@ class LocusProductsOverviewWidget extends StatelessWidget {
         ),
         OverviewDataModel(
           value: featuresTypesProductsCount.length.toString(),
-          description: fluttemisAppLocalizations.totalTypeProducts,
+          description: fluttemisAppLocalizations.totalTypeProduct,
           image: 'assets/images/data/total_type_product.png',
         ),
       ],
       widgets: [
         if (featuresTypesProductsCount.isNotEmpty)
           OverviewMultipleDataListWidget(
-            title: fluttemisAppLocalizations.countTypeProducts,
+            title: fluttemisAppLocalizations.countTypeProduct,
             dataListLength: featuresTypesProductsCount.keys.length,
             children: featuresTypesProductsCount.keys
                 .map(

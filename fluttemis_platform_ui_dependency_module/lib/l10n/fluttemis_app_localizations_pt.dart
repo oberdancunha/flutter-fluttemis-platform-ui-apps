@@ -86,28 +86,28 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get annotationDate => 'Data em que a anotação tornou-se pública';
 
   @override
-  String get featuresOverview => 'Dados gerais de features';
+  String get featureOverview => 'Dados gerais de features';
 
   @override
-  String get totalFeatures => 'Total de features';
+  String get totalFeature => 'Total de features';
 
   @override
-  String get totalTypeFeatures => 'Total de tipos de features';
+  String get totalTypeFeature => 'Total de tipos de features';
 
   @override
-  String get countTypeFeatures => 'Total de features por tipo';
+  String get countTypeFeature => 'Total de features por tipo';
 
   @override
-  String get productsOverview => 'Dados gerais dos produtos';
+  String get productOverview => 'Dados gerais dos produtos';
 
   @override
   String get totalFeatureProduct => 'Total de features com produtos';
 
   @override
-  String get totalTypeProducts => 'Total de tipos de produtos';
+  String get totalTypeProduct => 'Total de tipos de produtos';
 
   @override
-  String get countTypeProducts => 'Total de produtos por tipo';
+  String get countTypeProduct => 'Total de produtos por tipo';
 
   @override
   String get openLocusTable => 'Abrir tabela de locus';
@@ -116,13 +116,13 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get tblGenomeName => 'Genoma';
 
   @override
-  String get tblSequencesLength => 'Bases';
+  String get tblSequenceLength => 'Bases';
 
   @override
   String get tblGenomeCodeAccession => 'Acesso';
 
   @override
-  String get tblTotalFeatures => 'Features';
+  String get tblTotalFeature => 'Features';
 
   @override
   String get tblAnnotationDate => 'Data';
@@ -185,13 +185,13 @@ class FluttemisAppLocalizationsPt extends FluttemisAppLocalizations {
   String get copied => 'Copiado';
 
   @override
-  String get featuresTable => 'Tabela de features';
+  String get featureTable => 'Tabela de features';
 
   @override
-  String get featuresHintTextSearch => 'Filtrar dados de features';
+  String get featureHintTextSearch => 'Filtrar dados de features';
 
   @override
-  String get emptyFeaturesTable => 'Tabela de features vazia';
+  String get emptyFeatureTable => 'Tabela de features vazia';
 
   @override
   String get tblStart => 'Início';

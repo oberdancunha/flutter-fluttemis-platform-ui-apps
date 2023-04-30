@@ -25,7 +25,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
 
     return LayoutBuilder(
       builder: (_, constraints) => DataTableWidget(
-        hintTextSearch: fluttemisAppLocalizations.featuresHintTextSearch,
+        hintTextSearch: fluttemisAppLocalizations.featureHintTextSearch,
         dataTableModel: DataTableModel(
           columns: [
             DataTableColumnModel(
@@ -39,7 +39,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
               isSortable: true,
             ),
             DataTableColumnModel(
-              label: fluttemisAppLocalizations.tblSequencesLength,
+              label: fluttemisAppLocalizations.tblSequenceLength,
               isNumeric: true,
               isSortable: true,
             ),
@@ -162,7 +162,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
               )
               .asList(),
         ),
-        emptyMessage: fluttemisAppLocalizations.emptyFeaturesTable,
+        emptyMessage: fluttemisAppLocalizations.emptyFeatureTable,
       ),
     );
   }

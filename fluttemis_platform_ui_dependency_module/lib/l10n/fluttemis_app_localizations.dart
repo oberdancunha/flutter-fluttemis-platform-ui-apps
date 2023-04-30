@@ -253,35 +253,35 @@ abstract class FluttemisAppLocalizations {
   /// **'Data em que a anotação tornou-se pública'**
   String get annotationDate;
 
-  /// No description provided for @featuresOverview.
+  /// No description provided for @featureOverview.
   ///
   /// In pt, this message translates to:
   /// **'Dados gerais de features'**
-  String get featuresOverview;
+  String get featureOverview;
 
-  /// No description provided for @totalFeatures.
+  /// No description provided for @totalFeature.
   ///
   /// In pt, this message translates to:
   /// **'Total de features'**
-  String get totalFeatures;
+  String get totalFeature;
 
-  /// No description provided for @totalTypeFeatures.
+  /// No description provided for @totalTypeFeature.
   ///
   /// In pt, this message translates to:
   /// **'Total de tipos de features'**
-  String get totalTypeFeatures;
+  String get totalTypeFeature;
 
-  /// No description provided for @countTypeFeatures.
+  /// No description provided for @countTypeFeature.
   ///
   /// In pt, this message translates to:
   /// **'Total de features por tipo'**
-  String get countTypeFeatures;
+  String get countTypeFeature;
 
-  /// No description provided for @productsOverview.
+  /// No description provided for @productOverview.
   ///
   /// In pt, this message translates to:
   /// **'Dados gerais dos produtos'**
-  String get productsOverview;
+  String get productOverview;
 
   /// No description provided for @totalFeatureProduct.
   ///
@@ -289,17 +289,17 @@ abstract class FluttemisAppLocalizations {
   /// **'Total de features com produtos'**
   String get totalFeatureProduct;
 
-  /// No description provided for @totalTypeProducts.
+  /// No description provided for @totalTypeProduct.
   ///
   /// In pt, this message translates to:
   /// **'Total de tipos de produtos'**
-  String get totalTypeProducts;
+  String get totalTypeProduct;
 
-  /// No description provided for @countTypeProducts.
+  /// No description provided for @countTypeProduct.
   ///
   /// In pt, this message translates to:
   /// **'Total de produtos por tipo'**
-  String get countTypeProducts;
+  String get countTypeProduct;
 
   /// No description provided for @openLocusTable.
   ///
@@ -313,11 +313,11 @@ abstract class FluttemisAppLocalizations {
   /// **'Genoma'**
   String get tblGenomeName;
 
-  /// No description provided for @tblSequencesLength.
+  /// No description provided for @tblSequenceLength.
   ///
   /// In pt, this message translates to:
   /// **'Bases'**
-  String get tblSequencesLength;
+  String get tblSequenceLength;
 
   /// No description provided for @tblGenomeCodeAccession.
   ///
@@ -325,11 +325,11 @@ abstract class FluttemisAppLocalizations {
   /// **'Acesso'**
   String get tblGenomeCodeAccession;
 
-  /// No description provided for @tblTotalFeatures.
+  /// No description provided for @tblTotalFeature.
   ///
   /// In pt, this message translates to:
   /// **'Features'**
-  String get tblTotalFeatures;
+  String get tblTotalFeature;
 
   /// No description provided for @tblAnnotationDate.
   ///
@@ -451,23 +451,23 @@ abstract class FluttemisAppLocalizations {
   /// **'Copiado'**
   String get copied;
 
-  /// No description provided for @featuresTable.
+  /// No description provided for @featureTable.
   ///
   /// In pt, this message translates to:
   /// **'Tabela de features'**
-  String get featuresTable;
+  String get featureTable;
 
-  /// No description provided for @featuresHintTextSearch.
+  /// No description provided for @featureHintTextSearch.
   ///
   /// In pt, this message translates to:
   /// **'Filtrar dados de features'**
-  String get featuresHintTextSearch;
+  String get featureHintTextSearch;
 
-  /// No description provided for @emptyFeaturesTable.
+  /// No description provided for @emptyFeatureTable.
   ///
   /// In pt, this message translates to:
   /// **'Tabela de features vazia'**
-  String get emptyFeaturesTable;
+  String get emptyFeatureTable;
 
   /// No description provided for @tblStart.
   ///

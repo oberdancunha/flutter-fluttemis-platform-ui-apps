@@ -31,22 +31,22 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
     const assetsImagesPath = 'assets/images/data';
 
     return OverviewDataListWidget(
-      title: fluttemisAppLocalizations.featuresOverview,
+      title: fluttemisAppLocalizations.featureOverview,
       listOverviewData: [
         OverviewDataModel(
           value: total.toString(),
-          description: fluttemisAppLocalizations.totalFeatures,
+          description: fluttemisAppLocalizations.totalFeature,
           image: '$assetsImagesPath/total_feature.png',
         ),
         OverviewDataModel(
           value: featuresTypesCount.length.toString(),
-          description: fluttemisAppLocalizations.totalTypeFeatures,
+          description: fluttemisAppLocalizations.totalTypeFeature,
           image: '$assetsImagesPath/total_type_feature.png',
         ),
       ],
       widgets: [
         OverviewMultipleDataListWidget(
-          title: fluttemisAppLocalizations.countTypeFeatures,
+          title: fluttemisAppLocalizations.countTypeFeature,
           dataListLength: featuresTypesCount.keys.length,
           children: featuresTypesCount.keys
               .map(
@@ -71,7 +71,7 @@ class LocusFeaturesOverviewWidget extends StatelessWidget {
               iconType: IconType.table,
               size: 10,
             ),
-            label: fluttemisAppLocalizations.featuresTable,
+            label: fluttemisAppLocalizations.featureTable,
             fontSize: 9,
             onPressed: () => platformShowDialog(
               context: context,
