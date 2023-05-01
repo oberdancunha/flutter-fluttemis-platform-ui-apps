@@ -13,7 +13,7 @@ packages:
 
 command:
   bootstrap:
-    runPubGetInParallel: true
+    runPubGetInParallel: false
   version:
     updateGitTagRefs: true
     branch: main
