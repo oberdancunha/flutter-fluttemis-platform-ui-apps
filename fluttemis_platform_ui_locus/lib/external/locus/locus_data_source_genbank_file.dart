@@ -1,4 +1,5 @@
 import 'package:fluttemis_platform_ui_core/domain/file_failure.dart';
+import 'package:fluttemis_platform_ui_core/utils/custom_date_format.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/foundation.dart';
 
@@ -36,7 +37,9 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
                 type: data.locus.type,
                 shape: data.locus.shape,
                 organism: data.locusDetails.source!,
-                releaseDate: data.locus.releaseDate,
+                releaseDate: DateTime.parse(
+                  CustomDateFormat.yMd(data.locus.releaseDate).dateFormatted,
+                ),
                 sequence: data.locus.sequence,
                 features: data.features
                     .asList()

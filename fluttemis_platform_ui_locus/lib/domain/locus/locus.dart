@@ -13,7 +13,7 @@ class Locus extends Equatable {
   final KtList<Feature> features;
   final FeaturesReport featuresReport;
   final String? shape;
-  final String? releaseDate;
+  final DateTime? releaseDate;
   final String? sequence;
 
   const Locus({

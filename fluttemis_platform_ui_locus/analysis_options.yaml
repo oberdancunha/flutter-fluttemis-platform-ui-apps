@@ -30,7 +30,7 @@ dart_code_metrics:
     lines-of-executable-code: 100
     number-of-arguments: 5
     maximum-nesting: 5
-    source-lines-of-code: 63
+    source-lines-of-code: 65
     number-of-parameters: 6
     root-folder: ./
   metrics-exclude:

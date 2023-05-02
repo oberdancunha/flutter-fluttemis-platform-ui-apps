@@ -12,7 +12,7 @@ class LocusDto extends Equatable {
   final String organism;
   final List<FeatureDto> features;
   final String? shape;
-  final String? releaseDate;
+  final DateTime? releaseDate;
   final String? sequence;
 
   const LocusDto({
@@ -55,7 +55,7 @@ class LocusDto extends Equatable {
     String? organism,
     List<FeatureDto>? features,
     String? shape,
-    String? releaseDate,
+    DateTime? releaseDate,
     String? sequence,
   }) =>
       LocusDto(

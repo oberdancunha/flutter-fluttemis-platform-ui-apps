@@ -15,19 +15,14 @@ class CustomDateFormat {
     return CustomDateFormat._(dateFormatted);
   }
 
-  factory CustomDateFormat.fromyMdToyMMMMd(String localeName, String date) {
-    final dateFormatted = DateFormat.yMMMMd(localeName).format(
-      DateTime.parse(
-        CustomDateFormat.yMd(date).dateFormatted,
-      ),
-    );
+  factory CustomDateFormat.fromyMdToyMMMMd(String localeName, DateTime date) {
+    final dateFormatted = DateFormat.yMMMMd(localeName).format(date);
 
     return CustomDateFormat._(dateFormatted);
   }
 
-  factory CustomDateFormat.fromyMdToMillisecondsSinceEpoch(String date) {
-    final dateFormatted =
-        DateTime.parse(CustomDateFormat.yMd(date).dateFormatted).millisecondsSinceEpoch.toString();
+  factory CustomDateFormat.fromyMdToMillisecondsSinceEpoch(DateTime date) {
+    final dateFormatted = date.millisecondsSinceEpoch.toString();
 
     return CustomDateFormat._(dateFormatted);
   }
