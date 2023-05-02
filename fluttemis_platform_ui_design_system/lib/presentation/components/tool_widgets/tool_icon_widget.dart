@@ -1,16 +1,17 @@
 import 'package:flutter/widgets.dart';
 
 import '../platform/circular_image/platform_circular_image_widget.dart';
+import '../platform/color/platform_color.dart';
 
 class ToolIconWidget extends StatelessWidget {
   final String image;
-  final Color imageColor;
   final double width;
+  final int? imageColor;
 
   const ToolIconWidget({
     required this.image,
-    required this.imageColor,
     required this.width,
+    this.imageColor,
     super.key,
   });
 
@@ -21,7 +22,7 @@ class ToolIconWidget extends StatelessWidget {
           image,
           fit: BoxFit.contain,
           width: width / 5,
-          color: imageColor,
+          color: getPlatformColor(imageColor ?? 0XFFFFFFFF),
         ),
       );
 }

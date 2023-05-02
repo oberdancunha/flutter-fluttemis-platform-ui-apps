@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import '../platform/tool_icon/platform_tool_icon_widget.dart';
 import '../platform/tooltip/platform_tooltip_widget.dart';
+import 'tool_icon_widget.dart';
 
 class ToolIconActionWidget extends StatelessWidget {
   final String image;
@@ -22,7 +22,7 @@ class ToolIconActionWidget extends StatelessWidget {
         message: message,
         child: GestureDetector(
           onTap: toolAction,
-          child: PlatformToolIconWidget(
+          child: ToolIconWidget(
             image: image,
             width: width,
           ),

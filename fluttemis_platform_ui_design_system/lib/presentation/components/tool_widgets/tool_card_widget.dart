@@ -4,7 +4,7 @@ import '../platform/card/platform_card_widget.dart';
 import '../platform/icon/icon_type_enum.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/icon_button/platform_icon_button_widget.dart';
-import '../platform/tool_icon/platform_tool_icon_widget.dart';
+import 'tool_icon_widget.dart';
 
 class ToolCardWidget extends StatelessWidget {
   final String image;
@@ -54,7 +54,7 @@ class ToolCardWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    PlatformToolIconWidget(
+                    ToolIconWidget(
                       image: image,
                       width: 240,
                     ),
