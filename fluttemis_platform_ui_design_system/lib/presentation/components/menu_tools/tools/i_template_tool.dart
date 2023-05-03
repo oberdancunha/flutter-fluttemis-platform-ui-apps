@@ -48,7 +48,7 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
         builder: (_, constraints) => ToolIconActionWidget(
           image: image,
           message: '$secondaryTitle $mainTitle',
-          width: constraints.maxWidth,
+          width: 120,
           toolAction: toolAction!,
         ),
       );
@@ -57,9 +57,9 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
   Widget build(BuildContext context) => LayoutBuilder(
         builder: (_, constraints) {
           final aspectRatioElementToEntireScreen =
-              constraints.maxWidth / MediaQuery.of(context).size.width;
+              constraints.maxHeight / MediaQuery.of(context).size.height;
 
-          return aspectRatioElementToEntireScreen > 0.11
+          return aspectRatioElementToEntireScreen > 0.07
               ? platformToolCardWidget
               : platformToolIconWidget;
         },

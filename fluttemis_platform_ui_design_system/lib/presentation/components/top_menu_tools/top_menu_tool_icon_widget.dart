@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class TopMenuToolIconWidget extends StatelessWidget {
   final Widget child;
@@ -10,7 +10,7 @@ class TopMenuToolIconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-        width: 105,
+        height: 40,
         child: child,
       );
 }
