@@ -34,7 +34,6 @@ dependencies:
   data_table_2: 2.3.10
   sealed_unions: ^3.0.3+1
   bitsdojo_window: ^0.1.5
-  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

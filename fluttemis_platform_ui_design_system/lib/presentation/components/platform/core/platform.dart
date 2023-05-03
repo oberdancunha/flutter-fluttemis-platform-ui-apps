@@ -8,7 +8,7 @@ enum CurrentPlatform {
 
 CurrentPlatform getCurrentPlatform() {
   if (Platform.isMacOS) {
-    return CurrentPlatform.isMacOS;
+    return CurrentPlatform.isWindows;
   } else if (Platform.isWindows) {
     return CurrentPlatform.isWindows;
   } else {
