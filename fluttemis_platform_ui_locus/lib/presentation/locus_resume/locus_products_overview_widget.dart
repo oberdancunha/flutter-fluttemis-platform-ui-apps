@@ -77,14 +77,14 @@ class LocusProductsOverviewWidget extends StatelessWidget {
       titleComplementWidgets: [
         SizedBox(
           height: 25,
-          width: 85,
+          width: 90,
           child: PlatformIconButtonWidget(
             icon: const PlatformIconWidget(
               iconType: IconType.table,
-              size: 10,
+              size: 12,
             ),
             label: fluttemisAppLocalizations.featureTable,
-            fontSize: 9,
+            fontSize: 10,
             onPressed: () => platformShowDialog(
               context: context,
               builder: (_) => PlatformDialogWidget(
