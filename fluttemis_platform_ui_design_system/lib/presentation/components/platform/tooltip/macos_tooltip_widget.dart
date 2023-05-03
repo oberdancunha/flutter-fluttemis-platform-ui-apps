@@ -13,6 +13,7 @@ class MacosTooltipWidget extends PlatformTooltipWidget {
   @override
   Widget build(BuildContext context) => MacosTooltip(
         message: message,
+        useMousePosition: false,
         child: child,
       );
 }
