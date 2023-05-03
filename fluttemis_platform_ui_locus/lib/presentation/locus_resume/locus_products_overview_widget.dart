@@ -77,6 +77,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
       titleComplementWidgets: [
         SizedBox(
           height: 25,
+          width: 85,
           child: PlatformIconButtonWidget(
             icon: const PlatformIconWidget(
               iconType: IconType.table,

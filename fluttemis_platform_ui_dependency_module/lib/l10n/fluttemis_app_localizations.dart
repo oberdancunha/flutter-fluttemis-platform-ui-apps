@@ -454,7 +454,7 @@ abstract class FluttemisAppLocalizations {
   /// No description provided for @featureTable.
   ///
   /// In pt, this message translates to:
-  /// **'Tabela de features'**
+  /// **'Features'**
   String get featureTable;
 
   /// No description provided for @featureHintTextSearch.
