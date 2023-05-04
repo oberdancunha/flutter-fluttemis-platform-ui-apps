@@ -16,8 +16,8 @@ class MenuToolsWidget extends StatelessWidget {
               MenuTitleWidget(),
               SizedBox(height: 20),
               SizedBox(
-                height: 240,
-                width: 240,
+                height: 260,
+                width: 260,
                 child: GenbankToolWidget(),
               ),
             ],

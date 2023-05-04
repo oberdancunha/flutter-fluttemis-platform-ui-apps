@@ -18,8 +18,8 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
   String get mainTitle;
   String get secondaryTitle;
   String? get description;
-  String? get mainDescriptionExtend => null;
-  String? get secondaryDescriptionExtend => null;
+  String? get mainHint => null;
+  String? get hintComplement => null;
   IconType? get toolActionButtonIconType;
   String? get toolActionButtonDescription;
   String get route;
@@ -37,8 +37,8 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
         mainTitle: mainTitle,
         secondaryTitle: secondaryTitle,
         description: description,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,

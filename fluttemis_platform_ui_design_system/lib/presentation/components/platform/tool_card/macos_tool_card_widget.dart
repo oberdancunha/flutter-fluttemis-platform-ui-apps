@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import '../../tool_widgets/tool_card_widget.dart';
+import '../../tool_widgets/tool_card/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class MacosToolCardWidget extends PlatformToolCardWidget {
@@ -10,8 +10,8 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
     required super.mainTitle,
     required super.secondaryTitle,
     super.description,
-    super.mainDescriptionExtend,
-    super.secondaryDescriptionExtend,
+    super.mainHint,
+    super.hintComplement,
     super.toolActionButtonIconType,
     super.toolActionButtonDescription,
     super.toolAction,
@@ -33,8 +33,8 @@ class MacosToolCardWidget extends PlatformToolCardWidget {
         toolActionButtonIconType: toolActionButtonIconType,
         description: description,
         descriptionStyle: MacosTheme.of(context).typography.body,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );

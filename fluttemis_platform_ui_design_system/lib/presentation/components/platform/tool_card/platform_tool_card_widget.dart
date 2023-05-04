@@ -12,8 +12,8 @@ class PlatformToolCardWidget
   final String mainTitle;
   final String secondaryTitle;
   final String? description;
-  final String? mainDescriptionExtend;
-  final String? secondaryDescriptionExtend;
+  final String? mainHint;
+  final String? hintComplement;
   final IconType? toolActionButtonIconType;
   final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
@@ -23,8 +23,8 @@ class PlatformToolCardWidget
     required this.mainTitle,
     required this.secondaryTitle,
     this.description,
-    this.mainDescriptionExtend,
-    this.secondaryDescriptionExtend,
+    this.mainHint,
+    this.hintComplement,
     this.toolActionButtonIconType,
     this.toolActionButtonDescription,
     this.toolAction,
@@ -37,8 +37,8 @@ class PlatformToolCardWidget
         mainTitle: mainTitle,
         secondaryTitle: secondaryTitle,
         description: description,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
@@ -50,8 +50,8 @@ class PlatformToolCardWidget
         mainTitle: mainTitle,
         secondaryTitle: secondaryTitle,
         description: description,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
@@ -63,8 +63,8 @@ class PlatformToolCardWidget
         mainTitle: mainTitle,
         secondaryTitle: secondaryTitle,
         description: description,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonIconType: toolActionButtonIconType,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,

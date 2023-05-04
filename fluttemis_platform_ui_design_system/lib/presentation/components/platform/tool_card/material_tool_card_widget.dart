@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../tool_widgets/tool_card_widget.dart';
+import '../../tool_widgets/tool_card/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class MaterialToolCardWidget extends PlatformToolCardWidget {
@@ -9,8 +9,8 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
     required super.secondaryTitle,
     required super.image,
     super.description,
-    super.mainDescriptionExtend,
-    super.secondaryDescriptionExtend,
+    super.mainHint,
+    super.hintComplement,
     super.toolActionButtonIconType,
     super.toolActionButtonDescription,
     super.toolAction,
@@ -32,8 +32,8 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
         toolActionButtonIconType: toolActionButtonIconType,
         description: description,
         descriptionStyle: Theme.of(context).textTheme.bodyText2,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );

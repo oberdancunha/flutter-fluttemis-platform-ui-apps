@@ -1,6 +1,6 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-import '../../tool_widgets/tool_card_widget.dart';
+import '../../tool_widgets/tool_card/tool_card_widget.dart';
 import 'platform_tool_card_widget.dart';
 
 class WindowsToolCardWidget extends PlatformToolCardWidget {
@@ -9,8 +9,8 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
     required super.mainTitle,
     required super.secondaryTitle,
     super.description,
-    super.mainDescriptionExtend,
-    super.secondaryDescriptionExtend,
+    super.mainHint,
+    super.hintComplement,
     super.toolActionButtonIconType,
     super.toolActionButtonDescription,
     super.toolAction,
@@ -30,8 +30,8 @@ class WindowsToolCardWidget extends PlatformToolCardWidget {
         toolActionButtonIconType: toolActionButtonIconType,
         description: description,
         descriptionStyle: FluentTheme.of(context).typography.caption,
-        mainDescriptionExtend: mainDescriptionExtend,
-        secondaryDescriptionExtend: secondaryDescriptionExtend,
+        mainHint: mainHint,
+        hintComplement: hintComplement,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );

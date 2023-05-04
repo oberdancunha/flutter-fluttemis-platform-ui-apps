@@ -27,11 +27,10 @@ class _GenbankToolWidgetState extends ITemplateToolState<GenbankToolWidget>
   String? get description => FluttemisAppLocalizations.of(context)!.genbankDescription;
 
   @override
-  String? get mainDescriptionExtend => extensionsAccepted.join(', ');
+  String? get mainHint => extensionsAccepted.join(', ');
 
   @override
-  String? get secondaryDescriptionExtend =>
-      FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions;
+  String? get hintComplement => FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions;
 
   @override
   IconType? get toolActionButtonIconType => IconType.openFile;
