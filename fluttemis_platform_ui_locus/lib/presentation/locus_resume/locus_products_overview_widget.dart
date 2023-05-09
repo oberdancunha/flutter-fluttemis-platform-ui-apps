@@ -57,7 +57,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
                     value: featuresTypesProductsCount[productType].toString(),
                     label: productType,
                     representativeWidget: PlatformContainerWidget(
-                      backgroundColor: getPlatformColor(
+                      backgroundColor: PlatformColor(
                         FeatureProductType.values
                             .firstWhere(
                               (featureProductType) =>
@@ -65,7 +65,7 @@ class LocusProductsOverviewWidget extends StatelessWidget {
                                   productType.toLowerCase(),
                             )
                             .color,
-                      ),
+                      )(),
                       width: 30,
                       height: 4,
                     ),

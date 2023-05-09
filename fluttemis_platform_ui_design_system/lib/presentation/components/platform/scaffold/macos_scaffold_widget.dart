@@ -16,7 +16,7 @@ class MacosScaffoldWidget extends PlatformScaffoldWidget {
   Widget build(BuildContext context) => MacosWindow(
         titleBar: TitleBar(
           height: 40,
-          dividerColor: getPlatformColor(0x00000000),
+          dividerColor: PlatformColor(0x00000000)(),
           title: title,
         ),
         child: body,

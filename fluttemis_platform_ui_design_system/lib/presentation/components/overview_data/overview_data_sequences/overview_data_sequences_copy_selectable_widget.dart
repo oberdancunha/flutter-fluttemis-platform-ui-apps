@@ -90,7 +90,7 @@ class _OverviewDataSequencesCopySelectableWidgetState
                 selectWordOnDoubleTap: true,
                 scrollController: widget.scrollController,
                 selectionController: _selectionController,
-                selectionColor: getPlatformColor(isSequencesCopied ? 0x73F44336 : 0x702195F3),
+                selectionColor: PlatformColor(isSequencesCopied ? 0x73F44336 : 0x702195F3)(),
                 showPopup: false,
                 child: widget.child,
               );

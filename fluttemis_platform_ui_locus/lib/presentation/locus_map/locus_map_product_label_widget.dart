@@ -39,7 +39,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
                             PlatformContainerWidget(
                               width: 100,
                               height: 2.5,
-                              backgroundColor: getPlatformColor(productType.color),
+                              backgroundColor: PlatformColor(productType.color)(),
                             ),
                           ],
                         ),

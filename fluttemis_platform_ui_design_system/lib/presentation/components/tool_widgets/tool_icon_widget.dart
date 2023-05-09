@@ -22,7 +22,7 @@ class ToolIconWidget extends StatelessWidget {
           image,
           fit: BoxFit.contain,
           width: width / 5,
-          color: getPlatformColor(imageColor ?? 0XFFFFFFFF),
+          color: PlatformColor(imageColor ?? 0XFFFFFFFF)(),
         ),
       );
 }

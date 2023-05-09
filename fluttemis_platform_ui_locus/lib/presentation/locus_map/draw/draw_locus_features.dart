@@ -30,7 +30,7 @@ class DrawLocusFeatures extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final touchyCanvas = TouchyCanvas(context, canvas);
     locusFeatures.forEach((locusFeature) {
-      final paint = Paint()..color = getPlatformColor(locusFeature.productType.color);
+      final paint = Paint()..color = PlatformColor(locusFeature.productType.color)();
       final featureStart = locusFeature.startToDraw * scale;
       final featureEnd = locusFeature.endToDraw * scale;
       final onTapUp = (_) {

@@ -136,7 +136,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                             feature.product ?? '-',
                             textStyle: defaultTextStyle,
                             fontSize: _fontSize,
-                            color: getPlatformColor(feature.productType.color),
+                            color: PlatformColor(feature.productType.color)(),
                           ),
                         ),
                       ),
