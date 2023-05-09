@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/platform_text_style.dart';
 import 'package:flutter/rendering.dart';
 
 import 'draw_locus_ruler_marker.dart';
@@ -6,7 +7,7 @@ class DrawLocusRulerOuterPositionMarker extends DrawLocusRulerMarker {
   @override
   final Canvas canvas;
   @override
-  final TextStyle textStyle;
+  final PlatformTextStyle textStyle;
   final double widthMapArea;
   final int locusLength;
   final int locusLengthByCharacters;

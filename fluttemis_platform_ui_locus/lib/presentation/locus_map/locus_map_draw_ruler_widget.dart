@@ -1,6 +1,5 @@
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/draw_ruler_color/platform_draw_ruler_color.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_style.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/sub_title_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 import 'draw/draw_locus_ruler.dart';
@@ -50,7 +49,7 @@ class LocusMapDrawRulerWidget extends StatelessWidget {
                     scale: scale,
                     pixelsPerCharacter: pixelsPerCharacter,
                     locusLengthByCharacters: locusLengthByCharacters,
-                    textStyle: getPlatformTextStyle(context, TextType.subTitle),
+                    textStyle: SubTitleTextStyle(context),
                   ),
                 ),
               ),

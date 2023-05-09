@@ -5,7 +5,7 @@ import 'package:flutter/widgets.dart';
 
 import '../data_source_input_type/data_source_input_name_widget.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/sub_title_text_style.dart';
 
 class DataSourceDetailsWidget extends StatelessWidget {
   final AccessHistoryStore accessHistoryStore;
@@ -28,7 +28,7 @@ class DataSourceDetailsWidget extends StatelessWidget {
                     context: context,
                     resourceType: accessHistory.resourceType!,
                   ),
-                  textType: TextType.subTitle,
+                  textStyle: SubTitleTextStyle(context),
                   fontSize: 13,
                 ),
                 DataSourceInputNameWidget(

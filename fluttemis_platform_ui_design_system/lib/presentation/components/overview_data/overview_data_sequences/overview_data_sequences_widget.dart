@@ -5,7 +5,9 @@ import 'package:flutter/widgets.dart';
 import '../../platform/font_family/platform_font_family_mono.dart';
 import '../../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../../platform/text/platform_text_widget.dart';
-import '../../platform/text/text_type_enum.dart';
+import '../../platform/text/text_style/caption_text_style.dart';
+import '../../platform/text/text_style/label_text_style.dart';
+import '../../platform/text/text_style/sub_title_text_style.dart';
 import 'overview_data_sequences_copy_selectable_widget.dart';
 import 'overview_data_sequences_copy_widget.dart';
 
@@ -53,13 +55,13 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
           children: [
             PlatformTextWidget(
               widget.title,
-              textType: TextType.subTitle,
+              textStyle: SubTitleTextStyle(context),
               fontSize: 13,
             ),
             const SizedBox(width: 5),
             PlatformTextWidget(
               '(${fluttemisAppLocalizations.copyExplanation})',
-              textType: TextType.caption,
+              textStyle: CaptionTextStyle(context),
               fontSize: 11,
             ),
           ],
@@ -88,7 +90,7 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                           ),
                           child: PlatformTextWidget(
                             _sequencesWithInnerWhiteSpace,
-                            textType: TextType.label,
+                            textStyle: LabelTextStyle(context),
                             fontSize: getPlatformFontFamilyMonoSize(),
                             textAlign: TextAlign.start,
                             fontFamily: getPlatformFontFamilyMono(),

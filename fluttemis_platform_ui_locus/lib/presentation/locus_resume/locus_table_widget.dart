@@ -6,7 +6,10 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/plat
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/icon/platform_icon_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/icon_button/platform_icon_button_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/genome_name_text_style.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/label_text_style.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/platform_text_style.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/title_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../application/locusShow/locus_show_store.dart';
@@ -21,11 +24,11 @@ class LocusTableWidget extends StatelessWidget {
   });
 
   static const double _fontSize = 13;
-  static const TextType _defaultTextType = TextType.label;
 
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+    final PlatformTextStyle defaultTextType = LabelTextStyle(context);
 
     return LayoutBuilder(
       builder: (_, constraints) => DataTableWidget(
@@ -80,7 +83,7 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel<String>(
                   dataToShow: PlatformTextWidget(
                     locus.organism,
-                    textType: TextType.genomeName,
+                    textStyle: GenomeNameTextStyle(context),
                     fontSize: _fontSize,
                   ),
                   rawData: locus.organism,
@@ -88,7 +91,7 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel<String>(
                   dataToShow: PlatformTextWidget(
                     locus.name,
-                    textType: _defaultTextType,
+                    textStyle: defaultTextType,
                     fontSize: _fontSize,
                   ),
                   rawData: locus.name,
@@ -96,7 +99,7 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel<int>(
                   dataToShow: PlatformTextWidget(
                     locus.length.toString(),
-                    textType: _defaultTextType,
+                    textStyle: defaultTextType,
                     fontSize: _fontSize,
                   ),
                   rawData: locus.length,
@@ -104,7 +107,7 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel<int>(
                   dataToShow: PlatformTextWidget(
                     locus.features.size.toString(),
-                    textType: _defaultTextType,
+                    textStyle: defaultTextType,
                     fontSize: _fontSize,
                   ),
                   rawData: locus.features.size,
@@ -112,7 +115,7 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel<String>(
                   dataToShow: PlatformTextWidget(
                     date,
-                    textType: _defaultTextType,
+                    textStyle: defaultTextType,
                     fontSize: _fontSize,
                   ),
                   rawData: date,
@@ -126,7 +129,7 @@ class LocusTableWidget extends StatelessWidget {
                       replacement: Center(
                         child: PlatformTextWidget(
                           fluttemisAppLocalizations.locusOpened,
-                          textType: TextType.title,
+                          textStyle: TitleTextStyle(context),
                           fontSize: _fontSize,
                         ),
                       ),

@@ -1,11 +1,10 @@
 import 'package:flutter/widgets.dart';
 
-import 'platform_text_style.dart';
-import 'text_type_enum.dart';
+import 'text_style/platform_text_style.dart';
 
 class PlatformTextWidget extends StatelessWidget {
   final String text;
-  final TextType textType;
+  final PlatformTextStyle textStyle;
   final double fontSize;
   final TextAlign? textAlign;
   final Color? color;
@@ -13,7 +12,7 @@ class PlatformTextWidget extends StatelessWidget {
 
   const PlatformTextWidget(
     this.text, {
-    required this.textType,
+    required this.textStyle,
     required this.fontSize,
     this.textAlign,
     this.color,
@@ -24,7 +23,7 @@ class PlatformTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: getPlatformTextStyle(context, textType).copyWith(
+        style: textStyle().copyWith(
           fontSize: fontSize,
           color: color,
           fontFamily: fontFamily,

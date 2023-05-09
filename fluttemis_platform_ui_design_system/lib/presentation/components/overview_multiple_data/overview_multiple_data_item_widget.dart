@@ -1,7 +1,8 @@
 import 'package:flutter/widgets.dart';
 
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/caption_text_style.dart';
+import '../platform/text/text_style/label_text_style.dart';
 
 class OverviewMultipleDataItemWidget extends StatelessWidget {
   final String value;
@@ -28,7 +29,7 @@ class OverviewMultipleDataItemWidget extends StatelessWidget {
               children: [
                 PlatformTextWidget(
                   value,
-                  textType: TextType.label,
+                  textStyle: LabelTextStyle(context),
                   fontSize: 14,
                 ),
                 SingleChildScrollView(
@@ -37,7 +38,7 @@ class OverviewMultipleDataItemWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 6),
                   child: PlatformTextWidget(
                     label,
-                    textType: TextType.caption,
+                    textStyle: CaptionTextStyle(context),
                     fontSize: 10,
                   ),
                 ),

@@ -1,5 +1,6 @@
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/label_text_style.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/title_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 class LocusResumeTotalWidget extends StatelessWidget {
@@ -21,12 +22,12 @@ class LocusResumeTotalWidget extends StatelessWidget {
             const SizedBox(width: 7),
             PlatformTextWidget(
               total.toString(),
-              textType: TextType.title,
+              textStyle: TitleTextStyle(context),
               fontSize: 14,
             ),
-            const PlatformTextWidget(
+            PlatformTextWidget(
               ' locus',
-              textType: TextType.label,
+              textStyle: LabelTextStyle(context),
               fontSize: 12,
             ),
           ],

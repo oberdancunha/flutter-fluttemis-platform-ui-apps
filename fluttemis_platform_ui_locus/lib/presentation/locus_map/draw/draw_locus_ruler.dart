@@ -1,3 +1,4 @@
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/platform_text_style.dart';
 import 'package:flutter/rendering.dart';
 
 import 'draw_locus_ruler_inner_position_marker.dart';
@@ -10,7 +11,7 @@ class DrawLocusRuler extends CustomPainter {
   final double scale;
   final int pixelsPerCharacter;
   final int locusLengthByCharacters;
-  final TextStyle textStyle;
+  final PlatformTextStyle textStyle;
 
   const DrawLocusRuler({
     required this.color,

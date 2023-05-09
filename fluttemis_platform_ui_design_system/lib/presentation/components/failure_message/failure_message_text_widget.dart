@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../platform/container/container_type.dart';
 import '../platform/container/platform_container_widget.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/error_text_style.dart';
 
 class FailureMessageTextWidget extends StatelessWidget {
   final String message;
@@ -39,7 +39,7 @@ class FailureMessageTextWidget extends StatelessWidget {
             Expanded(
               child: PlatformTextWidget(
                 message,
-                textType: TextType.error,
+                textStyle: ErrorTextStyle(context),
                 fontSize: 14,
               ),
             ),

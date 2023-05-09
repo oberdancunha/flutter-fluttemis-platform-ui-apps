@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/scrollbar/platform_scrollbar_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/label_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 class LocusMapFeaturesLabelWidget extends StatelessWidget {
@@ -46,7 +46,7 @@ class LocusMapFeaturesLabelWidget extends StatelessWidget {
                       !RegExp('#').hasMatch(featureLabel)
                           ? '$featureLabel (${featuresTypesCount[featureLabel]})'
                           : '',
-                      textType: TextType.label,
+                      textStyle: LabelTextStyle(context),
                       fontSize: 12,
                     ),
                   ),

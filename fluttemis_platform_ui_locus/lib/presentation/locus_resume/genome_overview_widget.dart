@@ -2,7 +2,7 @@ import 'package:fluttemis_platform_ui_core/utils/custom_date_format.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_list_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_model.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/genome_name_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../domain/locus/locus.dart';
@@ -27,7 +27,7 @@ class GenomeOverviewWidget extends StatelessWidget {
           value: locus.organism,
           description: fluttemisAppLocalizations.genomeName,
           image: '$assetsImagesPath/genome_name.png',
-          textType: TextType.genomeName,
+          textStyle: GenomeNameTextStyle(context),
         ),
         OverviewDataModel(
           value: locus.name,

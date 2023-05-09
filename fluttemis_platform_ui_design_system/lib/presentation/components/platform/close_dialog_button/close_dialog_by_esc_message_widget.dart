@@ -2,7 +2,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/widgets.dart';
 
 import '../text/platform_text_widget.dart';
-import '../text/text_type_enum.dart';
+import '../text/text_style/caption_text_style.dart';
 
 class CloseDialogByEscMessageWidget extends StatelessWidget {
   const CloseDialogByEscMessageWidget({super.key});
@@ -14,7 +14,7 @@ class CloseDialogByEscMessageWidget extends StatelessWidget {
           alignment: Alignment.topCenter,
           child: PlatformTextWidget(
             FluttemisAppLocalizations.of(context)!.escToCloseWindow,
-            textType: TextType.caption,
+            textStyle: CaptionTextStyle(context),
             fontSize: 13,
           ),
         ),

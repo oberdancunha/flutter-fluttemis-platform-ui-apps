@@ -2,7 +2,8 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/color/platform_color.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/container/platform_container_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/label_text_style.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/sub_title_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../domain/feature/feature_product_type.dart';
@@ -18,7 +19,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
           children: [
             PlatformTextWidget(
               FluttemisAppLocalizations.of(context)!.productColorLabel,
-              textType: TextType.subTitle,
+              textStyle: SubTitleTextStyle(context),
               fontSize: 13,
             ),
             const SizedBox(height: 9),
@@ -31,7 +32,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
                           children: [
                             PlatformTextWidget(
                               '${productType.name} product',
-                              textType: TextType.label,
+                              textStyle: LabelTextStyle(context),
                               fontSize: 10,
                             ),
                             const SizedBox(height: 9),

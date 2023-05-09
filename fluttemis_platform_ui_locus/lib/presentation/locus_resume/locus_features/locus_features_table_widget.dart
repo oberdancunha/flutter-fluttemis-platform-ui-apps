@@ -3,7 +3,8 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/data
 import 'package:fluttemis_platform_ui_design_system/presentation/components/data_table/data_table_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/color/platform_color.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/platform_text_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/label_text_style.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/platform_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../domain/feature/feature.dart';
@@ -17,11 +18,11 @@ class LocusFeaturesTableWidget extends StatelessWidget {
   });
 
   static const double _fontSize = 13;
-  static const TextType _defaultTextType = TextType.label;
 
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
+    final PlatformTextStyle defaultTextStyle = LabelTextStyle(context);
 
     return LayoutBuilder(
       builder: (_, constraints) => DataTableWidget(
@@ -80,7 +81,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   DataTableRowModel<int>(
                     dataToShow: PlatformTextWidget(
                       feature.start.toString(),
-                      textType: _defaultTextType,
+                      textStyle: defaultTextStyle,
                       fontSize: _fontSize,
                     ),
                     rawData: feature.start,
@@ -88,7 +89,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   DataTableRowModel<int>(
                     dataToShow: PlatformTextWidget(
                       feature.end.toString(),
-                      textType: _defaultTextType,
+                      textStyle: defaultTextStyle,
                       fontSize: _fontSize,
                     ),
                     rawData: feature.end,
@@ -96,7 +97,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   DataTableRowModel<int>(
                     dataToShow: PlatformTextWidget(
                       feature.length.toString(),
-                      textType: _defaultTextType,
+                      textStyle: defaultTextStyle,
                       fontSize: _fontSize,
                     ),
                     rawData: feature.length,
@@ -104,7 +105,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   DataTableRowModel<String>(
                     dataToShow: PlatformTextWidget(
                       feature.strand.getOrError().label,
-                      textType: _defaultTextType,
+                      textStyle: defaultTextStyle,
                       fontSize: _fontSize,
                     ),
                     rawData: feature.strand.getOrError().name,
@@ -112,7 +113,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   DataTableRowModel<String>(
                     dataToShow: PlatformTextWidget(
                       feature.name ?? '-',
-                      textType: _defaultTextType,
+                      textStyle: defaultTextStyle,
                       fontSize: _fontSize,
                     ),
                     rawData: feature.name ?? '',
@@ -120,7 +121,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                   DataTableRowModel<String>(
                     dataToShow: PlatformTextWidget(
                       feature.type,
-                      textType: _defaultTextType,
+                      textStyle: defaultTextStyle,
                       fontSize: _fontSize,
                     ),
                     rawData: feature.type,
@@ -133,7 +134,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                         child: SingleChildScrollView(
                           child: PlatformTextWidget(
                             feature.product ?? '-',
-                            textType: _defaultTextType,
+                            textStyle: defaultTextStyle,
                             fontSize: _fontSize,
                             color: getPlatformColor(feature.productType.color),
                           ),
@@ -150,7 +151,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
                         child: SingleChildScrollView(
                           child: PlatformTextWidget(
                             feature.note ?? '-',
-                            textType: _defaultTextType,
+                            textStyle: defaultTextStyle,
                             fontSize: _fontSize,
                           ),
                         ),

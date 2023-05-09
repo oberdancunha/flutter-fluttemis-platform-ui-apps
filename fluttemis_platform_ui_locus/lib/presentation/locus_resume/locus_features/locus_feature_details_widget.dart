@@ -1,6 +1,6 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/overview_data/overview_data_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/label_text_style.dart';
 import 'package:flutter/widgets.dart';
 
 import '../../../domain/feature/feature.dart';
@@ -44,38 +44,38 @@ class _LocusFeatureDetailsWidgetState extends State<LocusFeatureDetailsWidget> {
                     value: widget.locusFeature.start.toString(),
                     description: fluttemisAppLocalizations.featureStart,
                     image: '$_assetsImagesPath/feature_start.png',
-                    textType: TextType.label,
+                    textStyle: LabelTextStyle(context),
                   ),
                   OverviewDataWidget(
                     value: widget.locusFeature.end.toString(),
                     description: fluttemisAppLocalizations.featureEnd,
                     image: '$_assetsImagesPath/feature_end.png',
-                    textType: TextType.label,
+                    textStyle: LabelTextStyle(context),
                   ),
                   OverviewDataWidget(
                     value: widget.locusFeature.length.toString(),
                     description: fluttemisAppLocalizations.featureLength,
                     image: '$_assetsImagesPath/feature_length.png',
-                    textType: TextType.label,
+                    textStyle: LabelTextStyle(context),
                   ),
                   OverviewDataWidget(
                     value: widget.locusFeature.strand.getOrError().label,
                     description: fluttemisAppLocalizations.featureStrand,
                     image: '$_assetsImagesPath/feature_strand.png',
-                    textType: TextType.label,
+                    textStyle: LabelTextStyle(context),
                   ),
                   if (widget.locusFeature.name != null)
                     OverviewDataWidget(
                       value: widget.locusFeature.name!,
                       description: fluttemisAppLocalizations.featureName,
                       image: '$_assetsImagesPath/feature_name.png',
-                      textType: TextType.label,
+                      textStyle: LabelTextStyle(context),
                     ),
                   OverviewDataWidget(
                     value: widget.locusFeature.type,
                     description: fluttemisAppLocalizations.featureType,
                     image: '$_assetsImagesPath/feature_type.png',
-                    textType: TextType.label,
+                    textStyle: LabelTextStyle(context),
                   ),
                 ],
               ),
@@ -84,14 +84,14 @@ class _LocusFeatureDetailsWidgetState extends State<LocusFeatureDetailsWidget> {
                   value: widget.locusFeature.product!,
                   description: fluttemisAppLocalizations.featureProduct,
                   image: '$_assetsImagesPath/feature_product.png',
-                  textType: TextType.label,
+                  textStyle: LabelTextStyle(context),
                 ),
               if (widget.locusFeature.note != null)
                 OverviewDataWidget(
                   value: widget.locusFeature.note!,
                   description: fluttemisAppLocalizations.featureNote,
                   image: '$_assetsImagesPath/feature_note.png',
-                  textType: TextType.label,
+                  textStyle: LabelTextStyle(context),
                 ),
               Expanded(
                 child: LocusFeatureDetailsSequencesWidget(

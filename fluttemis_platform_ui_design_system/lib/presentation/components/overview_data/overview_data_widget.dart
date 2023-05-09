@@ -2,19 +2,21 @@ import 'package:flutter/widgets.dart';
 
 import '../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/caption_text_style.dart';
+import '../platform/text/text_style/label_text_style.dart';
+import '../platform/text/text_style/platform_text_style.dart';
 
 class OverviewDataWidget extends StatefulWidget {
   final String value;
   final String description;
   final String image;
-  final TextType? textType;
+  final PlatformTextStyle? textStyle;
 
   const OverviewDataWidget({
     required this.value,
     required this.description,
     required this.image,
-    this.textType,
+    this.textStyle,
     super.key,
   });
 
@@ -68,7 +70,7 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
                               padding: const EdgeInsets.only(bottom: 6),
                               child: PlatformTextWidget(
                                 widget.value,
-                                textType: widget.textType ?? TextType.label,
+                                textStyle: widget.textStyle ?? LabelTextStyle(context),
                                 fontSize: 13,
                               ),
                             ),
@@ -76,7 +78,7 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
                         ),
                         PlatformTextWidget(
                           widget.description,
-                          textType: TextType.caption,
+                          textStyle: CaptionTextStyle(context),
                           fontSize: 10,
                         ),
                       ],

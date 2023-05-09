@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 import '../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/sub_title_text_style.dart';
 import 'overview_data_model.dart';
 import 'overview_data_widget.dart';
 
@@ -58,7 +58,7 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
                 children: [
                   PlatformTextWidget(
                     widget.title,
-                    textType: TextType.subTitle,
+                    textStyle: SubTitleTextStyle(context),
                     fontSize: 15,
                   ),
                   ...widget.titleComplementWidgets ?? [],
@@ -87,7 +87,7 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
                         value: widgetData.value,
                         description: widgetData.description,
                         image: widgetData.image,
-                        textType: widgetData.textType,
+                        textStyle: widgetData.textStyle,
                       );
                     }
 

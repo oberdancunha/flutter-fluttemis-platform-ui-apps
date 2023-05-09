@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/title_text_style.dart';
 
 class DataSourceInputNameWidget extends StatelessWidget {
   final String inputName;
@@ -16,7 +16,7 @@ class DataSourceInputNameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PlatformTextWidget(
         inputName,
-        textType: TextType.title,
+        textStyle: TitleTextStyle(context),
         fontSize: fontSize,
       );
 }

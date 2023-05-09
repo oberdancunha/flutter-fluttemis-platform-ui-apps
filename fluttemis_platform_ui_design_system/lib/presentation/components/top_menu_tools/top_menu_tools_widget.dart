@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 
 import '../menu_tools/tools/menu_tool_widget.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/sub_title_text_style.dart';
 import 'top_menu_tool_icon_widget.dart';
 
 class TopMenuToolsWidget extends StatelessWidget {
@@ -23,7 +23,7 @@ class TopMenuToolsWidget extends StatelessWidget {
           SizedBox(
             child: PlatformTextWidget(
               FluttemisAppLocalizations.of(context)!.quicklyAccess,
-              textType: TextType.subTitle,
+              textStyle: SubTitleTextStyle(context),
               fontSize: 20,
             ),
           ),

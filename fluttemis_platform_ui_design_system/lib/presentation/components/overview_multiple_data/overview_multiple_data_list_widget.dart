@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 
 import '../platform/scrollbar/platform_scrollbar_widget.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/sub_title_text_style.dart';
 
 class OverviewMultipleDataListWidget extends StatefulWidget {
   final String title;
@@ -58,7 +58,7 @@ class _OverviewMultipleDataListWidgetState extends State<OverviewMultipleDataLis
               alignment: Alignment.centerLeft,
               child: PlatformTextWidget(
                 widget.title,
-                textType: TextType.subTitle,
+                textStyle: SubTitleTextStyle(context),
                 fontSize: 15,
               ),
             ),

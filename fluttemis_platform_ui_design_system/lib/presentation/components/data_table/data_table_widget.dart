@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../platform/icon/icon_type_enum.dart';
 import '../platform/icon/platform_icon.dart';
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/title_text_style.dart';
 import 'custom_data_table_source.dart';
 import 'data_table_controller.dart';
 import 'data_table_empty_message_widget.dart';
@@ -111,7 +111,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             (column) => DataColumn2(
               label: PlatformTextWidget(
                 column.label,
-                textType: TextType.title,
+                textStyle: TitleTextStyle(context),
                 fontSize: 14,
               ),
               numeric: column.isNumeric,

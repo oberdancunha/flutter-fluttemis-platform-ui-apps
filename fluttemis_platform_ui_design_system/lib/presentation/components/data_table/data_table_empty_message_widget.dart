@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../platform/text/platform_text_widget.dart';
-import '../platform/text/text_type_enum.dart';
+import '../platform/text/text_style/title_text_style.dart';
 
 class DataTableEmptyMessageWidget extends StatelessWidget {
   final String message;
@@ -16,7 +16,7 @@ class DataTableEmptyMessageWidget extends StatelessWidget {
         child: PlatformTextWidget(
           message,
           fontSize: 17,
-          textType: TextType.title,
+          textStyle: TitleTextStyle(context),
         ),
       );
 }

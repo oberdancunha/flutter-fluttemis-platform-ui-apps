@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../../platform/text/platform_text_widget.dart';
-import '../../../platform/text/text_type_enum.dart';
+import '../../../platform/text/text_style/caption_text_style.dart';
 
 class ToolCardDescriptionWidget extends StatelessWidget {
   final String? description;
@@ -20,7 +20,7 @@ class ToolCardDescriptionWidget extends StatelessWidget {
           description!,
           fontSize: width,
           textAlign: TextAlign.start,
-          textType: TextType.caption,
+          textStyle: CaptionTextStyle(context),
         ),
       );
 }
