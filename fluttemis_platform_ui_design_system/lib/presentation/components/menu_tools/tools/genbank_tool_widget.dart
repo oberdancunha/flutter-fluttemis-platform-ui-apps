@@ -1,7 +1,8 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../platform/icon/icon_type_enum.dart';
+import '../../platform/icon/icon_data/open_file_icon_data.dart';
+import '../../platform/icon/icon_data/platform_icon_data.dart';
 import 'i_template_tool.dart';
 import 'template_open_file_tool_mixin.dart';
 
@@ -33,7 +34,7 @@ class _GenbankToolWidgetState extends ITemplateToolState<GenbankToolWidget>
   String? get hintComplement => FluttemisAppLocalizations.of(context)!.toolAcceptedExtensions;
 
   @override
-  IconType? get toolActionButtonIconType => IconType.openFile;
+  PlatformIconData? get toolActionButtonIconData => OpenFileIconData();
 
   @override
   String? get toolActionButtonDescription => FluttemisAppLocalizations.of(context)!.openFile;

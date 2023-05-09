@@ -4,7 +4,8 @@ import 'package:fluttemis_platform_ui_core/store/access_history/access_history_s
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../platform/icon/icon_type_enum.dart';
+import '../../platform/icon/icon_data/menu_icon_data.dart';
+import '../../platform/icon/icon_data/platform_icon_data.dart';
 import 'i_template_tool.dart';
 
 class MenuToolWidget extends ITemplateTool {
@@ -33,7 +34,7 @@ class _MenuToolWidgetState extends ITemplateToolState<MenuToolWidget> {
   String? get toolActionButtonDescription => FluttemisAppLocalizations.of(context)!.goToMenu;
 
   @override
-  IconType? get toolActionButtonIconType => IconType.menu;
+  PlatformIconData? get toolActionButtonIconData => MenuIconData();
 
   @override
   FutureOr<bool> coreToolAction() {

@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../mixins/clipboard_watcher_mixin.dart';
 import '../../platform/color/platform_color.dart';
-import '../../platform/icon/icon_type_enum.dart';
+import '../../platform/icon/icon_data/copy_icon_data.dart';
 import '../../platform/icon/platform_icon_widget.dart';
 import '../../platform/tooltip/platform_tooltip_widget.dart';
 
@@ -45,7 +45,7 @@ class _OverviewDataSequencesCopyWidgetState extends State<OverviewDataSequencesC
             );
           },
           child: PlatformIconWidget(
-            iconType: IconType.copy,
+            iconData: CopyIconData(),
             size: 15,
             color:
                 value == _sequencesBreakedEvery60Characters ? getPlatformColor(0xFF8B8B8B) : null,

@@ -11,7 +11,7 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
     super.description,
     super.mainHint,
     super.hintComplement,
-    super.toolActionButtonIconType,
+    super.toolActionButtonIconData,
     super.toolActionButtonDescription,
     super.toolAction,
     super.key,
@@ -29,7 +29,7 @@ class MaterialToolCardWidget extends PlatformToolCardWidget {
         actionButtonBorderRadius: const BorderRadius.only(
           bottomRight: Radius.circular(15),
         ),
-        toolActionButtonIconType: toolActionButtonIconType,
+        toolActionButtonIconData: toolActionButtonIconData,
         description: description,
         descriptionStyle: Theme.of(context).textTheme.bodyText2,
         mainHint: mainHint,

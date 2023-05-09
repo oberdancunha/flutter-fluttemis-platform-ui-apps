@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'platform_icon.dart';
 import 'platform_icon_widget.dart';
 
 class MaterialIconWidget extends PlatformIconWidget {
   const MaterialIconWidget({
-    required super.iconType,
+    required super.iconData,
     required super.size,
     super.color,
     super.key,
@@ -13,7 +12,7 @@ class MaterialIconWidget extends PlatformIconWidget {
 
   @override
   Widget build(BuildContext context) => Icon(
-        getPlatformIcon(iconType),
+        iconData(),
         size: size,
         color: color,
       );

@@ -1,8 +1,7 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/material.dart';
 
-import '../platform/icon/icon_type_enum.dart';
-import '../platform/icon/platform_icon.dart';
+import '../platform/icon/icon_data/arrow_icon_data.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_style/title_text_style.dart';
 import 'custom_data_table_source.dart';
@@ -74,7 +73,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             onClear: _clear,
             hintTextSearch: widget.hintTextSearch,
           ),
-          sortArrowIcon: getPlatformIcon(IconType.arrow),
+          sortArrowIcon: ArrowIconData().call(),
           sortColumnIndex: _sortColumnIndex,
           sortAscending: _sortAscending,
           columns: _buildColumns(),

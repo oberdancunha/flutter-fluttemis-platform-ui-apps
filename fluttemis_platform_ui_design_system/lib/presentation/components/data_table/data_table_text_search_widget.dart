@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../platform/icon/icon_type_enum.dart';
+import '../platform/icon/icon_data/clear_icon_data.dart';
+import '../platform/icon/icon_data/search_icon_data.dart';
 import '../platform/icon/platform_icon_widget.dart';
 import '../platform/text_field/platform_text_field_widget.dart';
 
@@ -43,8 +44,8 @@ class _DataTableTextSearchWidgetState extends State<DataTableTextSearchWidget> {
         autoFocus: true,
         showCursor: true,
         fontSize: 15,
-        prefixIcon: const PlatformIconWidget(
-          iconType: IconType.search,
+        prefixIcon: PlatformIconWidget(
+          iconData: SearchIconData(),
           size: 15,
         ),
         hintText: widget.hintText,
@@ -57,8 +58,8 @@ class _DataTableTextSearchWidgetState extends State<DataTableTextSearchWidget> {
               _controller.clear();
               widget.onClear();
             },
-            child: const PlatformIconWidget(
-              iconType: IconType.clear,
+            child: PlatformIconWidget(
+              iconData: ClearIconData(),
               size: 15,
             ),
           ),

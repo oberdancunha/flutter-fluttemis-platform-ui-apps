@@ -1,7 +1,7 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/data_source_input_type/data_source_input_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/dialog/platform_dialog_widget.dart';
-import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/icon/icon_type_enum.dart';
+import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/icon/icon_data/table_icon_data.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/icon/platform_icon_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/icon_button/platform_icon_button_widget.dart';
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/show_dialog/platform_show_dialog.dart';
@@ -33,8 +33,8 @@ class LocusResumeHeaderWidget extends StatelessWidget {
               height: 25,
               width: 200,
               child: PlatformIconButtonWidget(
-                icon: const PlatformIconWidget(
-                  iconType: IconType.table,
+                icon: PlatformIconWidget(
+                  iconData: TableIconData(),
                   size: 13,
                 ),
                 label: FluttemisAppLocalizations.of(context)!.openLocusTable,

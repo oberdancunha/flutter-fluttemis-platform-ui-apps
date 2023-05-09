@@ -1,11 +1,11 @@
 import 'package:flutter/widgets.dart';
 
-import '../../../platform/icon/icon_type_enum.dart';
+import '../../../platform/icon/icon_data/platform_icon_data.dart';
 import '../../../platform/icon/platform_icon_widget.dart';
 import '../../../platform/icon_button/platform_icon_button_widget.dart';
 
 class ToolCardActionButtonWidget extends StatelessWidget {
-  final IconType? toolActionButtonIconType;
+  final PlatformIconData? toolActionButtonIconData;
   final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
   final double height;
@@ -20,7 +20,7 @@ class ToolCardActionButtonWidget extends StatelessWidget {
     required this.topSpacingHeight,
     required this.iconSize,
     required this.labelFontSize,
-    this.toolActionButtonIconType,
+    this.toolActionButtonIconData,
     this.toolActionButtonDescription,
     this.toolAction,
     super.key,
@@ -28,7 +28,7 @@ class ToolCardActionButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Visibility(
-        visible: toolActionButtonIconType != null &&
+        visible: toolActionButtonIconData != null &&
             toolActionButtonDescription != null &&
             toolAction != null,
         child: Column(
@@ -41,7 +41,7 @@ class ToolCardActionButtonWidget extends StatelessWidget {
                 width: width * 0.6,
                 child: PlatformIconButtonWidget(
                   icon: PlatformIconWidget(
-                    iconType: toolActionButtonIconType!,
+                    iconData: toolActionButtonIconData!,
                     size: iconSize,
                   ),
                   label: toolActionButtonDescription!,

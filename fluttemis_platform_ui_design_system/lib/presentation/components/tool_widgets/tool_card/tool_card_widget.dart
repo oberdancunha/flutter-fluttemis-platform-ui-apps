@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../platform/card/platform_card_widget.dart';
-import '../../platform/icon/icon_type_enum.dart';
+import '../../platform/icon/icon_data/platform_icon_data.dart';
 import 'components/tool_card_action_button_widget.dart';
 import 'components/tool_card_description_widget.dart';
 import 'components/tool_card_hint_widget.dart';
@@ -21,7 +21,7 @@ class ToolCardWidget extends StatelessWidget {
   final TextStyle? descriptionStyle;
   final String? mainHint;
   final String? hintComplement;
-  final IconType? toolActionButtonIconType;
+  final PlatformIconData? toolActionButtonIconData;
   final String? toolActionButtonDescription;
   final VoidCallback? toolAction;
 
@@ -38,7 +38,7 @@ class ToolCardWidget extends StatelessWidget {
     this.descriptionStyle,
     this.mainHint,
     this.hintComplement,
-    this.toolActionButtonIconType,
+    this.toolActionButtonIconData,
     this.toolActionButtonDescription,
     this.toolAction,
     super.key,
@@ -107,7 +107,7 @@ class ToolCardWidget extends StatelessWidget {
                     ),
                   ),
                   ToolCardActionButtonWidget(
-                    toolActionButtonIconType: toolActionButtonIconType,
+                    toolActionButtonIconData: toolActionButtonIconData,
                     toolActionButtonDescription: toolActionButtonDescription,
                     toolAction: toolAction,
                     height: constraints.maxHeight,

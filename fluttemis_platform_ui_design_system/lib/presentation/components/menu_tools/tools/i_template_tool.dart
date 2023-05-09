@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../platform/icon/icon_type_enum.dart';
+import '../../platform/icon/icon_data/platform_icon_data.dart';
 import '../../platform/tool_card/platform_tool_card_widget.dart';
 import '../../tool_widgets/tool_icon_action_widget.dart';
 
@@ -20,7 +20,7 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
   String? get description;
   String? get mainHint => null;
   String? get hintComplement => null;
-  IconType? get toolActionButtonIconType;
+  PlatformIconData? get toolActionButtonIconData;
   String? get toolActionButtonDescription;
   String get route;
   FutureOr<bool> coreToolAction();
@@ -39,7 +39,7 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
         description: description,
         mainHint: mainHint,
         hintComplement: hintComplement,
-        toolActionButtonIconType: toolActionButtonIconType,
+        toolActionButtonIconData: toolActionButtonIconData,
         toolActionButtonDescription: toolActionButtonDescription,
         toolAction: toolAction,
       );
