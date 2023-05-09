@@ -1,11 +1,7 @@
-import 'package:flutter/widgets.dart';
-
 import 'platform.dart';
 
 abstract class PlatformStyle<T> {
-  final BuildContext context;
-
-  const PlatformStyle(this.context);
+  const PlatformStyle();
 
   T call() {
     final currentPlatform = getCurrentPlatform();
