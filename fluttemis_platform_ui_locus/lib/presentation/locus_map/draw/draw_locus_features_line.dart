@@ -28,7 +28,7 @@ class DrawLocusFeatureLine {
       right,
       bottom,
     );
-    final borderRadius = getPlatformBorderRadiusToDrawFeature(featureStrand);
+    final borderRadius = PlatformBorderRadiusToDrawFeature(featureStrand)();
     final drawLine = borderRadius.toRRect(rect);
 
     return drawLine;

@@ -1,25 +1,12 @@
-import '../core/platform.dart';
+import '../core/platform_style.dart';
 
-String getPlatformFontFamilyMono() {
-  final currentPlatform = getCurrentPlatform();
-  switch (currentPlatform) {
-    case CurrentPlatform.isMacOS:
-      return 'SF Mono';
-    case CurrentPlatform.isWindows:
-      return 'Segoe Mono';
-    case CurrentPlatform.isLinux:
-      return 'Ubuntu Mono';
-  }
-}
+class PlatformFontFamilyMono extends PlatformStyle<String> {
+  @override
+  String getMacosStyle() => 'SF Mono';
 
-double getPlatformFontFamilyMonoSize() {
-  final currentPlatform = getCurrentPlatform();
-  switch (currentPlatform) {
-    case CurrentPlatform.isMacOS:
-      return 11;
-    case CurrentPlatform.isWindows:
-      return 11.5;
-    case CurrentPlatform.isLinux:
-      return 13;
-  }
+  @override
+  String getWindowsStyle() => 'Segoe Mono';
+
+  @override
+  String getMaterialStyle() => 'Ubuntu Mono';
 }

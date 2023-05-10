@@ -2,17 +2,23 @@ import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import '../core/platform.dart';
+import '../core/platform_style.dart';
 
-Color platformDrawRulerColor(BuildContext context) {
-  final platform = getCurrentPlatform();
-  switch (platform) {
-    case CurrentPlatform.isMacOS:
-      return MacosTheme.of(context).dividerColor;
-    case CurrentPlatform.isWindows:
-      final decoration = FluentTheme.of(context).dividerTheme.decoration! as BoxDecoration;
-      return decoration.color!;
-    case CurrentPlatform.isLinux:
-      return Theme.of(context).dividerTheme.color!.basedOnLuminance();
+class PlatformDrawRulerColor extends PlatformStyle<Color> {
+  final BuildContext context;
+
+  PlatformDrawRulerColor(this.context);
+
+  @override
+  Color getMacosStyle() => MacosTheme.of(context).dividerColor;
+
+  @override
+  Color getWindowsStyle() {
+    final decoration = FluentTheme.of(context).dividerTheme.decoration! as BoxDecoration;
+
+    return decoration.color!;
   }
+
+  @override
+  Color getMaterialStyle() => Theme.of(context).dividerTheme.color!.basedOnLuminance();
 }
