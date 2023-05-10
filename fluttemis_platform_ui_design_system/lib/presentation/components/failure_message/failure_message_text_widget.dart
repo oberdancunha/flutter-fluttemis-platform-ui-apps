@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../platform/container/container_type.dart';
+import '../platform/container/container_color/error_container_color.dart';
 import '../platform/container/platform_container_widget.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_style/error_text_style.dart';
@@ -19,7 +19,7 @@ class FailureMessageTextWidget extends StatelessWidget {
   Widget build(BuildContext context) => PlatformContainerWidget(
         height: 75,
         width: 420,
-        containerType: ContainerType.error,
+        backgroundColor: ErrorContainerColor(context)(),
         child: Row(
           children: [
             SizedBox(

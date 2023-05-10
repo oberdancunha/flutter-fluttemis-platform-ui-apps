@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:macos_ui/macos_ui.dart';
 
-import 'container_type.dart';
+import 'container_color/default_container_color.dart';
 import 'platform_container_widget.dart';
 
 class MacosContainerWidget extends PlatformContainerWidget {
   const MacosContainerWidget({
-    required super.child,
+    super.child,
     super.height,
     super.width,
-    super.backgroundColor,
-    super.containerType,
     super.key,
+    super.backgroundColor,
   });
 
   @override
@@ -31,7 +30,7 @@ class MacosContainerWidget extends PlatformContainerWidget {
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
-          color: backgroundColor ?? getContainerBackgroundColor(context),
+          color: backgroundColor ?? DefaultContainerColor(context)(),
           borderRadius: kSheetBorderRadius,
           border: Border.all(
             width: 2,
@@ -53,17 +52,5 @@ class MacosContainerWidget extends PlatformContainerWidget {
         child: child,
       ),
     );
-  }
-
-  @override
-  Color getContainerBackgroundColor(BuildContext context) {
-    switch (containerType) {
-      case ContainerType.error:
-        return MacosTheme.of(context).brightness == Brightness.light
-            ? MacosColors.windowFrameColor
-            : MacosColors.alternatingContentBackgroundColor;
-      case null:
-        return MacosTheme.of(context).primaryColor;
-    }
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/widgets.dart';
 
 import '../core/platform_widget.dart';
-import 'container_type.dart';
 import 'macos_container_widget.dart';
 import 'material_container_widget.dart';
 import 'windows_container_widget.dart';
@@ -11,19 +10,17 @@ class PlatformContainerWidget
   final Widget? child;
   final double? height;
   final double? width;
-  final Color? backgroundColor;
   final Color? shadowColor;
   final Color? borderColor;
-  final ContainerType? containerType;
+  final Color? backgroundColor;
 
   const PlatformContainerWidget({
     this.child,
     this.height,
     this.width,
-    this.backgroundColor,
     this.shadowColor,
     this.borderColor,
-    this.containerType,
+    this.backgroundColor,
     super.key,
   });
 
@@ -32,7 +29,6 @@ class PlatformContainerWidget
         height: height,
         width: width,
         backgroundColor: backgroundColor,
-        containerType: containerType,
         child: child,
       );
 
@@ -40,9 +36,8 @@ class PlatformContainerWidget
   WindowsContainerWidget buildWindowsWidget() => WindowsContainerWidget(
         height: height,
         width: width,
-        backgroundColor: backgroundColor,
         shadowColor: shadowColor,
-        containerType: containerType,
+        backgroundColor: backgroundColor,
         child: child,
       );
 
@@ -50,11 +45,8 @@ class PlatformContainerWidget
   MaterialContainerWidget buildMaterialWidget() => MaterialContainerWidget(
         height: height,
         width: width,
-        backgroundColor: backgroundColor,
         borderColor: borderColor,
-        containerType: containerType,
+        backgroundColor: backgroundColor,
         child: child,
       );
-
-  Color getContainerBackgroundColor(BuildContext context) => const Color(0x00000000);
 }

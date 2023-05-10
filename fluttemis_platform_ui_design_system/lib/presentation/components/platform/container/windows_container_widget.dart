@@ -1,17 +1,16 @@
 import 'package:fluent_ui/fluent_ui.dart';
 
-import 'container_type.dart';
+import 'container_color/default_container_color.dart';
 import 'platform_container_widget.dart';
 
 class WindowsContainerWidget extends PlatformContainerWidget {
   const WindowsContainerWidget({
-    required super.child,
+    super.child,
     super.height,
     super.width,
-    super.backgroundColor,
     super.shadowColor,
-    super.containerType,
     super.borderColor,
+    super.backgroundColor,
     super.key,
   });
 
@@ -21,7 +20,7 @@ class WindowsContainerWidget extends PlatformContainerWidget {
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
-          color: backgroundColor ?? getContainerBackgroundColor(context),
+          color: backgroundColor ?? DefaultContainerColor(context)(),
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: shadowColor ?? const Color(0x00000000),
@@ -34,14 +33,4 @@ class WindowsContainerWidget extends PlatformContainerWidget {
         ),
         child: child,
       );
-
-  @override
-  Color getContainerBackgroundColor(BuildContext context) {
-    switch (containerType) {
-      case ContainerType.error:
-        return FluentTheme.of(context).shadowColor.withOpacity(0.1);
-      case null:
-        return FluentTheme.of(context).accentColor;
-    }
-  }
 }
