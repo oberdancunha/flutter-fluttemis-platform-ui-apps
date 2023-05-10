@@ -40,12 +40,12 @@ class LocusResumeHeaderWidget extends StatelessWidget {
                 label: FluttemisAppLocalizations.of(context)!.openLocusTable,
                 fontSize: 11,
                 onPressed: () {
-                  platformShowDialog(
+                  PlatformShowDialog(
                     context: context,
                     builder: (_) => PlatformDialogWidget(
                       child: LocusTableWidget(locus: locus),
                     ),
-                  );
+                  )();
                 },
               ),
             ),

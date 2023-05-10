@@ -34,12 +34,12 @@ class DrawLocusFeatures extends CustomPainter {
       final featureStart = locusFeature.startToDraw * scale;
       final featureEnd = locusFeature.endToDraw * scale;
       final onTapUp = (_) {
-        platformShowDialog(
+        PlatformShowDialog(
           context: context,
           builder: (_) => PlatformDialogWidget(
             child: LocusFeatureDetailsWidget(locusFeature: locusFeature),
           ),
-        );
+        )();
       };
       if ((featureEnd - featureStart) + 1 > minimalLengthToDrawAdjust ||
           locusFeature.product != null) {
