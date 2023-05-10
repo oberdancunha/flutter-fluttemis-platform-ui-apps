@@ -90,9 +90,10 @@ class ToolCardWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ToolCardDescriptionWidget(
-                            width: constraints.maxWidth * 0.047,
+                            width: constraints.maxWidth * 0.045,
                             description: description,
                           ),
+                          SizedBox(height: constraints.maxHeight * 0.03),
                           ToolCardHintWidget(
                             mainHint: mainHint,
                             mainHintStyle: descriptionStyle,
