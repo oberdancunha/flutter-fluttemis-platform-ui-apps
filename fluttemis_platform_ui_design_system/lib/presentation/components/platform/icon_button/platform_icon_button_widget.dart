@@ -11,12 +11,14 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
   final String label;
   final double fontSize;
   final VoidCallback onPressed;
+  final bool? softWrap;
 
   const PlatformIconButtonWidget({
     required this.icon,
     required this.label,
     required this.fontSize,
     required this.onPressed,
+    this.softWrap = false,
     super.key,
   });
 
@@ -26,6 +28,7 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
         label: label,
         fontSize: fontSize,
         onPressed: onPressed,
+        softWrap: softWrap,
       );
 
   @override
@@ -34,6 +37,7 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
         label: label,
         fontSize: fontSize,
         onPressed: onPressed,
+        softWrap: softWrap,
       );
 
   @override
@@ -42,5 +46,6 @@ class PlatformIconButtonWidget extends PlatformWidget<MacosIconButtonWidget,
         label: label,
         fontSize: fontSize,
         onPressed: onPressed,
+        softWrap: softWrap,
       );
 }

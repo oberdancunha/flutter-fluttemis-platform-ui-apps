@@ -9,6 +9,7 @@ class MacosIconButtonWidget extends PlatformIconButtonWidget {
     required super.label,
     required super.fontSize,
     required super.onPressed,
+    super.softWrap,
     super.key,
   });
 
@@ -31,6 +32,7 @@ class MacosIconButtonWidget extends PlatformIconButtonWidget {
               Text(
                 label,
                 style: TextStyle(fontSize: fontSize),
+                softWrap: softWrap,
               ),
             ],
           ),

@@ -8,6 +8,7 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
     required super.label,
     required super.fontSize,
     required super.onPressed,
+    super.softWrap,
     super.key,
   });
 
@@ -49,9 +50,8 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
             const SizedBox(width: 11),
             Text(
               label,
-              style: TextStyle(
-                fontSize: fontSize,
-              ),
+              style: TextStyle(fontSize: fontSize),
+              softWrap: softWrap,
             ),
           ],
         ),

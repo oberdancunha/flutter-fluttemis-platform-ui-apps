@@ -8,6 +8,7 @@ class MaterialIconButtonWidget extends PlatformIconButtonWidget {
     required super.label,
     required super.fontSize,
     required super.onPressed,
+    super.softWrap,
     super.key,
   });
 
@@ -18,6 +19,7 @@ class MaterialIconButtonWidget extends PlatformIconButtonWidget {
         label: Text(
           label,
           style: TextStyle(fontSize: fontSize),
+          softWrap: softWrap,
         ),
         style: const ButtonStyle().copyWith(
           shape: MaterialStateProperty.all(
