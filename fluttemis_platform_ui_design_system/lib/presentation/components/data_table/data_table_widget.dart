@@ -1,6 +1,7 @@
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 import 'package:flutter/material.dart';
 
+import '../platform/brightness/platform_brightness.dart';
 import '../platform/icon/icon_data/arrow_icon_data.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_style/title_text_style.dart';
@@ -58,29 +59,42 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   @override
   Widget build(BuildContext context) => Material(
         color: Colors.transparent,
-        child: PaginatedDataTable2(
-          key: Key(DateTime.now().microsecondsSinceEpoch.toString()),
-          wrapInCard: false,
-          columnSpacing: 12,
-          horizontalMargin: 12,
-          autoRowsToHeight: true,
-          renderEmptyRowsInTheEnd: false,
-          showFirstLastButtons: true,
-          headingRowColor: MaterialStateProperty.all(Colors.transparent),
-          controller: _paginatorController,
-          empty: DataTableEmptyMessageWidget(message: widget.emptyMessage),
-          header: DataTableHeaderWidget(
-            onChanged: _changeTextSearch,
-            onClear: _clear,
-            hintTextSearch: widget.hintTextSearch,
+        child: Theme(
+          data: ThemeData(
+            colorScheme: PlatformBrightness(context)() == Brightness.dark
+                ? const ColorScheme.dark(
+                    primary: Colors.white,
+                  )
+                : const ColorScheme.light(
+                    primary: Colors.black,
+                  ),
+            splashColor: Colors.transparent,
+            hoverColor: Colors.transparent,
           ),
-          sortArrowIcon: ArrowIconData().call(),
-          sortColumnIndex: _sortColumnIndex,
-          sortAscending: _sortAscending,
-          columns: _buildColumns(),
-          source: CustomDataTableSource(listData: _listData),
-          hidePaginator: _listData.isEmpty,
-          dividerThickness: _listData.isEmpty ? 0 : 1,
+          child: PaginatedDataTable2(
+            key: Key(DateTime.now().microsecondsSinceEpoch.toString()),
+            wrapInCard: false,
+            columnSpacing: 12,
+            horizontalMargin: 12,
+            autoRowsToHeight: true,
+            renderEmptyRowsInTheEnd: false,
+            showFirstLastButtons: true,
+            headingRowColor: MaterialStateProperty.all(Colors.transparent),
+            controller: _paginatorController,
+            empty: DataTableEmptyMessageWidget(message: widget.emptyMessage),
+            header: DataTableHeaderWidget(
+              onChanged: _changeTextSearch,
+              onClear: _clear,
+              hintTextSearch: widget.hintTextSearch,
+            ),
+            sortArrowIcon: ArrowIconData().call(),
+            sortColumnIndex: _sortColumnIndex,
+            sortAscending: _sortAscending,
+            columns: _buildColumns(),
+            source: CustomDataTableSource(listData: _listData),
+            hidePaginator: _listData.isEmpty,
+            dividerThickness: _listData.isEmpty ? 0 : 1,
+          ),
         ),
       );
 
