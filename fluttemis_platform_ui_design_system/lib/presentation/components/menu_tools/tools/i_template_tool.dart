@@ -48,7 +48,7 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
         builder: (_, constraints) => ToolIconActionWidget(
           image: image,
           message: '$secondaryTitle $mainTitle',
-          width: 120,
+          width: 105,
           toolAction: toolAction!,
         ),
       );

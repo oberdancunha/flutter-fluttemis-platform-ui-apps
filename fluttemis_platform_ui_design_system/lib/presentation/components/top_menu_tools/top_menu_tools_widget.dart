@@ -32,7 +32,7 @@ class TopMenuToolsWidget extends StatelessWidget {
               const TopMenuToolIconWidget(
                 child: MenuToolWidget(),
               ),
-              const SizedBox(width: 15),
+              const SizedBox(width: 20),
               if (accessHistoryToolWidget != null)
                 TopMenuToolIconWidget(
                   child: accessHistoryToolWidget,
