@@ -59,6 +59,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   Widget build(BuildContext context) => Material(
         color: Colors.transparent,
         child: PaginatedDataTable2(
+          key: Key(DateTime.now().microsecondsSinceEpoch.toString()),
           wrapInCard: false,
           columnSpacing: 12,
           horizontalMargin: 12,
