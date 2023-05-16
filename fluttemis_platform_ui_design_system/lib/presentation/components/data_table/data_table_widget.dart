@@ -72,7 +72,6 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             hoverColor: Colors.transparent,
           ),
           child: PaginatedDataTable2(
-            key: Key(DateTime.now().microsecondsSinceEpoch.toString()),
             wrapInCard: false,
             columnSpacing: 12,
             horizontalMargin: 12,
