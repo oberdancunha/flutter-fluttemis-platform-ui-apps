@@ -2,6 +2,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/material.dart';
 
 import '../platform/brightness/platform_brightness.dart';
+import '../platform/core/platform.dart';
 import '../platform/icon/icon_data/arrow_icon_data.dart';
 import '../platform/text/platform_text_widget.dart';
 import '../platform/text/text_style/title_text_style.dart';
@@ -60,17 +61,19 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   Widget build(BuildContext context) => Material(
         color: Colors.transparent,
         child: Theme(
-          data: ThemeData(
-            colorScheme: const PlatformBrightness()(context) == Brightness.dark
-                ? const ColorScheme.dark(
-                    primary: Colors.white,
-                  )
-                : const ColorScheme.light(
-                    primary: Colors.black,
-                  ),
-            splashColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-          ),
+          data: getCurrentPlatform() == CurrentPlatform.isLinux
+              ? Theme.of(context)
+              : ThemeData(
+                  colorScheme: const PlatformBrightness()(context) == Brightness.dark
+                      ? const ColorScheme.dark(
+                          primary: Colors.white,
+                        )
+                      : const ColorScheme.light(
+                          primary: Colors.black,
+                        ),
+                  splashColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                ),
           child: PaginatedDataTable2(
             wrapInCard: false,
             columnSpacing: 12,
