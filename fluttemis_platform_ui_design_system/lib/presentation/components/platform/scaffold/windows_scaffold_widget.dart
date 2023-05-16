@@ -14,11 +14,11 @@ class WindowsScaffoldWidget extends PlatformScaffoldWidget {
 
   @override
   Widget build(BuildContext context) => ScaffoldPage(
-        padding: const EdgeInsets.only(top: 10),
+        padding: const EdgeInsets.only(top: 5),
         header: SizedBox(
           height: 35,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
