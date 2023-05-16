@@ -30,7 +30,7 @@ class MacosContainerWidget extends PlatformContainerWidget {
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
-          color: backgroundColor ?? DefaultContainerColor(context)(),
+          color: backgroundColor ?? const DefaultContainerColor()(context),
           borderRadius: kSheetBorderRadius,
           border: Border.all(
             width: 2,

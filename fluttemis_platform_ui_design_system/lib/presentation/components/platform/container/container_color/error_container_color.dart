@@ -6,18 +6,19 @@ import '../../theme/fluttemis_material_theme_extension.dart';
 import 'platform_container_color.dart';
 
 class ErrorContainerColor extends PlatformContainerColor {
-  const ErrorContainerColor(super.context);
+  const ErrorContainerColor();
 
   @override
-  Color getMacosStyle() => MacosTheme.of(context).brightness == Brightness.light
+  Color getMacosStyle(BuildContext context) => MacosTheme.of(context).brightness == Brightness.light
       ? MacosColors.windowFrameColor
       : MacosColors.alternatingContentBackgroundColor;
 
   @override
-  Color getWindowsStyle() => FluentTheme.of(context).shadowColor.withOpacity(0.1);
+  Color getWindowsStyle(BuildContext context) =>
+      FluentTheme.of(context).shadowColor.withOpacity(0.1);
 
   @override
-  Color getMaterialStyle() {
+  Color getMaterialStyle(BuildContext context) {
     final materialThemeExtension = Theme.of(context).extension<FluttemisMaterialThemeExtension>()!;
 
     return materialThemeExtension.errorBackgroundColor;

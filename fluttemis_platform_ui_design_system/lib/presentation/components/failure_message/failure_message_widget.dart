@@ -39,7 +39,7 @@ class FailureMessageWidget extends StatelessWidget {
         ),
         PlatformTextWidget(
           FluttemisAppLocalizations.of(context)!.nextOptionInError,
-          textStyle: SubTitleTextStyle(context),
+          textStyle: SubTitleTextStyle(),
           fontSize: 20,
         ),
         Row(

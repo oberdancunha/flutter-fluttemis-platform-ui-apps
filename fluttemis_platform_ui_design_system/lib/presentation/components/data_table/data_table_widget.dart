@@ -61,7 +61,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
         color: Colors.transparent,
         child: Theme(
           data: ThemeData(
-            colorScheme: PlatformBrightness(context)() == Brightness.dark
+            colorScheme: const PlatformBrightness()(context) == Brightness.dark
                 ? const ColorScheme.dark(
                     primary: Colors.white,
                   )
@@ -124,7 +124,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
             (column) => DataColumn2(
               label: PlatformTextWidget(
                 column.label,
-                textStyle: TitleTextStyle(context),
+                textStyle: TitleTextStyle(),
                 fontSize: 14,
               ),
               numeric: column.isNumeric,

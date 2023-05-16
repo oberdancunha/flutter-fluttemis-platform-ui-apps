@@ -27,7 +27,7 @@ class GenomeOverviewWidget extends StatelessWidget {
           value: locus.organism,
           description: fluttemisAppLocalizations.genomeName,
           image: '$assetsImagesPath/genome_name.png',
-          textStyle: GenomeNameTextStyle(context),
+          textStyle: GenomeNameTextStyle(),
         ),
         OverviewDataModel(
           value: locus.name,

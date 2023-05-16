@@ -6,20 +6,21 @@ import 'package:macos_ui/macos_ui.dart';
 import 'platform_text_style.dart';
 
 class TitleTextStyle extends PlatformTextStyle {
-  const TitleTextStyle(super.context);
+  @override
+  TextStyle getMacosStyle(BuildContext context) =>
+      MacosTheme.of(context).typography.title1.copyWith(
+            color: MacosTheme.of(context).primaryColor,
+          );
 
   @override
-  TextStyle getMacosStyle() => MacosTheme.of(context).typography.title1.copyWith(
-        color: MacosTheme.of(context).primaryColor,
-      );
+  TextStyle getWindowsStyle(BuildContext context) =>
+      fluent_ui.FluentTheme.of(context).typography.title!.copyWith(
+            color: fluent_ui.FluentTheme.of(context).accentColor,
+          );
 
   @override
-  TextStyle getWindowsStyle() => fluent_ui.FluentTheme.of(context).typography.title!.copyWith(
-        color: fluent_ui.FluentTheme.of(context).accentColor,
-      );
-
-  @override
-  TextStyle getMaterialStyle() => material.Theme.of(context).textTheme.titleLarge!.copyWith(
-        color: material.Theme.of(context).primaryColor,
-      );
+  TextStyle getMaterialStyle(BuildContext context) =>
+      material.Theme.of(context).textTheme.titleLarge!.copyWith(
+            color: material.Theme.of(context).primaryColor,
+          );
 }

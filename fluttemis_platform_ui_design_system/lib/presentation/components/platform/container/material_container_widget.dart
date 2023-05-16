@@ -18,7 +18,7 @@ class MaterialContainerWidget extends PlatformContainerWidget {
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
-          color: backgroundColor ?? DefaultContainerColor(context)(),
+          color: backgroundColor ?? const DefaultContainerColor()(context),
           borderRadius: BorderRadius.circular(15),
           border: Border.all(
             color: borderColor ?? const Color(0x00000000),

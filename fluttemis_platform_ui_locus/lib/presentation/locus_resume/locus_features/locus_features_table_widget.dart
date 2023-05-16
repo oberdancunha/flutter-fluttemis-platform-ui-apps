@@ -22,7 +22,7 @@ class LocusFeaturesTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
-    final PlatformTextStyle defaultTextStyle = LabelTextStyle(context);
+    final PlatformTextStyle defaultTextStyle = LabelTextStyle();
 
     return LayoutBuilder(
       builder: (_, constraints) => DataTableWidget(

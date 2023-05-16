@@ -5,14 +5,14 @@ import 'package:macos_ui/macos_ui.dart';
 import 'platform_container_color.dart';
 
 class DefaultContainerColor extends PlatformContainerColor {
-  const DefaultContainerColor(super.context);
+  const DefaultContainerColor();
 
   @override
-  Color getMacosStyle() => MacosTheme.of(context).primaryColor;
+  Color getMacosStyle(BuildContext context) => MacosTheme.of(context).primaryColor;
 
   @override
-  Color getWindowsStyle() => FluentTheme.of(context).accentColor;
+  Color getWindowsStyle(BuildContext context) => FluentTheme.of(context).accentColor;
 
   @override
-  Color getMaterialStyle() => Theme.of(context).primaryColor;
+  Color getMaterialStyle(BuildContext context) => Theme.of(context).primaryColor;
 }

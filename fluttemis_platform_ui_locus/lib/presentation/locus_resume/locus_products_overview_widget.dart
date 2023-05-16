@@ -86,13 +86,12 @@ class LocusProductsOverviewWidget extends StatelessWidget {
             label: fluttemisAppLocalizations.featureTable,
             fontSize: 10,
             onPressed: () => PlatformShowDialog(
-              context: context,
               builder: (_) => PlatformDialogWidget(
                 child: LocusFeaturesTableWidget(
                   features: features,
                 ),
               ),
-            )(),
+            )(context),
           ),
         ),
       ],

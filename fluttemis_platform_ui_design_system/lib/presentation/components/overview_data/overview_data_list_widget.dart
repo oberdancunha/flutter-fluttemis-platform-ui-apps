@@ -58,7 +58,7 @@ class _OverviewDataListWidgetState extends State<OverviewDataListWidget> {
                 children: [
                   PlatformTextWidget(
                     widget.title,
-                    textStyle: SubTitleTextStyle(context),
+                    textStyle: SubTitleTextStyle(),
                     fontSize: 15,
                   ),
                   ...widget.titleComplementWidgets ?? [],

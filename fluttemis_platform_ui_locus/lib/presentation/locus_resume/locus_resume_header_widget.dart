@@ -41,11 +41,10 @@ class LocusResumeHeaderWidget extends StatelessWidget {
                 fontSize: 11,
                 onPressed: () {
                   PlatformShowDialog(
-                    context: context,
                     builder: (_) => PlatformDialogWidget(
                       child: LocusTableWidget(locus: locus),
                     ),
-                  )();
+                  )(context);
                 },
               ),
             ),

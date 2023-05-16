@@ -1,9 +1,11 @@
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/platform_text_style.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 import 'draw_locus_ruler_marker.dart';
 
 class DrawLocusRulerOuterPositionMarker extends DrawLocusRulerMarker {
+  @override
+  final BuildContext context;
   @override
   final Canvas canvas;
   @override
@@ -13,12 +15,14 @@ class DrawLocusRulerOuterPositionMarker extends DrawLocusRulerMarker {
   final int locusLengthByCharacters;
 
   const DrawLocusRulerOuterPositionMarker({
+    required this.context,
     required this.canvas,
     required this.textStyle,
     required this.widthMapArea,
     required this.locusLength,
     required this.locusLengthByCharacters,
   }) : super(
+          context: context,
           canvas: canvas,
           textStyle: textStyle,
         );

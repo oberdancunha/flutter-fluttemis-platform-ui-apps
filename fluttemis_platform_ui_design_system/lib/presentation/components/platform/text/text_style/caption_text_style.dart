@@ -6,20 +6,21 @@ import 'package:macos_ui/macos_ui.dart';
 import 'platform_text_style.dart';
 
 class CaptionTextStyle extends PlatformTextStyle {
-  const CaptionTextStyle(super.context);
+  @override
+  TextStyle getMacosStyle(BuildContext context) =>
+      MacosTheme.of(context).typography.caption1.copyWith(
+            color: MacosColors.systemGrayColor,
+          );
 
   @override
-  TextStyle getMacosStyle() => MacosTheme.of(context).typography.caption1.copyWith(
-        color: MacosColors.systemGrayColor,
-      );
+  TextStyle getWindowsStyle(BuildContext context) =>
+      fluent_ui.FluentTheme.of(context).typography.caption!.copyWith(
+            color: fluent_ui.Colors.grey[90],
+          );
 
   @override
-  TextStyle getWindowsStyle() => fluent_ui.FluentTheme.of(context).typography.caption!.copyWith(
-        color: fluent_ui.Colors.grey[90],
-      );
-
-  @override
-  TextStyle getMaterialStyle() => material.Theme.of(context).textTheme.caption!.copyWith(
-        color: material.Colors.grey.shade500,
-      );
+  TextStyle getMaterialStyle(BuildContext context) =>
+      material.Theme.of(context).textTheme.caption!.copyWith(
+            color: material.Colors.grey.shade500,
+          );
 }

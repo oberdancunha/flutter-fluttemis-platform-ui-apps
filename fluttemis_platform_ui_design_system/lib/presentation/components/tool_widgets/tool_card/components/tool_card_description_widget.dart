@@ -20,7 +20,7 @@ class ToolCardDescriptionWidget extends StatelessWidget {
           description!,
           fontSize: width,
           textAlign: TextAlign.start,
-          textStyle: CaptionTextStyle(context),
+          textStyle: CaptionTextStyle(),
         ),
       );
 }

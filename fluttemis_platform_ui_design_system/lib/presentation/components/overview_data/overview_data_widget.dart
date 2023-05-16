@@ -70,7 +70,7 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
                               padding: const EdgeInsets.only(bottom: 6),
                               child: PlatformTextWidget(
                                 widget.value,
-                                textStyle: widget.textStyle ?? LabelTextStyle(context),
+                                textStyle: widget.textStyle ?? LabelTextStyle(),
                                 fontSize: 13,
                               ),
                             ),
@@ -78,7 +78,7 @@ class _OverviewDataWidgetState extends State<OverviewDataWidget> {
                         ),
                         PlatformTextWidget(
                           widget.description,
-                          textStyle: CaptionTextStyle(context),
+                          textStyle: CaptionTextStyle(),
                           fontSize: 10,
                         ),
                       ],

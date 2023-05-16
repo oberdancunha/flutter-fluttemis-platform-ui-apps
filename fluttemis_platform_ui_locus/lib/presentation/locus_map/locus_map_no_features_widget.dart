@@ -10,7 +10,7 @@ class LocusMapNoFeaturesWidget extends StatelessWidget {
   Widget build(BuildContext context) => Center(
         child: PlatformTextWidget(
           FluttemisAppLocalizations.of(context)!.noDataToBeDisplayedOnTheMap,
-          textStyle: TitleTextStyle(context),
+          textStyle: TitleTextStyle(),
           fontSize: 15,
         ),
       );

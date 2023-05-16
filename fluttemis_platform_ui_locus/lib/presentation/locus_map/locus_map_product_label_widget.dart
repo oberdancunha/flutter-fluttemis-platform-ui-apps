@@ -19,7 +19,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
           children: [
             PlatformTextWidget(
               FluttemisAppLocalizations.of(context)!.productColorLabel,
-              textStyle: SubTitleTextStyle(context),
+              textStyle: SubTitleTextStyle(),
               fontSize: 13,
             ),
             const SizedBox(height: 9),
@@ -32,7 +32,7 @@ class LocusMapProductLabelWidget extends StatelessWidget {
                           children: [
                             PlatformTextWidget(
                               '${productType.name} product',
-                              textStyle: LabelTextStyle(context),
+                              textStyle: LabelTextStyle(),
                               fontSize: 10,
                             ),
                             const SizedBox(height: 9),

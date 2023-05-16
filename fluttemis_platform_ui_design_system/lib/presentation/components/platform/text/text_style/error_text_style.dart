@@ -6,20 +6,21 @@ import 'package:macos_ui/macos_ui.dart';
 import 'platform_text_style.dart';
 
 class ErrorTextStyle extends PlatformTextStyle {
-  const ErrorTextStyle(super.context);
+  @override
+  TextStyle getMacosStyle(BuildContext context) =>
+      MacosTheme.of(context).typography.title3.copyWith(
+            color: MacosColors.appleRed,
+          );
 
   @override
-  TextStyle getMacosStyle() => MacosTheme.of(context).typography.title3.copyWith(
-        color: MacosColors.appleRed,
-      );
+  TextStyle getWindowsStyle(BuildContext context) =>
+      fluent_ui.FluentTheme.of(context).typography.body!.copyWith(
+            color: fluent_ui.Colors.red,
+          );
 
   @override
-  TextStyle getWindowsStyle() => fluent_ui.FluentTheme.of(context).typography.body!.copyWith(
-        color: fluent_ui.Colors.red,
-      );
-
-  @override
-  TextStyle getMaterialStyle() => material.Theme.of(context).textTheme.displaySmall!.copyWith(
-        color: material.Theme.of(context).errorColor,
-      );
+  TextStyle getMaterialStyle(BuildContext context) =>
+      material.Theme.of(context).textTheme.displaySmall!.copyWith(
+            color: material.Theme.of(context).errorColor,
+          );
 }

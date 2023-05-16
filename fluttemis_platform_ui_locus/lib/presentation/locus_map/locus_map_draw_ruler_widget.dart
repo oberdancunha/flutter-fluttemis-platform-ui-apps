@@ -43,13 +43,14 @@ class LocusMapDrawRulerWidget extends StatelessWidget {
                 child: CustomPaint(
                   isComplex: true,
                   painter: DrawLocusRuler(
-                    color: PlatformDrawRulerColor(context)(),
+                    context: context,
+                    color: PlatformDrawRulerColor()(context),
                     widthMapArea: widthMapArea,
                     locusLength: locusLength,
                     scale: scale,
                     pixelsPerCharacter: pixelsPerCharacter,
                     locusLengthByCharacters: locusLengthByCharacters,
-                    textStyle: SubTitleTextStyle(context),
+                    textStyle: SubTitleTextStyle(),
                   ),
                 ),
               ),

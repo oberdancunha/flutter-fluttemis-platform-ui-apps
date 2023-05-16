@@ -26,7 +26,7 @@ class AppScaffoldWidget extends StatelessWidget {
               const SizedBox(width: 10),
               PlatformTextWidget(
                 kAppTitle,
-                textStyle: TitleTextStyle(context),
+                textStyle: TitleTextStyle(),
                 fontSize: titleSize,
               ),
             ],

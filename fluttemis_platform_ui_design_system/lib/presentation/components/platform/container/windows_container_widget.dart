@@ -20,7 +20,7 @@ class WindowsContainerWidget extends PlatformContainerWidget {
         height: height ?? 0,
         width: width ?? 0,
         decoration: BoxDecoration(
-          color: backgroundColor ?? DefaultContainerColor(context)(),
+          color: backgroundColor ?? const DefaultContainerColor()(context),
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: shadowColor ?? const Color(0x00000000),

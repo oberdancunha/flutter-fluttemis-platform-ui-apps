@@ -1,10 +1,11 @@
 import 'package:fluttemis_platform_ui_design_system/presentation/components/platform/text/text_style/platform_text_style.dart';
-import 'package:flutter/rendering.dart';
+import 'package:flutter/material.dart';
 
 import 'draw_locus_ruler_inner_position_marker.dart';
 import 'draw_locus_ruler_outer_position_marker.dart';
 
 class DrawLocusRuler extends CustomPainter {
+  final BuildContext context;
   final Color color;
   final double widthMapArea;
   final int locusLength;
@@ -14,6 +15,7 @@ class DrawLocusRuler extends CustomPainter {
   final PlatformTextStyle textStyle;
 
   const DrawLocusRuler({
+    required this.context,
     required this.color,
     required this.widthMapArea,
     required this.locusLength,
@@ -30,6 +32,7 @@ class DrawLocusRuler extends CustomPainter {
       ..color = color;
     _drawLine(canvas, paint);
     DrawLocusRulerOuterPositionMarker(
+      context: context,
       canvas: canvas,
       textStyle: textStyle,
       widthMapArea: widthMapArea,
@@ -39,6 +42,7 @@ class DrawLocusRuler extends CustomPainter {
       ..printStart()
       ..printEnd();
     DrawLocusRulerInnerPositionMarker(
+      context: context,
       canvas: canvas,
       textStyle: textStyle,
       paint: paint,

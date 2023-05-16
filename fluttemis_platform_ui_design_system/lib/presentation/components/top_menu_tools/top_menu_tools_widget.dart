@@ -23,7 +23,7 @@ class TopMenuToolsWidget extends StatelessWidget {
           SizedBox(
             child: PlatformTextWidget(
               FluttemisAppLocalizations.of(context)!.quicklyAccess,
-              textStyle: SubTitleTextStyle(context),
+              textStyle: SubTitleTextStyle(),
               fontSize: 20,
             ),
           ),

@@ -1,9 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import '../../core/platform_style.dart';
+import '../../core/platform_style_context.dart';
 
-abstract class PlatformTextStyle extends PlatformStyle<TextStyle> {
-  final BuildContext context;
-
-  const PlatformTextStyle(this.context);
+abstract class PlatformTextStyle extends PlatformStyleContext<TextStyle> {
+  const PlatformTextStyle();
 }

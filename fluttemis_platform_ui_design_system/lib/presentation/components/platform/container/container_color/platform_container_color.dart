@@ -1,9 +1,7 @@
 import 'package:flutter/widgets.dart';
 
-import '../../core/platform_style.dart';
+import '../../core/platform_style_context.dart';
 
-abstract class PlatformContainerColor extends PlatformStyle<Color> {
-  final BuildContext context;
-
-  const PlatformContainerColor(this.context);
+abstract class PlatformContainerColor extends PlatformStyleContext<Color> {
+  const PlatformContainerColor();
 }

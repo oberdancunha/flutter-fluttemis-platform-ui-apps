@@ -22,12 +22,12 @@ class LocusResumeTotalWidget extends StatelessWidget {
             const SizedBox(width: 7),
             PlatformTextWidget(
               total.toString(),
-              textStyle: TitleTextStyle(context),
+              textStyle: TitleTextStyle(),
               fontSize: 14,
             ),
             PlatformTextWidget(
               ' locus',
-              textStyle: LabelTextStyle(context),
+              textStyle: LabelTextStyle(),
               fontSize: 12,
             ),
           ],

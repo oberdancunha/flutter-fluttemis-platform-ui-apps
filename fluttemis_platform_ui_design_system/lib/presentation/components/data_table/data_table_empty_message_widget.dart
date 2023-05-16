@@ -16,7 +16,7 @@ class DataTableEmptyMessageWidget extends StatelessWidget {
         child: PlatformTextWidget(
           message,
           fontSize: 17,
-          textStyle: TitleTextStyle(context),
+          textStyle: TitleTextStyle(),
         ),
       );
 }

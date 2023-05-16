@@ -58,7 +58,7 @@ class _OverviewMultipleDataListWidgetState extends State<OverviewMultipleDataLis
               alignment: Alignment.centerLeft,
               child: PlatformTextWidget(
                 widget.title,
-                textStyle: SubTitleTextStyle(context),
+                textStyle: SubTitleTextStyle(),
                 fontSize: 15,
               ),
             ),

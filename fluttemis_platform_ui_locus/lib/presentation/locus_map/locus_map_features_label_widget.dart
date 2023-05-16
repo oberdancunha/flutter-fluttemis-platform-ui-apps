@@ -46,7 +46,7 @@ class LocusMapFeaturesLabelWidget extends StatelessWidget {
                       !RegExp('#').hasMatch(featureLabel)
                           ? '$featureLabel (${featuresTypesCount[featureLabel]})'
                           : '',
-                      textStyle: LabelTextStyle(context),
+                      textStyle: LabelTextStyle(),
                       fontSize: 12,
                     ),
                   ),

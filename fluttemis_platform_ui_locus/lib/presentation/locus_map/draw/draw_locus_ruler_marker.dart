@@ -2,10 +2,12 @@ import 'package:fluttemis_platform_ui_design_system/presentation/components/plat
 import 'package:flutter/material.dart';
 
 class DrawLocusRulerMarker {
+  final BuildContext context;
   final Canvas canvas;
   final PlatformTextStyle textStyle;
 
   const DrawLocusRulerMarker({
+    required this.context,
     required this.canvas,
     required this.textStyle,
   });
@@ -17,7 +19,7 @@ class DrawLocusRulerMarker {
     const textHeight = 8.0;
 
     final textSpan = TextSpan(
-      style: textStyle().copyWith(
+      style: textStyle(context).copyWith(
         fontSize: 12,
       ),
       text: text,

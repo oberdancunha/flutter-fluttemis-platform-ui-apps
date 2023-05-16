@@ -28,7 +28,7 @@ class DataSourceDetailsWidget extends StatelessWidget {
                     context: context,
                     resourceType: accessHistory.resourceType!,
                   ),
-                  textStyle: SubTitleTextStyle(context),
+                  textStyle: SubTitleTextStyle(),
                   fontSize: 13,
                 ),
                 DataSourceInputNameWidget(

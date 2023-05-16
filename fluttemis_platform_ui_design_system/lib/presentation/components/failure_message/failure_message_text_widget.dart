@@ -19,7 +19,7 @@ class FailureMessageTextWidget extends StatelessWidget {
   Widget build(BuildContext context) => PlatformContainerWidget(
         height: 75,
         width: 420,
-        backgroundColor: ErrorContainerColor(context)(),
+        backgroundColor: const ErrorContainerColor()(context),
         child: Row(
           children: [
             SizedBox(
@@ -39,7 +39,7 @@ class FailureMessageTextWidget extends StatelessWidget {
             Expanded(
               child: PlatformTextWidget(
                 message,
-                textStyle: ErrorTextStyle(context),
+                textStyle: ErrorTextStyle(),
                 fontSize: 14,
               ),
             ),

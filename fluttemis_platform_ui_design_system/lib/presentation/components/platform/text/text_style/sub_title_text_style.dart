@@ -6,14 +6,14 @@ import 'package:macos_ui/macos_ui.dart';
 import 'platform_text_style.dart';
 
 class SubTitleTextStyle extends PlatformTextStyle {
-  const SubTitleTextStyle(super.context);
+  @override
+  TextStyle getMacosStyle(BuildContext context) => MacosTheme.of(context).typography.title2;
 
   @override
-  TextStyle getMacosStyle() => MacosTheme.of(context).typography.title2;
+  TextStyle getWindowsStyle(BuildContext context) =>
+      fluent_ui.FluentTheme.of(context).typography.subtitle!;
 
   @override
-  TextStyle getWindowsStyle() => fluent_ui.FluentTheme.of(context).typography.subtitle!;
-
-  @override
-  TextStyle getMaterialStyle() => material.Theme.of(context).textTheme.subtitle1!;
+  TextStyle getMaterialStyle(BuildContext context) =>
+      material.Theme.of(context).textTheme.subtitle1!;
 }

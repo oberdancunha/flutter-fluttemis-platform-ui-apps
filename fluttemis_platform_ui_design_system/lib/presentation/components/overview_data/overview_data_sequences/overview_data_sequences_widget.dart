@@ -56,13 +56,13 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
           children: [
             PlatformTextWidget(
               widget.title,
-              textStyle: SubTitleTextStyle(context),
+              textStyle: SubTitleTextStyle(),
               fontSize: 13,
             ),
             const SizedBox(width: 5),
             PlatformTextWidget(
               '(${fluttemisAppLocalizations.copyExplanation})',
-              textStyle: CaptionTextStyle(context),
+              textStyle: CaptionTextStyle(),
               fontSize: 11,
             ),
           ],
@@ -91,7 +91,7 @@ class _OverviewDataSequencesWidgetState extends State<OverviewDataSequencesWidge
                           ),
                           child: PlatformTextWidget(
                             _sequencesWithInnerWhiteSpace,
-                            textStyle: LabelTextStyle(context),
+                            textStyle: LabelTextStyle(),
                             fontSize: PlatformFontFamilyMonoSize()(),
                             textAlign: TextAlign.start,
                             fontFamily: PlatformFontFamilyMono()(),

@@ -14,7 +14,7 @@ class CloseDialogByEscMessageWidget extends StatelessWidget {
           alignment: Alignment.topCenter,
           child: PlatformTextWidget(
             FluttemisAppLocalizations.of(context)!.escToCloseWindow,
-            textStyle: CaptionTextStyle(context),
+            textStyle: CaptionTextStyle(),
             fontSize: 13,
           ),
         ),

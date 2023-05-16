@@ -29,7 +29,7 @@ class OverviewMultipleDataItemWidget extends StatelessWidget {
               children: [
                 PlatformTextWidget(
                   value,
-                  textStyle: LabelTextStyle(context),
+                  textStyle: LabelTextStyle(),
                   fontSize: 14,
                 ),
                 SingleChildScrollView(
@@ -38,7 +38,7 @@ class OverviewMultipleDataItemWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 6),
                   child: PlatformTextWidget(
                     label,
-                    textStyle: CaptionTextStyle(context),
+                    textStyle: CaptionTextStyle(),
                     fontSize: 10,
                   ),
                 ),

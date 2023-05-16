@@ -16,7 +16,7 @@ class DataSourceInputNameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PlatformTextWidget(
         inputName,
-        textStyle: TitleTextStyle(context),
+        textStyle: TitleTextStyle(),
         fontSize: fontSize,
       );
 }

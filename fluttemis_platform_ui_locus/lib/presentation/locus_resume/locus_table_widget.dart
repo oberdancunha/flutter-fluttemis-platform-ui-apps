@@ -28,7 +28,7 @@ class LocusTableWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final fluttemisAppLocalizations = FluttemisAppLocalizations.of(context)!;
-    final PlatformTextStyle defaultTextType = LabelTextStyle(context);
+    final PlatformTextStyle defaultTextType = LabelTextStyle();
 
     return LayoutBuilder(
       builder: (_, constraints) => DataTableWidget(
@@ -83,7 +83,7 @@ class LocusTableWidget extends StatelessWidget {
                 DataTableRowModel<String>(
                   dataToShow: PlatformTextWidget(
                     locus.organism,
-                    textStyle: GenomeNameTextStyle(context),
+                    textStyle: GenomeNameTextStyle(),
                     fontSize: _fontSize,
                   ),
                   rawData: locus.organism,
@@ -129,7 +129,7 @@ class LocusTableWidget extends StatelessWidget {
                       replacement: Center(
                         child: PlatformTextWidget(
                           fluttemisAppLocalizations.locusOpened,
-                          textStyle: TitleTextStyle(context),
+                          textStyle: TitleTextStyle(),
                           fontSize: _fontSize,
                         ),
                       ),

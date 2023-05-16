@@ -6,14 +6,13 @@ import 'package:macos_ui/macos_ui.dart';
 import 'platform_text_style.dart';
 
 class LabelTextStyle extends PlatformTextStyle {
-  const LabelTextStyle(super.context);
+  @override
+  TextStyle getMacosStyle(BuildContext context) => MacosTheme.of(context).typography.caption1;
 
   @override
-  TextStyle getMacosStyle() => MacosTheme.of(context).typography.caption1;
+  TextStyle getWindowsStyle(BuildContext context) =>
+      fluent_ui.FluentTheme.of(context).typography.caption!;
 
   @override
-  TextStyle getWindowsStyle() => fluent_ui.FluentTheme.of(context).typography.caption!;
-
-  @override
-  TextStyle getMaterialStyle() => material.Theme.of(context).textTheme.caption!;
+  TextStyle getMaterialStyle(BuildContext context) => material.Theme.of(context).textTheme.caption!;
 }

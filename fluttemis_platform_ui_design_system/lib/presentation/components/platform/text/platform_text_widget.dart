@@ -23,7 +23,7 @@ class PlatformTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Text(
         text,
-        style: textStyle().copyWith(
+        style: textStyle(context).copyWith(
           fontSize: fontSize,
           color: color,
           fontFamily: fontFamily,
