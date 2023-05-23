@@ -4,7 +4,7 @@ env:
   flutter_version: "3.3.6"
   flutter_channel: "stable"
   flutter_architecture: x64
-  melos_version: "2.9.0"
+  melos_version: "3.1.0"
   fluttemis_app: "fluttemis_platform_ui_app"
   git_checkout_title: "Git checkout"
   install_melos_title: "Install melos tool"

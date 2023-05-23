@@ -21,16 +21,14 @@ command:
 scripts:
 
   test:flutter:
-    exec: flutter test --coverage
+    run:  melos exec -c 4 --fail-fast -- "flutter test --coverage"
     description: Run Flutter test in all projects packages.
     packageFilters:
       flutter: true
       dirExists: test
 
   analyze:
-    exec: dart analyze
-    packageFilters:
-      ignore: fluttemis_platform_ui_dependency_module
+    exec: dart analyze .
 
   localization:flutter:
     exec: flutter gen-l10n
