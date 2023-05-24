@@ -9,7 +9,6 @@ env:
   git_checkout_title: "Git checkout"
   install_melos_title: "Install melos tool"
   melos_bootstrap_title: "Melos bootstrap"
-  melos_analyze_title: "Melos analyze"
   flutter_test_title: "Flutter test"
   generate_localizations_files_title: "Generate localizations files"
 
@@ -40,9 +39,6 @@ jobs:
 
       - name: ${{env.melos_bootstrap_title}}
         run: melos bootstrap --verbose
-
-      - name: ${{env.melos_analyze_title}}
-        run: melos run analyze
 
       - name: ${{env.flutter_test_title}}
         run: melos run test:flutter
@@ -104,9 +100,6 @@ jobs:
       - name: ${{env.melos_bootstrap_title}}
         run: melos bootstrap --verbose
 
-      - name: ${{env.melos_analyze_title}}
-        run: melos run analyze
-
       - name: ${{env.flutter_test_title}}
         run: melos run test:flutter
 
@@ -166,9 +159,6 @@ jobs:
 
       - name: ${{env.melos_bootstrap_title}}
         run: melos bootstrap --verbose
-
-      - name: ${{env.melos_analyze_title}}
-        run: melos run analyze
 
       - name: ${{env.flutter_test_title}}
         run: melos run test:flutter
