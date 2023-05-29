@@ -155,3 +155,4 @@ icons_launcher:
     linux:
       enable: true
       image_path: assets/images/launcher/launcher_windows_linux.png
+
