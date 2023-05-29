@@ -123,17 +123,17 @@ jobs:
       - name: Write MSIX
         uses: DamianReeves/write-file-action@v1.0
         with:
-          path: fluttemis_platform_ui_app/pubspec.yaml
+          path: ${{env.fluttemis_app}}/pubspec.yaml
           contents: |
             msix_config:
               display_name: Fluttemis
               publisher_display_name: Oberdan C.
               identity_name: com.oberdancunha.fluttemis
               msix_version: ${{steps.msixver.outputs.value }}.0
-              logo_path: fluttemis_platform_ui_app/assets/images/launcher/launcher_windows_linux.png
+              logo_path: ${{env.fluttemis_app}}/assets/images/launcher/launcher_windows_linux.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
-              certificate_path: fluttemis_platform_ui_app/windows/FLUTTEMIS-CERT.pfx
+              certificate_path: ${{env.fluttemis_app}}/windows/FLUTTEMIS-CERT.pfx
               certificate_password: ${{ secrets.WIN_CERT_PASS }}
               store: false
           write-mode: append
@@ -146,7 +146,7 @@ jobs:
         with:
           type: zip
           filename: Fluttemis-windows.zip
-          directory: ${{env.fluttemis_app}}/build/windows/Build/Products/Release
+          directory: ${{env.fluttemis_app}}/build/windows/Runner/release
 
       - name: Creating Github MSIX release
         uses: svenstaro/upload-release-action@2.5.0
@@ -160,7 +160,7 @@ jobs:
         uses: svenstaro/upload-release-action@2.5.0
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{env.fluttemis_app}}/build/windows/Build/Products/Release/Fluttemis-windows.zip
+          file: ${{env.fluttemis_app}}/build/windows/Runner/release/Fluttemis-windows.zip
           asset_name: windows-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.ref }}
 
