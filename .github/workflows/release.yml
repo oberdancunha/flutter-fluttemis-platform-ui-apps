@@ -111,6 +111,14 @@ jobs:
 
       - name: Build release
         run: melos run windows:build
+        
+      - name: Generate MSIX-compatible version
+        uses: ashley-taylor/regex-property-action@1.2
+        id: msixver
+        with:
+          value: ${{ github.event.release.tag_name }}
+          regex: (\-\w+)|(\+\w+)
+          replacement: ""
 
       - name: Write MSIX
         uses: DamianReeves/write-file-action@v1.0
@@ -121,7 +129,7 @@ jobs:
               display_name: Fluttemis
               publisher_display_name: Oberdan C.
               identity_name: com.oberdancunha.fluttemis
-              msix_version: 1.0.0.0
+              msix_version: ${{steps.msixver.outputs.value }}.0
               logo_path: fluttemis_platform_ui_app/assets/images/launcher/launcher_windows_linux.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
