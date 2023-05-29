@@ -130,10 +130,10 @@ jobs:
               publisher_display_name: Oberdan C.
               identity_name: com.oberdancunha.fluttemis
               msix_version: ${{steps.msixver.outputs.value }}.0
-              logo_path: ${{env.fluttemis_app}}\assets\images\launcher\launcher_windows_linux.png
+              logo_path: assets\images\launcher\launcher_windows_linux.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
-              certificate_path: ${{env.fluttemis_app}}\windows\FLUTTEMIS-CERT.pfx
+              certificate_path: windows\FLUTTEMIS-CERT.pfx
               certificate_password: ${{ secrets.WIN_CERT_PASS }}
               store: false
           write-mode: append
