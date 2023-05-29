@@ -121,7 +121,7 @@ jobs:
           replacement: ""
 
       - name: Write MSIX
-        uses: DamianReeves/write-file-action@v1.0
+        uses: DamianReeves/write-file-action@v1.2
         with:
           path: ${{env.fluttemis_app}}/pubspec.yaml
           contents: |
