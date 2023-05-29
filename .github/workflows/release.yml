@@ -112,6 +112,24 @@ jobs:
       - name: Build release
         run: melos run windows:build
 
+      - name: Write MSIX
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: fluttemis_platform_ui_app/pubspec.yaml
+          contents: |
+            msix_config:
+              display_name: Fluttemis
+              publisher_display_name: Oberdan C.
+              identity_name: com.oberdancunha.fluttemis
+              msix_version: 1.0.0.0
+              logo_path: fluttemis_platform_ui_app/assets/images/launcher/launcher_windows_linux.png
+              architecture: x64
+              capabilities: "internetClient,removableStorage"
+              certificate_path: fluttemis_platform_ui_app/windows/FLUTTEMIS-CERT.pfx
+              certificate_password: ${{ secrets.WIN_CERT_PASS }}
+              store: false
+          write-mode: append
+
       - name: Create MSIX
         run: melos run windows:create-msix
 
