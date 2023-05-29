@@ -78,7 +78,8 @@ scripts:
     description: Create windows msix file
     packageFilters:
       flutter: true
-      fileExists: lib/main.dart
+      dirExists: windows
+      fileExists: windows/FLUTTEMIS-CERT.pfx
 
   enable:linux:build:
     exec: flutter config --enable-linux-desktop
