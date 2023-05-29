@@ -113,7 +113,7 @@ jobs:
         run: melos run windows:build
         
       - name: Generate MSIX-compatible version
-        uses: ashley-taylor/regex-property-action@1.2
+        uses: ashley-taylor/regex-property-action@v1.4
         id: msixver
         with:
           value: ${{ github.event.release.tag_name }}
@@ -130,10 +130,10 @@ jobs:
               publisher_display_name: Oberdan C.
               identity_name: com.oberdancunha.fluttemis
               msix_version: ${{steps.msixver.outputs.value }}.0
-              logo_path: ${{env.fluttemis_app}}/assets/images/launcher/launcher_windows_linux.png
+              logo_path: ${{env.fluttemis_app}}\assets\images\launcher\launcher_windows_linux.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
-              certificate_path: ${{env.fluttemis_app}}/windows/FLUTTEMIS-CERT.pfx
+              certificate_path: ${{env.fluttemis_app}}\windows\FLUTTEMIS-CERT.pfx
               certificate_password: ${{ secrets.WIN_CERT_PASS }}
               store: false
           write-mode: append
