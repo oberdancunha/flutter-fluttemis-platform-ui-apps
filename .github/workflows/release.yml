@@ -129,6 +129,7 @@ jobs:
               display_name: Fluttemis
               publisher_display_name: Oberdan C.
               identity_name: com.oberdancunha.fluttemis
+              publisher: CN=00000000-0000-0000-0000-000000000000
               msix_version: ${{steps.msixver.outputs.value }}.0
               logo_path: assets\images\launcher\launcher_windows_linux.png
               architecture: x64
