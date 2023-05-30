@@ -136,7 +136,7 @@ jobs:
               capabilities: "internetClient,removableStorage"
               certificate_path: windows\FLUTTEMIS-CERT.pfx
               certificate_password: ${{ secrets.WIN_CERT_PASS }}
-              store: false
+              store: true
           write-mode: append
 
       - name: Create MSIX
