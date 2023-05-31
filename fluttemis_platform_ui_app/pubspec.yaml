@@ -54,7 +54,7 @@ dev_dependencies:
   dart_code_metrics: ^5.0.1
   lint: ^1.10.0
   icons_launcher: ^2.0.6
-  msix: ^3.9.1
+  msix: 2.8.18
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
