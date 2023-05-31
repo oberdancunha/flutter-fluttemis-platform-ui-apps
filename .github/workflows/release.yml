@@ -111,6 +111,21 @@ jobs:
 
       - name: Build release
         run: melos run windows:build
+      
+      - name: Zip release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: zip
+          filename: Fluttemis-windows.zip
+          directory: ${{env.fluttemis_app}}/build/windows/Runner/release
+
+      - name: Creating Github ZIP release
+        uses: svenstaro/upload-release-action@2.5.0
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ${{env.fluttemis_app}}/build/windows/Runner/release/Fluttemis-windows.zip
+          asset_name: windows-${{ github.event.release.tag_name }}.zip
+          tag: ${{ github.ref }}
         
       - name: Generate MSIX-compatible version
         uses: ashley-taylor/regex-property-action@v1.4
@@ -128,26 +143,20 @@ jobs:
             msix_config:
               display_name: Fluttemis
               publisher_display_name: Oberdan C.
-              identity_name: com.oberdancunha.fluttemis
-              publisher: CN=00000000-0000-0000-0000-000000000000
+              identity_name: Fluttemis
+              publisher: CN=Fluttemis
               msix_version: ${{steps.msixver.outputs.value }}.0
               logo_path: assets\images\launcher\launcher_windows_linux.png
               architecture: x64
               capabilities: "internetClient,removableStorage"
               certificate_path: windows\FLUTTEMIS-CERT.pfx
               certificate_password: ${{ secrets.WIN_CERT_PASS }}
-              store: true
+              install_certificate: true
+              store: false
           write-mode: append
 
       - name: Create MSIX
         run: melos run windows:create-msix
-
-      - name: Zip release
-        uses: thedoctor0/zip-release@master
-        with:
-          type: zip
-          filename: Fluttemis-windows.zip
-          directory: ${{env.fluttemis_app}}/build/windows/Runner/release
 
       - name: Creating Github MSIX release
         uses: svenstaro/upload-release-action@2.5.0
@@ -155,14 +164,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/windows/Runner/release/fluttemis.msix
           asset_name: fluttemis-windows-${{ github.event.release.tag_name }}.msix
-          tag: ${{ github.ref }}
-      
-      - name: Creating Github ZIP release
-        uses: svenstaro/upload-release-action@2.5.0
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ${{env.fluttemis_app}}/build/windows/Runner/release/Fluttemis-windows.zip
-          asset_name: windows-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.ref }}
 
   build-and-release-linux:
