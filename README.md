@@ -120,7 +120,6 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
     src="/images/macos_light_theme.gif" 
     alt="macostemaclaro" 
     title="macos tema claro"
-    border= "2px solid gray"
   />
 </p>
 
@@ -140,7 +139,6 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
     src="/images/macos_empty_file.gif" 
     alt="macostemaarquivovazio" 
     title="macos arquivo vazio"
-    border= "2px solid gray"
   />
 </p>
 
@@ -152,7 +150,6 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
     src="/images/windows_light_theme.gif" 
     alt="windowstemaclaro" 
     title="windows tema claro"
-    border= "2px solid gray"
   />
 </p>
 
@@ -171,7 +168,6 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
     src="/images/windows_light_theme_empty_file.gif" 
     alt="windowstemaclaroemptyfile" 
     title="windows tema claro - arquivo vazio"
-    border= "2px solid gray"
   />
 </p>
 
@@ -192,7 +188,6 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
     src="/images/linux_light_theme.gif" 
     alt="linuxtemaclaro" 
     title="linux tema claro"
-    border= "2px solid gray"
   />
 </p>
 
@@ -211,7 +206,6 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
     src="/images/linux_empty_file.gif" 
     alt="linuxtemaarquivovazio" 
     title="linux arquivo vazio"
-    border= "2px solid gray"
   />
 </p>
 
