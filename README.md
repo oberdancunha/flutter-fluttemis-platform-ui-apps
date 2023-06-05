@@ -82,13 +82,13 @@ A primeira versão do Fluttemis foi construída dentro de um mesmo projeto. Ness
 
 #### fluttemis_platform_ui_design_system
 
-É onde estão os componentes visuais e de funcionalidades para serem usados/reaproveitados durante todo o projeto. Nestes componentes visuais, há os de identidade baseado na plataforma e os comuns entre elas.
+É onde estão os componentes visuais e de funcionalidades para serem usados/reaproveitados durante todo o projeto. Nestes componentes visuais, há os de identidade baseado na plataforma e os que são independentes da plataforma.
 
 #### fluttemis_platform_ui_locus
 
 É onde os dados dos locus estão organizados. É a localização das suas entidades, stores, repositórios e data sources (leitura de arquivo genbank, por exemplo).
 
-Também é onde estão os relatórios com os dados detalhados dos locus e features. Além disso, é nessa aplicação onde está localizado o mapa com o desenho gráfico das features, como sua a posição, organização e orientação.
+Também é onde estão os relatórios com os dados detalhados dos locus e features. Além disso, é nessa aplicação onde está localizado o mapa com o desenho gráfico das features, como a sua posição, organização e orientação.
 
 ### Fluttemis original
 
@@ -106,7 +106,7 @@ Terminada a etapa do mapa, a ideia para o restante da aplicação era a constru�
 
 Para essa versão, a interface não apenas foi completamente remodelada, como também possui a sua identidade visual de acordo com a respectiva plataforma. Windows, Macos e Linux, para cada uma dessas plataformas, o Fluttemis possui sua própria paleta de cores, fontes, bordas e sombreamentos completamente distintos, tanto no modo claro, quanto no modo escuro.
 
-O desenvolvimento para Windows e Macos contou com uso das bibliotecas [fluent_ui](https://pub.dev/packages/fluent_ui) e o [macos_ui](https://pub.dev/packages/macos_ui), respectivamente. Ambas as bibliotecas possuem um completo conjunto de widgets com o propósito de permitir que cada detalhe da aplicação, desde uma caixa de texto, um botão, um ícone, a tonalidade das cores e seus efeitos tenham identidades semelhantes à plataforma de interesse.
+O desenvolvimento para Windows e Macos contou com uso das bibliotecas [fluent_ui](https://pub.dev/packages/fluent_ui) e o [macos_ui](https://pub.dev/packages/macos_ui), respectivamente. Ambas as bibliotecas possuem um vasto conjunto de widgets com o propósito de permitir que cada detalhe da aplicação, desde uma caixa de texto, um botão, um ícone, a tonalidade das cores e seus efeitos tenham identidades semelhantes à respectiva plataforma.
 
 Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. Portanto, seu desenvolvimento baseou-se nos aspectos visuais do material design. Não deixa de fazer um certo sentido a falta dessa biblioteca, já que com tantas distribuições (Ubuntu, Mint, Deepin, Manjaro e etc...) e ambientes gráficos (Gnome, KDE, XFCE, Cinnamon e etc...) distintos, realmente não é muito trivial chegar a um consenso visual.
 
