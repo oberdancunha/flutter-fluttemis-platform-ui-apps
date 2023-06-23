@@ -26,6 +26,7 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
         (fileParseError) => left(FileFailure.parseError(fileParseError.error)),
         (fileEmpty) => left(FileFailure.empty()),
         (fileFormatIncorrect) => left(FileFailure.formatIncorrect()),
+        (fileDataFormatIncorrect) => left(FileFailure.formatDataIncorrect()),
       ),
       (genbank) => right(
         genbank.data

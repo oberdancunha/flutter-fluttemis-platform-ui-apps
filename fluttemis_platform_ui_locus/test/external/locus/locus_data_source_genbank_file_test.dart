@@ -153,6 +153,23 @@ void main() {
           );
         },
       );
+
+      test(
+        'Should return a FileFailure.formatDataIncorrect when there is any incorrect data.',
+        () async {
+          const fileName = 'SCU49845_incorrect_data_format.gb';
+          final genbankFileInvalidFormat = path.join(basePath, '$testDataPath/$fileName');
+          locusDataSourceGenbankFile =
+              LocusDataSourceGenbankFile(genbankFile: genbankFileInvalidFormat);
+          final listLocus = await locusDataSourceGenbankFileGet();
+          expect(
+            listLocus.toString(),
+            left<FileFailure, List<LocusDto>>(
+              FileFailure.formatDataIncorrect(),
+            ).toString(),
+          );
+        },
+      );
     },
   );
 }

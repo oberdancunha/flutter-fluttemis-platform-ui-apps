@@ -12,7 +12,7 @@ dependencies:
   dart_bio_package:
     git: 
       url: https://github.com/oberdancunha/dart-bio-package.git
-      ref: 2.0.0
+      ref: 2.1.0
   collection: ^1.16.0
   equatable: ^2.0.5
   file_picker: ^5.2.2

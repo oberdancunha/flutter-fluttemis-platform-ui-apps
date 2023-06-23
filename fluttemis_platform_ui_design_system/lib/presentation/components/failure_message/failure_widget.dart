@@ -38,6 +38,11 @@ class FailureWidget extends StatelessWidget {
           message: fluttemisAppLocalizations.fileFormatError,
           tryAgain: false,
         ),
+        (formatDataIncorrect) => FailureMessageWidget(
+          message: fluttemisAppLocalizations.fileDataFormatError,
+          image: 'file_data_format_error.png',
+          tryAgain: false,
+        ),
       ),
       SizedBox.shrink,
     );

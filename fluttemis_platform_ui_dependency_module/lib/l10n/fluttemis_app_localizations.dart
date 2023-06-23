@@ -118,26 +118,32 @@ abstract class FluttemisAppLocalizations {
   /// No description provided for @fileEmpty.
   ///
   /// In pt, this message translates to:
-  /// **'Erro na leitura do arquivo: arquivo vazio'**
+  /// **'Erro na leitura do arquivo. Arquivo vazio.'**
   String get fileEmpty;
 
   /// No description provided for @fileFormatError.
   ///
   /// In pt, this message translates to:
-  /// **'Erro na leitura do arquivo: formato desconhecido'**
+  /// **'Erro na leitura do arquivo. Formato desconhecido.'**
   String get fileFormatError;
 
   /// No description provided for @fileNotFound.
   ///
   /// In pt, this message translates to:
-  /// **'Erro na leitura do arquivo: arquivo não encontrado'**
+  /// **'Erro na leitura do arquivo. Arquivo não encontrado.'**
   String get fileNotFound;
 
   /// No description provided for @fileUnexpectedError.
   ///
   /// In pt, this message translates to:
-  /// **'Erro na leitura do arquivo: erro não esperado'**
+  /// **'Erro na leitura do arquivo. Erro não esperado.'**
   String get fileUnexpectedError;
+
+  /// No description provided for @fileDataFormatError.
+  ///
+  /// In pt, this message translates to:
+  /// **'Há um erro no formato de algum dado do arquivo. Por favor verifique se todos os dados estão no formato correto.'**
+  String get fileDataFormatError;
 
   /// No description provided for @nextOptionInError.
   ///
