@@ -19,29 +19,6 @@ class WindowsIconButtonWidget extends PlatformIconButtonWidget {
           shape: ButtonState.all(
             const RoundedRectangleBorder(),
           ),
-          border: ButtonState.resolveWith(
-            (states) {
-              if (states.isHovering || states.isFocused) {
-                return const BorderSide(
-                  color: Color(0XFF3B76D6),
-                );
-              }
-
-              return const BorderSide(
-                color: Color(0XFF3B76D6),
-                width: 2,
-              );
-            },
-          ),
-          backgroundColor: ButtonState.resolveWith(
-            (states) {
-              if (states.isHovering || states.isFocused) {
-                return const Color(0XFFE7F1FB);
-              }
-
-              return const Color.fromARGB(255, 235, 235, 235);
-            },
-          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

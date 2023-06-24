@@ -9,13 +9,30 @@ ThemeData get windowsThemeDataDark => ThemeData(
       borderInputColor: const Color.fromARGB(255, 111, 111, 111),
       buttonTheme: ButtonThemeData(
         defaultButtonStyle: ButtonStyle(
-          border: ButtonState.all(
-            const BorderSide(
-              width: 0.7,
-              color: Color.fromARGB(255, 0, 62, 246),
-            ),
+          foregroundColor: ButtonState.all(Colors.white),
+          border: ButtonState.resolveWith(
+            (states) {
+              if (states.isHovering || states.isFocused) {
+                return const BorderSide(
+                  color: Color(0xFFFFFFFF),
+                );
+              }
+
+              return const BorderSide(
+                color: Color(0xFFFFFFFF),
+                width: 1.5,
+              );
+            },
           ),
-          foregroundColor: ButtonState.all(Colors.grey),
+          backgroundColor: ButtonState.resolveWith(
+            (states) {
+              if (states.isHovering || states.isFocused) {
+                return const Color(0XFF454545);
+              }
+
+              return const Color(0XFF333333);
+            },
+          ),
         ),
       ),
       scrollbarTheme: const ScrollbarThemeData(
