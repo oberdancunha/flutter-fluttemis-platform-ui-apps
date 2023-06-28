@@ -28,7 +28,7 @@ class DrawLocusRulerOuterPositionMarker extends DrawLocusRulerMarker {
         );
 
   static const textHeight = 8.0;
-  static const factorForCharacterWidth = 10;
+  static const factorForCharacterWidth = 7;
 
   void printStart() {
     printMarker(
