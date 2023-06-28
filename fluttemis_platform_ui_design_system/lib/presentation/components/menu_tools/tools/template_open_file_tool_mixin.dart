@@ -4,6 +4,7 @@ import 'package:fluttemis_platform_ui_core/store/access_history/access_history_s
 import 'package:fluttemis_platform_ui_core/utils/utils.dart';
 import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_dependency_module.dart';
 
+import '../../platform/icon_button/button_status/button_status_store.dart';
 import 'i_template_tool.dart';
 
 mixin TemplateOpenFileToolMixin<TemplateOpenFileTool extends ITemplateTool>
@@ -18,7 +19,9 @@ mixin TemplateOpenFileToolMixin<TemplateOpenFileTool extends ITemplateTool>
 
   @override
   Future<bool> coreToolAction() async {
+    Modular.get<ButtonStatusStore>().addDisabled(ButtonTypeStatus.menuToolButton);
     final filePickerPath = await filePicker.filePickerByExtensions(extensionsAccepted);
+    Modular.get<ButtonStatusStore>().removeDisabled(ButtonTypeStatus.menuToolButton);
     if (filePickerPath != null) {
       Modular.get<AccessHistoryStore>().setLastToolAccessed(widget);
       Modular.get<AccessHistoryStore>().setLastResource(

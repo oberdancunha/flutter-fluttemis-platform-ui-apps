@@ -4,6 +4,7 @@ import 'package:fluttemis_platform_ui_dependency_module/fluttemis_platform_ui_de
 import 'package:flutter/widgets.dart';
 
 import '../../platform/icon/icon_data/platform_icon_data.dart';
+import '../../platform/icon_button/button_status/button_status_store.dart';
 import '../../platform/tool_card/platform_tool_card_widget.dart';
 import '../../tool_widgets/tool_icon_action_widget.dart';
 
@@ -26,9 +27,13 @@ abstract class ITemplateToolState<TemplateTool extends ITemplateTool> extends St
   FutureOr<bool> coreToolAction();
   VoidCallback get callRoute => () => Modular.to.navigate(route);
   VoidCallback? get toolAction => () async {
-        final goToTheNext = await coreToolAction.call();
-        if (goToTheNext) {
-          callRoute();
+        final buttonStatusStore = Modular.get<ButtonStatusStore>();
+        final isButtonDisabled = buttonStatusStore.buttonsDisabled[ButtonTypeStatus.menuToolButton];
+        if (isButtonDisabled == null || !isButtonDisabled) {
+          final goToTheNext = await coreToolAction.call();
+          if (goToTheNext) {
+            callRoute();
+          }
         }
       };
 
