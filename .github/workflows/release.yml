@@ -78,7 +78,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis-macos.zip
-          asset_name: macos-${{ github.event.release.tag_name }}.zip
+          asset_name: fluttemis-macos-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.ref }}
 
   build-and-release-windows:
@@ -124,7 +124,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/windows/Runner/release/Fluttemis-windows.zip
-          asset_name: windows-${{ github.event.release.tag_name }}.zip
+          asset_name: fluttemis-windows-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.ref }}
         
       - name: Generate MSIX-compatible version
@@ -233,7 +233,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/linux/x64/release/bundle/Fluttemis-linux.zip
-          asset_name: linux-${{ github.event.release.tag_name }}.zip
+          asset_name: fluttemis-linux-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.ref }}
 
 
