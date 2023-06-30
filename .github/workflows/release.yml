@@ -66,7 +66,7 @@ jobs:
           directory: ${{env.fluttemis_app}}/build/macos/Build/Products/Release
 
       - name: Creating Github DMG release
-        uses: svenstaro/upload-release-action@2.5.0
+        uses: svenstaro/upload-release-action@2.6.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis.dmg
@@ -74,7 +74,7 @@ jobs:
           tag: ${{ github.ref }}
       
       - name: Creating Github ZIP release
-        uses: svenstaro/upload-release-action@2.5.0
+        uses: svenstaro/upload-release-action@2.6.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/macos/Build/Products/Release/Fluttemis-macos.zip
@@ -120,7 +120,7 @@ jobs:
           directory: ${{env.fluttemis_app}}/build/windows/Runner/release
 
       - name: Creating Github ZIP release
-        uses: svenstaro/upload-release-action@2.5.0
+        uses: svenstaro/upload-release-action@2.6.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/windows/Runner/release/Fluttemis-windows.zip
@@ -159,7 +159,7 @@ jobs:
         run: melos run windows:create-msix
 
       - name: Creating Github MSIX release
-        uses: svenstaro/upload-release-action@2.5.0
+        uses: svenstaro/upload-release-action@2.6.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/windows/Runner/release/fluttemis.msix
@@ -229,7 +229,7 @@ jobs:
           directory: ${{env.fluttemis_app}}/build/linux/x64/release/bundle
 
       - name: Creating Github ZIP release
-        uses: svenstaro/upload-release-action@2.5.0
+        uses: svenstaro/upload-release-action@2.6.1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ${{env.fluttemis_app}}/build/linux/x64/release/bundle/Fluttemis-linux.zip
