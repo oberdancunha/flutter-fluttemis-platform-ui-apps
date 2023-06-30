@@ -153,7 +153,7 @@ packages:
     description:
       path: dart_bio_core
       ref: "2.1.0"
-      resolved-ref: "70ad0db6fd91e6a9ceaf806094455225b3352ad6"
+      resolved-ref: b0790ee5f07fec45f827dc98f880e976a3e8aefc
       url: "https://github.com/oberdancunha/dart-bio-package.git"
     source: git
     version: "2.1.0"
@@ -162,7 +162,7 @@ packages:
     description:
       path: dart_bio_dependency_module
       ref: "2.1.0"
-      resolved-ref: "70ad0db6fd91e6a9ceaf806094455225b3352ad6"
+      resolved-ref: e9e969189fde6d3fa3c23102a4b667dd9250c7d2
       url: "https://github.com/oberdancunha/dart-bio-package.git"
     source: git
     version: "2.1.0"
@@ -171,7 +171,7 @@ packages:
     description:
       path: "."
       ref: "2.1.0"
-      resolved-ref: "70ad0db6fd91e6a9ceaf806094455225b3352ad6"
+      resolved-ref: b0790ee5f07fec45f827dc98f880e976a3e8aefc
       url: "https://github.com/oberdancunha/dart-bio-package.git"
     source: git
     version: "2.1.0"
@@ -180,7 +180,7 @@ packages:
     description:
       path: dart_bio_seqio
       ref: "2.1.0"
-      resolved-ref: "70ad0db6fd91e6a9ceaf806094455225b3352ad6"
+      resolved-ref: b0790ee5f07fec45f827dc98f880e976a3e8aefc
       url: "https://github.com/oberdancunha/dart-bio-package.git"
     source: git
     version: "2.1.0"

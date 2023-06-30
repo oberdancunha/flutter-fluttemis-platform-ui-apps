@@ -35,11 +35,11 @@ class LocusDataSourceGenbankFile implements ILocusDataSource {
               (data) => LocusDto(
                 name: data.locus.name,
                 length: data.locus.length,
-                type: data.locus.type,
+                type: data.locus.type!,
                 shape: data.locus.shape,
                 organism: data.locusDetails.source!,
                 releaseDate: DateTime.parse(
-                  CustomDateFormat.yMd(data.locus.releaseDate).dateFormatted,
+                  CustomDateFormat.yMd(data.locus.releaseDate!).dateFormatted,
                 ),
                 sequence: data.locus.sequence,
                 features: data.features
