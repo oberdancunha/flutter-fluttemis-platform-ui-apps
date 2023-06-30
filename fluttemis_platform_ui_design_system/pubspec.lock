@@ -253,14 +253,14 @@ packages:
       path: "../fluttemis_platform_ui_core"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.1.0"
   fluttemis_platform_ui_dependency_module:
     dependency: "direct main"
     description:
       path: "../fluttemis_platform_ui_dependency_module"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.1.0"
   flutter:
     dependency: "direct main"
     description: flutter
