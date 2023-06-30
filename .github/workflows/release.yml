@@ -215,7 +215,7 @@ jobs:
           write-mode: append
       
       - name: Set snapcraft.yaml version
-        uses: DamianReeves/write-file-action@v1.0
+        uses: DamianReeves/write-file-action@v1.2
         with:
           path: ${{env.fluttemis_app}}/snap/snapcraft.yaml
           contents: 'version: "${{ github.event.release.tag_name }}"'
