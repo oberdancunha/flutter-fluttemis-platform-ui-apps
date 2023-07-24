@@ -211,7 +211,7 @@ Para a plataforma Linux não foi possível encontrar nenhuma bibloteca similar. 
 
 ## Imagens e ícones
 
-<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 ## Fontes
   - [SF Mono](https://www.cufonfonts.com/font/sf-mono)
